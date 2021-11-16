@@ -8,8 +8,8 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria                | Documentados | Total de problemas |
 | ------------------------ | -----------: | -----------------: |
-| Iniciante                |           34 |                334 |
-| Ad-Hoc                   |           74 |                731 |
+| Iniciante                |           34 |                336 |
+| Ad-Hoc                   |           74 |                732 |
 | Strings                  |           15 |                148 |
 | Estruturas e Bibliotecas |           18 |                179 |
 | Matemática               |            0 |                269 |
