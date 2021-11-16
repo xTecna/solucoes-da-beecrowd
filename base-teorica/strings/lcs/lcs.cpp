@@ -1,0 +1,30 @@
+int LCS(string A, string B)
+{
+    int n, m;
+    vector<vector<int>> T;
+
+    n = A.length(), m = B.length();
+
+    T.assign(n + 1, vector<int>());
+    for (int i = 0; i <= n; ++i)
+    {
+        T[i].assign(m + 1, 0);
+    }
+
+    for (int i = 1; i <= n; ++i)
+    {
+        for (int j = 1; j <= m; ++j)
+        {
+            if (A[i - 1] == B[j - 1])
+            {
+                T[i][j] = T[i - 1][j - 1] + 1;
+            }
+            else
+            {
+                T[i][j] = max(T[i][j - 1], T[i - 1][j]);
+            }
+        }
+    }
+
+    return T[n][m];
+}
