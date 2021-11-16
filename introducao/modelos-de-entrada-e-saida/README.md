@@ -4,7 +4,7 @@
 
 ### Entrada e saída padrão
 
-Como vimos na página [beecrowd](uri-online-judge.md), o juiz automático só leva em consideração arquivos de texto de entrada e saída, com isso, ler e imprimir no fluxo de entrada/saída é o suficiente para todas as linguagens suportadas até o momento. Em JavaScript, apesar da primeira linha apresentar sintaxe de leitura de arquivo para a entrada, tal arquivo é convertido e entendido como a entrada padrão do seu programa, então tudo certo ainda (embora para todos os efeitos, tal chamada realmente equivale a um acesso em arquivo, trazendo toda a entrada de uma vez).
+Como vimos na página [beecrowd](../beecrowd/README.md), o juiz automático só leva em consideração arquivos de texto de entrada e saída, com isso, ler e imprimir no fluxo de entrada/saída é o suficiente para todas as linguagens suportadas até o momento. Em JavaScript, apesar da primeira linha apresentar sintaxe de leitura de arquivo para a entrada, tal arquivo é convertido e entendido como a entrada padrão do seu programa, então tudo certo ainda (embora para todos os efeitos, tal chamada realmente equivale a um acesso em arquivo, trazendo toda a entrada de uma vez).
 
 [Aqui nesta página](https://www.beecrowd.com.br/judge/pt/faqs/about/examples), você encontrará exemplos de códigos em diversas linguagens suportadas pela beecrowd para o problema 1001 - Extremamente Básico.
 
@@ -51,8 +51,6 @@ while True:
     except EOFError:
         break
 ```
-
-
 
 ### Entrada de JavaScript
 
