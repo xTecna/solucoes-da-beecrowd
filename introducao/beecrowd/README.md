@@ -6,6 +6,6 @@ A beecrowd funciona através de um juiz automático que executa o código que vo
 
 ![Funcionamento da beecrowd explicado visualmente](../../assets/esquemabeecrowd.png)
 
-Lembrando que **não** é necessário lidar com arquivos explicitamente no seu código, ou seja, você não precisa lidar com comandos para abrir e fechar arquivos para a entrada e saída do seu programa, com exceções apenas em algumas linguagens específicas. Na página [Preparando o ambiente](./preparando-o-ambiente/README.md), eu procuro explicar melhor como arrumar um ambiente para treinar programação na beecrowd na sua máquina ou em um compilador online.
+Lembrando que **não** é necessário lidar com arquivos explicitamente no seu código, ou seja, você não precisa lidar com comandos para abrir e fechar arquivos para a entrada e saída do seu programa, com exceções apenas em algumas linguagens específicas. Na página [Preparando o ambiente](../preparando-o-ambiente/README.md), eu procuro explicar melhor como arrumar um ambiente para treinar programação na beecrowd na sua máquina ou em um compilador online.
 
 Para mais dúvidas, acesse o [FAQ da própria beecrowd](https://www.beecrowd.com.br/judge/pt/faqs/about).
