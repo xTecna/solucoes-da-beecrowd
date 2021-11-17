@@ -8,7 +8,7 @@ Alguns dos métodos de ordenação apresentados abaixo vão te parecer muito int
 
 Vamos começar com os métodos mais simples e partir para métodos mais sofisticados, cada um com sua complexidade de tempo e espaço e uma breve explicação e implementação.
 
-Em todas as funções apresentadas estamos usando os métodos mais gerais possíveis, podendo ser aplicados a qualquer tipo de estrutura de dados. Para isso, usamos templates na linguagem C++ e também uma função `comp` facilmente customizável para qualquer necessidade de ordenação. Falamos mais sobre esta função e suas propriedades na seção [Customização de critérios](#customizacao-de-criterios).
+Em todas as funções apresentadas estamos usando os métodos mais gerais possíveis, podendo ser aplicados a qualquer tipo de estrutura de dados. Para isso, usamos templates na linguagem C++ e também uma função `comp` facilmente customizável para qualquer necessidade de ordenação. Falamos mais sobre esta função e suas propriedades na seção [Customização de critérios](#customização-de-critérios).
 
 ## Métodos de ordenação
 
