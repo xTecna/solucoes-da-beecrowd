@@ -1,0 +1,79 @@
+# 1044 - Múltiplos
+
+## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1044)
+
+## Solução
+
+Uma forma bem fácil de vermos se um número é múltiplo de outro número é verificando se o resto da divisão entre o maior e o menor número dá zero, o que pode ser verificado com o operador `mod` (`%`).
+
+> Para esse problema, não é necessário verificar se um dos dois valores é 0.
+
+### C99
+
+```c
+#include <stdio.h>
+
+void swap(int* a, int* b){
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+}
+
+int main(){
+    int A, B;
+
+    scanf("%d %d", &A, &B);
+
+    if(A < B)   swap(&A, &B);
+
+    if(A % B)   printf("Nao sao Multiplos\n");
+    else        printf("Sao Multiplos\n");
+
+    return 0;
+}
+```
+
+### C++17
+
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main(){
+    int A, B;
+
+    cin >> A >> B;
+
+    if(A < B)   swap(A, B);
+
+    if(A % B)   cout << "Nao sao Multiplos" << endl;
+    else        cout << "Sao Multiplos" << endl;
+
+    return 0;
+}
+```
+
+### JavaScript 12.18
+
+```javascript
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+let [A, B] = lines.shift().split(' ').map((x) => parseInt(x));
+
+if(A < B)   [A, B] = [B, A];
+
+console.log((A % B === 0) ? "Sao Multiplos" : "Nao sao Multiplos");
+```
+
+### Python 3.9
+
+```python
+A, B = [int(x) for x in input().split(' ')]
+
+if(A < B):
+    A, B = B, A
+
+print("Nao sao Multiplos" if (A % B) else "Sao Multiplos")
+```
