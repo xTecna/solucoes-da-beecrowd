@@ -1,6 +1,6 @@
 # 1018 - Cédulas
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1018)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1018)
 
 ## Solução
 
@@ -8,21 +8,21 @@ A ideia deste problema é ir utilizando divisões e restos de divisão para ir d
 
 Por exemplo, com o número 576, seguimos o seguinte raciocínio:
 
-1. R$ 576,00 precisa de 5 notas de R$ 100,00 porque 576/100 = 5 (divisão inteira).
-2. Beleza, representamos 500, então agora sobra 76.
-3. R$ 76,00 precisa de 1 nota de R$ 50,00 porque 76/50 = 1.
-4. OK, agora temos 26.
-5. R$ 26,00 precisa de 1 nota de R$ 20,00 porque 26/20 = 1.
-6. Temos 6.
-7. R$ 6,00 precisa de 0 nota de R$ 10,00 porque 6/10 = 0.
-8. Continuamos com 6.
-9. R$ 6,00 precisa de 1 nota de R$ 5,00 porque 6/5 = 1.
-10. Agora só sobrou 1.
-11. R$ 1,00 precisa de 0 nota de R$ 2,00 porque 1/2 = 0.
-12. Continua sobrando 1.
+1. R$ 576,00 precisa de 5 notas de R$ 100,00 porque 576/100 = 5 (divisão inteira);
+2. Beleza, representamos 500, então agora sobra 76;
+3. R$ 76,00 precisa de 1 nota de R$ 50,00 porque 76/50 = 1;
+4. OK, agora temos 26;
+5. R$ 26,00 precisa de 1 nota de R$ 20,00 porque 26/20 = 1;
+6. Temos 6;
+7. R$ 6,00 precisa de 0 nota de R$ 10,00 porque 6/10 = 0;
+8. Continuamos com 6;
+9. R$ 6,00 precisa de 1 nota de R$ 5,00 porque 6/5 = 1;
+10. Agora só sobrou 1;
+11. R$ 1,00 precisa de 0 nota de R$ 2,00 porque 1/2 = 0;
+12. Continua sobrando 1;
 13. Agora o que sobrou é o que dá para representar com 1 nota de R$ 1,00.
 
-Dessa maneira, nossa resposta final são 5 notas de R$ 100,00, 1 nota de R$ 50,00, 1 de R$ 20,00, 1 de R$ 5,00 e 1 de R$ 1,00. Experimente com outros valores de N e veja que pegar as divisões inteiras e seus respectivos restos forma um raciocínio interessante para a resolução deste e dos próximos problemas subsequentes.
+Dessa maneira, nossa resposta final são 5 notas de R$ 100,00, 1 nota de R$ 50,00, 1 de R$ 20,00, 1 de R$ 5,00 e 1 de R$ 1,00. Experimente com outros valores de `N` e veja que pegar as divisões inteiras e seus respectivos restos forma um raciocínio interessante para a resolução deste e dos próximos problemas subsequentes.
 
 ### C99
 

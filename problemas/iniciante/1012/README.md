@@ -1,6 +1,6 @@
 # 1012 - Área
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1012)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1012)
 
 ## Solução
 

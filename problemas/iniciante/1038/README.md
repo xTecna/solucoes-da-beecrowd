@@ -1,6 +1,6 @@
 # 1038 - Lanche
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1038)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1038)
 
 ## Solução
 

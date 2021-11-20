@@ -1,6 +1,6 @@
 # 1036 - Fórmula de Bhaskara
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1036)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1036)
 
 ## Solução
 
@@ -9,7 +9,7 @@ O enunciado já dá as dicas para gente, nós teremos resultados válidos se ess
 * O valor de A tem que ser diferente de zero;
 * O valor de delta tem que ser não-negativo.
 
-Não há necessidade alguma de imprimir apenas um R1 caso delta seja igual a zero, até no ponto de vista matemático, quando delta é igual a zero, significa que temos duas raízes com o mesmo valor, não só uma raiz, então você pode imprimir as duas com o mesmo valor corretamente.
+Não há necessidade alguma de imprimir apenas um R1 caso delta seja igual a zero, até no ponto de vista matemático. Quando delta é igual a zero, significa que temos duas raízes com o mesmo valor, não só uma raiz, então você pode imprimir as duas com o mesmo valor corretamente.
 
 > Você pode perceber que eu deixei para testar se A é diferente de zero depois do cálculo do delta, fiz isso apenas para simplificar o código.
 

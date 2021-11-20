@@ -1,12 +1,12 @@
 # 1001 - Extremamente Básico
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1001)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1001)
 
 ## Solução
 
-Um problema bem simples que envolve ler dois valores e imprimir a soma dos dois valores lidos. Nesta [página do URI Online Judge](https://www.urionlinejudge.com.br/judge/pt/faqs/about/examples) ele oferece as soluções deste problema para diversas linguagens.
+Um problema bem simples que envolve ler dois valores e imprimir a soma dos dois valores lidos. Nesta [página da beecrowd](https://www.beecrowd.com.br/judge/pt/faqs/about/examples) ela oferece as soluções deste problema para diversas linguagens.
 
-A diferença entre os exemplos apresentados acima e os apresentados abaixo é que lá tem em muito mais linguagens do que aqui e que lá eles levam em consideração a variável X, que não é necessária, mas que é pode ser bom incluir para fins educativos.
+A diferença entre os exemplos apresentados acima e os apresentados abaixo é que lá tem em muito mais linguagens do que aqui e que lá eles levam em consideração a variável X, que não é necessária, mas que pode ser bom incluir para fins educativos.
 
 ### C99
 

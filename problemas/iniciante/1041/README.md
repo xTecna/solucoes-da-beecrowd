@@ -1,6 +1,6 @@
 # 1041 - Coordenadas de um Ponto
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1041)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1041)
 
 ## Solução
 

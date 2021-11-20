@@ -1,6 +1,6 @@
 # 1050 - DDD
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1050)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1050)
 
 ## Solução
 

@@ -1,6 +1,6 @@
 # 1013 - O Maior
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1013)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1013)
 
 ## Solução
 
@@ -8,11 +8,11 @@ Uma forma de conseguir o maior de três elementos usando uma função que só ac
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;max(a,&space;max(b,&space;c))" title="\bg_white max(a, max(b, c))" />
 
-Com isso, o max(b, c) de dentro vai ser executado primeiro, trazendo o maior entre os números b e c; e depois vai ser executado o max de fora, onde vai ser escolhido o máximo entre a e o máximo escolhido entre b e c antes.
+Com isso, o `max(b, c)` de dentro vai ser executado primeiro, trazendo o maior entre os números `b` e `c`; e depois vai ser executado o `max` de fora, onde vai ser escolhido o máximo entre `a` e o máximo escolhido entre `b` e `c` antes.
 
 ### Por que a fórmula funciona?
 
-Considere que a é o maior número e b é o menor, temos que
+Considerando que a é o maior número e b é o menor, temos que
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;max(a,&space;b)&space;=&space;\frac{a&space;&plus;&space;b&space;&plus;&space;abs(a&space;-&space;b)}{2}&space;\\\text{}\\max(a,&space;b)&space;=&space;\frac{a&space;&plus;&space;b&space;&plus;&space;a&space;-&space;b}{2}&space;\\\text{}\\max(a,&space;b)&space;=&space;\frac{2a}{2}&space;\\\text{}\\max(a,&space;b)&space;=&space;a" title="\bg_white max(a, b) = \frac{a + b + abs(a - b)}{2} \\\text{}\\max(a, b) = \frac{a + b + a - b}{2} \\\text{}\\max(a, b) = \frac{2a}{2} \\\text{}\\max(a, b) = a" />
 

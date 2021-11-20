@@ -1,6 +1,6 @@
 # 1020 - Idade em Dias
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1020)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1020)
 
 ## Solução
 

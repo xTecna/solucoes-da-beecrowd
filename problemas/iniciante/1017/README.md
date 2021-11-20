@@ -1,6 +1,6 @@
 # 1017 - Gasto de Combustível
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1017)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1017)
 
 ## Solução
 

@@ -1,14 +1,14 @@
 # 1043 - Triângulo
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1043)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1043)
 
 ## Solução
 
-Podemos pensar em alguns exemplos de tamanhos de lados que não podem formar triângulo (como por exemplo, dois lados muito pequenos e um lado muito grande). Para que os lados A, B e C sejam capazes de formar um triângulo, é necessário a soma de dois dos lados seja sempre maior que o terceiro lado. Ou seja,
+Podemos pensar em alguns exemplos de tamanhos de lados que não podem formar triângulo (como por exemplo, dois lados muito pequenos e um lado muito grande). Para que os lados `A`, `B` e `C` sejam capazes de formar um triângulo, é necessário que a soma de dois dos lados seja sempre maior que o terceiro lado. Ou seja,
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;A&space;<&space;B&space;&plus;&space;C\\B&space;<&space;A&space;&plus;&space;C\\C&space;<&space;A&space;&plus;&space;B" title="\bg_white A < B + C\\B < A + C\\C < A + B" />
 
-Cumprindo com essas três inequações, temos três lados de um triângulo.
+Cumprindo essas três inequações, temos três lados de um triângulo.
 
 ### C99
 

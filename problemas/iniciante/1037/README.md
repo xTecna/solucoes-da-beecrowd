@@ -1,6 +1,6 @@
 # 1037 - Intervalo
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1037)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1037)
 
 ## Solução
 

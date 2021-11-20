@@ -1,6 +1,6 @@
 # 1002 - Área do Círculo
 
-## [Descrição]https://www.urionlinejudge.com.br/judge/pt/problems/view/1002)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1002)
 
 ## Solução
 

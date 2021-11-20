@@ -1,10 +1,10 @@
 # 1008 - Salário
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1008)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1008)
 
 ## Solução
 
-Para calcular o salário do funcionário, basta multiplicar o valor que ele recebe por hora pelo número de horas trabalhadas. Perceba que a variável número não é usava para absolutamente nada, mas decidimos lê-la mesmo assim (e para algumas linguagens, é realmente necessário ler o número, mesmo não usando ele para nada depois).
+Para calcular o salário do funcionário, basta multiplicar o valor que ele recebe por hora pelo número de horas trabalhadas. Perceba que a variável número não é usada para absolutamente nada, mas decidimos lê-la mesmo assim (e para algumas linguagens, é realmente necessário ler o número, mesmo não usando ele para nada depois).
 
 ### C99
 

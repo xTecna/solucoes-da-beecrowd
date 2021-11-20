@@ -1,6 +1,6 @@
 # 1042 - Sort Simples
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1042)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1042)
 
 ## Solução
 
@@ -117,8 +117,8 @@ for i in range(3):
 
 Um método eficiente e fácil de implementar que podemos usar é o InsertionSort, onde podemos proceder da seguinte maneira:
 
-1. Verificar se o segundo elemento é menor que o primeiro. Se for, trocar as posições de ambos.
-2. Verificar se o terceiro elemento é menor que o segundo. Se for, trocar as posições de ambos.
+1. Verificar se o segundo elemento é menor que o primeiro. Se for, trocar as posições de ambos;
+2. Verificar se o terceiro elemento é menor que o segundo. Se for, trocar as posições de ambos;
 3. Se no passo anterior, se os elementos foram trocados, então verificar novamente se o agora segundo elemento é menor que o primeiro e se for, trocar as posições de ambos.
 
 #### C99

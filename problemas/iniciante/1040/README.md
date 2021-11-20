@@ -6,11 +6,11 @@
 
 O mais importante daqui desse exercício é fazer uma parte de cada vez.
 
-1. Calcular a média e exibi-la na tela, respeitando os pesos de cada prova
-2. Ver se o aluno passou, reprovou ou está em exame, exibindo essa informação na tela
-3. Só ler a próxima nota se o aluno estiver em exame e, se for o caso, exibir essa nota nova também
-4. Ver se o aluno passou ou não com a nova média
-5. Independente do aluno passar ou não, exibir a nova média
+1. Calcular a média e exibi-la na tela, respeitando os pesos de cada prova;
+2. Ver se o aluno passou, reprovou ou está em exame, exibindo essa informação na tela;
+3. Só ler a próxima nota se o aluno estiver em exame e, se for o caso, exibir essa nota nova também;
+4. Ver se o aluno passou ou não com a nova média;
+5. Independente do aluno passar ou não, exibir a nova média.
 
 Vamos então esquematizar cada um desses passos no nosso programa.
 

@@ -1,6 +1,6 @@
 # 1014 - Consumo
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1014)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1014)
 
 ## Solução
 

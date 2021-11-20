@@ -1,10 +1,10 @@
 # 1010 - Cálculo Simples
 
-## [Descrição](https://www.urionlinejudge.com.br/judge/pt/problems/view/1010)
+## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1010)
 
 ## Solução
 
-Para calcular o total da compra dos dois tipos de produtos, basta multiplicar as respectivas quantidades pelos valores dos produtos e somar esses dois valores. Repare que os códigos dos produtos são inúteis, então em linguagens onde se pode ignorar essas variáveis, pode-se ignorar de forma segura.
+Para calcular o total da compra dos dois tipos de produtos, basta multiplicar as respectivas quantidades pelos valores dos produtos e somar esses dois valores. Repare que os códigos dos produtos são inúteis, então em linguagens onde é possível ignorar essas variáveis, pode-se ignorar de forma segura.
 
 ### C99
 
