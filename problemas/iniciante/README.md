@@ -1,5 +1,4 @@
-# Iniciante
-
+## Iniciante (34/336)
 * [1000 - Hello World!](./1000/README.md)
 * [1001 - Extremamente Básico](./1001/README.md)
 * [1002 - Área do Círculo](./1002/README.md)
