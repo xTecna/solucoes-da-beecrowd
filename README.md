@@ -8,17 +8,17 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria                | Documentados | Total de problemas |
 | ------------------------ | -----------: | -----------------: |
-| Iniciante                |           34 |                336 |
-| Ad-Hoc                   |           74 |                732 |
-| Strings                  |           15 |                148 |
-| Estruturas e Bibliotecas |           18 |                179 |
-| Matemática               |            0 |                269 |
+| [Iniciante](./problemas/iniciante/README.md)                |           34 |                336 |
+| [Ad-Hoc](./problemas/ad-hoc/README.md)                   |           74 |                732 |
+| [Strings](./problemas/strings/README.md)                  |           15 |                148 |
+| [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) |           18 |                179 |
+| [Matemática](./problemas/matematica/README.md)               |           27 |                269 |
 | Paradigmas               |            0 |                215 |
 | Grafos                   |            0 |                277 |
 | Geometria Computacional  |            0 |                 82 |
 | SQL                      |            0 |                 46 |
 |                          |              |                    |
-| Total                    |          141 |               2281 |
+| Total                    |          168 |               2281 |
 
 ## Quais linguagens são abarcadas nesta documentação?
 
