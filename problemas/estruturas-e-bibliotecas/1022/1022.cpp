@@ -25,27 +25,27 @@ public:
         den = y;
     }
 
-    Fracao operator+(const Fracao &outra)
+    const Fracao operator+(const Fracao &outra)
     {
         return Fracao(this->num * outra.den + this->den * outra.num, this->den * outra.den);
     }
 
-    Fracao operator-(const Fracao &outra)
+    const Fracao operator-(const Fracao &outra)
     {
         return Fracao(this->num * outra.den - this->den * outra.num, this->den * outra.den);
     }
 
-    Fracao operator*(const Fracao &outra)
+    const Fracao operator*(const Fracao &outra)
     {
         return Fracao(this->num * outra.num, this->den * outra.den);
     }
 
-    Fracao operator/(const Fracao &outra)
+    const Fracao operator/(const Fracao &outra)
     {
         return Fracao(this->num * outra.den, this->den * outra.num);
     }
 
-    Fracao irredutivel()
+    const Fracao irredutivel()
     {
         int mdc = (this->num < 0) ? MDC(-this->num, this->den) : MDC(this->num, this->den);
 
