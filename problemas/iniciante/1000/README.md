@@ -36,6 +36,29 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        Console.WriteLine("Hello World!");
+    }
+}
+```
+
+### Java 14
+```java
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        System.out.println("Hello World!");
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript
