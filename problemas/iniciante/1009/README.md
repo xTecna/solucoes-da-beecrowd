@@ -6,6 +6,8 @@
 
 A compensação do trabalho que o vendedor vai receber ao final das vendas equivale ao salário fixo dele mais 15% das vendas efetuadas por ele. Com isso, basta fazer o cálculo equivalente e imprimir o resultado.
 
+Perceba que o nome do funcionário não é usado para nada, mas é preciso lê-lo mesmo assim. Basta pegar o valor para a variável e não a utilizar mais.
+
 ### C99
 
 ```c
@@ -44,6 +46,46 @@ int main(){
     cout << "TOTAL = R$ " << setprecision(2) << fixed << total << endl;
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string vendedor = Console.ReadLine();
+        double salario = double.Parse(Console.ReadLine());
+        double vendas = double.Parse(Console.ReadLine());
+
+        double total = salario + 0.15 * vendas;
+
+        Console.WriteLine($"TOTAL = R$ {total:0.00}");
+    }
+}
+```
+
+### Java 14
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        String vendedor = in.readLine();
+        double salario = Double.parseDouble(in.readLine());
+        double vendas = Double.parseDouble(in.readLine());
+        
+        double total = salario + 0.15 * vendas;
+
+        System.out.println(String.format(Locale.US, "TOTAL = R$ %.2f", total));
+    }
 }
 ```
 

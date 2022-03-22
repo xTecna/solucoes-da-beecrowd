@@ -4,7 +4,7 @@
 
 ## Solução
 
-Para calcular o salário do funcionário, basta multiplicar o valor que ele recebe por hora pelo número de horas trabalhadas. Perceba que a variável número não é usada para absolutamente nada, mas decidimos lê-la mesmo assim (e para algumas linguagens, é realmente necessário ler o número, mesmo não usando ele para nada depois).
+Para calcular o salário do funcionário, basta multiplicar o valor que ele recebe por hora pelo número de horas trabalhadas. Após isso, imprimir tanto o número do funcionário quanto o salário que calculamos.
 
 ### C99
 
@@ -45,6 +45,48 @@ int main(){
     cout << "SALARY = U$ " << setprecision(2) << fixed << salario << endl;
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int numero = int.Parse(Console.ReadLine());
+        int horas = int.Parse(Console.ReadLine());
+        double valor = double.Parse(Console.ReadLine());
+
+        double salario = valor * horas;
+
+        Console.WriteLine($"NUMBER = {numero}");
+        Console.WriteLine($"SALARY = U$ {salario:0.00}");
+    }
+}
+```
+
+### Java 14
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int numero = Integer.parseInt(in.readLine());
+        int horas = Integer.parseInt(in.readLine());
+        double valor = Double.parseDouble(in.readLine());
+        
+        double salario = valor * horas;
+
+        System.out.println("NUMBER = " + numero);
+        System.out.println(String.format(Locale.US, "SALARY = U$ %.2f", salario));
+    }
 }
 ```
 

@@ -4,7 +4,9 @@
 
 ## Solução
 
-Para calcular o total da compra dos dois tipos de produtos, basta multiplicar as respectivas quantidades pelos valores dos produtos e somar esses dois valores. Repare que os códigos dos produtos são inúteis, então em linguagens onde é possível ignorar essas variáveis, pode-se ignorar de forma segura.
+Para calcular o total da compra dos dois tipos de produtos, basta multiplicar as respectivas quantidades pelos valores dos produtos e somar esses dois valores.
+
+Repare que os códigos dos produtos são inúteis, então em linguagens onde é possível ignorar essas variáveis, Perceba que os códigos dos produtos são inúteis, mas é preciso lê-los mesmo assim. Basta pegar o valor para as variáveis e não as utilizar mais.
 
 ### C99
 
@@ -46,6 +48,54 @@ int main(){
     cout << "VALOR A PAGAR: R$ " << setprecision(2) << fixed << valor << endl;
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string[] linhaPeca1 = Console.ReadLine().Trim().Split(' ');
+        int quantidade1 = int.Parse(linhaPeca1[1]);
+        double valor1 = double.Parse(linhaPeca1[2]);
+
+        string[] linhaPeca2 = Console.ReadLine().Trim().Split(' ');
+        int quantidade2 = int.Parse(linhaPeca2[1]);
+        double valor2 = double.Parse(linhaPeca2[2]);
+
+        double valor = quantidade1 * valor1 + quantidade2 * valor2;
+
+        Console.WriteLine($"VALOR A PAGAR: R$ {valor:0.00}");
+    }
+}
+```
+
+### Java 14
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        String[] linhaPeca1 = in.readLine().trim().split(" ");
+        int quantidade1 = Integer.parseInt(linhaPeca1[1]);
+        double valor1 = Double.parseDouble(linhaPeca1[2]);
+
+        String[] linhaPeca2 = in.readLine().trim().split(" ");
+        int quantidade2 = Integer.parseInt(linhaPeca2[1]);
+        double valor2 = Double.parseDouble(linhaPeca2[2]);
+        
+        double valor = quantidade1 * valor1 + quantidade2 * valor2;
+
+        System.out.println(String.format(Locale.US, "VALOR A PAGAR: R$ %.2f", valor));
+    }
 }
 ```
 
