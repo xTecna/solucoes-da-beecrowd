@@ -70,6 +70,69 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime;
+
+class URI {
+    static void Main(string[] args) {
+        List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList();
+        double A = entrada[0];
+        double B = entrada[1];
+        double C = entrada[2];
+        
+        double delta = (B * B) - 4 * A * C;
+        
+        if(A != 0 && delta > -1){
+            double R1 = (-B + Math.Sqrt(delta))/(2 * A);
+            double R2 = (-B - Math.Sqrt(delta))/(2 * A);
+            
+            Console.WriteLine($"R1 = {R1:0.00000}");
+            Console.WriteLine($"R2 = {R2:0.00000}");
+        }else{
+            Console.WriteLine("Impossivel calcular");
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        String[] entrada = in.readLine().trim().split(" ");
+        double A = Double.parseDouble(entrada[0]);
+        double B = Double.parseDouble(entrada[1]);
+        double C = Double.parseDouble(entrada[2]);
+        
+        double delta = B * B - 4 * A * C;
+        
+        if(A != 0 && delta > -1){
+            double R1 = (-B + Math.sqrt(delta))/(2 * A);
+            double R2 = (-B - Math.sqrt(delta))/(2 * A);
+            
+            System.out.println(String.format(Locale.US, "R1 = %.5f", R1));
+            System.out.println(String.format(Locale.US, "R2 = %.5f", R2));
+        }else{
+            System.out.println("Impossivel calcular");
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript

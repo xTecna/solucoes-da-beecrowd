@@ -50,6 +50,57 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(x)).ToList();
+        int A = entrada[0];
+        int B = entrada[1];
+        int C = entrada[2];
+        int D = entrada[3];
+        
+        if((B > C) && (D > A) && (C + D > A + B) && (C > 0) && (D > 0) && (A % 2 == 0)){
+            Console.WriteLine("Valores aceitos");
+        }else{
+            Console.WriteLine("Valores nao aceitos");
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        String[] entrada = in.readLine().trim().split(" ");
+        int A = Integer.parseInt(entrada[0]);
+        int B = Integer.parseInt(entrada[1]);
+        int C = Integer.parseInt(entrada[2]);
+        int D = Integer.parseInt(entrada[3]);
+        
+        if((B > C) && (D > A) && (C + D > A + B) && (C > 0) && (D > 0) && (A % 2 == 0)){
+            System.out.println("Valores aceitos");
+        }else{
+            System.out.println("Valores nao aceitos");
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript

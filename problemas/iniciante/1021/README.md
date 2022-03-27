@@ -6,7 +6,9 @@
 
 Para entender o raciocínio para resolver este problema, consulte [1018 - Cédulas](../1018/README.md).
 
-Entretanto, temos alguns detalhes aqui: é um pouco problemático obter o resto da divisão para números não inteiros. Por isso, eu decidi que seria uma boa multiplicar por 100 todos os valores envolvidos para me certificar de que só faria manipulação com números inteiros. Também simplifiquei o código para evitar repetições, fazendo com que na hora de imprimir os valores, também seja necessário dividir por 100.
+Entretanto, temos alguns detalhes aqui: é um pouco problemático obter o resto da divisão para números não inteiros. Por isso, eu decidi que seria uma boa multiplicar por 100 todos os valores envolvidos para me certificar de que só faria manipulação com números inteiros
+
+ Também simplifiquei o código para evitar repetições, fazendo com que na hora de imprimir os valores, também seja necessário dividir por 100. Perceba que essas simplifações também podem ser usadas no exercício mencionado anteriormente.
 
 ### C99
 
@@ -63,6 +65,70 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        int[] notas = {10000, 5000, 2000, 1000, 500, 200};
+        int[] moedas = {100, 50, 25, 10, 5, 1};
+        
+        List<int> entrada = Console.ReadLine().Trim().Split('.').Select((x) => int.Parse(x)).ToList();
+        int reais = entrada[0] * 100 + entrada[1];
+        
+        Console.WriteLine("NOTAS:");
+        foreach(int nota in notas){
+            Console.WriteLine($"{reais/nota} nota(s) de R$ {nota/100.0:0.00}");
+            reais %= nota;
+        }
+        
+        Console.WriteLine("MOEDAS:");
+        foreach(int moeda in moedas){
+            Console.WriteLine($"{reais/moeda} moeda(s) de R$ {moeda/100.0:0.00}");
+            reais %= moeda;
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        int[] notas = {10000, 5000, 2000, 1000, 500, 200};
+        int[] moedas = {100, 50, 25, 10, 5, 1};
+        
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        String[] entrada = in.readLine().trim().split("\\.");
+        int reais = 100 * Integer.parseInt(entrada[0]) + Integer.parseInt(entrada[1]);
+        
+        System.out.println("NOTAS:");
+        for(int i = 0; i < 6; ++i){
+            System.out.println(String.format(Locale.US, "%d nota(s) de R$ %.2f", reais/notas[i], notas[i]/100.0));
+            reais %= notas[i];
+        }
+        
+        System.out.println("MOEDAS:");
+        for(int i = 0; i < 6; ++i){
+            System.out.println(String.format(Locale.US, "%d moeda(s) de R$ %.2f", reais/moedas[i], moedas[i]/100.0));
+            reais %= moedas[i];
+        }
+    }
 }
 ```
 
