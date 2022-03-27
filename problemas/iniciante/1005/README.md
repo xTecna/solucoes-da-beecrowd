@@ -4,7 +4,7 @@
 
 ## Solução
 
-Só precisamos aqui fazer o cálculo direto da média ponderada, ou seja, calcular a expressão (3,5 * A + 7,5 * B) / 11.
+Só precisamos aqui fazer o cálculo direto da média ponderada, ou seja, calcular a expressão <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\text{Media}&space;=&space;\frac{3,5&space;\times&space;A&space;+&space;7,5&space;\times&space;B}{11}" title="\bg_white \text{Media} = \frac{3,5 \times A + 7,5 \times B}{11}" />.
 
 ### C99
 

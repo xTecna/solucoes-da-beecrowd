@@ -56,6 +56,49 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int segundos = int.Parse(Console.ReadLine());
+        
+        int horas = segundos/3600;
+        segundos %= 3600;
+        int minutos = segundos/60;
+        segundos %= 60;
+        
+        Console.WriteLine($"{horas}:{minutos}:{segundos}");
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        int segundos = Integer.parseInt(in.readLine());
+        
+        int horas = segundos/3600;
+        segundos %= 3600;
+        int minutos = segundos/60;
+        segundos %= 60;
+        
+        System.out.println(horas + ":" + minutos + ":" + segundos);
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript

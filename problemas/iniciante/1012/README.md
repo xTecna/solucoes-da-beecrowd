@@ -61,6 +61,70 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        const double PI = 3.14159;
+        List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList();
+        double A = entrada[0];
+        double B = entrada[1];
+        double C = entrada[2];
+        
+        double areaTriangulo = (A * C)/2;
+        double areaCirculo = PI * C * C;
+        double areaTrapezio = (A + B)/2 * C;
+        double areaQuadrado = B * B;
+        double areaRetangulo = A * B;
+        
+        Console.WriteLine($"TRIANGULO: {areaTriangulo:0.000}");
+        Console.WriteLine($"CIRCULO: {areaCirculo:0.000}");
+        Console.WriteLine($"TRAPEZIO: {areaTrapezio:0.000}");
+        Console.WriteLine($"QUADRADO: {areaQuadrado:0.000}");
+        Console.WriteLine($"RETANGULO: {areaRetangulo:0.000}");
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        double PI = 3.14159;
+        String[] entrada = in.readLine().trim().split(" ");
+        double A = Double.parseDouble(entrada[0]);
+        double B = Double.parseDouble(entrada[1]);
+        double C = Double.parseDouble(entrada[2]);
+
+        double areaTriangulo = (A * C)/2;
+        double areaCirculo = PI * C * C;
+        double areaTrapezio = (A + B)/2 * C;
+        double areaQuadrado = B * B;
+        double areaRetangulo = A * B;
+
+        System.out.println(String.format(Locale.US, "TRIANGULO: %.3f", areaTriangulo));
+        System.out.println(String.format(Locale.US, "CIRCULO: %.3f", areaCirculo));
+        System.out.println(String.format(Locale.US, "TRAPEZIO: %.3f", areaTrapezio));
+        System.out.println(String.format(Locale.US, "QUADRADO: %.3f", areaQuadrado));
+        System.out.println(String.format(Locale.US, "RETANGULO: %.3f", areaRetangulo));
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript

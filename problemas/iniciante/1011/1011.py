@@ -1,5 +1,5 @@
 PI = 3.14159
-R = int(input())
+R = float(input())
 
 volume = 4/3 * PI * R * R * R
 

@@ -66,6 +66,56 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+using System.Runtime;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static int max(int a, int b){
+        return (a + b + Math.Abs(a - b))/2;
+    }
+    
+    static void Main(string[] args) {
+        List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(x)).ToList();
+        int a = entrada[0];
+        int b = entrada[1];
+        int c = entrada[2];
+        
+        Console.WriteLine($"{max(a, max(b, c))} eh o maior");
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static int max(int a, int b){
+        return (a + b + Math.abs(a - b))/2;
+    }
+    
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        String[] entrada = in.readLine().trim().split(" ");
+        int a = Integer.parseInt(entrada[0]);
+        int b = Integer.parseInt(entrada[1]);
+        int c = Integer.parseInt(entrada[2]);
+        
+        System.out.println(max(a, max(b, c)) + " eh o maior");
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript

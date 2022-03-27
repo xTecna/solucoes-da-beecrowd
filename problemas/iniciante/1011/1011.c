@@ -2,11 +2,11 @@
 
 int main()
 {
-    int R;
+    double R;
     double volume;
     const double PI = 3.14159;
 
-    scanf("%d", &R);
+    scanf("%lf", &R);
 
     volume = 4.0 / 3.0 * PI * R * R * R;
 

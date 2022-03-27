@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    int R;
+    double R;
     double volume;
     const double PI = 3.14159;
 
