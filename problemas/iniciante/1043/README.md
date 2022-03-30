@@ -54,6 +54,55 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList();
+        double A = entrada[0];
+        double B = entrada[1];
+        double C = entrada[2];
+        
+        if(A < B + C && B < A + C && C < A + B)
+            Console.WriteLine($"Perimetro = {A + B + C:0.0}");
+        else
+            Console.WriteLine($"Area = {(A + B)/2.0 * C:0.0}");
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        String[] entrada = in.readLine().trim().split(" ");
+        double A = Double.parseDouble(entrada[0]);
+        double B = Double.parseDouble(entrada[1]);
+        double C = Double.parseDouble(entrada[2]);
+        
+        if(A < B + C && B < A + C && C < A + B){
+            System.out.println(String.format(Locale.US, "Perimetro = %.1f", A + B + C));
+        }else{
+            System.out.println(String.format(Locale.US, "Area = %.1f", (A + B)/2.0 * C));
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript

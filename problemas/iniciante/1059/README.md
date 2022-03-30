@@ -44,6 +44,40 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int par = 2;
+        
+        while(par <= 100){
+            Console.WriteLine(par);
+            par += 2;
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        int par = 2;
+        
+        while(par <= 100){
+            System.out.println(par);
+            par += 2;
+        }
+    }
+}
+```
+
 #### JavaScript 12.18
 
 ```javascript
@@ -96,6 +130,34 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        for(int par = 2; par <= 100; par += 2){
+            Console.WriteLine(par);
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        for(int par = 2; par <= 100; par += 2){
+            System.out.println(par);
+        }
+    }
 }
 ```
 

@@ -64,6 +64,87 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList();
+        double X = entrada[0];
+        double Y = entrada[1];
+        
+        if(X > 0.0){
+            if(Y > 0.0)
+                Console.WriteLine("Q1");
+            else if(Y < 0.0)
+                Console.WriteLine("Q4");
+            else
+                Console.WriteLine("Eixo X");
+        }else if(X < 0.0){
+            if(Y > 0.0)
+                Console.WriteLine("Q2");
+            else if(Y < 0.0)
+                Console.WriteLine("Q3");
+            else
+                Console.WriteLine("Eixo X");
+        }else{
+            if(Y > 0.0)
+                Console.WriteLine("Eixo Y");
+            else if(Y < 0.0)
+                Console.WriteLine("Eixo Y");
+            else
+                Console.WriteLine("Origem");
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+        
+        String[] entrada = in.readLine().trim().split(" ");
+        double X = Double.parseDouble(entrada[0]);
+        double Y = Double.parseDouble(entrada[1]);
+        
+        if(X > 0.0){
+            if(Y > 0.0)
+                System.out.println("Q1");
+            else if(Y < 0.0)
+                System.out.println("Q4");
+            else
+                System.out.println("Eixo X");
+        }else if(X < 0.0){
+            if(Y > 0.0)
+                System.out.println("Q2");
+            else if(Y < 0.0)
+                System.out.println("Q3");
+            else
+                System.out.println("Eixo X");
+        }else{
+            if(Y > 0.0)
+                System.out.println("Eixo Y");
+            else if(Y < 0.0)
+                System.out.println("Eixo Y");
+            else
+                System.out.println("Origem");
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 
 ```javascript
