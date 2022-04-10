@@ -68,7 +68,7 @@ public class Main {
         int A = Integer.parseInt(in.readLine());
         int B = Integer.parseInt(in.readLine());
         
-        System.out.println("SOMA = " + (A + B));
+        System.out.printf("SOMA = %d\n", A + B);
     }
 }
 ```

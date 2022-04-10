@@ -5,7 +5,7 @@ public class Main {
         int par = 2;
         
         while(par <= 100){
-            System.out.println(par);
+            System.out.printf("%d\n", par);
             par += 2;
         }
     }

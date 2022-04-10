@@ -6,7 +6,7 @@
 
 O [sistema de datas Era Unix](https://pt.wikipedia.org/wiki/Era\_Unix) é um sistema que mapeia cada data existente deste 1 de janeiro de 1970 a um número inteiro equivalente ao número de segundos passados desde aquela época até a data desejada. Com este sistema de datas,  podemos comparar de forma muito mais fácil datas e também calcular quanto tempo se passou de uma data até outra, bastando converter ambas as datas para o formato Era Unix e obter a resposta em um número inteiro.
 
-Aqui neste exercício vamos seguir essa mesma lógica, convertendo os dois horários para o número de minutos desde meia-noite até o horário passado e subtraindo ambos os horários para conseguirmos o número de minutos que se passou do horário inicial até o horário final. Na tabela abaixo há alguns exemplos da conversão e da subtração em ação.
+Aqui neste exercício não vamos exatamente converter para a Era Unix, mas vamos seguir essa mesma lógica, convertendo os dois horários para o número de minutos desde meia-noite até o horário passado e subtraindo ambos os horários para conseguirmos o número de minutos que se passou do horário inicial até o horário final. Na tabela abaixo há alguns exemplos da conversão e da subtração em ação.
 
 | Horário Inicial | Horário Final | Inicial Convertido | Final Convertido | Subtração    |
 | --------------- | ------------- | ------------------ | ---------------- | ------------ |

@@ -71,7 +71,7 @@ public class Main {
         int par = 2;
         
         while(par <= 100){
-            System.out.println(par);
+            System.out.printf("%d\n", par);
             par += 2;
         }
     }
@@ -155,7 +155,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         for(int par = 2; par <= 100; par += 2){
-            System.out.println(par);
+            System.out.printf("%d\n", par);
         }
     }
 }

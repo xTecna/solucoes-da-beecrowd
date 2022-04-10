@@ -100,7 +100,7 @@ public class Main {
                 ++positivos;
         }
         
-        System.out.println(positivos + " valores positivos");
+        System.out.printf("%d valores positivos\n", positivos);
     }
 }
 ```

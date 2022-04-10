@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -20,10 +19,10 @@ public class Main {
         double areaQuadrado = B * B;
         double areaRetangulo = A * B;
 
-        System.out.println(String.format(Locale.US, "TRIANGULO: %.3f", areaTriangulo));
-        System.out.println(String.format(Locale.US, "CIRCULO: %.3f", areaCirculo));
-        System.out.println(String.format(Locale.US, "TRAPEZIO: %.3f", areaTrapezio));
-        System.out.println(String.format(Locale.US, "QUADRADO: %.3f", areaQuadrado));
-        System.out.println(String.format(Locale.US, "RETANGULO: %.3f", areaRetangulo));
+        System.out.printf("TRIANGULO: %.3f\n", areaTriangulo);
+        System.out.printf("CIRCULO: %.3f\n", areaCirculo);
+        System.out.printf("TRAPEZIO: %.3f\n", areaTrapezio);
+        System.out.printf("QUADRADO: %.3f\n", areaQuadrado);
+        System.out.printf("RETANGULO: %.3f\n", areaRetangulo);
     }
 }

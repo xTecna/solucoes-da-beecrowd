@@ -121,25 +121,25 @@ public class Main {
         
         if(X > 0.0){
             if(Y > 0.0)
-                System.out.println("Q1");
+                System.out.printf("Q1\n");
             else if(Y < 0.0)
-                System.out.println("Q4");
+                System.out.printf("Q4\n");
             else
-                System.out.println("Eixo X");
+                System.out.printf("Eixo X\n");
         }else if(X < 0.0){
             if(Y > 0.0)
-                System.out.println("Q2");
+                System.out.printf("Q2\n");
             else if(Y < 0.0)
-                System.out.println("Q3");
+                System.out.printf("Q3\n");
             else
-                System.out.println("Eixo X");
+                System.out.printf("Eixo X\n");
         }else{
             if(Y > 0.0)
-                System.out.println("Eixo Y");
+                System.out.printf("Eixo Y\n");
             else if(Y < 0.0)
-                System.out.println("Eixo Y");
+                System.out.printf("Eixo Y\n");
             else
-                System.out.println("Origem");
+                System.out.printf("Origem\n");
         }
     }
 }

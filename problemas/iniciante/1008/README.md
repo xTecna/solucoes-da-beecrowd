@@ -71,7 +71,6 @@ class URI {
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -84,8 +83,8 @@ public class Main {
         
         double salario = valor * horas;
 
-        System.out.println("NUMBER = " + numero);
-        System.out.println(String.format(Locale.US, "SALARY = U$ %.2f", salario));
+        System.out.printf("NUMBER = %d\n", numero);
+        System.out.printf("SALARY = U$ %.2f\n", salario);
     }
 }
 ```

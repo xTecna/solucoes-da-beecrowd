@@ -94,7 +94,7 @@ public class Main {
         int minutos = segundos/60;
         segundos %= 60;
         
-        System.out.println(horas + ":" + minutos + ":" + segundos);
+        System.out.printf("%d:%d:%d\n", horas, minutos, segundos);
     }
 }
 ```

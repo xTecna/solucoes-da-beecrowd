@@ -70,7 +70,6 @@ class URI {
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static int max(int a, int b){
@@ -86,7 +85,7 @@ public class Main {
         
         double consumo = X/Y;
         
-        System.out.println(String.format(Locale.US, "%.3f km/l", consumo));
+        System.out.printf("%.3f km/l\n", consumo);
     }
 }
 ```

@@ -8,7 +8,7 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria                | Documentados | Total de problemas |
 | ------------------------ | -----------: | -----------------: |
-| [Iniciante](./problemas/iniciante/README.md)                |           34 |                335 |
+| [Iniciante](./problemas/iniciante/README.md)                |           50 |                335 |
 | [Ad-Hoc](./problemas/ad-hoc/README.md)                   |           74 |                732 |
 | [Strings](./problemas/strings/README.md)                  |           15 |                148 |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) |           18 |                179 |

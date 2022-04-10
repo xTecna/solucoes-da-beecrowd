@@ -18,8 +18,8 @@ public class Main {
         }
         
         if(A % B == 0)
-            System.out.println("Sao Multiplos");
+            System.out.printf("Sao Multiplos\n");
         else
-            System.out.println("Nao sao Multiplos");
+            System.out.printf("Nao sao Multiplos\n");
     }
 }

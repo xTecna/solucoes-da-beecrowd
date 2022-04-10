@@ -16,6 +16,6 @@ public class Main {
         int b = Integer.parseInt(entrada[1]);
         int c = Integer.parseInt(entrada[2]);
         
-        System.out.println(max(a, max(b, c)) + " eh o maior");
+        System.out.printf("%d eh o maior\n", max(a, max(b, c)));
     }
 }

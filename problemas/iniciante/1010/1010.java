@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -18,6 +17,6 @@ public class Main {
         
         double valor = quantidade1 * valor1 + quantidade2 * valor2;
 
-        System.out.println(String.format(Locale.US, "VALOR A PAGAR: R$ %.2f", valor));
+        System.out.printf("VALOR A PAGAR: R$ %.2f\n", valor);
     }
 }

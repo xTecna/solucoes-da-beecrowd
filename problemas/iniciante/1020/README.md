@@ -92,9 +92,9 @@ public class Main {
         int meses = dias/30;
         dias %= 30;
         
-        System.out.println(anos + " ano(s)");
-        System.out.println(meses + " mes(es)");
-        System.out.println(dias + " dia(s)");
+        System.out.printf("%d ano(s)\n", anos);
+        System.out.printf("%d mes(es)\n", meses);
+        System.out.printf("%d dia(s)\n", dias);
     }
 }
 ```

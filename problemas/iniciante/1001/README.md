@@ -70,7 +70,7 @@ public class Main {
         int A = Integer.parseInt(in.readLine());
         int B = Integer.parseInt(in.readLine());
         
-        System.out.println("X = " + (A + B));
+        System.out.printf("X = %d\n", A + B);
     }
 }
 ```

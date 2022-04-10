@@ -24,24 +24,24 @@ public class Main {
         
         int media = (2 * notas[0] + 3 * notas[1] + 4 * notas[2] + notas[3])/10;
         
-        System.out.println("Media: " + imprimeDouble(media));
+        System.out.printf("Media: %s\n", imprimeDouble(media));
         if(media >= 70){
-            System.out.println("Aluno aprovado.");
+            System.out.printf("Aluno aprovado.\n");
         }else if(media < 50){
-            System.out.println("Aluno reprovado.");
+            System.out.printf("Aluno reprovado.\n");
         }else{
-            System.out.println("Aluno em exame.");
+            System.out.printf("Aluno em exame.\n");
             
             int exame = leDouble(in.readLine().trim());
             media = (media + exame)/2;
             
-            System.out.println("Nota do exame: " + imprimeDouble(exame));
+            System.out.printf("Nota do exame: %s\n", imprimeDouble(exame));
             if(media >= 50){
-                System.out.println("Aluno aprovado.");
+                System.out.printf("Aluno aprovado.\n");
             }else{
-                System.out.println("Aluno reprovado.");
+                System.out.printf("Aluno reprovado.\n");
             }
-            System.out.println("Media final: " + imprimeDouble(media));
+            System.out.printf("Media final: %s\n", imprimeDouble(media));
         }
     }
 }

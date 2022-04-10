@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -14,15 +13,15 @@ public class Main {
         String[] entrada = in.readLine().trim().split("\\.");
         int reais = 100 * Integer.parseInt(entrada[0]) + Integer.parseInt(entrada[1]);
         
-        System.out.println("NOTAS:");
+        System.out.printf("NOTAS:\n");
         for(int i = 0; i < 6; ++i){
-            System.out.println(String.format(Locale.US, "%d nota(s) de R$ %.2f", reais/notas[i], notas[i]/100.0));
+            System.out.printf("%d nota(s) de R$ %.2f\n", reais/notas[i], notas[i]/100.0);
             reais %= notas[i];
         }
         
-        System.out.println("MOEDAS:");
+        System.out.println("MOEDAS:\n");
         for(int i = 0; i < 6; ++i){
-            System.out.println(String.format(Locale.US, "%d moeda(s) de R$ %.2f", reais/moedas[i], moedas[i]/100.0));
+            System.out.printf("%d moeda(s) de R$ %.2f\n", reais/moedas[i], moedas[i]/100.0);
             reais %= moedas[i];
         }
     }

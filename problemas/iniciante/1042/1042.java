@@ -19,11 +19,11 @@ public class Main {
         Arrays.sort(numeros);
         
         for(int i = 0; i < 3; ++i){
-            System.out.println(numeros[i]);
+            System.out.printf("%d\n", numeros[i]);
         }
-        System.out.println("");
+        System.out.printf("\n");
         for(int i = 0; i < 3; ++i){
-            System.out.println(original[i]);
+            System.out.printf("%d\n", original[i]);
         }
     }
 }

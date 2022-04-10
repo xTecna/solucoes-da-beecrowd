@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -18,6 +17,6 @@ public class Main {
         
         double distancia = Math.sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
         
-        System.out.println(String.format(Locale.US, "%.4f", distancia));
+        System.out.printf("%.4f\n", distancia);
     }
 }

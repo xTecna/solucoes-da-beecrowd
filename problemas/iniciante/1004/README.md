@@ -68,7 +68,7 @@ public class Main {
         int A = Integer.parseInt(in.readLine());
         int B = Integer.parseInt(in.readLine());
         
-        System.out.println("PROD = " + (A * B));
+        System.out.printf("PROD = %d\n", A * B);
     }
 }
 ```

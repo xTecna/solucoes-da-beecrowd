@@ -68,7 +68,7 @@ public class Main {
         
         int X = Integer.parseInt(in.readLine());
         
-        System.out.println((X * 2) + " minutos");
+        System.out.printf("%d minutos\n", X * 2);
     }
 }
 ```
