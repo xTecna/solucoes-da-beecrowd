@@ -8,45 +8,48 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria                | Documentados | Total de problemas |
 | ------------------------ | -----------: | -----------------: |
-| [Iniciante](./problemas/iniciante/README.md)                |           50 |                335 |
-| [Ad-Hoc](./problemas/ad-hoc/README.md)                   |           74 |                732 |
+| [Iniciante](./problemas/iniciante/README.md)                |           75 |                335 |
+| [Ad-Hoc](./problemas/ad-hoc/README.md)                   |           74 |                745 |
 | [Strings](./problemas/strings/README.md)                  |           15 |                148 |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) |           18 |                179 |
 | [Matemática](./problemas/matematica/README.md)               |           27 |                269 |
-| [Paradigmas](./problemas/paradigmas/README.md)               |            22 |                215 |
+| [Paradigmas](./problemas/paradigmas/README.md)               |            4 |                215 |
 | Grafos                   |            0 |                277 |
 | Geometria Computacional  |            0 |                 82 |
 | SQL                      |            0 |                 46 |
 |                          |              |                    |
-| Total                    |          190 |               2283 |
+| Total                    |          213 |               2296 |
 
 ## Aqui tem material teórico?
 
 Nosso material teórico pode ser acessado através da apresentação deste em cada problema ou pelo índice abaixo.
 
 ### Introdução
-* [Beecrowd](./beecrowd/README.md)
-* [Estrutura de um problema](./estrutura-de-um-problema/README.md)
-* [Modelos de entrada e saída](./modelos-de-entrada-e-saida/README.md)
-* [Preparando o ambiente](./preparando-o-ambiente/README.md)
+* [Beecrowd](./introducao/beecrowd/README.md)
+* [Estrutura de um problema](./introducao/estrutura-de-um-problema/README.md)
+* [Modelos de entrada e saída](./introducao/modelos-de-entrada-e-saida/README.md)
+* [Preparando o ambiente](./introducao/preparando-o-ambiente/README.md)
 
 ### Strings
-* [Código e tabela ASCII](ascii/README.md)
-* [LCS - Largest Common Subsequence (e Substring)](lcs/README.md)
+* [Código e tabela ASCII](./base-teorica/strings/ascii/README.md)
+* [LCS - Largest Common Subsequence (e Substring)](./base-teorica/strings/lcs/README.md)
 
 ### Estruturas e bibliotecas
-* [Ordenação](./ordenacao/README.md)
-* [Pilha](./pilha/README.md)
-* [Deque](./deque/README.md)
+* [Ordenação](./base-teorica/estruturas-e-bibliotecas/ordenacao/README.md)
+* [Pilha](./base-teorica/estruturas-e-bibliotecas/pilha/README.md)
+* [Deque](./base-teorica/estruturas-e-bibliotecas/deque/README.md)
 
 ### Matemática
-* [Macetes matemáticos](./macetes-matematicos/README.md)
-* [Progressões](./progressoes/README.md)
-* [MDC](./gcd/README.md)
-* [Números primos](./primos/README.md)
+* [Macetes matemáticos](./base-teorica/matematica/macetes-matematicos/README.md)
+* [Progressões](./base-teorica/matematica/progressoes/README.md)
+* [MDC](./base-teorica/matematica/gcd/README.md)
+* [Números primos](./base-teorica/matematica/primos/README.md)
+
+### Paradigmas
+* [Memorização](./base-teorica/paradigmas/memorizacao/README.md)
 
 ### Algoritmos raros
-* [Algoritmo de Shunting-Yard](./shunting-yard/README.md)
+* [Algoritmo de Shunting-Yard](./base-teorica/algoritmos-raros/shunting-yard/README.md)
 
 ## Quais linguagens são abarcadas nesta documentação?
 
