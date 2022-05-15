@@ -319,4 +319,5 @@ def ehPrimo(primos, n):
 
 ## Problemas
 
-* [1221 - Primo rápido](../../../matematica/1221/README.md)
+* [1165 - Número Primo](../../../problemas/iniciante/1165/README.md)
+* [1221 - Primo rápido](../../../problemas/matematica/1221/README.md)

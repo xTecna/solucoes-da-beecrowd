@@ -22,7 +22,7 @@ Para calcular um determinado elemento `a_n`, com `n` > 0, podemos fazer
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;a_n&space;=&space;a_1&space;&plus;&space;(n&space;-&space;1)q" title="\bg_white a_n = a_1 + (n - 1)q" />
 
-### Soma dos termos de `a_1` até `a_n`
+### Soma dos termos de `a_1` até `a_n` de uma progressão aritmética
 
 Para calcular a soma de todos os termos entre `a_1` e `a_n` inclusive, podemos usar a fórmula
 
@@ -44,7 +44,7 @@ Para calcular um determinado elemento `a_n`, com `n` > 0, podemos fazer
 
 <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;a_{n}&space;=&space;a_{1}q^{n&space;-&space;1}" title="\bg_white a_{n} = a_{1}q^{n - 1}" />
 
-### Soma dos termos de `a_{1}` até `a_{n}`
+### Soma dos termos de `a_1` até `a_n` de uma progressão geométrica
 
 Para calcular a soma de todos os termos entre `a_{1}` e `a_{n}` inclusive, podemos usar a fórmula
 
