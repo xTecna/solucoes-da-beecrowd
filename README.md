@@ -8,7 +8,7 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria                | Documentados | Total de problemas |
 | ------------------------ | -----------: | -----------------: |
-| [Iniciante](./problemas/iniciante/README.md)                |           109 |                335 |
+| [Iniciante](./problemas/iniciante/README.md)                |           125 |                335 |
 | [Ad-Hoc](./problemas/ad-hoc/README.md)                   |           74 |                745 |
 | [Strings](./problemas/strings/README.md)                  |           15 |                148 |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) |           18 |                179 |
@@ -18,7 +18,7 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 | Geometria Computacional  |            0 |                 82 |
 | SQL                      |            0 |                 46 |
 |                          |              |                    |
-| Total                    |          247 |               2296 |
+| Total                    |          263 |               2296 |
 
 ## Aqui tem material teórico?
 
@@ -39,8 +39,9 @@ Nosso material teórico pode ser acessado através da apresentação deste em ca
 * [Pilha](./base-teorica/estruturas-e-bibliotecas/pilha/README.md)
 * [Deque](./base-teorica/estruturas-e-bibliotecas/deque/README.md)
 
-### Matemática
-* [Macetes matemáticos](./base-teorica/matematica/macetes-matematicos/README.md)
+# Matemática
+* [Macetes matemáticos](./base-teorica/matematica/macetes/README.md)
+* [Base numérica](./base-teorica/matematica/base-numerica/README.md)
 * [Progressões](./base-teorica/matematica/progressoes/README.md)
 * [MDC](./base-teorica/matematica/gcd/README.md)
 * [Números primos](./base-teorica/matematica/primos/README.md)

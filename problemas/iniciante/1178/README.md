@@ -1,4 +1,4 @@
-# 1178 - Preenchimento de Vetor
+# 1178 - Preenchimento de Vetor III
 
 ## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/1178)
 
@@ -8,6 +8,8 @@ Fazer um _loop_ que repete 100 vezes o seguinte processo:
 
 * Imprime o valor de `N`
 * Divide `N` por 2
+
+> Infelizmente não temos códigos disponíveis nas linguagens C#, Java 14 e JavaScript 12.18 por problemas de arredondamento.
 
 ### C99
 
@@ -51,62 +53,6 @@ int main()
     }
 
     return 0;
-}
-```
-
-### C#
-
-```cs
-using System;
-
-class URI {
-    static void Main(string[] args) {
-        double X;
-
-        X = double.Parse(Console.ReadLine());
-
-        for(int i = 0; i < 100; ++i){
-            Console.WriteLine($"N[{i}] = {X:0.0000}");
-            X /= 2;
-        }
-    }
-}
-```
-
-### Java 14
-
-```java
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.Locale;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        InputStreamReader ir = new InputStreamReader(System.in);
-        BufferedReader in = new BufferedReader(ir);
-    
-        double X = Double.parseDouble(in.readLine());
-
-        for(int i = 0; i < 100; ++i){
-            System.out.println(String.format(Locale.US, "N[%d] = %.4f", i, X));
-            X /= 2;
-        }
-    }
-}
-```
-
-### Javascript 12.18
-
-```js
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
-
-let X = parseFloat(lines.shift());
-
-for (let i = 0; i < 100; ++i) {
-    console.log(`N[${i}] = ${X.toFixed(4)}`);
-    X /= 2;
 }
 ```
 
