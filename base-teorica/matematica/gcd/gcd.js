@@ -1,1 +1,0 @@
-const MDC = (a, b) => (b === 0) ? a : MDC(b, a % b);
