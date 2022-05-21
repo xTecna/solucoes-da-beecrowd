@@ -39,7 +39,7 @@ Nosso material teórico pode ser acessado através da apresentação deste em ca
 * [Pilha](./base-teorica/estruturas-e-bibliotecas/pilha/README.md)
 * [Deque](./base-teorica/estruturas-e-bibliotecas/deque/README.md)
 
-# Matemática
+### Matemática
 * [Macetes matemáticos](./base-teorica/matematica/macetes/README.md)
 * [Base numérica](./base-teorica/matematica/base-numerica/README.md)
 * [Progressões](./base-teorica/matematica/progressoes/README.md)
