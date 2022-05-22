@@ -47,7 +47,7 @@ public:
 
     const Fracao irredutivel()
     {
-        int mdc = (this->num < 0) ? MDC(-this->num, this->den) : MDC(this->num, this->den);
+        int mdc = MDC(abs(this->num), this->den);
 
         return Fracao(this->num / mdc, this->den / mdc);
     }

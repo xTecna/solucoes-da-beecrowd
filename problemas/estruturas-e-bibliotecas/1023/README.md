@@ -8,20 +8,19 @@ Não parece muito claro, mas o objetivo desse problema é contabilizar quantas p
 
 Por exemplo, vamos analisar o segundo caso de teste:
 
-|         |               |                           |
-| ------- | ------------- | ------------------------: |
 | Pessoas | Consumo total | Consumo médio por pessoa |
-| 1       | 25            |                        25 |
-| 2       | 20            |                        10 |
-| 3       | 31            |                        10 |
-| 2       | 40            |                        20 |
-| 6       | 70            |                        11 |
+| ------- | ------------- | ------------------------ |
+| 1       | 25            |                       25 |
+| 2       | 20            |                       10 |
+| 3       | 31            |                       10 |
+| 2       | 40            |                       20 |
+| 6       | 70            |                       11 |
 
 Como resposta, podemos agrupar 5 pessoas com consumo médio 10 (as 2 em uma casa e 3 em outra), 6 pessoas com consumo médio 11, 2 pessoas com consumo médio 20 e 1 com consumo médio 25.
 
 Com isso, podemos usar o consumo médio como índice de um vetor de contagem para somar a quantidade de pessoas para cada consumo médio encontrado. Com valor mínimo de pessoas de 1 e valor máximo de consumo de 200, então o tamanho máximo do vetor é 200.
 
-> Para exibir o resultado truncado em duas casas decimais, pode-se fazer uma operação de piso da divisão no resultado da divisão multiplicado por 100 e, após isso, dividir novamente o número por 100.
+> Para exibir o resultado truncado em duas casas decimais, pode-se fazer uma operação de piso da divisão de total de consumo multiplicado por 100 pelo número total de pessoas e, após isso, dividir esse resultado por 100 novamente.
 
 ### C99
 ```c
@@ -134,6 +133,123 @@ int main()
     }
 
     return 0;
+}
+```
+
+### C#
+
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime;
+
+class URI
+{
+    static void Main(string[] args)
+    {
+        int T = 0;
+        string entrada;
+
+        while ((entrada = Console.ReadLine()) != null)
+        {
+            int N = int.Parse(entrada);
+            if (N == 0)
+            {
+                break;
+            }
+
+            if (T > 0)
+            {
+                Console.WriteLine("");
+            }
+
+            int totalX = 0, totalY = 0;
+            int[] consumos = new int[201];
+
+            for (int i = 0; i < N; ++i)
+            {
+                List<int> numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+
+                totalX += numeros[0];
+                totalY += numeros[1];
+                consumos[numeros[1] / numeros[0]] += numeros[0];
+            }
+
+            Console.WriteLine($"Cidade# {++T}:");
+            List<string> resposta = new List<string>();
+            for (int i = 0; i < 201; ++i)
+            {
+                if (consumos[i] > 0)
+                {
+                    resposta.Add($"{consumos[i]}-{i}");
+                }
+            }
+            Console.WriteLine(string.Join(" ", resposta));
+
+            Console.WriteLine($"Consumo medio: {(Math.Truncate((100.0 * totalY) / totalX) / 100.0):N2} m3.");
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+import java.util.Locale;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int T = 0;
+        while (in.ready()) {
+            int N = Integer.parseInt(in.readLine());
+            if (N == 0) {
+                break;
+            }
+
+            if (T > 0) {
+                System.out.println("");
+            }
+
+            int totalX = 0, totalY = 0;
+            int[] consumos = new int[201];
+            for (int i = 0; i < N; ++i) {
+                String[] numeros = in.readLine().trim().split(" ");
+
+                int X = Integer.parseInt(numeros[0]);
+                int Y = Integer.parseInt(numeros[1]);
+
+                totalX += X;
+                totalY += Y;
+                consumos[Y / X] += X;
+            }
+
+            System.out.printf("Cidade# %d:\n", ++T);
+            boolean first = true;
+            for (int i = 0; i < 201; ++i) {
+                if (consumos[i] > 0) {
+                    if (first) {
+                        first = false;
+                    } else {
+                        System.out.print(" ");
+                    }
+
+                    System.out.printf("%d-%d", consumos[i], i);
+                }
+            }
+            System.out.println("");
+
+            System.out.println(
+                    String.format(Locale.US, "Consumo medio: %.2f m3.", Math.floor((100.0 * totalY) / totalX) / 100.0));
+        }
+    }
 }
 ```
 

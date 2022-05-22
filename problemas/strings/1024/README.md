@@ -4,9 +4,10 @@
 
 ## Solução
 
-Apenas seguir cada um dos processos separadamente e procurar não colocar um passo na frente do outro. Saber como acessar o [código ASCII](../../../base-teorica/strings/ascii/README.md) de um caractere ajuda demais com esse problema, então procure como fazer isso na sua linguagem de programação.
+Apenas seguir cada um dos processos separadamente e procurar não colocar um passo na frente do outro. Saber como acessar o [código ASCII](../../../base-teorica/strings/ascii/README.md) de um caractere ajuda demais com esse problema, então procure como fazer isso na sua linguagem de programação escolhida.
 
 ### C99
+
 ```c
 #include <string.h>
 #include <stdio.h>
@@ -44,6 +45,7 @@ int main(){
 ```
 
 ### C++17
+
 ```cpp
 #include <iostream>
 #include <cctype>
@@ -83,7 +85,82 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+
+class URI
+{
+    static void Main(string[] args)
+    {
+        int N = int.Parse(Console.ReadLine());
+        for (int i = 0; i < N; ++i)
+        {
+            char[] texto = Console.ReadLine().ToCharArray();
+
+            for (int j = 0; j < texto.Length; ++j)
+            {
+                if (char.IsLetter(texto[j]))
+                {
+                    texto[j] = (char)((int)texto[j] + 3);
+                }
+            }
+            for (int j = 0; j < texto.Length / 2; ++j)
+            {
+                char temp = texto[j];
+                texto[j] = texto[texto.Length - 1 - j];
+                texto[texto.Length - 1 - j] = temp;
+            }
+            for (int j = texto.Length / 2; j < texto.Length; ++j)
+            {
+                texto[j] = (char)((int)texto[j] - 1);
+            }
+
+            Console.WriteLine(string.Join("", texto));
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int T = Integer.parseInt(in.readLine());
+        for (int i = 0; i < T; ++i) {
+            char[] texto = in.readLine().trim().toCharArray();
+
+            for (int j = 0; j < texto.length; ++j) {
+                if (Character.isAlphabetic(texto[j])) {
+                    texto[j] += 3;
+                }
+            }
+            for (int j = 0; j < texto.length / 2; ++j) {
+                char temp = texto[j];
+                texto[j] = texto[texto.length - 1 - j];
+                texto[texto.length - 1 - j] = temp;
+            }
+            for (int j = texto.length / 2; j < texto.length; ++j) {
+                texto[j] -= 1;
+            }
+
+            System.out.println(texto);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
+
 ```javascript
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
@@ -105,6 +182,7 @@ for(let i = 0; i < N; ++i){
 ```
 
 ### Python 3.9
+
 ```python
 N = int(input())
 
