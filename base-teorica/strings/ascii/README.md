@@ -106,9 +106,9 @@ Abaixo apresento a tabela ASCII com os caracteres correspondentes a cada um dos 
 
 ## Problemas relacionados
 
-* [1024 - Criptografia](../../../strings/1024/README.md)
-* [1253 - Cifra de César](../../../strings/1253/README.md)
-* [1255 - Frequência de letras](../../../strings/1255/README.md)
-* [1257 - Array hash](../../../strings/1257/README.md)
-* [1551 - Frase completa.md](../../../strings/1551/README.md)
-* [1607 - Avance as letras.md](../../../strings/1607/README.md)
+* [1024 - Criptografia](../../../problemas/strings/1024/README.md)
+* [1253 - Cifra de César](../../../problemas/strings/1253/README.md)
+* [1255 - Frequência de letras](../../../problemas/strings/1255/README.md)
+* [1257 - Array hash](../../../problemas/strings/1257/README.md)
+* [1551 - Frase completa](../../../problemas/strings/1551/README.md)
+* [1607 - Avance as letras](../../../problemas/strings/1607/README.md)
