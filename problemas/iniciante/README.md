@@ -1,4 +1,4 @@
-## Iniciante (125/335)
+## Iniciante (127/335)
 * [1000 - Hello World!](./1000/README.md)
 * [1001 - Extremamente Básico](./1001/README.md)
 * [1002 - Área do Círculo](./1002/README.md)
@@ -124,3 +124,5 @@
 * [1848 - Corvo Contador](./1848/README.md)
 * [1858 - A Resposta de Theon](./1858/README.md)
 * [1864 - Nossos Dias Nunca Voltarão](./1864/README.md)
+* [1958 - Notação Científica](./1958/README.md)
+* [1960 - Numeração Romana para Números de Página](./1960/README.md)
