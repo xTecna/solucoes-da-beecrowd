@@ -3,14 +3,15 @@
 
 int main()
 {
-    int marmores[10000];
-    int T, N, Q, x, consulta;
+    int T, N, Q, x, consulta, marmores[10000];
 
-    T = 1;
+    T = 0;
     while (scanf("%d %d", &N, &Q))
     {
         if (!N && !Q)
+        {
             break;
+        }
 
         memset(marmores, 0, sizeof(marmores));
 
@@ -26,15 +27,19 @@ int main()
             marmores[i] += marmores[i - 1];
         }
 
-        printf("CASE# %d:\n", T++);
+        printf("CASE# %d:\n", ++T);
         for (int i = 0; i < Q; ++i)
         {
             scanf("%d", &consulta);
 
             if (marmores[consulta] == marmores[consulta - 1])
+            {
                 printf("%d not found\n", consulta);
+            }
             else
+            {
                 printf("%d found at %d\n", consulta, marmores[consulta - 1] + 1);
+            }
         }
     }
 

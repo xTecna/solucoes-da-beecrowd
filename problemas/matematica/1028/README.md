@@ -9,6 +9,7 @@ Ambos os jogadores precisam dividir suas coleções em pilhas de tamanho igual e
 Confira [Máximo Divisor Comum](../base-teorica/matematica/maior-divisor-comum.md) para entender como o algoritmo de Euclides para encontrar o MDC entre dois números funciona.
 
 ### C99
+
 ```c
 #include <stdio.h>
 
@@ -34,6 +35,7 @@ int main()
 ```
 
 ### C++17
+
 ```cpp
 #include <iostream>
 
@@ -64,8 +66,58 @@ int main()
 }
 ```
 
+### C#
+
+```cs
+using System;
+
+class URI
+{
+    static int MDC(int a, int b)
+    {
+        return b == 0 ? a : MDC(b, a % b);
+    }
+
+    static void Main(string[] args)
+    {
+        int N = int.Parse(Console.ReadLine());
+        for (int i = 0; i < N; ++i)
+        {
+            string[] entrada = Console.ReadLine().Trim().Split(' ');
+            Console.WriteLine(MDC(int.Parse(entrada[0]), int.Parse(entrada[1])));
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static int MDC(int a, int b) {
+        return b == 0 ? a : MDC(b, a % b);
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for (int i = 0; i < N; ++i) {
+            String[] entrada = in.readLine().trim().split(" ");
+            System.out.println(MDC(Integer.parseInt(entrada[0]), Integer.parseInt(entrada[1])));
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -81,7 +133,8 @@ for (let i = 0; i < N; ++i) {
 ```
 
 ### Python 3.9
-```python
+
+```py
 def MDC(a, b):
     return a if b == 0 else MDC(b, a % b)
 

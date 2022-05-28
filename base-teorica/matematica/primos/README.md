@@ -319,5 +319,6 @@ def ehPrimo(primos, n):
 
 ## Problemas
 
+* [1032 - O Primo de Josephus](../../../problemas/ad-hoc/1032/README.md)
 * [1165 - Número Primo](../../../problemas/iniciante/1165/README.md)
 * [1221 - Primo rápido](../../../problemas/matematica/1221/README.md)

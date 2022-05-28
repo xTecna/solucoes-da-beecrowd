@@ -254,4 +254,5 @@ def converteDeDecimal(decimal, base):
 
 ## Problemas
 
+* [1033 - Quantas Chamadas Recursivas?](../../../problemas/paradigmas/1033/README.md)
 * [1848 - Corvo Contador](../../../iniciante/1848/README.md)

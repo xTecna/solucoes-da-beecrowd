@@ -8,7 +8,7 @@ int main()
     int T, N, Q, x;
     vector<int> marmores;
 
-    T = 1;
+    T = 0;
     while (cin >> N >> Q)
     {
         if (!N && !Q)
@@ -27,7 +27,7 @@ int main()
             marmores[i] += marmores[i - 1];
         }
 
-        cout << "CASE# " << T++ << ":" << endl;
+        cout << "CASE# " << ++T << ":" << endl;
         for (int i = 0; i < Q; ++i)
         {
             cin >> x;

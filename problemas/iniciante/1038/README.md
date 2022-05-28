@@ -138,7 +138,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 let input = require('fs').readFileSync('/dev/stdin', 'utf8');
 let lines = input.split('\n');
 
@@ -163,7 +163,7 @@ console.log(`Total: R$ ${total.toFixed(2)}`);
 
 ### Python 3.9
 
-```python
+```py
 codigo, quantidade = [int(x) for x in input().strip().split(' ')]
 precos = [4.00, 4.50, 5.00, 2.00, 1.50]
 

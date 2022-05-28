@@ -14,7 +14,7 @@ while True:
     try:
         N = int(input())
 
-        if(not N):
+        if(N == 0):
             break
 
         m = 1

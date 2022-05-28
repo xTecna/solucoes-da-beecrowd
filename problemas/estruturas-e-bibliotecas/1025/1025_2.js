@@ -3,7 +3,7 @@ var lines = input.trim().split('\n');
 
 lines.pop();
 
-let T = 1, p = 0;
+let T = 0, p = 0;
 let marmores = Array(10000);
 while (p < lines.length) {
     let [N, Q] = lines[p++].trim().split(' ').map((x) => parseInt(x));
@@ -19,7 +19,7 @@ while (p < lines.length) {
         marmores[i] += marmores[i - 1];
     }
 
-    console.log(`CASE# ${T++}:`);
+    console.log(`CASE# ${++T}:`);
     for (let i = 0; i < Q; ++i) {
         x = parseInt(lines[p++].trim());
 

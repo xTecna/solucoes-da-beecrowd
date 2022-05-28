@@ -136,7 +136,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -161,7 +161,7 @@ console.log(`Em percentual: ${reajuste} %`);
 
 ### Python 3.9
 
-```python
+```py
 salario = float(input())
 reajuste = 0
 

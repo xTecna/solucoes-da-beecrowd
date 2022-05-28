@@ -9,7 +9,7 @@ int main()
     vector<int> marmores;
     int T, N, Q, consulta;
 
-    T = 1;
+    T = 0;
     while (cin >> N >> Q)
     {
         if (!N && !Q)
@@ -23,7 +23,7 @@ int main()
 
         sort(marmores.begin(), marmores.end());
 
-        cout << "CASE# " << T++ << ":" << endl;
+        cout << "CASE# " << ++T << ":" << endl;
         for (int i = 0; i < Q; ++i)
         {
             cin >> consulta;

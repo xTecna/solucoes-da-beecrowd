@@ -8,25 +8,21 @@ Uma coisa interessante desse problema é como ele explica com detalhes como as c
 
 Primeiramente, a recorrência de Fibonacci que todos nós conhecemos
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;
-F(0)&space;=&space;0&space;\\
-F(1)&space;=&space;1&space;\\
-F(i)&space;=&space;F(i&space;-&space;1)&space;+&space;F(i&space;-&space;2)" title="\bg_white 
-F(0) = 0 \\
-F(1) = 1 \\
-F(i) = F(i - 1) + F(i - 2)" />
+$$F(n) = \begin{cases}
+0 \text{, se } n = 0\\
+1 \text{, se } n = 1\\
+F(i - 1) + F(i - 2) \text{, caso contrário}
+\end{cases}$$
 
 que é inclusive a que está no enunciado. Vamos usar essa recorrência para calcular no número de Fibonacci e em conjunto a isso, faremos também a recorrência para o número de chamadas
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;
-CF(0)&space;=&space;1&space;\\
-CF(1)&space;=&space;1&space;\\
-CF(i)&space;=&space;CF(i&space;-&space;1)&space;+&space;CF(i&space;-&space;2)&space;+&space;1" title="\bg_white 
-CF(0) = 1 \\
-CF(1) = 1 \\
-CF(i) = CF(i - 1) + CF(i - 2) + 1" />
+$$CF(n) = \begin{cases}
+1 \text{, se } n = 0\\
+1 \text{, se } n = 1\\
+CF(n - 1) + CF(n - 2) + 1 \text{, caso contrário}
+\end{cases}$$
 
-com o mais um porque contamos a própria chamada representada por CF(i).
+com o mais um porque contamos a própria chamada representada por $CF(n)$.
 
 > Perceba que o número de chamadas recursivas envolve todas as chamadas **exceto a chamada inicial**, o que significa que, para nossa recorrência, é importante manter essa fórmula, mas para a resposta final, é necessário remover 1 para não contar a chamada inicial.
 
@@ -37,6 +33,7 @@ Perceba que como temos apenas 39 valores diferentes, podemos inclusive pré-proc
 > Por algum motivo, o problem setter achou legal trocar o Fibonacci e o número de chamadas de lugar, então fique ciente disso quando você for apresentar o output do seu problema.
 
 ### C99
+
 ```c
 #include <stdio.h>
 
@@ -78,6 +75,7 @@ int main(){
 ```
 
 ### C++17
+
 ```cpp
 #include <iostream>
 
@@ -120,8 +118,105 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+
+class URI
+{
+    static int[] F;
+    static int[] CF;
+
+    static (int result, int num_calls) calcula(int n)
+    {
+        if (F[n] == -1)
+        {
+            (int result1, int num_calls1) = calcula(n - 1);
+            (int result2, int num_calls2) = calcula(n - 2);
+
+            F[n] = result1 + result2;
+            CF[n] = num_calls1 + num_calls2 + 1;
+        }
+        return (F[n], CF[n]);
+    }
+
+    static void Main(string[] args)
+    {
+        F = new int[40];
+        F[0] = 0;
+        F[1] = 1;
+        CF = new int[40];
+        CF[0] = 1;
+        CF[1] = 1;
+
+        for (int i = 2; i < 40; ++i)
+        {
+            F[i] = -1;
+            CF[i] = -1;
+        }
+
+        int N = int.Parse(Console.ReadLine());
+        for (int i = 0; i < N; ++i)
+        {
+            int X = int.Parse(Console.ReadLine());
+            (int result, int num_calls) = calcula(X);
+            Console.WriteLine($"fib({X}) = {num_calls - 1} calls = {result}");
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static int[] F;
+    public static int[] CF;
+
+    public static void calcula(int n) {
+        if (F[n] == -1) {
+            calcula(n - 1);
+            calcula(n - 2);
+
+            F[n] = F[n - 1] + F[n - 2];
+            CF[n] = CF[n - 1] + CF[n - 2] + 1;
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        F = new int[40];
+        F[0] = 0;
+        F[1] = 1;
+        CF = new int[40];
+        CF[0] = 1;
+        CF[1] = 1;
+
+        for (int i = 2; i < 40; ++i) {
+            F[i] = -1;
+            CF[i] = -1;
+        }
+
+        int N = Integer.parseInt(in.readLine());
+        for (int i = 0; i < N; ++i) {
+            int X = Integer.parseInt(in.readLine());
+            calcula(X);
+            System.out.printf("fib(%d) = %d calls = %d\n", X, CF[X] - 1, F[X]);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -161,7 +256,8 @@ for (let i = 0; i < N; ++i) {
 ```
 
 ### Python 3.9
-```python
+
+```py
 F = [-1 for _ in range(40)]
 CF = [-1 for _ in range(40)]
 

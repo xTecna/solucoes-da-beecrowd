@@ -13,7 +13,6 @@ Não há necessidade alguma de imprimir apenas um R1 caso delta seja igual a zer
 
 > Você pode perceber que eu deixei para testar se A é diferente de zero depois do cálculo do delta, fiz isso apenas para simplificar o código.
 
-
 ### C99
 
 ```c
@@ -134,7 +133,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 let input = require("fs").readFileSync("/dev/stdin", "utf8");
 let lines = input.split("\n");
 
@@ -155,7 +154,7 @@ if (a !== 0 && delta > -1) {
 
 ### Python 3.9
 
-```python
+```py
 import math
 
 a, b, c = [float(x) for x in input().strip().split(' ')]

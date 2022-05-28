@@ -147,7 +147,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 let input = require("fs").readFileSync("/dev/stdin", "utf8");
 let lines = input.split("\n");
 
@@ -170,7 +170,7 @@ if (x > 0.0) {
 
 #### Python 3.9
 
-```python
+```py
 x, y = [float(x) for x in input().strip().split(' ')]
 
 if(x > 0.0):

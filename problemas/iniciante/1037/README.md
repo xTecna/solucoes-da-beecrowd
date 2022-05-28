@@ -115,7 +115,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 let input = require("fs").readFileSync("/dev/stdin", "utf8");
 let lines = input.split("\n");
 
@@ -136,7 +136,7 @@ if (0 <= numero && numero <= 25) {
 
 ### Python 3.9
 
-```python
+```py
 numero = float(input())
 
 if(0 <= numero <= 25):

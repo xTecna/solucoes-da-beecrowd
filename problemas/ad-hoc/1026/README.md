@@ -23,21 +23,17 @@ Com a ausência de um vai um, isso significa que essa operação não vai influe
 
 Se repararmos no desenho ali apresentado no enunciado, vemos que o fio de carry não vai a lugar algum, então podemos facilmente descarta-lo da operação lógica. A operação lógica construída por Mofiz então pode ser representada pela seguinte expressão, sendo simplificada a uma operação lógica bem conhecida.
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;
-(\lnot&space;A&space;\lor&space;B)&space;\land&space;(A&space;\lor&space;\lnot&space;B)&space;\\
-\lnot&space;(\lnot&space;A&space;\lor&space;B)&space;\lor&space;\lnot&space;(A&space;\lor&space;\lnot&space;B)&space;\\
-(A&space;\land&space;\lnot&space;B)&space;\lor&space;(\lnot&space;A&space;\land&space;B)&space;\\
-A&space;\veebar&space;B" title="\bg_white 
-(\lnot A \lor B) \land (A \lor \lnot B) \\
-\lnot (\lnot A \lor B) \lor \lnot (A \lor \lnot B) \\
-(A \land \lnot B) \lor (\lnot A \land B) \\
-A \veebar B" />
+$$(\lnot A \lor B) \land (A \lor \lnot B)\\
+\lnot(\lnot A \lor B) \lor \lnot(A \lor \lnot B)\\
+(A \land \lnot B) \lor (\lnot A \lor B)\\
+A \veebar B$$
 
 Logo, a operação do Mofiz e a operação do ou exclusivo são equivalentes. Desta maneira, basta fazermos a operação de ou exclusivo para obtermos nosso resultado.
 
 > Em JavaScript, precisamos usar BigInt, já que os números não cabem em um inteiro normal.
 
 ### C99
+
 ```c
 #include <stdio.h>
 
@@ -53,6 +49,7 @@ int main(){
 ```
 
 ### C++17
+
 ```cpp
 #include <iostream>
 
@@ -69,7 +66,54 @@ int main(){
 }
 ```
 
+### C#
+
+```cs
+using System;
+
+class URI
+{
+    static void Main(string[] args)
+    {
+        string entrada;
+
+        while ((entrada = Console.ReadLine()) != null)
+        {
+            long a = long.Parse(entrada.Trim().Split(' ')[0]);
+            long b = long.Parse(entrada.Trim().Split(' ')[1]);
+
+            Console.WriteLine(a ^ b);
+        }
+    }
+}
+```
+
+### Java 14
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while (in.ready()) {
+            String[] entrada = in.readLine().trim().split(" ");
+
+            long a = Long.parseLong(entrada[0]);
+            long b = Long.parseLong(entrada[1]);
+
+            System.out.println(a ^ b);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
+
 ```javascript
 let input = require("fs").readFileSync("/dev/stdin", "utf8");
 let lines = input.trim().split("\n");
@@ -82,6 +126,7 @@ lines.forEach((line) => {
 ```
 
 ### Python 3.9
+
 ```python
 while True:
     try:

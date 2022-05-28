@@ -1,15 +1,18 @@
-def pesquisaBinaria(v, valor):
-    inicio, fim, meio = 0, len(v), 0
+def pesquisaBinaria(V, valor):
+    inicio, fim = 0, len(V)
 
     while(inicio < fim):
         meio = (inicio + fim)//2
 
-        if(v[meio] < valor):
+        if(V[meio] < valor):
             inicio = meio + 1
         else:
             fim = meio
 
-    return inicio + 1 if inicio < len(v) and v[inicio] == valor else -1
+    if(inicio >= len(V)):
+        return -1
+
+    return inicio + 1 if V[inicio] == valor else -1
 
 
 T = 1
@@ -23,7 +26,6 @@ while True:
         marmores = []
         for _ in range(N):
             marmores.append(int(input()))
-
         marmores.sort()
 
         print(f'CASE# {T}:')
@@ -32,11 +34,9 @@ while True:
             consulta = int(input())
 
             resposta = pesquisaBinaria(marmores, consulta)
-
             if(resposta == -1):
                 print(f'{consulta} not found')
             else:
                 print(f'{consulta} found at {resposta}')
     except EOFError:
         break
-

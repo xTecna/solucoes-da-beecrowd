@@ -8,7 +8,7 @@ Podemos simplesmente colocar estes valores em um vetor e ordená-los usando o m�
 
 > Seja qual for a solução, lembre-se de guardar a ordem original da entrada em outras variáveis.
 
-### Alternativa 1 - Transformando em vetor e ordenando com sort()
+### Alternativa 1 - Transformando em vetor e ordenando com `sort()`
 
 Esta abordagem é mais simples, só é um pouco menos performática, mas a diferença é bem pouquinha mesmo.
 
@@ -137,7 +137,7 @@ public class Main {
 
 #### JavaScript 12.18
 
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -159,7 +159,7 @@ for(let i = 0; i < 3; ++i){
 
 #### Python 3.9
 
-```python
+```py
 V = [int(x) for x in input().strip().split(' ')]
 v = V[:]
 
@@ -321,7 +321,7 @@ public class Main {
 
 #### JavaScript 12.18
 
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -347,7 +347,7 @@ console.log(C);
 
 #### Python 3.9
 
-```python
+```py
 A, B, C = [int(x) for x in input().strip().split(' ')]
 a, b, c = A, B, C
 

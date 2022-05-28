@@ -4,7 +4,7 @@
 
 ## Solução
 
-Primeiro, verifique se é possível formar triângulo, caso contrário todas as outras verificações se tornam inúteis. Só verificando que é de fato possível formar triângulo que então se faz o resto das verificações, agrupando em RETANGULO/OBTUSANGULO/ACUTANGULO e EQUILATERO/ISOSCELES.
+Primeiro, verifique se é possível formar triângulo, caso contrário todas as outras verificações se tornam inúteis. Só verificando que é de fato possível formar triângulo que então se faz o resto das verificações, agrupando em `RETANGULO`/`OBTUSANGULO`/`ACUTANGULO` e `EQUILATERO`/`ISOSCELES`.
 
 ### C99
 

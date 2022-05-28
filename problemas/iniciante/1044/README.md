@@ -113,7 +113,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -126,7 +126,7 @@ console.log((A % B === 0) ? "Sao Multiplos" : "Nao sao Multiplos");
 
 ### Python 3.9
 
-```python
+```py
 A, B = [int(x) for x in input().split(' ')]
 
 if(A < B):
