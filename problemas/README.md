@@ -129,10 +129,11 @@
 * [1958 - Notação Científica](./iniciante/1958/README.md)
 * [1960 - Numeração Romana para Números de Página](./iniciante/1960/README.md)
 
-## [Ad-Hoc (74/732)](./ad-hoc/README.md)
+## Ad-hoc (83/732)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./ad-hoc/1030/README.md)
 * [1031 - Crise de Energia](./ad-hoc/1031/README.md)
+* [1032 - O Primo de Josephus](./ad-hoc/1032/README.md)
 * [1087 - Dama](./ad-hoc/1087/README.md)
 * [1089 - Loop Musical](./ad-hoc/1089/README.md)
 * [1091 - Divisão da Nlogônia](./ad-hoc/1091/README.md)
@@ -287,3 +288,15 @@
 * [1921 - Guilherme e Suas Pipas](./matematica/1921/README.md)
 * [2033 - Juros Sobre o Empréstimo](./matematica/2033/README.md)
 * [2232 - Triângulo de Pascal](./matematica/2232/README.md)
+
+## Paradigmas (7/215)
+* [1027 - Onda Crítica](./paradigmas/1027/README.md)
+* [1029 - Fibonacci, Quantas Chamadas?](./paradigmas/1029/README.md)
+* [1033 - Quantas Chamadas Recursivas?](./paradigmas/1033/README.md)
+* [1034 - Festival de Estátuas de Gelo](./paradigmas/1034/README.md)
+* [1203 - Pontes de São Petersburgo](./paradigmas/1203/README.md)
+* [1310 - Lucro](./paradigmas/1310/README.md)
+* [2243 - Isósceles](./paradigmas/2243/README.md)
+
+## Geometria computacional (1/82)
+* [1039 - Flores de Fogo](./geometria-computacional/1039/README.md)
