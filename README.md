@@ -22,36 +22,7 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 ## Aqui tem material teórico?
 
-Nosso material teórico pode ser acessado através da apresentação deste em cada problema ou pelo índice abaixo.
-
-### Introdução
-* [Beecrowd](./introducao/beecrowd/README.md)
-* [Estrutura de um problema](./introducao/estrutura-de-um-problema/README.md)
-* [Modelos de entrada e saída](./introducao/modelos-de-entrada-e-saida/README.md)
-* [Preparando o ambiente](./introducao/preparando-o-ambiente/README.md)
-
-### Strings
-* [Código e tabela ASCII](./base-teorica/strings/ascii/README.md)
-* [LCS - Largest Common Subsequence (e Substring)](./base-teorica/strings/lcs/README.md)
-
-# Estruturas e bibliotecas
-* [Ordenação](./ordenacao/README.md)
-* [Pesquisa binária](./pesquisa-binaria/README.md)
-* [Pilha](./pilha/README.md)
-* [Deque](./deque/README.md)
-
-### Matemática
-* [Macetes matemáticos](./base-teorica/matematica/macetes/README.md)
-* [Base numérica](./base-teorica/matematica/base-numerica/README.md)
-* [Progressões](./base-teorica/matematica/progressoes/README.md)
-* [MDC](./base-teorica/matematica/gcd/README.md)
-* [Números primos](./base-teorica/matematica/primos/README.md)
-
-### Paradigmas
-* [Memorização](./base-teorica/paradigmas/memorizacao/README.md)
-
-### Algoritmos raros
-* [Algoritmo de Shunting-Yard](./base-teorica/algoritmos-raros/shunting-yard/README.md)
+Nosso material teórico pode ser acessado através da apresentação deste em cada problema ou pela página a seguir: [base teórica](./base-teorica/README.md).
 
 ## Quais linguagens são abarcadas nesta documentação?
 
