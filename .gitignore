@@ -1,5 +1,12 @@
-vscode
+.vscode
 templates
 script.py
 scriptTemplate.py
 progresso.txt
+
+# Soluções que quero deixar como rascunho
+
+# Problema 1053 - Desenho Contínuo
+problemas/grafos/1053/1053.c
+problemas/grafos/1053/1053.cs
+problemas/grafos/1053/1053.py

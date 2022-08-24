@@ -110,6 +110,7 @@ void inicializa(struct deque *d)
 
 void destroi(struct deque *d)
 {
+    d->tamanho = 0;
     while (!empty(d))
     {
         pop_front(d);
@@ -206,7 +207,7 @@ class Deque {
 
     pop_back() {
         if(this.tras){
-            this.tras -= 1;
+            this.tamanho -= 1;
             this.tras = this.tras.anterior;
         }
     }
@@ -238,7 +239,7 @@ Python implementa o deque com a biblioteca collections com todas as seguintes op
 * `popleft`: remove o elemento da frente do deque
 * `pop`: remove o elemento de trás do deque
 
-Pode-se usar acessores diretamente para avaliar a posição da frente e a de trás com \[0] e \[-1] respectivamente. Você também pode implementar as funções `front` e `back` guardando o retorno do respectivo `pop` e fazendo o `push` equivalente de volta.
+Pode-se usar acessores diretamente para avaliar a posição da frente e a de trás com \[0] e \[-1] respectivamente.
 
 Para mais detalhes sobre como funciona cada operação ou sobre como instanciar um deque, veja a [documentação](https://docs.python.org/3/library/collections.html#collections.deque).
 
@@ -259,4 +260,5 @@ while(len(d) > 0):
 
 ## Problemas
 
-* [1110 - Jogando cartas fora](../../../estruturas-e-bibliotecas/1110/README.md)
+* [1055 - Soma Permutada Elegante](../../../problemas/paradigmas/1055/README.md)
+* [1110 - Jogando cartas fora](../../../problemas/estruturas-e-bibliotecas/1110/README.md)

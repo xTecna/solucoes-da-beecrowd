@@ -140,7 +140,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -153,7 +153,7 @@ console.log(meses[mes - 1]);
 
 ### Python 3.9
 
-```python
+```py
 meses = ['January', 'February', 'March', 'April', 'May', 'June',
          'July', 'August', 'September', 'October', 'November', 'December']
 mes = int(input())

@@ -151,7 +151,7 @@ public class Main {
 
 ### JavaScript 12.18
 
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -181,7 +181,7 @@ switch(DDD){
 
 ### Python 3.9
 
-```python
+```py
 codigos = {
     61: "Brasilia",
     71: "Salvador",
