@@ -66,7 +66,7 @@ public class Main {
 ```
 
 #### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -77,7 +77,7 @@ while(lines.length){
 ```
 
 #### Python 3.9
-```python
+```py
 while True:
     try:
         ...

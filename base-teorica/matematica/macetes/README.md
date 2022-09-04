@@ -58,8 +58,34 @@ unsigned long long int potencia(int base, int expoente)
 }
 ```
 
+### C#
+```cs
+static double potencia(double basePotencia, int expoente) {
+    if (expoente == 1)
+        return basePotencia;
+    if (expoente % 2 == 1)
+        return basePotencia * potencia(basePotencia, expoente - 1);
+        
+    double p = potencia(basePotencia, expoente / 2);
+    return p * p;
+}
+```
+
+### Java 14
+```java
+public static double potencia(double base, int expoente) {
+    if (expoente == 1)
+        return base;
+    if (expoente % 2 == 1)
+        return base * potencia(base, expoente - 1);
+
+    double p = potencia(base, expoente / 2);
+    return p * p;
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 const potencia = (base, expoente) => {
     if (expoente === 1) return base;
     if (expoente % 2) return base * potencia(base, expoente - 1);
