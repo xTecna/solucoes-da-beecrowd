@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -9,6 +8,6 @@ public class Main {
         BufferedReader in = new BufferedReader(ir);
 
         double X = Double.parseDouble(in.readLine());
-        System.out.println(String.format(Locale.US, "%+.4E", X));
+        System.out.printf("%+.4E\n", X);
     }
 }

@@ -142,7 +142,6 @@ class URI {
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -154,16 +153,16 @@ public class Main {
         int coelhos = 0;
         int ratos = 0;
         int sapos = 0;
-        for(int i = 0; i < N; ++i){
+        for (int i = 0; i < N; ++i) {
             String[] entrada = in.readLine().trim().split(" ");
             int Quantia = Integer.parseInt(entrada[0]);
             String Tipo = entrada[1];
 
-            if(Tipo.equals("C")){
+            if (Tipo.equals("C")) {
                 coelhos += Quantia;
-            }else if(Tipo.equals("R")){
+            } else if (Tipo.equals("R")) {
                 ratos += Quantia;
-            }else if(Tipo.equals("S")){
+            } else if (Tipo.equals("S")) {
                 sapos += Quantia;
             }
         }
@@ -173,9 +172,9 @@ public class Main {
         System.out.printf("Total de coelhos: %d\n", coelhos);
         System.out.printf("Total de ratos: %d\n", ratos);
         System.out.printf("Total de sapos: %d\n", sapos);
-        System.out.println(String.format(Locale.US, "Percentual de coelhos: %.2f %%", (double)coelhos / total * 100));
-        System.out.println(String.format(Locale.US, "Percentual de ratos: %.2f %%", (double)ratos / total * 100));
-        System.out.println(String.format(Locale.US, "Percentual de sapos: %.2f %%", (double)sapos / total * 100));
+        System.out.printf("Percentual de coelhos: %.2f %%\n", 100.0 * coelhos / total);
+        System.out.printf("Percentual de ratos: %.2f %%\n", 100.0 * ratos / total);
+        System.out.printf("Percentual de sapos: %.2f %%\n", 100.0 * sapos / total);
     }
 }
 ```
