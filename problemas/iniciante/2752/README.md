@@ -6,7 +6,7 @@
 
 Nada te impede de só copiar a saída e mandar imprimir, mas aqui eu quis fazer bonitinho, separando as funções pra impressão.
 
-Se esses formatos não fazem muito sentido para você, entenda que são formatos de _string_, que foram utilizados nas linguagens C e Java (mas podem ser usados em outras linguagens também). Em JavaScript e Python fiz uma adaptação de acordo com o significado de cada formatação.
+Se esses formatos não fazem muito sentido para você, entenda que são formatos de _string_, que foram utilizados nas linguagens C e Java (mas podem ser usados em outras linguagens também). Em C++, JavaScript e Python fiz uma adaptação de acordo com o significado de cada formatação. Em C#, rolou uma mistura das duas maneiras.
 
 ### C99
 
@@ -53,6 +53,27 @@ int main()
     cout << "<" << left << setw(30) << frase.substr(0, 20) << ">" << endl;
 
     return 0;
+}
+```
+
+### C#
+
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string frase = "AMO FAZER EXERCICIO NO URI";
+
+        Console.WriteLine($"<{frase}>");
+        Console.WriteLine($"<{frase,30}>");
+        Console.WriteLine($"<{frase.Substring(0, 20)}>");
+        Console.WriteLine($"<{frase,-20}>");
+        Console.WriteLine($"<{frase,-30}>");
+        Console.WriteLine($"<{frase}>");
+        Console.WriteLine($"<{frase.Substring(0, 20),30}>");
+        Console.WriteLine($"<{frase.Substring(0, 20),-30}>");
+    }
 }
 ```
 
