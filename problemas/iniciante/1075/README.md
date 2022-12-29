@@ -4,9 +4,9 @@
 
 ## Solução
 
-O número 2 dividido por qualquer número acima de 2 dá resto 2. Com isso, começamos a imprimir o número 2 e depois para sabermos o próximo número que dá resto 2, basta somarmos por `X`, já que `X mod X = 0` e isso implica em `X + 2 mod 0 = 2`, o que indica que somar `X` não afeta o resultado do cálculo do resto da divisão do número por `X`. Com isso, tudo o que precisamos fazer é um `for` que começa em 2 e vai somando 2 até 10000.
+O número 2 dividido por qualquer número acima de 2 dá resto 2. Com isso, começamos a imprimir o número 2 e depois para sabermos o próximo número que dá resto 2, basta somarmos por $X$, já que $X \mod X = 0$ e isso implica em $(X + 2) \mod 0 = 2$, o que indica que somar $X$ não afeta o resultado do cálculo do resto da divisão do número por $X$. Com isso, tudo o que precisamos fazer é um `for` que começa em 2 e vai somando 2 até 10000.
 
-Simplesmente não tratei o caso de `X` menor ou igual a 2, o que indica que não teremos nenhum caso de teste com esses valores, então tudo certo.
+Simplesmente não tratei o caso de $X$ menor ou igual a 2, o que indica que não teremos nenhum caso de teste com esses valores, então tudo certo.
 
 ### C99
 
