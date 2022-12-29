@@ -4,7 +4,7 @@
 
 ## Solução
 
-Aqui neste problema proponho uma mudança simples no algoritmo basicão de fatorial que aumenta bastante a eficiência do algoritmo. Por favor, dê uma olhada em [Memorização](../../../base-teorica/paradigmas/memorizacao/README.md) para entender como essa técnica funciona e o porquê dela ser tão eficiente.
+Aqui neste problema proponho uma mudança simples no algoritmo basicão de fatorial que aumenta bastante a eficiência do algoritmo. Por favor, dê uma olhada em [memorização](../../../base-teorica/paradigmas/memorizacao/README.md) para entender como essa técnica funciona e o porquê dela ser tão eficiente.
 
 ### C99
 
