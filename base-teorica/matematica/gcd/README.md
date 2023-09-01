@@ -8,7 +8,7 @@ Muitas das vezes, gostaríamos de saber qual o maior divisor comum entre dois ou
 
 O método de Euclides para encontrar o MDC entre dois números $a$ e $b$ parte das seguintes premissas:
 
-$$\begin{cases}
+$$MDC(a, b) = \begin{cases}
 b \text{, se } a = 0\\
 a \text{, se } b = 0\\
 MDC(b, a \mod b) \text{, caso contrário}
@@ -31,7 +31,7 @@ a = (w + z) MDC(b, c)$$
 
 ou seja, $MDC(b, c)$ também divide $a$.
 
-Com isso, se $MDC(a, b)$ divide $b$ e $c$, então, por definição, $MDC(a, b) \leq MDC(b, a - b)$. Por outro lado, se $MDC(b, c)$ divide $b$ e $a$, então, também por definição, $MDC(a, b) \leq MDC(b, a - b)$. Logo, podemos concluir que, na verdade, $MDC(a, b) = MDC(b, a - b)$.
+Com isso, se $MDC(a, b)$ divide $b$ e $c$, então, por definição, $MDC(a, b) \leq MDC(b, a - b)$. Por outro lado, se $MDC(b, c)$ divide $b$ e $a$, então, também por definição, $MDC(b, a - b) \leq MDC(a, b)$. Logo, podemos concluir que, na verdade, $MDC(a, b) = MDC(b, a - b)$.
 
 Se ficarmos repetidamente retirando $b$ de $a$ para calcular $MDC(a, b)$, certamente alcançaremos o resto da divisão de $a$ por $b$. Logo, também podemos dizer que  $MDC(a, b) = MDC(b, a \mod b)$, como queríamos demonstrar.
 
@@ -63,7 +63,7 @@ static int MDC(int a, int b){
 }
 ```
 
-### Java 14
+### Java 19
 
 ```java
 public static int MDC(int a, int b){

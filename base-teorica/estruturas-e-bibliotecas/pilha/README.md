@@ -33,7 +33,7 @@ Em ambas as abordagens, a ideia é deitarmos essa pilha, mais ou menos como na f
 
 Para o caso de listas encadeadas, a representação comum envolve uma lista sequencial de todos os elementos até o valor NULL. A representação em pilhas é exatamente a mesma, onde os elementos são adicionados ou removidos pelo começo da lista, a fim de garantir a complexidade das operações.
 
-Para o caso de vetores, é importante que os elementos sejam adicionados ou removidos pelo final do vetor, já que se você remove o primeiro elemento, a própria linguagem se encarrega de "empurrar" todos os elementos da memória para frente e, neste caso, você perde a complexidade constante de O(1) no `POP`.
+Para o caso de vetores, é importante que os elementos sejam adicionados ou removidos pelo final do vetor, já que se você remove o primeiro elemento, a própria linguagem se encarrega de "empurrar" todos os elementos da memória para frente e, neste caso, você perde a complexidade constante de $O(1)$ no `POP`.
 
 Vamos conferir então como podemos implementar uma pilha nas linguagens suportadas por esse solucionário.
 
@@ -219,4 +219,4 @@ while(len(pilha) > 0):
 * [1068 - Balanço de parênteses I](../../../estruturas-e-bibliotecas/1068/README.md)
 * [1069 - Diamantes e areia](../../../estruturas-e-bibliotecas/1069/README.md)
 * [1077 - Infixa para posfixa](../../../estruturas-e-bibliotecas/1077/README.md)
-* [2929 - Menor da pilha.md](../../../estruturas-e-bibliotecas/2929/README.md)
+* [2929 - Menor da pilha](../../../estruturas-e-bibliotecas/2929/README.md)

@@ -4,13 +4,13 @@
 
 ## Solução
 
-Basta fazer um for deslocando cada letra as posições para **esquerda** (lembre-se que a descrição diz como que criptografa, aqui a gente quer descriptografar). Daí, só utilizar o seguinte artifício para deslocar uma letra `x` para esquerda dentro do intervalo `[0,25]`, ou seja, no intervalo de `'A'` a `'Z'`:
+Basta fazer um _for_ deslocando cada letra as posições para **esquerda** (lembre-se que a descrição diz como que criptografa, aqui a gente quer descriptografar, ou seja, o contrário). Daí, só utilizar o seguinte artifício para deslocar uma letra `x` para esquerda dentro do intervalo `[0,25]`, ou seja, no intervalo de `'A'` a `'Z'`:
 
 ```
 Esquerda(x) = ((ASCII(x) - ASCII('A') - deslocamento + 26) % 26) + ASCII('A')
 ```
 
-Dê uma olhada nas páginas [Tabela ASCII](../../../base-teorica/strings/ascii/README.md) e [Deslocar dentro de um intervalo \[0, N - 1\]](../../../base-teorica/matematica/macetes/README.md#deslocar-dentro-de-um-intervalo-0-n-1) para entender por que essa operação acima funciona. Ao final teremos um número no intervalo `[0,25]` onde basta adicionarmos novamente o código ASCII da letra A para descobrirmos a letra resultante do deslocamento.
+Dê uma olhada nas páginas [Tabela ASCII](../../../base-teorica/strings/ascii/README.md) e [Deslocar dentro de um intervalo \[0, N - 1\]](../../../base-teorica/matematica/macetes/README.md#deslocar-dentro-de-um-intervalo-0-n-1) para entender por que essa operação acima funciona. Ao final teremos um número no intervalo `[0,25]` onde basta adicionarmos novamente o código ASCII da letra `'A'` para descobrirmos a letra resultante do deslocamento.
 
 ### C99
 ```c
@@ -61,6 +61,54 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+
+        for(int i = 0; i < N; ++i){
+            char[] alfabeto = Console.ReadLine().Trim().ToCharArray();
+            int deslocamento = int.Parse(Console.ReadLine());
+
+            for(int j = 0; j < alfabeto.Length; ++j){
+                alfabeto[j] = (char)((((int)alfabeto[j] - (int)'A' - deslocamento + 26) % 26) + (int)'A');
+            }
+
+            Console.WriteLine(string.Join("", alfabeto));
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            char[] alfabeto = in.readLine().trim().toCharArray();
+            int deslocamento = Integer.parseInt(in.readLine());
+
+            for(int j = 0; j < alfabeto.length; ++j){
+                alfabeto[j] = (char)((((int)alfabeto[j] - (int)'A' - deslocamento + 26) % 26) + (int)'A');
+            }
+
+            System.out.println(alfabeto);
+        }
+    }
 }
 ```
 

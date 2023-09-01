@@ -47,7 +47,7 @@ class URI {
 }
 ```
 
-#### Java 14
+#### Java 19
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -118,6 +118,16 @@ for(int i = 1; i < vetor.size(); ++i){
 cout << endl;
 ```
 
+#### C#
+```cs
+Console.WriteLine(String.Join(' ', vetor));
+```
+
+### Java 19
+```java
+System.out.println(String.join(" ", vetor));
+```
+
 #### JavaScript 12.18
 ```javascript
 console.log(vetor.join(' '));
@@ -166,6 +176,30 @@ while(cin >> N){
 }
 ```
 
+#### C#
+```cs
+bool first = true;
+
+while((entrada = Console.ReadLine()) != null){
+    if(first)   first = false;
+    else        Console.WriteLine("");
+    ...
+    // imprime a saida para o caso
+}
+```
+
+#### Java 19
+```java
+boolean first = true;
+
+while(in.ready()){
+    if(first)   first = false;
+    else        System.out.println("");
+    ...
+    // imprime a saida para o caso
+}
+```
+
 #### JavaScript 12.18
 ```javascript
 let first = true;
@@ -174,7 +208,7 @@ while(lines.length){
     if(first)    first = false;
     else         console.log('');
     ...
-    //imprime a saida para o caso
+    // imprime a saida para o caso
 }
 ```
 
@@ -189,7 +223,7 @@ while True:
         else:
             print('')
         ...
-        #imprime a saida para o caso
+        # imprime a saida para o caso
     except EOFError:
         break
 ```

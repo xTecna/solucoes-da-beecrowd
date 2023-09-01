@@ -4,7 +4,7 @@
 
 ## Solução
 
-O jeito mais fácil de resolver esse problema é arrumar um for para colocar duas letras por vez e depois pegar a string que sobrou e colocar ela toda. A ideia é simples, se temos duas strings, uma de tamanho 14 e outra de tamanho 10, então vamos fazer um for até 10 e depois pegar os 4 caracteres faltando da string maior.
+O jeito mais fácil de resolver esse problema é arrumar um _for_ para colocar duas letras por vez e depois pegar a string que sobrou e colocar ela toda. A ideia é simples, se temos duas strings, uma de tamanho 14 e outra de tamanho 10, então vamos fazer um for até 10 e depois pegar os 4 caracteres faltando da string maior.
 
 ### C99
 ```c
@@ -73,6 +73,89 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+
+        for(int i = 0; i < N; ++i){
+            string[] palavras = Console.ReadLine().Trim().Split(' ');
+
+            string A = palavras[0];
+            string B = palavras[1];
+            string resposta = "";
+
+            int tam = A.Length < B.Length ? A.Length : B.Length;
+            for(int j = 0; j < tam; ++j){
+                resposta += A[j];
+                resposta += B[j];
+            }
+
+            if(tam < A.Length){
+                for(int j = tam; j < A.Length; ++j){
+                    resposta += A[j];
+                }
+            }
+
+            if(tam < B.Length){
+                for(int j = tam; j < B.Length; ++j){
+                    resposta += B[j];
+                }
+            }
+
+            Console.WriteLine(resposta);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            String[] palavras = in.readLine().trim().split(" ");
+
+            char[] A = palavras[0].toCharArray();
+            char[] B = palavras[1].toCharArray();
+            String resposta = "";
+
+            int tam = Math.min(A.length, B.length);
+            for(int j = 0; j < tam; ++j){
+                resposta += A[j];
+                resposta += B[j];
+            }
+
+            if(tam < A.length){
+                for(int j = tam; j < A.length; ++j){
+                    resposta += A[j];
+                }
+            }
+
+            if(tam < B.length){
+                for(int j = tam; j < B.length; ++j){
+                    resposta += B[j];
+                }
+            }
+
+            System.out.println(resposta);
+        }
+    }
 }
 ```
 

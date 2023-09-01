@@ -6,6 +6,8 @@
 
 Apenas seguir cada um dos processos separadamente e procurar não colocar um passo na frente do outro. Saber como acessar o [código ASCII](../../../base-teorica/strings/ascii/README.md) de um caractere ajuda demais com esse problema, então procure como fazer isso na sua linguagem de programação escolhida.
 
+Se você preferir fazer separando cada passo em uma função separada que recebe uma string e retorna outra, vai ficar bem organizadinho. Não foi o que fiz aqui, mas fica como um exercício caso queira tentar.
+
 ### C99
 
 ```c

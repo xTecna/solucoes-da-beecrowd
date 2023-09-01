@@ -8,8 +8,6 @@ Não é necessário guardar o vetor inteiro, a única coisa que nos interessa é
 
 Normalmente nesses exercícios, a convenção é pegar o menor valor possível de um inteiro para começar, mas eu acho mais fácil assumir que o menor elemento é o primeiro e ler o resto do vetor pra ver se esse é realmente o caso.
 
-> Infelizmente não temos solução para C# e Python ainda.
-
 ### C99
 
 ```c
@@ -76,6 +74,32 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine().Trim());
+        string[] X = Console.ReadLine().Trim().Split(' ');
+
+        int menor_valor = int.Parse(X[0]);
+        int posicao = 0;
+        for(int i = 1; i < N; ++i){
+            int valor = int.Parse(X[i]);
+
+            if(valor < menor_valor){
+                menor_valor = valor;
+                posicao = i;
+            }
+        }
+
+        Console.WriteLine($"Menor valor: {menor_valor}");
+        Console.WriteLine($"Posicao: {posicao}");
+    }
+}
+```
+
 ### Java 14
 
 ```java
@@ -131,4 +155,23 @@ for (let i = 1; i < N; ++i) {
 
 console.log(`Menor valor: ${menor}`);
 console.log(`Posicao: ${posicao}`);
+```
+
+### Python 3.9
+```py
+N = int(input())
+X = [int(x) for x in input().strip().split()]
+
+menor_valor = X[0]
+posicao = 0
+
+for i in range(1, len(X)):
+    valor = X[i]
+
+    if(valor < menor_valor):
+        menor_valor = valor
+        posicao = i
+
+print(f'Menor valor: {menor_valor}')
+print(f'Posicao: {posicao}')
 ```

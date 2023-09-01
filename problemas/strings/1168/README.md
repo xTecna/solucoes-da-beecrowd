@@ -4,9 +4,9 @@
 
 ## Solução
 
-A primeira coisa importante de reparar nesse problema é que apesar do problema envolver números, os números que podem vir na entrada vão de 1 até 10^100, o que significa que podemos receber números de até 100 dígitos, um valor que definitivamente não cabe em inteiros computacionalmente. Com isso, a categoria do nosso problema nos traz uma dica: para ler esses números, precisamos interpretá-los como strings.
+A primeira coisa importante de reparar nesse problema é que apesar do problema envolver números, os números que podem vir na entrada vão de $1$ até $10^{100}$, o que significa que podemos receber números de até 100 dígitos, um valor que definitivamente não cabe em inteiros computacionalmente. Com isso, a categoria do nosso problema nos traz uma dica: para ler esses números, precisamos interpretá-los como _strings_.
 
-A partir daí, você pode decidir se vai usar mapa ou se vai de alguma forma converter cada dígito para número e usar um vetor. Eu decidi pela segunda ideia, mas isso fica a seu critério.
+A partir daí, você pode decidir se vai usar mapa ou se vai de alguma forma converter cada dígito para número e usar um vetor. Eu decidi pela segunda ideia, mas isso fica a seu critério. Nas linguagens C99 e C++17, eu usei a ideia de conversão com [tabela ASCII](../../../base-teorica/strings/ascii/README.md) para poder acessar a posição correta do vetor.
 
 ### C99
 ```c
@@ -60,6 +60,57 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static int[] leds = new int[] {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
+
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+
+        for(int i = 0; i < N; ++i){
+            char[] V = Console.ReadLine().ToCharArray();
+
+            int resposta = 0;
+            for(int j = 0; j < V.Length; ++j){
+                resposta += leds[((int)V[j]) - ((int)'0')];
+            }
+
+            Console.WriteLine($"{resposta} leds");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static int[] leds = new int[] {6, 2, 5, 5, 4, 5, 6, 3, 7, 6, 6};
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            char[] V = in.readLine().trim().toCharArray();
+
+            int resposta = 0;
+            for(int j = 0; j < V.length; ++j){
+                resposta += leds[V[j] - ((int)'0')];
+            }
+
+            System.out.printf("%d leds\n", resposta);
+        }
+    }
 }
 ```
 

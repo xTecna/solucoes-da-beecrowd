@@ -73,6 +73,76 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string expressao;
+
+        while((expressao = Console.ReadLine()) != null){
+            int i = 0;
+            int parenteses = 0;
+
+            for(i = 0; i < expressao.Length; ++i){
+                if(expressao[i] == '('){
+                    parenteses += 1;
+                }else if(expressao[i] == ')'){
+                    if(parenteses == 0){
+                        break;
+                    }
+                    parenteses -= 1;
+                }
+            }
+
+            if(i == expressao.Length && parenteses == 0){
+                Console.WriteLine("correct");
+            }else{
+                Console.WriteLine("incorrect");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            char[] expressao = in.readLine().trim().toCharArray();
+
+            int i;
+            int parenteses = 0;
+            for(i = 0; i < expressao.length; ++i){
+                if(expressao[i] == '('){
+                    parenteses += 1;
+                }else if(expressao[i] == ')'){
+                    if(parenteses == 0){
+                        break;
+                    }
+                    parenteses -= 1;
+                }
+            }
+
+            if(i == expressao.length && parenteses == 0){
+                System.out.println("correct");
+            }else{
+                System.out.println("incorrect");
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 ```javascript
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
@@ -246,6 +316,79 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        string expressao;
+
+        while((expressao = Console.ReadLine()) != null){
+            int i;
+            Stack<char> pilha = new Stack<char>();
+
+            for(i = 0; i < expressao.Length; ++i){
+                if(expressao[i] == '('){
+                    pilha.Push('(');
+                }else if(expressao[i] == ')'){
+                    if(pilha.Count == 0){
+                        break;
+                    }
+                    pilha.Pop();
+                }
+            }
+
+            if(i == expressao.Length && pilha.Count == 0){
+                Console.WriteLine("correct");
+            }else{
+                Console.WriteLine("incorrect");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            char[] expressao = in.readLine().trim().toCharArray();
+
+            int i;
+            Stack<Character> pilha;
+
+            for(i = 0; i < expressao.length; ++i){
+                if(expressao[i] == '('){
+                    pilha.push('(');
+                }else if(expressao[i] == ')'){
+                    if(pilha.size() == 0){
+                        break;
+                    }
+                    pilha.pop();
+                }
+            }
+
+            if(i == expressao.length && pilha.size() == 0){
+                System.out.println("correct");
+            }else{
+                System.out.println("incorrect");
+            }
+        }
+    }
 }
 ```
 
