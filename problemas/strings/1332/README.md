@@ -67,6 +67,75 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string um = "one";
+        int N = int.Parse(Console.ReadLine());
+
+        for(int i = 0; i < N; ++i){
+            string palavra = Console.ReadLine();
+
+            if(palavra.Length == 5){
+                Console.WriteLine(3);
+            }else{
+                int semelhancas = 0;
+                for(int j = 0; j < 3; ++j){
+                    if(palavra[j] == um[j]){
+                        semelhancas += 1;
+                    }
+                }
+                if(semelhancas > 1){
+                    Console.WriteLine(1);
+                }else{
+                    Console.WriteLine(2);
+                }
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        char[] um = new char[] {'o', 'n', 'e'};
+        int N = Integer.parseInt(in.readLine());
+
+        for(int i = 0; i < N; ++i){
+            char[] palavra = in.readLine().trim().toCharArray();
+
+            if(palavra.length == 5){
+                System.out.println(3);
+            }else{
+                int semelhancas = 0;
+                for(int j = 0; j < 3; ++j){
+                    if(palavra[j] == um[j]){
+                        semelhancas += 1;
+                    }
+                }
+                if(semelhancas > 1){
+                    System.out.println(1);
+                }else{
+                    System.out.println(2);
+                }
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 ```javascript
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');

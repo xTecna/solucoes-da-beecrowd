@@ -77,6 +77,66 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        
+        for(int i = 0; i < N; ++i){
+            int resposta = 0;
+            int parenteses = 0;
+            string expressao = Console.ReadLine();
+
+            for(int j = 0; j < expressao.Length; ++j){
+                if(expressao[j] == '<'){
+                    parenteses += 1;
+                }else if(expressao[j] == '>' && parenteses > 0){
+                    parenteses -= 1;
+                    resposta += 1;
+                }
+            }
+
+            Console.WriteLine(resposta);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            int resposta = 0;
+            int parenteses = 0;
+
+            char[] expressao = in.readLine().trim().toCharArray();
+            for(int j = 0; j < expressao.length; ++j){
+                if(expressao[j] == '<'){
+                    parenteses += 1;
+                }else if(expressao[j] == '>' && parenteses > 0){
+                    parenteses -= 1;
+                    resposta += 1;
+                }
+            }
+
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 ```javascript
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
@@ -250,6 +310,68 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        
+        for(int i = 0; i < N; ++i){
+            int resposta = 0;
+            Stack<int> pilha = new Stack<int>();
+            string expressao = Console.ReadLine();
+
+            for(int j = 0; j < expressao.Length; ++j){
+                if(expressao[j] == '<'){
+                    pilha.Push(expressao[j]);
+                }else if(expressao[j] == '>' && pilha.Count > 0){
+                    pilha.Pop();
+                    resposta += 1;
+                }
+            }
+
+            Console.WriteLine(resposta);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            int resposta = 0;
+            Stack<Character> pilha = new Stack<Character>();
+
+            char[] expressao = in.readLine().toCharArray();
+            for(int j = 0; j < expressao.length; ++j){
+                if(expressao[j] == '<'){
+                    pilha.push(expressao[j]);
+                }else if(expressao[j] == '>' && pilha.size() > 0){
+                    pilha.pop();
+                    resposta += 1;
+                }
+            }
+
+            System.out.println(resposta);
+        }
+    }
 }
 ```
 

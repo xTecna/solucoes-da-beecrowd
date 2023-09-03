@@ -70,6 +70,68 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+
+            if(N == 0){
+                break;
+            }
+
+            int joao = 0;
+            List<int> partes = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            for(int i = 0; i < partes.Count(); ++i){
+                joao += partes[i];
+            }
+
+            int maria = N - joao;
+            Console.WriteLine($"Mary won {maria} times and John won {joao} times");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            if(N == 0){
+                break;
+            }
+
+            String[] partes = in.readLine().trim().split(" ");
+
+            int joao = 0;
+            for(int i = 0; i < N; ++i){
+                int R = Integer.parseInt(partes[i]);
+                joao += R;
+            }
+
+            int maria = N - joao;
+            System.out.printf("Mary won %d times and John won %d times\n", maria, joao);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 ```javascript
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');

@@ -156,22 +156,75 @@ int main()
 
 using namespace std;
 
-int main()
-{
-    deque<int> d;
+int main(){
+    deque<int> cartas;
+    int N;
 
-    d.push_front(10);
-    d.push_front(20);
-    d.push_back(30);
+    while(cin >> N){
+        if (!N) break;
 
-    while (!d.empty())
-    {
-        cout << d.front() << ' ';
-        d.pop_front();
+        for(int i = 1; i <= N; ++i){
+            cartas.push_back(i);
+        }
+
+        bool first = true;
+        cout << "Discarded cards: ";
+        while(cartas.size() > 1){
+            int topo = cartas.front();
+            cartas.pop_front();
+
+            if (first)  first = false;
+            else        cout << ", ";
+            cout << topo;
+
+            topo = cartas.front();
+            cartas.pop_front();
+            cartas.push_back(topo);
+        }
+        cout << endl;
+
+        cout << "Remaining card: " << cartas.front() << endl;
+        cartas.pop_front();
     }
-    cout << endl;
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+
+            if(N == 0){
+                break;
+            }
+
+            LinkedList<int> cartas = new LinkedList<int>();
+            for(int i = 1; i <= N; ++i){
+                cartas.AddFirst(i);
+            }
+
+            List<string> descartadas = new List<string>();
+            while(cartas.Count > 1){
+                descartadas.Add(cartas.First.Value);
+                cartas.RemoveFirst();
+
+                int topo = cartas.First.Value;
+                cartas.RemoveFirst();
+                cartas.AddLast(topo);
+            }
+
+            Console.WriteLine($"Discarded cards: {string.Join(", ", descartadas)}");
+            Console.WriteLine($"Remaining card: {cartas.First.Value}");
+        }
+    }
 }
 ```
 

@@ -4,7 +4,7 @@
 
 ## Solução
 
-Vemos que nosso colega Mofiz desenvolveu um programa para somar dois números em binário, mas ele acabou se enrolando. Normalmente, quando fazemos tal soma, nós temos um carregador de bit importante para servir como o "vai um" que fazemos quando somamos na base 10, mas na versão de Mofiz, ele simplesmente esqueceu de implementar esse "vai um". A partir daqui, vou explicar mais sobre o erro que ele cometeu por duas abordagens diferentes e peço para que você selecione seu melhor jeito de entender: do jeito empírico, com exemplos, ou do jeito lógico, com prova matemática.
+Vemos que nosso colega Mofiz desenvolveu um programa para somar dois números em binário, mas ele acabou se enrolando. Normalmente, quando fazemos tal soma, nós temos um carregador de bit importante para servir como o "vai um" que fazemos quando somamos na base 10, mas na versão de Mofiz, ele simplesmente esqueceu de implementar esse "vai um". A partir daqui, vou explicar mais sobre o erro que ele cometeu por duas abordagens diferentes e peço para que você selecione seu melhor jeito de entender: do jeito empírico com exemplos ou do jeito lógico com prova matemática.
 
 ### Empiricamente falando
 

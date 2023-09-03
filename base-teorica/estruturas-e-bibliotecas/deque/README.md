@@ -158,11 +158,65 @@ int main(){
 
 > A saída do programa acima será: `20 10 30`
 
+### C#
+
+Não há uma implementação direta de deque em C#, mas entendendo que deques podem ser implementados como listas encadeadas com operações de inserção e remoção em $O(1)$, então podemos usar a classe `LinkedList<t>`, que contém os métodos `AddFirst()`, `AddLast()`, `RemoveFirst()` e `RemoveLast()`, com a mesma complexidade de um deque. Você pode ver mais detalhes sobre essa classe na [documentação](https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.linkedlist-1?view=net-7.0).
+
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        LinkedList<int> deque = new LinkedList<int>();
+        
+        deque.AddFirst(10);
+        deque.AddFirst(20);
+        deque.AddLast(30);
+        
+        while(deque.Count > 0){
+            Console.Write($"{deque.First.Value} ");
+            deque.RemoveFirst();
+        }
+        Console.WriteLine("");
+    }
+}
+```
+
+> A saída do programa será: `20 10 30 `
+
+### Java
+
+Assim como em C#, em Java podemos usar a estrutura `LinkedList` implementada na biblioteca `java.util`. Para mais informações sobre `LinkedList`, consulte a [documentação](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html).
+
+```java
+import java.util.LinkedList;
+
+public class Main
+{
+	public static void main(String[] args) {
+		LinkedList<Integer> deque = new LinkedList<Integer>();
+		
+		deque.addFirst(10);
+		deque.addFirst(20);
+		deque.addLast(30);
+		
+		while(deque.size() > 0){
+		    System.out.printf("%d ", deque.peekFirst());
+		    deque.removeFirst();
+		}
+		System.out.println("");
+	}
+}
+```
+
+> A saída do programa será: `20 10 30 `
+
 ### JavaScript
 
-A implementação em JavaScript é bastante parecida com a de C, mas com a facilidade de se lidar com classes. Embora existam os métodos `shift()` e `unshift()` para manipulação de vetores, não tenho certeza se tais funções são feitas em complexidade O(1) e, portanto, não sei se pode configurar um uso apropriado da estrutura de dados deque.
+A implementação em JavaScript é bastante parecida com a de C, mas com a facilidade de se lidar com classes. Embora existam os métodos `shift()` e `unshift()` para manipulação de vetores, não tenho certeza se tais funções são feitas em complexidade $O(1)$ e, portanto, não sei se pode configurar um uso apropriado da estrutura de dados `deque`.
 
-```javascript
+```js
 class DequeNo {
     constructor(valor) {
         this.valor = valor;
@@ -232,7 +286,7 @@ class Deque {
 
 ### Python
 
-Python implementa o deque com a biblioteca collections com todas as seguintes operações:
+Python implementa o deque com a biblioteca `collections` com todas as seguintes operações:
 
 * `appendleft`: insere um elemento na frente do deque
 * `append`: insere um elemento atrás do deque

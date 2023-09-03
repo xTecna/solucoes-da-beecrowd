@@ -4,7 +4,7 @@
 
 ## Solução
 
-Como os números que estão vindo na entrada pertencem a um intervalo bem específico e definido (números de 1 a 2000), temos como opção montarmos um vetor que guarda a frequência de cada um desses números. Começando o vetor inteiro com zero, vamos usar a posição i do vetor para determinar quantas vezes o número i apareceu na entrada (numa lógica bem parecida com o algoritmo [Counting Sort](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md#counting-sort)). Logo, para cada número, contamos +1 no elemento correspondente e na hora de imprimir percorremos todos os 2000 números, imprimindo apenas para as posições maiores que zero.
+Como os números que estão vindo na entrada pertencem a um intervalo bem específico e definido (números de 1 a 2000), temos como opção montarmos um vetor que guarda a frequência de cada um desses números. Começando o vetor inteiro com zero, vamos usar a posição `i` do vetor para determinar quantas vezes o número `i` apareceu na entrada (numa lógica bem parecida com o algoritmo [Counting Sort](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md#counting-sort)). Logo, para cada número, contamos +1 no elemento correspondente e na hora de imprimir percorremos todos os 2000 números, imprimindo apenas para as posições maiores que zero.
 
 > Para o código em C++, eu consegui implementar usando a estrutura de dados map, que já ordena todos os índices automaticamente. Com isso, podemos usar `map` em C++ para limites que não são tão definidos assim, mas essa não é a norma e é algo específico dessa estrutura de dados para essa linguagem específica.
 
@@ -59,6 +59,56 @@ int main(){
     }
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+
+        int[] frequencias = new int[2001];
+        for(int i = 0; i < N; ++i){
+            int X = int.Parse(Console.ReadLine());
+            frequencias[X] += 1;
+        }
+
+        for(int i = 1; i < 2001; ++i){
+            if(frequencias[i] > 0){
+                Console.WriteLine($"{i} aparece {frequencias[i]} vez(es)");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        int[] frequencias = new int[2001];
+        for(int i = 0; i < N; ++i){
+            int X = Integer.parseInt(in.readLine());
+            frequencias[X] += 1;
+        }
+
+        for(int i = 1; i < 2001; ++i){
+            if(frequencias[i] > 0){
+                System.out.printf("%d aparece %d vez(es)\n", i, frequencias[i]);
+            }
+        }
+    }
 }
 ```
 

@@ -8,7 +8,7 @@ Vide problema [1435 - Matriz Quadrada I](../1435/README.md) para entender melhor
 
 Com relação ao conteúdo, podemos perceber que cada elemento é a diferença absoluta entre o valor da linha e o valor da coluna mais um, ou seja, a célula em `(1, 1)` tem valor `1` porque `|1 - 1| + 1 = 1`, a célula em `(2, 1)` tem valor `2` porque `|2 - 1| + 1 = 2` e assim por diante.
 
-> A solução em Java 14 que funciona para o problema 1435 é lenta demais para resolver este problema (repare que este problema tem a metade do time limit do outro).
+> A solução em Java 14 que funciona para o problema 1435 é lenta demais para resolver este problema (repare que este problema tem a metade do limite de tempo do outro).
 
 ### C99
 

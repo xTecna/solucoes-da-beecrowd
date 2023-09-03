@@ -4,7 +4,7 @@
 
 ## Solução
 
-Assim como o problema [Select Básico](../2603/README.md), esse também é bem básico, com a única diferença que aqui queremos duas colunas (nome e endereço) em vez de uma só.
+Assim como o problema [Select Básico](../2602/README.md), esse também é bem básico, com a única diferença que aqui queremos duas colunas (nome e endereço) em vez de uma só.
 
 ### PostgreSQL
 

@@ -68,6 +68,78 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static int converte(int horas, int minutos){
+        return 60 * horas + minutos;
+    }
+
+    static void Main(string[] args) {
+        string entrada;
+        while((entrada = Console.ReadLine()) != null){
+            string[] partes = entrada.Trim().Split(' ');
+
+            int H1 = int.Parse(partes[0]);
+            int M1 = int.Parse(partes[1]);
+            int H2 = int.Parse(partes[2]);
+            int M2 = int.Parse(partes[3]);
+
+            if(H1 == 0 && M1 == 0 && H2 == 0 && M2 == 0){
+                break;
+            }
+
+            if(H2 < H1 || (H2 == H1 && M2 < M1)){
+                H2 += 24;
+            }
+            int resposta = converte(H2, M2) - converte(H1, M1);
+
+            Console.WriteLine(resposta);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static int converte(int horas, int minutos){
+        return 60 * horas + minutos;
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] partes = in.readLine().trim().split(" ");
+
+            int H1 = Integer.parseInt(partes[0]);
+            int M1 = Integer.parseInt(partes[1]);
+            int H2 = Integer.parseInt(partes[2]);
+            int M2 = Integer.parseInt(partes[3]);
+            
+            if(H1 == 0 && M1 == 0 && H2 == 0 && M2 == 0){
+                break;
+            }
+
+            if(H2 < H1 || (H1 == H2 && M2 < M1)){
+                H2 += 24;
+            }
+            int resposta = converte(H2, M2) - converte(H1, M1);
+
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 ```javascript
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');

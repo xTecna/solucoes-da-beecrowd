@@ -66,6 +66,69 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        while((entrada = Console.ReadLine()) != null){
+            bool maiuscula = true;
+
+            for(int i = 0; i < entrada.Length; ++i){
+                if(!char.IsLetter(entrada[i])){
+                    Console.Write(entrada[i]);
+                    continue;
+                }
+
+                if(maiuscula){
+                    Console.Write(entrada[i].ToString().ToUpper());
+                }else{
+                    Console.Write(entrada[i].ToString().ToLower());
+                }
+                maiuscula = !maiuscula;
+            }
+            Console.WriteLine("");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            char[] entrada = in.readLine().toCharArray();
+
+            boolean maiuscula = true;
+            for(int i = 0; i < entrada.length; ++i){
+                if(!Character.isAlphabetic(entrada[i])){
+                    System.out.print(entrada[i]);
+                    continue;
+                }
+
+                if(maiuscula){
+                    System.out.print(Character.toUpperCase(entrada[i]));
+                }else{
+                    System.out.print(Character.toLowerCase(entrada[i]));
+                }
+                maiuscula = !maiuscula;
+            }
+            System.out.println("");
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
 ```javascript
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
