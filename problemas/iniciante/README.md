@@ -1,4 +1,4 @@
-## Iniciante (225/335)
+## Iniciante (228/335)
 * [1000 - Hello World!](./1000/README.md)
 * [1001 - Extremamente Básico](./1001/README.md)
 * [1002 - Área do Círculo](./1002/README.md)
@@ -224,3 +224,6 @@
 * [2752 - Saída 6](./2752/README.md)
 * [2753 - Saída 7](./2753/README.md)
 * [2754 - Saída 8](./2754/README.md)
+* [2756 - Saída 10](./2756/README.md)
+* [2764 - Entrada e Saída de Data](./2764/README.md)
+* [2780 - Basquete de Robôs](./2780/README.md)

@@ -4,7 +4,7 @@
 
 ## Solução
 
-Aqui apenas direcionar cada número à pessoa correta é o bastante para resolver este problema. Você pode usar cadeia de ifs, switches, vetores, escolha sua abordagem preferida dependendo da sua linguagem.
+Aqui apenas direcionar cada número à pessoa correta é o bastante para resolver este problema. Você pode usar cadeia de _if_s, _switch_es, vetores, escolha sua abordagem preferida dependendo da sua linguagem.
 
 ### C99
 ```c
@@ -64,8 +64,57 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string[] responsaveis = new string[] {"Rolien", "Naej", "Elehcim", "Odranoel"};
+        
+        int N = int.Parse(Console.ReadLine());
+        
+        for(int k = 0; k < N; ++k){
+            int K = int.Parse(Console.ReadLine());
+            
+            for(int i = 0; i < K; ++i){
+                int feedback = int.Parse(Console.ReadLine());
+                Console.WriteLine(responsaveis[feedback - 1]);
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        String[] responsaveis = new String[] { "Rolien", "Naej", "Elehcim", "Odranoel" };
+
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+
+        for(int k = 0; k < N; ++k){
+            int K = Integer.parseInt(in.readLine());
+
+            for(int i = 0; i < K; ++i){
+                int feedback = Integer.parseInt(in.readLine());
+                System.out.println(responsaveis[feedback - 1]);
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -85,7 +134,7 @@ for(let i = 0; i < N; ++i){
 ```
 
 ### Python 3.9
-```python
+```py
 nomes = ['Rolien', 'Naej', 'Elehcim', 'Odranoel']
 
 N = int(input())

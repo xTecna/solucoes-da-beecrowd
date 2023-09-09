@@ -70,8 +70,89 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+            
+            if(N == 0){
+                break;
+            }
+            
+            for(int k = 0; k < N; ++k){
+                List<int> folha = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+                
+                int opcao = -1;
+                int corretos = 0;
+                for(int i = 0; i < 5; ++i){
+                    if(folha[i] <= 127){
+                        opcao = i;
+                        ++corretos;
+                    }
+                }
+                
+                if(corretos == 1){
+                    Console.WriteLine((char)(opcao + (int)'A'));
+                }else{
+                    Console.WriteLine("*");
+                }
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            if(N == 0){
+                break;
+            }
+
+            for(int k = 0; k < N; ++k){
+                String[] folha = in.readLine().trim().split(" ");
+
+                int opcao = -1;
+                int corretos = 0;
+                for(int i = 0; i < 5; ++i){
+                    if(Integer.parseInt(folha[i]) <= 127){
+                        opcao = i;
+                        ++corretos;
+                    }
+                }
+
+                if(corretos == 1){
+                    System.out.println((char)(opcao + (int)'A'));
+                }else{
+                    System.out.println("*");
+                }
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -90,7 +171,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         N = int(input())

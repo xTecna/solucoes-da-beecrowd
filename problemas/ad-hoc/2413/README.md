@@ -4,11 +4,11 @@
 
 ## Solução
 
-Vamos considerar que o número de pessoas que clicam no terceiro link é `X`.
+Vamos considerar que o número de pessoas que clicam no terceiro link é $x$.
 
-De acordo com o que João leu anteriormente, o número de pessoas que clicam no segundo link listado é o dobro do número de pessoas que clicam no terceiro link. Logo, o número de pessoas que clicam no segundo link é `2 * X`.
+De acordo com o que João leu anteriormente, o número de pessoas que clicam no segundo link listado é o dobro do número de pessoas que clicam no terceiro link. Logo, o número de pessoas que clicam no segundo link é $2x$.
 
-Já o número de pessoas que clicam no segundo link é a metade do número de pessoas que clicam no primeiro link. Se `2 * X` é a metade, então o total de número de pessoas que clicam no primeiro link é `2 * 2 * X`. Desta maneira, para calcular o número de pessoas que clicam no primeiro link a partir do número de pessoas que clicam no terceiro link, basta calcularmos `4 * X`.
+Já o número de pessoas que clicam no segundo link é a metade do número de pessoas que clicam no primeiro link. Se $2x$ é a metade, então o total de número de pessoas que clicam no primeiro link é $2 \cdot 2x$. Desta maneira, para calcular o número de pessoas que clicam no primeiro link a partir do número de pessoas que clicam no terceiro link, basta calcularmos $4x$.
 
 ### C99
 ```c
@@ -42,8 +42,39 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int t = int.Parse(Console.ReadLine());
+
+        Console.WriteLine(4 * t);
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int t = Integer.parseInt(in.readLine());
+
+        System.out.println(4 * t);
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 let input = require('fs').readFileSync('/dev/stdin', 'utf8');
 let lines = input.split('\n');
 
@@ -53,7 +84,7 @@ console.log(4 * t);
 ```
 
 ### Python 3.9
-```python
+```py
 t = int(input())
 
 print(4 * t)

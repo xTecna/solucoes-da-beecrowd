@@ -1,4 +1,4 @@
-## SQL (12/46)
+## SQL (13/46)
 * [2602 - Select Básico](./2602/README.md)
 * [2603 - Endereço dos Clientes](./2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./2604/README.md)
@@ -10,4 +10,5 @@
 * [2610 - Valor Médio dos Produtos](./2610/README.md)
 * [2611 - Filmes de Ação](./2611/README.md)
 * [2613 - Filmes em Promoção](./2613/README.md)
+* [2614 - Locações de Setembro](./2614/README.md)
 * [2615 - Expandindo o Negocio](./2615/README.md)

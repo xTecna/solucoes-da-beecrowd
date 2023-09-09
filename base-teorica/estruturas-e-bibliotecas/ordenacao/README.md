@@ -987,5 +987,6 @@ def comp(aluno):
 ## Problemas
 
 * [1025 - Onde está o Mármore?](../../../problemas/estruturas-e-bibliotecas/1025/README.md)
+* [1244 - Ordenação por Tamanho](../../../problemas/estruturas-e-bibliotecas/1244/README.md)
 * [1259 - Pares e Ímpares](../../../problemas/estruturas-e-bibliotecas/1259/README.md)
 * [1548 - Fila do Recreio](../../../problemas/estruturas-e-bibliotecas/1548/README.md)

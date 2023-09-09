@@ -141,8 +141,87 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static int comp(string a, string b){
+        return b.Length - a.Length;
+    }
+    
+    static void insertionSort(ref List<string> V){
+        for(int i = 1; i < V.Count; ++i){
+            int j = i, k = j - 1;
+            while(k > -1 && comp(V[j], V[k]) < 0){
+                string temp = V[j];
+                V[j] = V[k];
+                V[k] = temp;
+                --j;
+                --k;
+            }
+        }
+    }
+    
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        
+        for(int i = 0; i < N; ++i){
+            List<string> palavras = Console.ReadLine().Trim().Split(' ').ToList();
+            
+            insertionSort(ref palavras);
+            
+            Console.WriteLine(string.Join(" ", palavras));
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+    public static int comp(String a, String b){
+        return b.length() - a.length();
+    }
+
+    public static void insertionSort(List<String> V){
+        for(int i = 1; i < V.size(); ++i){
+            int j = i, k = j - 1;
+            while(k > -1 && comp(V.get(j), V.get(k)) < 0){
+                Collections.swap(V, j, k);
+                --j;
+                --k;
+            }
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            List<String> palavras = Arrays.asList(in.readLine().trim().split(" "));
+
+            insertionSort(palavras);
+
+            System.out.println(String.join(" ", palavras));
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -171,7 +250,7 @@ for(let i = 0; i < N; ++i){
 ```
 
 ### Python 3.9
-```python
+```py
 def comp(a, b):
     return len(b) - len(a)
 
@@ -195,5 +274,4 @@ for _ in range(N):
     insertionSort(palavras)
 
     print(' '.join(palavras))
-
 ```
