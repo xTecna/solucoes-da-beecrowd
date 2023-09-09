@@ -8,8 +8,8 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria | Documentados | Total de problemas |
 | -- | -- | -- |
-| [Iniciante](./problemas/iniciante/README.md) | 225 | 335 |
-| [Ad-Hoc](./problemas/ad-hoc/README.md) | 83 | 745 |
+| [Iniciante](./problemas/iniciante/README.md) | 228 | 336 |
+| [Ad-Hoc](./problemas/ad-hoc/README.md) | 83 | 850 |
 | [Strings](./problemas/strings/README.md) | 15 | 148 |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) | 18 | 179 |
 | [Matemática](./problemas/matematica/README.md) | 27 | 269 |
@@ -18,7 +18,7 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 | Geometria Computacional | 1 | 82 |
 | SQL | 0 | 46 |
 | | | |
-| Total | 376 | 2296 |
+| Total | 376 | 2402 |
 
 ## Aqui tem material teórico?
 

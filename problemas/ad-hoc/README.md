@@ -1,4 +1,4 @@
-## Ad-hoc (83/732)
+## Ad-hoc (83/850)
 * [1026 - Carrega ou não Carrega?](./1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./1030/README.md)
 * [1031 - Crise de Energia](./1031/README.md)

@@ -1,6 +1,6 @@
 # Problemas
 
-## Iniciante (228/335)
+## Iniciante (228/336)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -230,7 +230,7 @@
 * [2764 - Entrada e Saída de Data](./iniciante/2764/README.md)
 * [2780 - Basquete de Robôs](./iniciante/2780/README.md)
 
-## Ad-hoc (83/732)
+## Ad-hoc (83/850)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./ad-hoc/1030/README.md)
 * [1031 - Crise de Energia](./ad-hoc/1031/README.md)
