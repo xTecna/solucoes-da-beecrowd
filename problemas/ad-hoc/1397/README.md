@@ -60,8 +60,80 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+            
+            if(N == 0){
+                break;
+            }
+            
+            int A = 0;
+            int B = 0;
+            for(int i = 0; i < N; ++i){
+                List<int> numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+                
+                if(numeros[0] > numeros[1]){
+                    ++A;
+                }else if(numeros[1] > numeros[0]){
+                    ++B;
+                }
+            }
+            Console.WriteLine($"{A} {B}");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            if(N == 0){
+                break;
+            }
+
+            int A = 0;
+            int B = 0;
+            for(int i = 0; i < N; ++i){
+                String[] numeros = in.readLine().trim().split(" ");
+
+                int a = Integer.parseInt(numeros[0]);
+                int b = Integer.parseInt(numeros[1]);
+
+                if(a > b){
+                    ++A;
+                }else if(b > a){
+                    ++B;
+                }
+            }
+            System.out.printf("%d %d\n", A, B);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -84,7 +156,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         N = int(input())

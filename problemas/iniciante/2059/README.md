@@ -6,11 +6,11 @@
 
 Este jogo na verdade tem duas camadas: uma que é o jogo em si e outra com roubo e acusação. Com isso em mente, temos que, independente do jogo:
 
-* Se o jogador 1 rouba e o jogador 2 o acusa, o jogador 2 ganha
-* Se o jogador 1 rouba e o jogador 2 não o acusa, o jogador 1 ganha
-* Se o jogador 1 não rouba, mas o jogador 2 o acusa, o jogador 1 ganha
+* Se o jogador 1 rouba e o jogador 2 o acusa, o jogador 2 ganha;
+* Se o jogador 1 rouba e o jogador 2 não o acusa, o jogador 1 ganha;
+* Se o jogador 1 não rouba, mas o jogador 2 o acusa, o jogador 1 ganha.
 
-E só no caso do jogador 1 não roubar e o jogador 2 não o acusá-lo é que segue o jogo de par ou ímpar normalmente.
+E só no caso do jogador 1 não roubar e o jogador 2 não o acusar é que segue o jogo de par ou ímpar normalmente.
 
 ### C99
 

@@ -4,7 +4,7 @@
 
 ## Solução
 
-Para este problema, basta checar quantos elementos do vetor ordenado são iguais ao do vetor original nas mesmas posições, ou seja, em quantas posições tem uma pessoa que não trocou de lugar.
+Para este problema, basta checar quantos elementos do vetor ordenado são iguais ao do vetor original nas mesmas posições, ou seja, em quantas posições tem uma pessoa que não trocou de lugar. Caso tenha dúvidas sobre como a ordenação foi empregada aqui, veja a nossa página sobre [ordenação](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md).
 
 ### C99
 ```c
@@ -91,8 +91,78 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static int Comp(int a, int b){
+        return b - a;
+    }
+    
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        for(int k = 0; k < N; ++k){
+            int M = int.Parse(Console.ReadLine());
+            
+            List<int> alunos = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            List<int> ordenada = new List<int>(alunos);
+            
+            ordenada.Sort(Comp);
+            
+            int resposta = 0;
+            for(int i = 0; i < M; ++i){
+                if(alunos[i] == ordenada[i]){
+                    resposta += 1;
+                }
+            }
+            Console.WriteLine(resposta);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int k = 0; k < N; ++k){
+            int M = Integer.parseInt(in.readLine());
+
+            String[] alunos = in.readLine().trim().split(" ");
+            Integer[] notas = new Integer[M];
+            for(int i = 0; i < M; ++i){
+                notas[i] = Integer.parseInt(alunos[i]);
+            }
+
+            Arrays.sort(notas, Collections.reverseOrder());
+
+            int resposta = 0;
+            for(int i = 0; i < M; ++i){
+                if(Integer.parseInt(alunos[i]) == notas[i]){
+                    resposta += 1;
+                }
+            }
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -117,7 +187,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 for _ in range(N):

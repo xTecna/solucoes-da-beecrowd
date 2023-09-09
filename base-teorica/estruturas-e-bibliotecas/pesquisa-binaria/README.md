@@ -2,9 +2,9 @@
 
 ## Motivação
 
-Imagine que você esteja conversando com alguém e essa pessoa te fala a seguinte frase: _"O argumento fósmeo disfarçado de metuendo não corresponde à aparência janota deste indivíduo. Felizmente todos parecem incólumes diante de tal declaração."_. Provavelmente sua primeira reação seria pegar um dicionário para procurar o significado de alguma dessas palavras. Vamos supor que sua primeira palavra a pesquisar fosse `metuendo`. Como você naturalmente faria para pesquisar essa palavra?
+Imagine que você esteja conversando com alguém que está desabafando contigo e essa pessoa te solta a seguinte frase: _"Durante a aula de filosofia, o professor usou sesquipedalismo, obnubilação e anacronismo em suas explicações, tornando o conteúdo ainda mais difícil de compreender."_. Provavelmente sua primeira reação seria pegar um dicionário para procurar o significado de alguma dessas palavras. Vamos supor que sua primeira palavra a pesquisar fosse `obnubilação`. Como você naturalmente faria para pesquisar essa palavra?
 
-Como você entende como dicionários funcionam, você sabe que todas as palavras lá estão em ordem alfabética, então você vai abrir o dicionário em qualquer página e olhar em que letra você está. Se você está na letra `F`, por exemplo, significa que você precisa abrir o dicionário em uma página à frente, mas se você se encontra na letra `R`, isso significa que você precisa voltar um pouco, pois sua palavra começa com `M`. Esse processo de ir pulando páginas pra trás ou pra frente vai se repetindo até você chegar na página com palavras que começam com `M`, onde você vai começar a fazer um folheamento mais delicado de acordo com a segunda, a terceira, a quarta letra, até chegar na palavra `metuendo`.
+Como você entende como dicionários funcionam, você sabe que todas as palavras lá estão em ordem alfabética, então você vai abrir o dicionário em qualquer página e olhar em que letra você está. Se você está na letra `F`, por exemplo, significa que você precisa abrir o dicionário em uma página à frente, mas se você se encontra na letra `T`, isso significa que você precisa voltar um pouco, pois sua palavra começa com `O`. Esse processo de ir pulando páginas pra trás ou pra frente vai se repetindo até você chegar na página com palavras que começam com `O`, onde você vai começar a fazer um folheamento mais delicado de acordo com a segunda, a terceira, a quarta letra, até chegar na palavra `obnubilação`.
 
 A partir daí, podemos tirar algumas lições:
 
@@ -18,13 +18,13 @@ Dito tudo isso, como você já deve imaginar, esse processo de eliminar uma part
 
 ## Implementações
 
-A pesquisa binária serve para que possamos procurar rapidamente um elemento em um vetor ordenado (vide [ordenação](../ordenacao/README.md) para entender como ordenar um vetor). Para isso, vamos considerar que estamos procurando o valor `x` em um vetor `V` no intervalo `[0, N[`, onde `N` é o número de elementos em `V`. Para implementar o algoritmo, vamos contar com 3 variáveis:
+A pesquisa binária serve para que possamos procurar rapidamente um elemento em um vetor ordenado (vide [ordenação](../ordenacao/README.md) para entender como ordenar um vetor). Para isso, vamos considerar que estamos procurando o valor $x$ em um vetor $V$ no intervalo $[0, N[$, onde $n$ é o número de elementos em $V$. Para implementar o algoritmo, vamos contar com 3 variáveis:
 
 * `inicio`: marca o limite inferior do intervalo de busca;
 * `fim`: marca o limite superior do intervalo de busca (que normalmente é excluído, como representado acima);
-* `meio`: a posição onde vamos tentar encontrar nosso valor `x`.
+* `meio`: a posição onde vamos tentar encontrar nosso valor $x$.
 
-No começo, temos `inicio = 0`, `fim = N` e `meio = (inicio + fim)/2`, ou seja, a posição do meio desse intervalo. Logo, vendo qual é o valor do meio e comparando com nosso `x`, podemos fazer como nosso exemplo do dicionário, verificar se podemos ir pra frente ou pra trás no nosso algoritmo. A ideia seria essa:
+No começo, temos `inicio` com valor $0$, $fim$ com valor $n$ e `meio` com valor $\frac{inicio + fim}{2}$, ou seja, a posição do meio desse intervalo. Logo, vendo qual é o valor do meio e comparando com nosso $x$, podemos fazer como nosso exemplo do dicionário, verificar se podemos ir pra frente ou pra trás no nosso algoritmo. A ideia seria essa:
 
 ```
 se(V[meio] == x):
@@ -38,9 +38,9 @@ senão se(V[meio] < x):
     comeco = meio + 1
 ```
 
-Nos casos onde `V[meio]` não é o valor que procuramos, precisamos definir um novo intervalo para nossa próxima busca, onde temos duas opções: `[inicio, meio[` e `[meio + 1, fim[`, ambas definidas e fatiadas pelo `meio`. Como nosso intervalo inclui um `inicio` inclusivo e um `fim` exclusivo, perceba que `meio` pode assumir o papel de `fim` como está (já que já olhamos `V[meio]` e já confirmamos que não é `x`), mas para assumir o papel de `inicio`, é necessário somar 1 (pelo mesmo motivo, já confirmamos que `V[meio]` não é `x`).
+Nos casos onde `V[meio]` não é o valor que procuramos, precisamos definir um novo intervalo para nossa próxima busca, onde temos duas opções: $[inicio, meio[$ e $[meio + 1, fim[$, ambas definidas e fatiadas pelo `meio`. Como nosso intervalo inclui um `inicio` inclusivo e um `fim` exclusivo, perceba que `meio` pode assumir o papel de `fim` como está (já que já olhamos `V[meio]` e já confirmamos que não é $x$), mas para assumir o papel de `inicio`, é necessário somar 1 (pelo mesmo motivo, já confirmamos que `V[meio]` não é $x$).
 
-Logo, a ideia é fazer essa verificação, mudar o intervalo de acordo com o encontrado e ir fazendo isso enquanto o intervalo fizer sentido. No momento em que nosso intervalo se torna inválido (por `inicio` ser igual ou ultrapassar `fim`), então temos nossa prova de que na verdade `x` não está em `V`. O algoritmo final então ficaria assim:
+Logo, a ideia é fazer essa verificação, mudar o intervalo de acordo com o encontrado e ir fazendo isso enquanto o intervalo fizer sentido. No momento em que nosso intervalo se torna inválido (por `inicio` ser igual ou ultrapassar `fim`), então temos nossa prova de que na verdade $x$ não está em $V$. O algoritmo final então ficaria assim:
 
 ```
 função pesquisaBinária(vetor V, elemento valor):

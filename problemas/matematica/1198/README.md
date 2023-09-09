@@ -47,8 +47,51 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            List<long> guerreiros = entrada.Trim().Split(' ').Select(x => long.Parse(x)).ToList();
+            Console.WriteLine(Math.Abs(guerreiros[0] - guerreiros[1]));
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] guerreiros = in.readLine().trim().split(" ");
+
+            long hashmat = Long.parseLong(guerreiros[0]);
+            long oponente = Long.parseLong(guerreiros[1]);
+
+            System.out.println(Math.abs(hashmat - oponente));
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -63,7 +106,7 @@ while (p < lines.length) {
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         hashmat, oponente = [int(x) for x in input().strip().split(' ')]

@@ -399,7 +399,7 @@
 ## Geometria computacional (1/82)
 * [1039 - Flores de Fogo](./geometria-computacional/1039/README.md)
 
-## SQL (10/46)
+## SQL (12/46)
 * [2602 - Select Básico](./2602/README.md)
 * [2603 - Endereço dos Clientes](./2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./2604/README.md)
@@ -410,3 +410,5 @@
 * [2609 - Produtos por Categorias](./2609/README.md)
 * [2610 - Valor Médio dos Produtos](./2610/README.md)
 * [2611 - Filmes de Ação](./2611/README.md)
+* [2613 - Filmes em Promoção](./2613/README.md)
+* [2615 - Expandindo o Negocio](./2615/README.md)

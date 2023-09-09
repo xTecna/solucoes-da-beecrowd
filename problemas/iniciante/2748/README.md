@@ -4,7 +4,7 @@
 
 ## Solução
 
-Nada impede de copiar a saída e mandar o programa retornar apenas isso, mas aqui alteramos as funções do problema [2748 - Saída 1](../2748/README.md) para fazer uma solução mais sofisticada.
+Nada impede de copiar a saída e mandar o programa retornar apenas isso, mas aqui alteramos as funções do problema [2747 - Saída 1](../2747/README.md) para fazer uma solução mais sofisticada.
 
 ### C99
 

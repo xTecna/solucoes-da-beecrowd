@@ -8,8 +8,8 @@ O problema consiste em ordenar todos os mármores em ordem crescente e ir respon
 
 Para solucioná-lo, podemos usar duas diferentes abordagens:
 
-* Ordenar o vetor de mármores e fazer cada consulta com [pesquisa binária](../../../base-teorica/estruturas-e-bibliotecas/pesquisa-binaria/README.md), com complexidade O(log n) de tempo para cada consulta;
-* Acumular todos os valores de mármore em um vetor auxiliar, usando-o para contar quantos mármores de cada tem na entrada (ver [Counting sort](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md#counting-sort)) para poder fazer as consultas em tempo O(1) (mas com gasto de espaço O(N)).
+* Ordenar o vetor de mármores e fazer cada consulta com [pesquisa binária](../../../base-teorica/estruturas-e-bibliotecas/pesquisa-binaria/README.md), com complexidade $O(\log{n})$ de tempo para cada consulta;
+* Acumular todos os valores de mármore em um vetor auxiliar, usando-o para contar quantos mármores de cada tem na entrada (ver [Counting sort](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md#counting-sort)) para poder fazer as consultas em tempo $O(1)$ (mas com gasto de espaço $O(n)$).
 
 > Na versão em JavaScript, usar `lines.shift()` é lento demais, então tive que utilizar o acesso direto.
 
@@ -17,8 +17,8 @@ Para solucioná-lo, podemos usar duas diferentes abordagens:
 
 | Complexidade | Notação assintótica |
 | ------------ | ------------------- |
-| Tempo        |            O(log n) |
-| Espaço       |                O(1) |
+| Tempo        |            $O(\log{n})$ |
+| Espaço       |                $O(1)$ |
 
 Essa solução precisa de uma leve adaptação para que quando for igual, não retorne a posição, e sim escolha o intervalo à esquerda. Isso acontece porque não queremos saber apenas se o mármore existe ou não, mas sim a posição do primeiro mármore. Então, se o mármore existe, precisamos chegar pra trás ainda pra nos certificarmos de que é de fato o primeiro mármore.
 
@@ -388,12 +388,12 @@ while True:
 
 ### Alternativa 2 - Contando os mármores
 
-É importante notar que não sabemos o valor máximo `m` que N pode assumir. O valor que está no código que eu escrevi foi um valor chutado.
+É importante notar que não sabemos o valor máximo $m$ que $n$ pode assumir. O valor que está no código que eu escrevi (10 mil) foi um valor chutado.
 
 | Complexidade | Notação assintótica |
 | ------------ | ------------------- |
-| Tempo        |                O(m) |
-| Espaço       |                O(m) |
+| Tempo        |                $O(m)$ |
+| Espaço       |                $O(m)$ |
 
 ### C99
 

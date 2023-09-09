@@ -8,22 +8,22 @@ O problema de Josephus é um problema conhecido na Matemática onde o objetivo �
 
 Vamos primeiro considerar o primeiro passo dessa matança. Considere que temos $n$ soldados numerados de $0$ a $n - 1$:
 
-| 0 | 1 | 2 | 3 | ... | n - 3 | n - 2 | n - 1 |
+| $0$ | $1$ | $2$ | $3$ | ... | $n - 3$ | $n - 2$ | $n - 1$ |
 | - | - | - | - | --- | ----- | ----- | ----- |
 
 Se estamos removendo de $k$ em $k$, então o primeiro soldado a ser excluído é o soldado $k - 1$. Aqui em baixo represento o soldado a ser removido e como que ficam os soldados após sua remoção:
 
-| 0 | 1 | 2 | 3 | ... | ~~k - 1~~ | k | k + 1 | ... | n - 3 | n - 2 | n - 1 |
+| $0$ | $1$ | $2$ | $3$ | ... | $\sout{k - 1}$ | $k$ | $k + 1$ | ... | $n - 3$ | $n - 2$ | $n - 1$ |
 | - | - | - | - | --- | --------- | - | ----- | --- | ----- | ----- | ----- |
 
-| 0 | 1 | 2 | 3 | ... | k - 1 (antes k) | k (antes k + 1) | ... | n - 3 (antes n - 2) | n - 2 (antes n- 1) |
+| $0$ | $1$ | $2$ | $3$ | ... | $k - 1$ (antes $k$) | $k$ (antes $k + 1$) | ... | $n - 3$ (antes $n - 2$) | $n - 2$ (antes $n - 1$) |
 | - | - | - | - | --- | --------------- | --------------- | --- | ------------------- | ------------------ |
 
 Veja que os elementos depois de $k - 1$ mudaram suas posições para compensar a falta do elemento $k - 1$ e que agora temos $n - 1$ soldados. Parece que nosso problema de achar o sobrevivente para $n$ soldados pulando de $k$ em $k$ agora se transformou no problema de achar o sobrevivente para $n - 1$ soldados pulando de $k$ em $k$, com a diferença de que antes começávamos em $0$ e agora vamos começar na posição $k$ (veja ali em cima que o soldado $k$ assumiu o lugar do soldado $k - 1$ quando ele morreu). Logo, podemos montar a seguinte recorrência:
 
 $$T(n, k) = (T(n - 1, k) + k) \mod n$$
 
-Onde é necessário aplicar o resto da divisão porque pode ser que esse $+ k$ resulte em um valor fora do intervalo $[0, n - 1]$. O nosso caso base então seria $T(1, k) = 0$, ou seja, quando tem apenas um soldado, ele sobrevive, não importa o tamanho do pulo.
+onde é necessário aplicar o resto da divisão porque pode ser que esse $+ k$ resulte em um valor fora do intervalo $[0, n - 1]$. O nosso caso base então seria $T(1, k) = 0$, ou seja, quando tem apenas um soldado, ele sobrevive, não importa o tamanho do pulo.
 
 > Na linguagem Python, decidi pela versão iterativa da recorrência, já que com os limites estabelecidos no enunciado a pilha de recursão do Python pode estourar.
 

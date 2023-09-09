@@ -4,7 +4,7 @@
 
 ## Solução
 
-Por favor, se você possuir uma solução melhor e mais fácil, por favor, faça um pull request.
+Por favor, se você possuir uma solução melhor e mais fácil, faça um pull request.
 
 Para a minha solução, achei muito mais fácil lidar com cada caso de sinais separadamente, já que resto de divisão entre números negativos é problemática às vezes.
 

@@ -4,7 +4,7 @@
 
 ## Solução
 
-Este problema consiste em separar a entrada por palavras e pegar a primeira letra de cada palavra. Se você tem o recurso de separar por palavras, apenas certifique-se de que suas palavras têm um caractere ou mais. Se você não tem esse recurso, você pode percorrer a frase com um booleano para te indicar se você já pegou a primeira letra de alguma palavra ou não.
+Este problema consiste em separar a entrada por palavras e pegar a primeira letra de cada palavra. Se você tem o recurso de separar por palavras, ótimo. Se você não tem, você pode percorrer a frase com um _booleano_ para te indicar se você já pegou a primeira letra de alguma palavra ou não.
 
 ### C99
 ```c
@@ -76,8 +76,51 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) { 
+        int N = int.Parse(Console.ReadLine());
+        for(int i = 0; i < N; ++i){
+            string[] frase = Console.ReadLine().Trim().Split(' ');
+            Console.WriteLine(String.Join("", frase.Where(x => x.Length > 0).Select(x => x[0])));
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            String[] frase = in.readLine().trim().split(" ");
+
+            String resposta = "";
+            for(int j = 0; j < frase.length; ++j){
+                if(frase[j].length() > 0){
+                    resposta += frase[j].charAt(0);
+                }
+            }
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -93,13 +136,13 @@ for(let i = 0; i < N; ++i){
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 for _ in range(N):
     frase = input().strip()
 
-    resposta = ''.join([x[0] if len(x) > 0 else '' for x in frase.split(' ')])
+    resposta = ''.join([x[0] for x in frase.split()])
 
     print(resposta)
 ```
