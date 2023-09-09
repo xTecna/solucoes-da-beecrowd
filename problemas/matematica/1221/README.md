@@ -4,7 +4,7 @@
 
 ## Solução
 
-Confira a página [Números primos](../base-teorica/matematica/numeros-primos.md) para entender como calcular a primalidade de números até 2^31, que por ser um valor consideravelmente alto, não é possível criar um vetor com tantas posições. Por isso, vamos fazer o crivo até um valor um pouco maior do que a raiz quadrada de 2^31 (aqui escolhemos 2^16) e depois testar do jeito convencional.&#x20;
+Confira a página [Números primos](../base-teorica/matematica/numeros-primos.md) para entender como calcular a primalidade de números até $2^{31}$, que por ser um valor consideravelmente alto, não é possível criar um vetor com tantas posições. Por isso, vamos fazer o crivo até um valor um pouco maior do que a raiz quadrada de $2^{31}$ (aqui escolhemos $2^{16}$) e depois testar do jeito convencional.
 
 ### C99
 ```c
@@ -151,8 +151,138 @@ int main()
 }
 ```
 
-### JavaScript
-```javascript
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Crivo(ref List<bool> C, ref List<int> primos, int n){
+        for(int i = 0; i < n; ++i){
+            C.Add(true);
+        }
+        
+        C[1] = false;
+        primos.Add(2);
+        
+        for(int i = 4; i < n; i += 2){
+            C[i] = false;
+        }
+        
+        for(int i = 3; i < n; i += 2){
+            if(C[i]){
+                primos.Add(i);
+                
+                for(int j = i * 3; j < n; j += 2 * i){
+                    C[j] = false;
+                }
+            }
+        }
+    }
+
+    static bool ehPrimo(ref List<int> primos, int n){
+        int p = primos.Count;
+        int limite = (int)Math.Sqrt(n) + 1;
+        
+        for(int i = 0; i < p && primos[i] < limite; ++i){
+            if(n % primos[i] == 0){
+                return (n == primos[i]);
+            }
+        }
+        
+        return true;
+    }
+
+    static void Main(string[] args) {
+        int limite = 65536;
+        List<bool> C = new List<bool>(limite);
+        List<int> primos = new List<int>();
+
+        Crivo(ref C, ref primos, limite);
+
+        int N = int.Parse(Console.ReadLine());
+        for(int i = 0; i < N; ++i){
+            int X = int.Parse(Console.ReadLine());
+            
+            if(ehPrimo(ref primos, X)){
+                Console.WriteLine("Prime");
+            }else{
+                Console.WriteLine("Not Prime");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+
+public class Main {
+    public static void Crivo(ArrayList<Boolean>C, ArrayList<Integer> primos, int n){
+        for(int i = 0; i < n; ++i){
+            C.add(true);
+        }
+        
+        C.set(1, false);
+        primos.add(2);
+        
+        for(int i = 4; i < n; i += 2){
+            C.set(i, false);
+        }
+        
+        for(int i = 3; i < n; i += 2){
+            if(C.get(i)){
+                primos.add(i);
+                
+                for(int j = i * 3; j < n; j += 2 * i){
+                    C.set(j, false);
+                }
+            }
+        }
+    }
+
+    public static boolean ehPrimo(ArrayList<Integer> primos, int n){
+        int p = primos.size();
+        int limite = (int)Math.sqrt(n) + 1;
+        
+        for(int i = 0; i < p && primos.get(i) < limite; ++i){
+            if(n % primos.get(i) == 0){
+                return (n == primos.get(i));
+            }
+        }
+        
+        return true;
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int limite = 65536;
+        ArrayList<Boolean> C = new ArrayList<Boolean>();
+        ArrayList<Integer> primos = new ArrayList<Integer>();
+        Crivo(C, primos, limite);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            int X = Integer.parseInt(in.readLine());
+
+            if(ehPrimo(primos, X)){
+                System.out.println("Prime");
+            }else{
+                System.out.println("Not Prime");
+            }
+        }
+    }
+}
+```
+
+### JavaScript 12.18
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -206,7 +336,7 @@ for (let i = 0; i < N; ++i) {
 ```
 
 ### Python 3.9
-```python
+```py
 import math
 
 
@@ -250,5 +380,4 @@ for _ in range(N):
     X = int(input())
 
     print('Prime' if ehPrimo(primos, X) else 'Not Prime')
-
 ```

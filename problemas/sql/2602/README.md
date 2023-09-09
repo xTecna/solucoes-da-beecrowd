@@ -4,7 +4,7 @@
 
 ## Solução
 
-Assim como o título do problema diz, esse é um _select_ básico. Basta entender que da tabela de clientes, você quer só a coluna de nome, mas só dos clientes de um determinado estado.
+Assim como o título do problema diz, esse é um `select` básico. Basta entender que da tabela de clientes, você quer só a coluna de nome, mas só dos clientes de um determinado estado.
 
 ### PostgreSQL
 

@@ -4,7 +4,7 @@
 
 ## Solução
 
-Existem várias formas de resolver esse problema, incluindo fazer todos os ifs prováveis para decidir cada vitória. No caso dos códigos abaixo, segui uma abordagem de primeiro contar a soma de todos os números. Se a soma der 1, significa que só uma pessoa colocou 1. Se a soma der 2, significa que só uma pessoa colocou 0. Logo, primeiro fazemos a soma e depois perguntamos quem foi a pessoa que colocou 1 ou 0.
+Existem várias formas de resolver esse problema, incluindo fazer todos os _if_s prováveis para decidir cada vitória. No caso dos códigos abaixo, segui uma abordagem de primeiro contar a soma de todos os números. Se a soma der 1, significa que só uma pessoa colocou 1. Se a soma der 2, significa que só uma pessoa colocou 0. Logo, primeiro fazemos a soma e depois perguntamos quem foi a pessoa que colocou 1 ou 0.
 
 ### C99
 ```c
@@ -82,8 +82,75 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            List<int> jogadas = entrada.Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+
+            int A = jogadas[0];
+            int B = jogadas[1];
+            int C = jogadas[2];
+
+            if(A + B + C == 1){
+                if(A == 1)  Console.WriteLine("A");
+                if(B == 1)  Console.WriteLine("B");
+                if(C == 1)  Console.WriteLine("C");
+            }else if(A + B + C == 2){
+                if(A == 0)  Console.WriteLine("A");
+                if(B == 0)  Console.WriteLine("B");
+                if(C == 0)  Console.WriteLine("C");
+            }else{
+                Console.WriteLine("*");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] entrada = in.readLine().trim().split(" ");
+
+            int A = Integer.parseInt(entrada[0]);
+            int B = Integer.parseInt(entrada[1]);
+            int C = Integer.parseInt(entrada[2]);
+
+            if(A + B + C == 1){
+                if(A == 1)  System.out.println("A");
+                if(B == 1)  System.out.println("B");
+                if(C == 1)  System.out.println("C");
+            }else if(A + B + C == 2){
+                if(A == 0)  System.out.println("A");
+                if(B == 0)  System.out.println("B");
+                if(C == 0)  System.out.println("C");
+            }else{
+                System.out.println("*");
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -103,7 +170,7 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         A, B, C = [int(x) for x in input().strip().split(' ')]

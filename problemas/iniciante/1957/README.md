@@ -6,7 +6,7 @@
 
 Apesar de termos um material sobre [bases numéricas](../../../base-teorica/matematica/base-numerica/README.md), todos os códigos abaixo apresentam truques que podem ser usados em cada linguagem para resolver o problema com o menor número de linhas possível aproveitando os recursos que cada linguagem tem para representar números em diferentes bases numéricas.
 
-Esse método funciona porque apesar dos números serem recebidos como números decimais, o computador na verdade os armazena como números binários e na hora de imprimir, ele pode imprimir no formato que desejarmos. O número permanece sendo o mesmo, a única coisa que mudamos é a forma como ele é exibido no sistema (por isso que todas essas "conversões" estão sendo feitas nos métodos de impressão das linguagens).
+Esse método funciona porque apesar dos números serem recebidos como números decimais, o computador na verdade os armazena como números binários em memória e, na hora de imprimir, ele pode imprimir no formato que desejarmos. O número permanece sendo o mesmo, a única coisa que mudamos é a forma como ele é exibido no sistema (por isso que todas essas "conversões" estão sendo feitas nos métodos de impressão das linguagens).
 
 ### C99
 

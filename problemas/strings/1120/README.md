@@ -6,10 +6,10 @@
 
 Podemos dividir esse problema em dois passos:
 
-1. Criar uma nova string com os mesmos caracteres que a string passada, só que sem o caractere ignorado;
-2. Retirar os zeros à frente da string resultante, seja manualmente ou usando a expressão regular `/^(0+)/`, que checa se há um ou mais zeros à frente da string formada.
+1. Criar uma nova string com os mesmos caracteres que a _string_ passada, só que sem o caractere ignorado;
+2. Retirar os zeros à frente da _string_ resultante, seja manualmente ou usando uma função de retirar o mesmo caractere de um dos lados da _string_.
 
-> É muito importante manter a string o tempo todo sem converter para inteiro porque não vai caber.
+> É muito importante manter a _string_ o tempo todo sem converter para inteiro porque não vai caber.
 
 ### C99
 ```c
@@ -87,8 +87,80 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null)
+        {
+            string[] partes = entrada.Split(' ');
+            string D = partes[0];
+            string N = partes[1];
+
+            if(D == "0" && N == "0"){
+                break;
+            }
+
+            N = N.Replace(D, "");
+            N = N.TrimStart('0');
+
+            if(N.Length == 0){
+                Console.WriteLine("0");
+            }else{
+                Console.WriteLine(N);
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] numeros = in.readLine().trim().split(" ");
+
+            String D = numeros[0];
+            String N = numeros[1];
+
+            if(D.equals("0") && N.equals("0")){
+                break;
+            }
+
+            N = N.replace(D, "");
+            
+            String resposta = "";
+            for(int i = 0; i < N.length(); ++i){
+                if(N.charAt(i) != '0'){
+                    resposta = N.substring(i);
+                    break;
+                }
+            }
+
+            if(resposta.length() == 0){
+                System.out.println("0");
+            }else{
+                System.out.println(resposta);
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -109,7 +181,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 import re
 
 while True:
@@ -119,11 +191,7 @@ while True:
         if(D == '0' and N == '0'):
             break
 
-        resposta = ''
-        for letra in N:
-            if(letra != D):
-                resposta += letra
-        
+        resposta = N.replace(D, '')
         resultado = re.findall(r'^(0+)', resposta)
 
         if(len(resultado) > 0):

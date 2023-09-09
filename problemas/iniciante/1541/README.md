@@ -6,12 +6,11 @@
 
 Esse problema tem um enunciado incrivelmente confuso, então eu vou ver se eu consigo destrinchar mais ou menos a ideia.
 
-A ideia seria que você gostaria de construir uma casa com área `A` x `B`, mas você quer fazer isso de forma que o terreno seja quadrado. Com isso, basta multiplicarmos `A` com `B` e tirarmos a raiz quadrada para descobrirmos qual seria o lado do quadrado do nosso terreno. OK, até aqui tudo certo. Entretanto, temos uma variável `C` que indica a porcentagem permitida do terreno onde podemos construir. Se `C` fosse sempre 100%, não teríamos nenhum problema, mas às vezes ele pode ser menor. Nesse caso, a área que vamos construir não é mais `A` vezes `B`, e sim `A` vezes `B` vezes 100/`C`, ou seja, o quanto de área que o terreno deve ter em relação ao 100%. Se o valor for 100%, multiplicamos por 1, o que dá no mesmo. Mas se esse valor for, por exemplo, 20%, então agora precisamos ter um terreno 5 vezes maior para arcar com essa restrição de que só 20% do terreno pode ser construído (e que queremos construir em uma área de `A` x `B`).
+A ideia seria que você gostaria de construir uma casa com área $A \times B$, mas você quer fazer isso de forma que o terreno seja quadrado. Com isso, basta multiplicarmos $A$ com $B$ e tirarmos a raiz quadrada para descobrirmos qual seria o lado do quadrado do nosso terreno. OK, até aqui tudo certo. Entretanto, temos uma variável $C$ que indica a porcentagem permitida do terreno onde podemos construir. Se $C$ fosse sempre $100\%$, não teríamos nenhum problema, mas às vezes ele pode ser menor. Nesse caso, a área que vamos construir não é mais $AB$, e sim $AB\frac{100}{C}$, ou seja, o quanto de área que o terreno deve ter em relação ao $100\%$. Se o valor for $100\%$, multiplicamos por $1$, o que dá no mesmo. Mas se esse valor for, por exemplo, $20\%$, então agora precisamos ter um terreno $5$ vezes maior para arcar com essa restrição de que só $20\%$ do terreno pode ser construído (e que queremos construir em uma área de $A \times B$).
 
 Lembrando que ao final da operação é necessário tirar a raiz quadrada desse novo cálculo da área e arredondar o resultado obtido para baixo.
 
 ### C99
-
 ```c
 #include <stdio.h>
 #include <math.h>
@@ -36,7 +35,6 @@ int main()
 ```
 
 ### C++17
-
 ```cpp
 #include <iostream>
 #include <cmath>
@@ -63,7 +61,6 @@ int main()
 ```
 
 ### C#
-
 ```cs
 using System;
 using System.Collections.Generic;
@@ -90,7 +87,6 @@ class URI
 ```
 
 ### Java 14
-
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -120,7 +116,6 @@ public class Main {
 ```
 
 ### Javascript 12.18
-
 ```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
@@ -137,7 +132,6 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-
 ```py
 import math
 

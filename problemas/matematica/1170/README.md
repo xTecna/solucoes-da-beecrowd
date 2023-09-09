@@ -4,9 +4,9 @@
 
 ## Solução
 
-### Alternativa 1 - Cálculo direto
-
 Saber quantas vezes precisamos dividir um número até que o resultado seja 1 ou menos é basicamente calcular o teto do logaritmo deste número.
+
+Também é possível simular cada dia e quantos suprimentos Blobs terá ao final do dia caso não queira usar a fórmula direta. Se a quantidade de suprimento for menor ou igual a 1, pode parar o processo e imprimir a resposta. A entrada $C$ é pequena o suficiente para ser possível fazer isso dentro do tempo limite estipulado. Eu até tinha os códigos para isso aqui, mas a fórmula direta é só mais simples, então no final eu acabei tirando pra evitar a fadiga...
 
 ### C99
 ```c
@@ -56,8 +56,47 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Runtime;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        for(int i = 0; i < N; ++i){
+            double C = double.Parse(Console.ReadLine());
+
+            Console.WriteLine($"{Math.Ceiling(Math.Log(C, 2))} dias");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            double C = Double.parseDouble(in.readLine());
+
+            System.out.printf("%d dias\n", (int)Math.ceil(Math.log(C)/Math.log(2)));
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -80,103 +119,4 @@ for _ in range(N):
     C = float(input())
 
     print(f'{math.ceil(math.log2(C))} dias')
-```
-
-### Alternativa 2 - Simulação do processo
-
-Tudo o que você precisa é simular cada dia e quantos suprimentos Blobs terá ao final do dia. Se a quantidade de suprimento for menor ou igual a 1, pode parar o processo e imprimir a resposta.
-
-### C99
-```c
-#include <stdio.h>
-
-int main()
-{
-    double C;
-    int N, resposta;
-
-    scanf("%d", &N);
-
-    for (int i = 0; i < N; ++i)
-    {
-        scanf("%lf", &C);
-
-        resposta = 0;
-        while (C > 1.0)
-        {
-            ++resposta;
-            C /= 2;
-        }
-
-        printf("%d dias\n", resposta);
-    }
-
-    return 0;
-}
-```
-
-### C++17
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main()
-{
-    double C;
-    int N, resposta;
-
-    cin >> N;
-
-    for (int i = 0; i < N; ++i)
-    {
-        cin >> C;
-
-        resposta = 0;
-        while (C > 1.0)
-        {
-            ++resposta;
-            C /= 2;
-        }
-
-        cout << resposta << " dias" << endl;
-    }
-
-    return 0;
-}
-```
-
-### JavaScript 12.18
-```javascript
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.trim().split('\n');
-
-let N = parseInt(lines.shift());
-
-for (let i = 0; i < N; ++i) {
-    let C = parseFloat(lines.shift());
-
-    let resposta = 0;
-    while (C > 1.0) {
-        ++resposta;
-        C /= 2;
-    }
-
-    console.log(`${resposta} dias`);
-}
-```
-
-### Python 3.9
-```python
-N = int(input())
-
-for _ in range(N):
-    C = float(input())
-
-    resposta = 0
-    while (C > 1.0):
-        resposta += 1
-        C /= 2
-
-    print(f'{resposta} dias')
 ```

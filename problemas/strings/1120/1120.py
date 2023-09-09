@@ -7,11 +7,7 @@ while True:
         if(D == '0' and N == '0'):
             break
 
-        resposta = ''
-        for letra in N:
-            if(letra != D):
-                resposta += letra
-        
+        resposta = N.replace(D, '')
         resultado = re.findall(r'^(0+)', resposta)
 
         if(len(resultado) > 0):

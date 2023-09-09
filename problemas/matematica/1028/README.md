@@ -6,7 +6,7 @@
 
 Ambos os jogadores precisam dividir suas coleções em pilhas de tamanho igual e que tenham o mesmo número de figurinhas entre qualquer pilha, não importa de qual jogador a pilha seja. Vejamos que o que sempre podemos fazer é criar pilhas de tamanho 1, mas se os dois jogadores tiverem uma quantidade de cartas que possuem um divisor maior em comum, é possível fazer pilhas de figurinhas maiores. Neste problema, estamos interessados no maior tamanho da pilha que ambos os jogadores podem fazer, o que nos leva a resolver o problema do máximo divisor em comum entre as duas quantidades de carta.
 
-Confira [Máximo Divisor Comum](../base-teorica/matematica/maior-divisor-comum.md) para entender como o algoritmo de Euclides para encontrar o MDC entre dois números funciona.
+Confira [Máximo Divisor Comum](../../../base-teorica/matematica/gcd/README.md) para entender como o algoritmo de Euclides para encontrar o MDC entre dois números funciona.
 
 ### C99
 

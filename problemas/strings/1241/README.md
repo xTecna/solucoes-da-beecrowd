@@ -4,7 +4,7 @@
 
 ## Solução
 
-Aqui vemos números de 1000 dígitos, números impossíveis de serem representados por variáveis numéricas nas linguagens atuais. Entretanto, ainda podemos e devemos tratar tais números como strings. Com isso, o problema fica bem mais tranquilo, afinal de contas, podemos tirar a substring com os últimos dígitos de A e conferir se são iguais a B. Lembrando que só podemos fazer isso se B não for maior que A, então confira esse caso para seu programa não dar Runtime Error.
+Aqui vemos números de 1000 dígitos, números impossíveis de serem representados por variáveis numéricas nas linguagens atuais. Entretanto, ainda podemos e devemos tratar tais números como _strings_. Com isso, o problema fica bem mais tranquilo, afinal de contas, podemos tirar a substring com os últimos dígitos de `A` e conferir se são iguais a `B`. Lembrando que só podemos fazer isso se `B` não for maior que `A`, então confira esse caso para seu programa não dar _Runtime Error_.
 
 ### C99
 ```c
@@ -59,8 +59,70 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        for(int i = 0; i < N; ++i){
+            string[] numeros = Console.ReadLine().Trim().Split(' ');
+
+            string A = numeros[0];
+            string B = numeros[1];
+
+            if(B.Length > A.Length){
+                Console.WriteLine("nao encaixa");
+            }else{
+                A = A.Substring(A.Length - B.Length);
+                if(A == B){
+                    Console.WriteLine("encaixa");
+                }else{
+                    Console.WriteLine("nao encaixa");
+                }
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            String[] numeros = in.readLine().trim().split(" ");
+
+            String A = numeros[0];
+            String B = numeros[1];
+
+            if(B.length() > A.length()){
+                System.out.println("nao encaixa");
+            }else{
+                A = A.substring(A.length() - B.length());
+
+                if(A.equals(B)){
+                    System.out.println("encaixa");
+                }else{
+                    System.out.println("nao encaixa");
+                }
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -79,7 +141,7 @@ for(let i = 0; i < N; ++i){
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 for _ in range(N):

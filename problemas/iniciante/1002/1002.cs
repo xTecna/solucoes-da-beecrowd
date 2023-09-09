@@ -1,6 +1,6 @@
 using System;
 
-class HelloWorld {
+class URI {
     static void Main(string[] args) {
         const double pi = 3.14159;
         double raio = double.Parse(Console.ReadLine());

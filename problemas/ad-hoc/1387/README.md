@@ -42,8 +42,61 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            List<int> LR = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+
+            int L = LR[0];
+            int R = LR[1];
+
+            if(L == 0 && R == 0){
+                break;
+            }
+
+            Console.WriteLine(L + R);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] LR = in.readLine().trim().split(" ");
+
+            int L = Integer.parseInt(LR[0]);
+            int R = Integer.parseInt(LR[1]);
+
+            if(L == 0 && R == 0){
+                break;
+            }
+
+            System.out.println(L + R);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -57,7 +110,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         L, R = [int(x) for x in input().strip().split(' ')]
