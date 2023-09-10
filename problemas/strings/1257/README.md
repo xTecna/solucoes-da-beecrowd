@@ -4,7 +4,7 @@
 
 ## Solução
 
-Aqui podemos entender que todas as strings passadas formam como se fosse uma matriz, onde cada linha é uma string e cada coluna é uma letra. Entretanto, não temos necessidade de fazer uma matriz completa para esse problema, se só ficarmos com a matriz em mente e entendermos que temos então linha i e coluna j, então podemos organizar direitinho os for que vamos precisar para fazer o cálculo do modo mais fácil possível, usando a [tabela ASCII](../../../base-teorica/strings/ascii/README.md) para calcular rapidamente a posição de cada letra no alfabeto.
+Aqui podemos entender que todas as _strings_ passadas formam como se fosse uma matriz, onde cada linha é uma _string_ e cada coluna é uma letra. Entretanto, não temos necessidade de fazer uma matriz completa para esse problema, se só ficarmos com a matriz em mente e entendermos que temos então linha `i` e coluna `j`, então podemos organizar direitinho os `for` que vamos precisar para fazer o cálculo do modo mais fácil possível, usando a [tabela ASCII](../../../base-teorica/strings/ascii/README.md) para calcular rapidamente a posição de cada letra no alfabeto.
 
 ### C99
 ```c
@@ -66,8 +66,87 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        
+        for(int k = 0; k < N; ++k){
+            int L = int.Parse(Console.ReadLine());
+            
+            int valor = 0;
+            for(int i = 0; i < L; ++i){
+                string frase = Console.ReadLine();
+                
+                for(int j = 0; j < frase.Length; ++j){
+                    valor += frase[j] - 'A' + i + j;
+                }
+            }
+            
+            Console.WriteLine(valor);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+
+        for(int k = 0; k < N; ++k){
+            int L = Integer.parseInt(in.readLine());
+
+            int valor = 0;
+            for(int i = 0; i < L; ++i){
+                String frase = in.readLine();
+
+                for(int j = 0; j < frase.length(); ++j){
+                    valor += frase.charAt(j) - 'A' + i + j;
+                }
+            }
+
+            System.out.println(valor);
+        }
+    }
+}
+```
+
+### JavaScript 12.18
+```js
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.split('\n');
+
+let N = parseInt(lines.shift());
+for(let k = 0; k < N; ++k){
+    let L = parseInt(lines.shift());
+
+    let valor = 0;
+    for(let i = 0; i < L; ++i){
+        let frase = lines.shift().trim();
+
+        for(let j = 0; j < frase.length; ++j){
+            valor += (frase.charCodeAt(j) - 'A'.charCodeAt(0) + i + j);
+        }
+    }
+
+    console.log(valor);
+}
+```
+
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 for _ in range(N):

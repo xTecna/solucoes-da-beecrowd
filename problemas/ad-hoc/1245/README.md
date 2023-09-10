@@ -4,7 +4,7 @@
 
 ## Solução
 
-Como o intervalo de tamanhos de sapato é claramente definido no intervalo `[30, 60]`, é perfeitamente possível contar todos os sapatos usando um vetor de 60 posições (de repente até um de 30, se você se importar de normalizar os tamanhos), num raciocínio muito parecido com o problema [1171 - Frequência de Números](../1171/README.md).
+Como o intervalo de tamanhos de sapato é claramente definido no intervalo $[30, 60]$, é perfeitamente possível contar todos os sapatos usando um vetor de 60 posições (de repente até um de 30, se você se importar de normalizar os tamanhos), num raciocínio muito parecido com o problema [1171 - Frequência de Números](../1171/README.md).
 
 ### Alternativa 1 - Contar quantos sapatos existem de cada par
 
@@ -75,8 +75,77 @@ int main(){
 }
 ```
 
+#### C#
+```cs
+using System;
+using System.Runtime;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+
+            int[,] sapatos = new int[61,2];
+            for(int i = 0; i < N; ++i){
+                string[] sapato = Console.ReadLine().Trim().Split(' ');
+
+                int tamanho = int.Parse(sapato[0]);
+                char lado = sapato[1][0];
+
+                sapatos[tamanho, lado - 'D'] += 1;
+            }
+
+            int pares = 0;
+            for(int i = 30; i < 61; ++i){
+                pares += Math.Min(sapatos[i, 0], sapatos[i, 1]);
+            }
+
+            Console.WriteLine(pares);
+        }
+    }
+}
+```
+
+#### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            int[][] sapatos = new int[61][2];
+            for(int i = 0; i < N; ++i){
+                String[] entrada = in.readLine().trim().split(" ");
+
+                int tamanho = Integer.parseInt(entrada[0]);
+                char lado = entrada[1].charAt(0);
+
+                sapatos[tamanho][lado - 'D'] += 1;
+            }
+
+            int pares = 0;
+            for(int i = 30; i < 61; ++i){
+                pares += Math.min(sapatos[i][0], sapatos[i][1]);
+            }
+
+            System.out.println(pares);
+        }
+    }
+}
+```
+
 #### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -103,7 +172,7 @@ while(lines.length){
 ```
 
 #### Python 3.9
-```python
+```py
 while True:
     try:
         N = int(input())
@@ -203,8 +272,124 @@ int main(){
 }
 ```
 
+#### C#
+```cs
+using System;
+using System.Runtime;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+
+            int pares = 0;
+            int[] sapatos = new int[61];
+            for(int i = 0; i < N; ++i){
+                string[] sapato = Console.ReadLine().Trim().Split(' ');
+
+                int tamanho = int.Parse(sapato[0]);
+                char lado = sapato[1][0];
+                
+                if(lado == 'D'){
+                    if(sapatos[tamanho] < 0){
+                        ++pares;
+                    }
+                    sapatos[tamanho] += 1;
+                }else{
+                    if(sapatos[tamanho] > 0){
+                        ++pares;
+                    }
+                    sapatos[tamanho] -= 1;
+                }
+            }
+
+            Console.WriteLine(pares);
+        }
+    }
+}
+```
+
+#### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            int pares = 0;
+            int[] sapatos = new int[61];
+            for(int i = 0; i < N; ++i){
+                String[] entrada = in.readLine().trim().split(" ");
+
+                int tamanho = Integer.parseInt(entrada[0]);
+                char lado = entrada[1].charAt(0);
+
+                if(lado == 'D'){
+                    if(sapatos[tamanho] < 0){
+                        ++pares;
+                    }
+                    sapatos[tamanho] += 1;
+                }else{
+                    if(sapatos[tamanho] > 0){
+                        ++pares;
+                    }
+                    sapatos[tamanho] -= 1;
+                }
+            }
+
+            System.out.println(pares);
+        }
+    }
+}
+```
+
+#### JavaScript 12.18
+```js
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.trim().split('\n');
+
+let p = 0;
+while(p < lines.length){
+  let N = parseInt(lines[p++]);
+
+  let sapatos = Array(61);
+  for (let i = 0; i < 61; ++i) {
+    sapatos[i] = 0;
+  }
+
+  let pares = 0;
+  for (let i = 0; i < N; ++i) {
+    let [M, L] = lines[p++].trim().split(" ");
+    M = parseInt(M);
+
+    if (L === "D"){
+      if(sapatos[M] < 0){
+        ++pares;
+      }
+      sapatos[M] += 1;
+    }else{
+      if(sapatos[M] > 0){
+        ++pares;
+      }
+      sapatos[M] -= 1;
+    }
+  }
+
+  console.log(pares);
+}
+```
+
 #### Python 3.9
-```python
+```py
 while True:
     try:
         N = int(input())

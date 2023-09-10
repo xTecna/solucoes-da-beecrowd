@@ -6,7 +6,7 @@
 
 Vide problema [1534 - Matriz 123](../1534/README.md) para entender o raciocínio para detectar a diagonal principal, a diagonal secundária e a lógica da ordem das verificações em si.
 
-Aqui vamos focar apenas em descobrir quais valores precisam ser preenchidos pelo valor `1`. Para o valor `1`, o problema nos indica que o quadrado com `1` sempre começa na posição `tamanho/3` tanto na largura quanto na altura. Isso quer dizer que qualquer célula entre `N/3` e `N - N/3` vai ter o valor `1`, em ambas as coordenadas `x` e `y`. Como a posição `N` não existe, então o limite superior não é incluído, mas o `N/3` é sim incluído.
+Aqui vamos focar apenas em descobrir quais valores precisam ser preenchidos pelo valor `1`. Para o valor `1`, o problema nos indica que o quadrado com `1` sempre começa na posição $\frac{N}/{3}$ tanto na largura quanto na altura. Isso quer dizer que qualquer célula entre $\frac{N}{3}$ e $N - \frac{N}{3}$ vai ter o valor `1`, em ambas as coordenadas `x` e `y`. Como a posição $N$ não existe, então o limite superior não é incluído, mas o $\frac{N}{3}$ é sim incluído.
 
 ### C99
 

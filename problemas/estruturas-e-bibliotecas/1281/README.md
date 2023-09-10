@@ -100,8 +100,75 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        
+        for(int k = 0; k < N; ++k){
+            int M = int.Parse(Console.ReadLine());
+            Dictionary<string, double> precos = new Dictionary<string, double>();
+            for(int i = 0; i < M; ++i){
+                string[] entrada = Console.ReadLine().Trim().Split(' ');
+                precos.Add(entrada[0], double.Parse(entrada[1]));
+            }
+            
+            double total = 0.0;
+            int P = int.Parse(Console.ReadLine());
+            for(int i = 0; i < P; ++i){
+                string[] entrada = Console.ReadLine().Trim().Split(' ');
+                total += precos[entrada[0]] * int.Parse(entrada[1]);
+            }
+            
+            Console.WriteLine($"R$ {total:0.00}");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            for(int k = 0; k < N; ++k){
+                int M = Integer.parseInt(in.readLine());
+                HashMap<String, Double> precos = new HashMap<String, Double>();
+                for(int i = 0; i < M; ++i){
+                    String[] entrada = in.readLine().trim().split(" ");
+                    precos.put(entrada[0], Double.parseDouble(entrada[1]));
+                }
+
+                int P = Integer.parseInt(in.readLine());
+                double total = 0;
+                for(int i = 0; i < P; ++i){
+                    String[] entrada = in.readLine().trim().split(" ");
+                    total += precos.get(entrada[0]) * Integer.parseInt(entrada[1]);
+                }
+
+                System.out.printf("R$ %.2f\n", total);
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -131,7 +198,7 @@ for(let k = 0; k < N; ++k){
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 for _ in range(N):
@@ -153,5 +220,4 @@ for _ in range(N):
         resposta += int(quantidade) * precos[fruta]
 
     print(f'R$ {resposta:.2f}')
-
 ```

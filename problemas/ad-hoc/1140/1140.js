@@ -6,6 +6,10 @@ lines.pop();
 while (lines.length) {
     let frase = lines.shift();
 
+    if(frase === '*'){
+        break;
+    }
+
     let palavras = frase.trim().split(' ');
     let letra = frase[0].toLowerCase();
 

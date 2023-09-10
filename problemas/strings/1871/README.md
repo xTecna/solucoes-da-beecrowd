@@ -4,7 +4,7 @@
 
 ## Solução
 
-O problemsetter desse problema nos fez um grande favor: ele já deixou claro que os números a serem somados não terão zero, ou seja, só precisamos tirar o zero do resultado da soma. Com isso, podemos transformar a soma em string e retirar todos os zeros presentes no resultado. Em cada linguagem eu lido com isso de uma maneira diferente, confira como eu fiz na sua linguagem escolhida.
+O _problemsetter_ desse problema nos fez um grande favor: ele já deixou claro que os números a serem somados não terão zero, ou seja, só precisamos tirar o zero do resultado da soma. Com isso, podemos transformar a soma em _string_ e retirar todos os zeros presentes no resultado. Em cada linguagem eu lido com isso de uma maneira diferente, confira como eu fiz na sua linguagem escolhida.
 
 ### C99
 ```c
@@ -75,8 +75,64 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            List<int> NM = entrada.Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+
+            if(NM[0] == 0 && NM[1] == 0){
+                break;
+            }
+
+            string soma = (NM[0] + NM[1]).ToString();
+            soma = soma.Replace("0", "");
+
+            Console.WriteLine(soma);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] NM = in.readLine().trim().split(" ");
+
+            int N = Integer.parseInt(NM[0]);
+            int M = Integer.parseInt(NM[1]);
+
+            if(N == 0 && M == 0){
+                break;
+            }
+
+            String soma = String.format("%d", N + M);
+            soma = soma.replace("0", "");
+
+            System.out.println(soma);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -93,7 +149,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         M, N = [int(x) for x in input().strip().split(' ')]

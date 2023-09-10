@@ -1,6 +1,6 @@
 # Problemas
 
-## Iniciante (228/336)
+## Iniciante (230/336)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -226,7 +226,9 @@
 * [2752 - Saída 6](./iniciante/2752/README.md)
 * [2753 - Saída 7](./iniciante/2753/README.md)
 * [2754 - Saída 8](./iniciante/2754/README.md)
+* [2755 - Saída 9](./iniciante/2755/README.md)
 * [2756 - Saída 10](./iniciante/2756/README.md)
+* [2763 - Entrada e Saída CPF](./iniciante/2763/README.md)
 * [2764 - Entrada e Saída de Data](./iniciante/2764/README.md)
 * [2780 - Basquete de Robôs](./iniciante/2780/README.md)
 
@@ -402,7 +404,7 @@
 ## Geometria computacional (1/82)
 * [1039 - Flores de Fogo](./geometria-computacional/1039/README.md)
 
-## SQL (13/46)
+## SQL (20/46)
 * [2602 - Select Básico](./sql/2602/README.md)
 * [2603 - Endereço dos Clientes](./sql/2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./sql/2604/README.md)
@@ -416,3 +418,10 @@
 * [2613 - Filmes em Promoção](./sql/2613/README.md)
 * [2614 - Locações de Setembro](./sql/2614/README.md)
 * [2615 - Expandindo o Negocio](./sql/2615/README.md)
+* [2616 - Nenhuma Locação](./sql/2616/README.md)
+* [2617 - Fornecedor Ajax SA](./sql/2617/README.md)
+* [2618 - Produtos Importados](./sql/2618/README.md)
+* [2619 - Super Luxo](./sql/2619/README.md)
+* [2621 - Quantidades Entre 10 e 20](./sql/2621/README.md)
+* [2622 - Pessoas Jurídicas](./sql/2622/README.md)
+* [2624 - Quantidades de Cidades por Clientes](./2624/README.md)

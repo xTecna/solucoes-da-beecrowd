@@ -78,8 +78,76 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            if(entrada == "*"){
+                break;
+            }
+            
+            string[] palavras = entrada.Trim().ToLower().Split(' ');
+            
+            char letra = palavras[0][0];
+            bool tautograma = palavras.All(x => x[0] == letra);
+            
+            if(tautograma){
+                Console.WriteLine("Y");
+            }else{
+                Console.WriteLine("N");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String frase = in.readLine().toLowerCase();
+
+            if(frase.equals("*")){
+                break;
+            }
+
+            String[] palavras = frase.split(" ");
+            char letra = palavras[0].charAt(0);
+
+            boolean tautograma = true;
+            for(int i = 0; i < palavras.length; ++i){
+                if(palavras[i].charAt(0) != letra){
+                    tautograma = false;
+                    break;
+                }
+            }
+
+            if(tautograma){
+                System.out.println("Y");
+            }else{
+                System.out.println("N");
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -87,6 +155,10 @@ lines.pop();
 
 while (lines.length) {
     let frase = lines.shift();
+
+    if(frase === '*'){
+        break;
+    }
 
     let palavras = frase.trim().split(' ');
     let letra = frase[0].toLowerCase();
@@ -97,7 +169,7 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         frase = input().strip()

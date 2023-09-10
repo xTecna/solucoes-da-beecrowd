@@ -8,7 +8,14 @@ O círculo da flor deve estar todo dentro do círculo do caçador. Para isso aco
 
 ![Esquematização de um caso onde o círculo da flor está dentro do círculo do caçador: a distância mais o raio da flor é menor do que o raio do caçador](../../../assets/1039.png)
 
-Logo, temos que para que o círculo da flor esteja dentro do círculo do caçador (que na fórmula botamos homem porque não dá pra escrever cedilha), $dist(C_{flor}, C_{homem}) + R_{flor} \leq R_{homem} \Rightarrow dist(C_{flor}, C_{homem}) \leq R_{homem} - R_{flor}$ precisa ser verdade.
+Logo, temos que, para que o círculo da flor esteja dentro do círculo do caçador (que na fórmula botamos $_{homem}$ porque não dá pra escrever cedilha),
+
+$$\begin{split}
+dist(C_{flor}, C_{homem}) + R_{flor} & \leq R_{homem} \\
+dist(C_{flor}, C_{homem}) & \leq R_{homem} - R_{flor}
+\end{split}$$
+
+precisa ser verdade.
 
 ### C99
 
