@@ -4,107 +4,11 @@
 
 ## Solução
 
-Independente da alternativa que você escolher para resolver o problema, é importante notar que duas posições do conector só podem ser compatíveis se em uma delas tiver um plugue e em outra uma tomada. Isso é a cara do ou exclusivo, onde dá verdadeiro se um e somente um dos valores é 1.
+É importante notar que duas posições do conector só podem ser compatíveis se em uma delas tiver um plugue e em outra uma tomada. Isso é a cara do ou exclusivo, onde dá verdadeiro se um e somente um dos valores é 1.
 
-### Alternativa 1 - Simulação
+Com isso, podemos transformar os dois conectores em números binários e fazer a comparação apenas uma vez, onde o objetivo é que a operação ou exclusivo dê verdadeiro nas cinco posições. Com isso, o resultado procurado é 11111, que na base 10 é igual a 31.
 
-Para fazer a simulação, basta representar os conectores como um vetor e depois verificar cada posição, no primeiro caso de conectores iguais pode-se descartar a pesquisa e apresentar o veredito.
-
-#### C99
-```c
-#include <stdio.h>
-
-int main(){
-    int X[5], Y[5];
-    int compativel;
-
-    for(int i = 0; i < 5; ++i){
-        scanf("%d", &X[i]);
-    }
-    for(int i = 0; i < 5; ++i){
-        scanf("%d", &Y[i]);
-    }
-
-    compativel = 1;
-    for(int i = 0; i < 5; ++i){
-        if(X[i] == Y[i]){
-            compativel = 0;
-            break;
-        }
-    }
-
-    printf("%c\n", compativel ? 'Y' : 'N');
-
-    return 0;
-}
-```
-
-#### C++17
-```cpp
-#include <iostream>
-
-using namespace std;
-
-int main(){
-    int X[5], Y[5];
-    bool compativel;
-
-    for(int i = 0; i < 5; ++i){
-        cin >> X[i];
-    }
-    for(int i = 0; i < 5; ++i){
-        cin >> Y[i];
-    }
-
-    compativel = true;
-    for(int i = 0; i < 5; ++i){
-        if(X[i] == Y[i]){
-            compativel = false;
-            break;
-        }
-    }
-
-    cout << (compativel ? 'Y' : 'N') << endl;
-
-    return 0;
-}
-```
-
-#### JavaScript 12.18
-```javascript
-let input = require('fs').readFileSync('/dev/stdin', 'utf8');
-let lines = input.split('\n');
-
-let X = lines.shift().trim().split(' ').map((x) => parseInt(x));
-let Y = lines.shift().trim().split(' ').map((x) => parseInt(x));
-
-let conectores = [];
-for(let i = 0; i < 5; ++i){
-    conectores.push([X[i], Y[i]]);
-}
-
-console.log(conectores.every((x) => x[0] !== x[1]) ? 'Y' : 'N');
-```
-
-#### Python 3.9
-```python
-X = [int(x) for x in input().strip().split(' ')]
-Y = [int(x) for x in input().strip().split(' ')]
-
-compativel = True
-for i in range(5):
-    if(X[i] == Y[i]):
-        compativel = False
-        break
-
-print('Y' if compativel else 'N')
-```
-
-### Alternativa 2 - Mexer com números binários
-
-Nessa alternativa, acreditamos ser mais interessante transformar os dois conectores em números binários e fazer a comparação apenas uma vez, onde o objetivo é que a operação ou exclusivo dê verdadeiro nas cinco posições. Com isso, o resultado procurado é 11111, que na base 10 é igual a 31.
-
-#### C99
+### C99
 ```c
 #include <stdio.h>
 
@@ -131,7 +35,7 @@ int main(){
 }
 ```
 
-#### C++17
+### C++17
 ```cpp
 #include <iostream>
 
@@ -160,8 +64,73 @@ int main(){
 }
 ```
 
-#### JavaScript 12.18
-```javascript
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        int X = 0;
+        List<int> Xs = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+        for(int i = 0; i < 5; ++i){
+            X *= 2;
+            X += Xs[i];
+        }
+        
+        int Y = 0;
+        List<int> Ys = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+        for(int i = 0; i < 5; ++i){
+            Y *= 2;
+            Y += Ys[i];
+        }
+        
+        if((X ^ Y) == 31){
+            Console.WriteLine("Y");
+        }else{
+            Console.WriteLine("N");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int X = 0;
+        String[] Xs = in.readLine().trim().split(" ");
+        for(int i = 0; i < 5; ++i){
+            X *= 2;
+            X += Integer.parseInt(Xs[i]);
+        }
+
+        int Y = 0;
+        String[] Ys = in.readLine().trim().split(" ");
+        for(int i = 0; i < 5; ++i){
+            Y *= 2;
+            Y += Integer.parseInt(Ys[i]);
+        }
+
+        if((X ^ Y) == 31){
+            System.out.println("Y");
+        }else{
+            System.out.println("N");
+        }
+    }
+}
+```
+
+### JavaScript 12.18
+```js
 let input = require('fs').readFileSync('/dev/stdin', 'utf8');
 let lines = input.split('\n');
 
@@ -171,8 +140,8 @@ Y = parseInt(lines[1].trim().split(' ').join(''), 2);
 console.log(`${(X ^ Y) == 31 ? 'Y' : 'N'}`);
 ```
 
-#### Python 3.9
-```python
+### Python 3.9
+```py
 X = int(''.join(input().strip().split(' ')), 2)
 Y = int(''.join(input().strip().split(' ')), 2)
 

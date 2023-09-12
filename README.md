@@ -8,17 +8,17 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria | Documentados | Total de problemas |
 | -- | -- | -- |
-| [Iniciante](./problemas/iniciante/README.md) | 228 | 336 |
-| [Ad-Hoc](./problemas/ad-hoc/README.md) | 83 | 850 |
-| [Strings](./problemas/strings/README.md) | 15 | 148 |
+| [Iniciante](./problemas/iniciante/README.md) | 233 | 336 |
+| [Ad-Hoc](./problemas/ad-hoc/README.md) | 82 | 850 |
+| [Strings](./problemas/strings/README.md) | 24 | 148 |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) | 18 | 179 |
 | [Matemática](./problemas/matematica/README.md) | 27 | 269 |
-| [Paradigmas](./problemas/paradigmas/README.md) | 7 | 215 |
+| [Paradigmas](./problemas/paradigmas/README.md) | 9 | 215 |
 | Grafos | 0 | 277 |
-| Geometria Computacional | 1 | 82 |
-| SQL | 0 | 46 |
+| [Geometria Computacional](./problemas/geometria-computacional/README.md) | 1 | 82 |
+| [SQL](./problemas/sql/README.md) | 22 | 46 |
 | | | |
-| Total | 376 | 2402 |
+| Total | 416 | 2402 |
 
 ## Aqui tem material teórico?
 
@@ -30,19 +30,26 @@ A intenção deste repositório é abarcar todas as principais linguagens dispon
 
 | Linguagem  | Cobertura |
 | -- | -- |
-| C | ✅ |
-| C++ | ✅ |
-| Java | ✅ |
-| Python | ✅ |
-| Ruby | ❌ |
 | C# | ✅ |
-| Scala | ❌ |
-| Lua | ❌ |
-| JavaScript | ✅ |
-| Go | ❌ |
-| Kotlin | ❌ |
-| Haskell | ❌ |
-| Ocaml | ❌ |
-| Pascal| ❌ |
+| C++ | ✅ |
+| C | ✅ |
+| Clojure | ❌ |
+| Dart | ❌ |
 | Elixir | ❌ |
+| Go | ❌ |
+| Haskell | ❌ |
+| Java | ✅ |
+| JavaScript | ✅ |
+| Julia | ❌ |
+| Kotlin | ❌ |
+| Lua | ❌ |
+| OCaml | ❌ |
+| Pascal | ❌ |
+| PHP | ❌ |
+| Python | ✅ |
+| R | ❌ |
+| Ruby | ❌ |
+| Rust | ❌ |
+| Scala | ❌ |
 | Swift | ❌ |
+| TypeScript | ❌ |

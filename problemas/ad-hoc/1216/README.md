@@ -60,8 +60,54 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        int pessoas = 0;
+        double media = 0.0;
+        while((entrada = Console.ReadLine()) != null){
+            media += int.Parse(Console.ReadLine());
+            pessoas += 1;
+        }
+        
+        media /= pessoas;
+        Console.WriteLine($"{media:N1}");
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int pessoas = 0;
+        double media = 0.0;
+        while(in.ready()){
+            String nome = in.readLine();
+            media += Double.parseDouble(in.readLine());
+            pessoas += 1;
+        }
+
+        media /= pessoas;
+        System.out.printf("%.1f\n", media);
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -72,7 +118,7 @@ console.log(resultado.toFixed(1));
 ```
 
 ### Python 3.9
-```python
+```py
 media, pessoas = 0, 0
 
 while True:

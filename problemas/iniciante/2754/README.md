@@ -4,10 +4,9 @@
 
 ## Solução
 
-Nada te impede de só copiar a saída e mandar imprimir, mas aqui eu quis fazer bonitinho, pegando os formatos para imprimir do jeito que o problema quer.
+Nada te impede de só copiar a saída e mandar imprimir. Para C e Python, eu fiz o código direitinho do jeito que o problema esperava.
 
 ### C99
-
 ```c
 #include <stdio.h>
 
@@ -29,8 +28,80 @@ int main()
 }
 ```
 
-### Python 3.9
+### C++20
+```cpp
+#include <iostream>
 
+using namespace std;
+
+int main()
+{
+    cout << "234.345000 - 45.698000" << endl;
+    cout << "234 - 46" << endl;
+    cout << "234.3 - 45.7" << endl;
+    cout << "234.34 - 45.70" << endl;
+    cout << "234.345 - 45.698" << endl;
+    cout << "2.343450e+02 - 4.569800e+01" << endl;
+    cout << "2.343450E+02 - 4.569800E+01" << endl;
+    cout << "234.345 - 45.698" << endl;
+    cout << "234.345 - 45.698" << endl;
+
+    return 0;
+}
+```
+
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        Console.WriteLine("234.345000 - 45.698000");
+        Console.WriteLine("234 - 46");
+        Console.WriteLine("234.3 - 45.7");
+        Console.WriteLine("234.34 - 45.70");
+        Console.WriteLine("234.345 - 45.698");
+        Console.WriteLine("2.343450e+02 - 4.569800e+01");
+        Console.WriteLine("2.343450E+02 - 4.569800E+01");
+        Console.WriteLine("234.345 - 45.698");
+        Console.WriteLine("234.345 - 45.698");
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        System.out.println("234.345000 - 45.698000");
+        System.out.println("234 - 46");
+        System.out.println("234.3 - 45.7");
+        System.out.println("234.34 - 45.70");
+        System.out.println("234.345 - 45.698");
+        System.out.println("2.343450e+02 - 4.569800e+01");
+        System.out.println("2.343450E+02 - 4.569800E+01");
+        System.out.println("234.345 - 45.698");
+        System.out.println("234.345 - 45.698");
+    }
+}
+```
+
+### JavaScript 12.18
+```js
+console.log("234.345000 - 45.698000");
+console.log("234 - 46");
+console.log("234.3 - 45.7");
+console.log("234.34 - 45.70");
+console.log("234.345 - 45.698");
+console.log("2.343450e+02 - 4.569800e+01");
+console.log("2.343450E+02 - 4.569800E+01");
+console.log("234.345 - 45.698");
+console.log("234.345 - 45.698");
+```
+
+### Python 3.9
 ```py
 v1, v2 = 234.345, 45.698
 

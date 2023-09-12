@@ -4,9 +4,9 @@
 
 ## Solução
 
-A quantidade de números presentes numa sequência até `N` é a [soma de uma progressão aritmética](../../../base-teorica/matematica/progressoes/README.md#soma-dos-termos-de-a1-até-an-de-uma-progressão-aritmética) que vai de 1 até `N` de razão 1 mais um. Isso acontece porque cada número é repetido seu próprio número de vezes, então temos um 1, dois 2, três 3, etc. Além disso, contamos mais um porque também temos um 0.
+A quantidade de números presentes numa sequência até $N$ é a [soma de uma progressão aritmética](../../../base-teorica/matematica/progressoes/README.md#soma-dos-termos-de-a1-até-an-de-uma-progressão-aritmética) que vai de $1$ até $N$ de razão $1$ mais um. Isso acontece porque cada número é repetido seu próprio número de vezes, então temos um $1$, dois $2$, três $3$, etc. Além disso, contamos mais um porque também temos um $0$.
 
-Já para imprimir a sequência completa, é uma boa imprimir o zero primeiro e depois imprimir o resto dos números usando dois _loop_ aninhados com um espaço na frente do número a ser impresso.
+Já para imprimir a sequência completa, é uma boa imprimir o zero primeiro e depois imprimir o resto dos números usando dois _loops_ aninhados com um espaço na frente do número a ser impresso.
 
 ### C99
 

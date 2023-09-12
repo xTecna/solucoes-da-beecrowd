@@ -4,7 +4,7 @@
 
 ## Solução
 
-Para este problema, você pode usar um conjunto para acrescentar as letras, e apenas as letras, de cada frase e contar quantos elementos tem ao final para definir se a frase é completa, quase completa ou mal elaborada. Caso sua linguagem não tenha suporte a conjuntos, nada que um mapeamento em um vetor de 26 posições usando a [tabela ASCII](../base-teorica/strings/tabela-ascii.md) não resolva.
+Para este problema, você pode usar um conjunto para acrescentar as letras, e apenas as letras, de cada frase e contar quantos elementos tem ao final para definir se a frase é completa, quase completa ou mal elaborada. Caso sua linguagem não tenha suporte a conjuntos, nada que um mapeamento em um vetor de 26 posições usando a [tabela ASCII](../../../base-teorica/strings/ascii/README.md) não resolva.
 
 ### C99
 ```c
@@ -77,8 +77,74 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+
+        for(int i = 0; i < N; ++i){
+            string frase = Console.ReadLine();
+
+            HashSet<char> letras = new HashSet<char>();
+            for(int j = 0; j < frase.Length; ++j){
+                if(char.IsLetter(frase[j])){
+                    letras.Add(frase[j]);
+                }
+            }
+
+            if(letras.Count == 26){
+                Console.WriteLine("frase completa");
+            }else if(letras.Count >= 13){
+                Console.WriteLine("frase quase completa");
+            }else{
+                Console.WriteLine("frase mal elaborada");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            String frase = in.readLine();
+
+            HashSet<Character> letras = new HashSet<Character>();
+            for(int j = 0; j < frase.length(); ++j){
+                if(Character.isAlphabetic(frase.charAt(j))){
+                    letras.add(frase.charAt(j));
+                }
+            }
+
+            if(letras.size() == 26){
+                System.out.println("frase completa");
+            }else if(letras.size() >= 13){
+                System.out.println("frase quase completa");
+            }else{
+                System.out.println("frase mal elaborada");
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -100,7 +166,7 @@ for(let k = 0; k < N; ++k){
 ```
 
 ### Python 2.7
-```python
+```py
 N = int(input())
 
 for _ in range(N):

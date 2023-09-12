@@ -3,7 +3,6 @@
 int main(){
     char comando;
     int N, direcao;
-    char direcoes[4] = {'N', 'L', 'S', 'O'};
 
     while(scanf("%d\n", &N)){
         if(!N)  break;
@@ -12,11 +11,23 @@ int main(){
         for(int i = 0; i < N; ++i){
             scanf("%c", &comando);
 
-            direcao += (comando == 'D') ? 1 : -1;
-            direcao = (direcao + 4) % 4;
+            if(comando == 'D'){
+                direcao = (direcao + 1) % 4;
+            }else{
+                direcao = ((direcao - 1) + 4) % 4;
+            }
         }
 
-        printf("%c\n", direcoes[direcao]);
+        switch(direcao){
+            case 0: printf("N\n");
+                    break;
+            case 1: printf("L\n");
+                    break;
+            case 2: printf("S\n");
+                    break;
+            case 3: printf("O\n");
+                    break;
+        }
     }
 
     return 0;

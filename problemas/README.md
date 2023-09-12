@@ -1,6 +1,6 @@
 # Problemas
 
-## Iniciante (230/336)
+## Iniciante (233/336)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -228,11 +228,14 @@
 * [2754 - Saída 8](./iniciante/2754/README.md)
 * [2755 - Saída 9](./iniciante/2755/README.md)
 * [2756 - Saída 10](./iniciante/2756/README.md)
+* [2759 - Entrada e Saída de Carácter](./iniciante/2759/README.md)
 * [2763 - Entrada e Saída CPF](./iniciante/2763/README.md)
 * [2764 - Entrada e Saída de Data](./iniciante/2764/README.md)
+* [2766 - Entrada e Saída Lendo e Pulando Nomes](./iniciante/2766/README.md)
 * [2780 - Basquete de Robôs](./iniciante/2780/README.md)
+* [2987 - Balão de Honra](./iniciante/2987/README.md)
 
-## Ad-hoc (83/850)
+## Ad-hoc (82/850)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./ad-hoc/1030/README.md)
 * [1031 - Crise de Energia](./ad-hoc/1031/README.md)
@@ -294,7 +297,6 @@
 * [1940 - Jogo da Estratégia](./ad-hoc/1940/README.md)
 * [1943 - Top N](./ad-hoc/1943/README.md)
 * [2058 - Triângulos e Polígonos Regulares](./ad-hoc/2058/README.md)
-* [2137 - A Biblioteca do Senhor Severino](./ad-hoc/2137/README.md)
 * [2339 - Aviões de Papel](./ad-hoc/2339/README.md)
 * [2373 - Garçom](./ad-hoc/2373/README.md)
 * [2374 - Pneu](./ad-hoc/2374/README.md)
@@ -317,7 +319,7 @@
 * [3227 - Doorman](./ad-hoc/3227/README.md)
 * [3263 - Apague Com Segurança](./ad-hoc/3263/README.md)
 
-## [Strings (15/148)](./strings/README.md)
+## [Strings (24/148)](./strings/README.md)
 * [1024 - Criptografia](./strings/1024/README.md)
 * [1120 - Revisão de Contrato](./strings/1120/README.md)
 * [1168 - LED](./strings/1168/README.md)
@@ -339,6 +341,7 @@
 * [1871 - Zero vale Zero](./strings/1871/README.md)
 * [1873 - Pedra-papel-tesoura-lagarto-Spock](./strings/1873/README.md)
 * [2062 - OBI URI](./strings/2062/README.md)
+* [2137 - A Biblioteca do Senhor Severino](./strings/2137/README.md)
 * [2242 - Huaauhahhuahau](./strings/2242/README.md)
 * [2253 - Validador de Senhas](./strings/2253/README.md)
 
@@ -404,7 +407,7 @@
 ## Geometria computacional (1/82)
 * [1039 - Flores de Fogo](./geometria-computacional/1039/README.md)
 
-## SQL (20/46)
+## SQL (22/46)
 * [2602 - Select Básico](./sql/2602/README.md)
 * [2603 - Endereço dos Clientes](./sql/2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./sql/2604/README.md)
@@ -422,6 +425,8 @@
 * [2617 - Fornecedor Ajax SA](./sql/2617/README.md)
 * [2618 - Produtos Importados](./sql/2618/README.md)
 * [2619 - Super Luxo](./sql/2619/README.md)
+* [2620 - Pedidos no Primeiro Semestre](./sql/2620/README.md)
 * [2621 - Quantidades Entre 10 e 20](./sql/2621/README.md)
 * [2622 - Pessoas Jurídicas](./sql/2622/README.md)
+* [2623 - Categorias com Vários Produtos](./sql/2623/README.md)
 * [2624 - Quantidades de Cidades por Clientes](./2624/README.md)

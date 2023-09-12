@@ -4,9 +4,9 @@
 
 ## Solução
 
-> Infelizmente não temos a implementação em Python deste problema.
-
 Confira a função `temSabre` para ver como eu usei dois _loops_ para percorrer todas as casas vizinhas de um determinado quadrado. Também note que eu só procuro sabre nos quadrados fora das bordas, os _loops_ vão da posição $1$ até $N - 2$ inclusive.
+
+> Python nos forçou a implementar a função `temSabre` de uma forma mais eficiente para passar no tempo limite estipulado.
 
 ### C99
 
@@ -284,4 +284,39 @@ for (let i = 1; i < N - 1; ++i) {
 }
 
 console.log(`${x} ${y}`);
+```
+
+### Python 3.9
+
+```py
+mapa = []
+
+
+def temSabre(x, y):
+    if(mapa[x][y] != 42):
+        return False
+
+    for i in range(-1, 2):
+        for j in range(-1, 2):
+            if(i == 0 and j == 0):
+                continue
+
+            if(mapa[x + i][y + j] != 7):
+                return False
+
+    return True
+
+
+N, M = [int(x) for x in input().strip().split(' ')]
+for _ in range(N):
+    mapa.append([int(x) for x in input().strip().split(' ')])
+
+x, y = 0, 0
+for i in range(1, N - 1):
+    for j in range(1, M - 1):
+        if(temSabre(i, j)):
+            x, y = i + 1, j + 1
+            break
+
+print(f'{x} {y}')
 ```

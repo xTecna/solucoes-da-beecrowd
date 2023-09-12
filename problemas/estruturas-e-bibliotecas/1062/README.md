@@ -14,7 +14,7 @@ A pilha da direção A vai começar com os valores na ordem em que estão sendo 
 
 A pilha da estação vai ser utilizada caso nós não consigamos passar o vagão direto da direção A para a direção B, então ela começa vazia.
 
-A pilha da direção B vai começar com os valores na ordem em que desejamos que os vagões saiam, ou seja, na ordem inversa: primeiro saindo o vagão `N`, depois o `N - 1`, e assim por diante até o `1`. Podemos fazer isso colocando os números de `1` a `N` na pilha de forma a representar a ordem desejada dos vagões corretamente.
+A pilha da direção B vai começar com os valores na ordem em que desejamos que os vagões saiam, ou seja, na ordem inversa: primeiro saindo o vagão $N$, depois o $N - 1$, e assim por diante até o $1$. Podemos fazer isso colocando os números de $1$ a $N$ na pilha de forma a representar a ordem desejada dos vagões corretamente.
 
 Com essas três pilhas arrumadas, vamos então seguir o seguinte algoritmo:
 
@@ -29,7 +29,9 @@ Se tudo der certo, vamos repetir esses passos até que todas as pilhas se esvazi
 * Não tem vagão na pilha A e o topo da pilha da estação é diferente do topo da pilha B;
 * Não tem vagão nem na pilha A nem na pilha da estação, mas ainda tem vagão na pilha B.
 
-Estes dois casos são casos onde é  impossível organizar os vagões na ordem pedida.
+Estes dois casos são casos onde é impossível organizar os vagões na ordem pedida.
+
+> Infelizmente não temos solução em Java no momento.
 
 ### C99
 ```c
@@ -203,8 +205,67 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+            
+            if(N == 0){
+                break;
+            }
+            
+            entrada = Console.ReadLine();
+            while(entrada != "0"){
+                List<int> trens = entrada.Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+                
+                Stack<int> A = new Stack<int>();
+                Stack<int> B = new Stack<int>();
+                Stack<int> estacao = new Stack<int>();
+                for(int i = 0; i < N; ++i){
+                    A.Push(trens[i]);
+                    B.Push(i + 1);
+                }
+                
+                while(A.Count > 0 || B.Count > 0 || estacao.Count > 0){
+                    if(A.Count > 0 && B.Count > 0 && A.Peek() == B.Peek()){
+                        A.Pop();
+                        B.Pop();
+                    }else if(estacao.Count > 0 && B.Count > 0 && estacao.Peek() == B.Peek()){
+                        estacao.Pop();
+                        B.Pop();
+                    }else if(A.Count > 0){
+                        estacao.Push(A.Peek());
+                        A.Pop();
+                    }else{
+                        break;
+                    }
+                }
+                
+                if(A.Count == 0 && B.Count == 0 && estacao.Count == 0){
+                    Console.WriteLine("Yes");
+                }else{
+                    Console.WriteLine("No");
+                }
+                
+                entrada = Console.ReadLine();
+            }
+            
+            Console.WriteLine("");
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -278,7 +339,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 from collections import deque
 
 def top(pilha):

@@ -990,3 +990,5 @@ def comp(aluno):
 * [1244 - Ordenação por Tamanho](../../../problemas/estruturas-e-bibliotecas/1244/README.md)
 * [1259 - Pares e Ímpares](../../../problemas/estruturas-e-bibliotecas/1259/README.md)
 * [1548 - Fila do Recreio](../../../problemas/estruturas-e-bibliotecas/1548/README.md)
+* [2137 - A Biblioteca do Senhor Severino](../../../problemas/strings/2137/README.md)
+* [2311 - Saltos Ornamentais](../../../problemas/iniciante/2311/README.md)

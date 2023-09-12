@@ -64,8 +64,82 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            List<int> numeros = entrada.Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            
+            int N = numeros[0];
+            int M = numeros[1];
+            
+            if(N == 0 && M == 0){
+                break;
+            }
+            
+            int repetidos = 0;
+            int[] bilhetes = new int[N + 1];
+            numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            for(int i = 0; i < M; ++i){
+                bilhetes[numeros[i]] += 1;
+                if(bilhetes[numeros[i]] == 2){
+                    ++repetidos;
+                }
+            }
+            
+            Console.WriteLine(repetidos);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] numeros = in.readLine().trim().split(" ");
+
+            int N = Integer.parseInt(numeros[0]);
+            int M = Integer.parseInt(numeros[1]);
+
+            if(N == 0 && M == 0){
+                break;
+            }
+
+            int repetidos = 0;
+            int[] contador = new int[N + 1];
+            String[] bilhetes = in.readLine().trim().split(" ");
+            for(int i = 0; i < M; ++i){
+                int bilhete = Integer.parseInt(bilhetes[i]);
+                contador[bilhete] += 1;
+                if(contador[bilhete] == 2){
+                    ++repetidos;
+                }
+            }
+
+            System.out.println(repetidos);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -91,7 +165,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         N, M = [int(x) for x in input().strip().split(' ')]

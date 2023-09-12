@@ -1,25 +1,26 @@
 #include <stdio.h>
 
-int main(){
-    int X[5], Y[5];
-    int compativel;
+int main()
+{
+    int X, Y, a;
 
-    for(int i = 0; i < 5; ++i){
-        scanf("%d", &X[i]);
-    }
-    for(int i = 0; i < 5; ++i){
-        scanf("%d", &Y[i]);
-    }
-
-    compativel = 1;
-    for(int i = 0; i < 5; ++i){
-        if(X[i] == Y[i]){
-            compativel = 0;
-            break;
-        }
+    X = 0;
+    for (int i = 0; i < 5; ++i)
+    {
+        scanf("%d", &a);
+        X *= 2;
+        X += a;
     }
 
-    printf("%c\n", compativel ? 'Y' : 'N');
+    Y = 0;
+    for (int i = 0; i < 5; ++i)
+    {
+        scanf("%d", &a);
+        Y *= 2;
+        Y += a;
+    }
+
+    printf("%c\n", (X ^ Y) == 31 ? 'Y' : 'N');
 
     return 0;
 }

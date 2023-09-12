@@ -4,7 +4,7 @@
 
 ## Solução
 
-Perceba que o resultado para cada quadrado `N x N` é a soma de todos os quadrados entre `1` e `N`, ou seja, `F(2) = 1 + 4 = 5` e `F(8) = 1 + 4 + 9 + 16 + 25 + 36 + 49 + 64 = 204`. Use memorização para guardar os resultados de cada soma para não precisar calcular novamente.
+Perceba que o resultado para cada quadrado $N \times N$ é a soma de todos os quadrados entre $1$ e $N$, ou seja, $F(2) = 1 + 4 = 5$ e $F(8) = 1 + 4 + 9 + 16 + 25 + 36 + 49 + 64 = 204$. Em outras palavras, podemos usar a recorrência $F(N) = F(N - 1) + N^{2}$ com caso base $F(2) = 1$. Use memorização para guardar os resultados de cada soma para não precisar calcular novamente.
 
 ### C99
 ```c
@@ -76,8 +76,75 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static int[] F = new int[101];
+    
+    static int Feynman(int n){
+        if(F[n] == 0){
+            F[n] = Feynman(n - 1) + n * n;
+        }
+        return F[n];
+    }
+    
+    static void Main(string[] args) {
+        string entrada;
+        
+        F[1] = 1;
+        
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+            
+            if(N == 0){
+                break;
+            }
+            
+            Console.WriteLine(Feynman(N));
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static int[] F = new int[101];
+
+    public static int Feynman(int n){
+        if(F[n] == 0){
+            F[n] = Feynman(n - 1) + n * n;
+        }
+        return F[n];
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        F[1] = 1;
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            if(N == 0){
+                break;
+            }
+
+            System.out.println(Feynman(N));
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -100,7 +167,7 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-```python
+```py
 F = [0 for _ in range(101)]
 F[1] = 1
 

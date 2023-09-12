@@ -11,8 +11,10 @@ while True:
 
         direcao = 0
         for comando in comandos:
-            direcao += 1 if comando == 'D' else -1
-            direcao = (direcao + 4) % 4
+            if comando == 'D':
+                direcao = (direcao + 1) % 4
+            else:
+                direcao = ((direcao - 1) + 4) % 4
 
         print(direcoes[direcao])
     except EOFError:

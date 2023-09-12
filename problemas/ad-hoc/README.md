@@ -1,4 +1,4 @@
-## Ad-hoc (83/850)
+## Ad-hoc (82/850)
 * [1026 - Carrega ou não Carrega?](./1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./1030/README.md)
 * [1031 - Crise de Energia](./1031/README.md)
@@ -60,7 +60,6 @@
 * [1940 - Jogo da Estratégia](./1940/README.md)
 * [1943 - Top N](./1943/README.md)
 * [2058 - Triângulos e Polígonos Regulares](./2058/README.md)
-* [2137 - A Biblioteca do Senhor Severino](./2137/README.md)
 * [2339 - Aviões de Papel](./2339/README.md)
 * [2373 - Garçom](./2373/README.md)
 * [2374 - Pneu](./2374/README.md)

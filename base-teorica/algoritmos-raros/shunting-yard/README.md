@@ -212,4 +212,4 @@ print(resposta)
 
 ## Problemas
 
-* [1077 - Infixa para posfixa](../../../estruturas-e-bibliotecas/1077/README.md)
+* [1077 - Infixa para Posfixa](../../../estruturas-e-bibliotecas/1077/README.md)

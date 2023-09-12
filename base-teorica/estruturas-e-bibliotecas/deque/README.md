@@ -160,7 +160,7 @@ int main(){
 
 ### C#
 
-Não há uma implementação direta de deque em C#, mas entendendo que deques podem ser implementados como listas encadeadas com operações de inserção e remoção em $O(1)$, então podemos usar a classe `LinkedList<t>`, que contém os métodos `AddFirst()`, `AddLast()`, `RemoveFirst()` e `RemoveLast()`, com a mesma complexidade de um deque. Você pode ver mais detalhes sobre essa classe na [documentação](https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.linkedlist-1?view=net-7.0).
+Não há uma implementação direta de deque em C#, mas entendendo que deques podem ser implementados como listas encadeadas com operações de inserção e remoção em $O(1)$, então podemos usar a classe `LinkedList<T>`, que contém os métodos `AddFirst()`, `AddLast()`, `RemoveFirst()` e `RemoveLast()`, com a mesma complexidade de um deque. Você pode ver mais detalhes sobre essa classe na [documentação](https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.linkedlist-1?view=net-7.0).
 
 ```cs
 using System;
@@ -314,5 +314,4 @@ while(len(d) > 0):
 
 ## Problemas
 
-* [1055 - Soma Permutada Elegante](../../../problemas/paradigmas/1055/README.md)
-* [1110 - Jogando cartas fora](../../../problemas/estruturas-e-bibliotecas/1110/README.md)
+* [1110 - Jogando Cartas Fora](../../../problemas/estruturas-e-bibliotecas/1110/README.md)

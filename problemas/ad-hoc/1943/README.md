@@ -50,8 +50,51 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int K = int.Parse(Console.ReadLine());
+        
+        if(K == 1)          Console.WriteLine("Top 1");
+        else if(K <= 3)     Console.WriteLine("Top 3");
+        else if(K <= 5)     Console.WriteLine("Top 5");
+        else if(K <= 10)    Console.WriteLine("Top 10");
+        else if(K <= 25)    Console.WriteLine("Top 25");
+        else if(K <= 50)    Console.WriteLine("Top 50");
+        else                Console.WriteLine("Top 100");
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int K = Integer.parseInt(in.readLine());
+        
+        if(K == 1)          System.out.println("Top 1");
+        else if(K <= 3)     System.out.println("Top 3");
+        else if(K <= 5)     System.out.println("Top 5");
+        else if(K <= 10)    System.out.println("Top 10");
+        else if(K <= 25)    System.out.println("Top 25");
+        else if(K <= 50)    System.out.println("Top 50");
+        else                System.out.println("Top 100");
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 let input = require('fs').readFileSync('/dev/stdin', 'utf8');
 let lines = input.split('\n');
 
@@ -67,7 +110,7 @@ else                console.log("Top 100");
 ```
 
 ### Python 3.9
-```python
+```py
 K = int(input())
 
 if(K == 1):

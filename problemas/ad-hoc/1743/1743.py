@@ -1,10 +1,4 @@
-X = [int(x) for x in input().strip().split(' ')]
-Y = [int(x) for x in input().strip().split(' ')]
+X = int(''.join(input().strip().split(' ')), 2)
+Y = int(''.join(input().strip().split(' ')), 2)
 
-compativel = True
-for i in range(5):
-    if(X[i] == Y[i]):
-        compativel = False
-        break
-
-print('Y' if compativel else 'N')
+print('Y' if (X ^ Y) == 31 else 'N')

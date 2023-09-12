@@ -11,14 +11,14 @@ Nessa enorme pilha de livros que vemos aqui e considerando que você é uma pess
 * `PUSH`: que adiciona um elemento ao topo da pilha
 * `POP`: que remova um elemento no topo da pilha
 
-Este comportamento é conhecido como LIFO (Last In, First Out), ou seja, o primeiro elemento a entrar é o último a sair, o que vemos também na pilha de livros. Também podemos ver que na pilha de livros, só é possível ver a capa do livro que está no topo, assim também é na estrutura de pilha computacionalmente, onde não é possível ver informações sobre qualquer elemento que não seja o do topo.
+Este comportamento é conhecido como LIFO (_Last In, First Out_), ou seja, o primeiro elemento a entrar é o último a sair, o que vemos também na pilha de livros. Também podemos ver que na pilha de livros, só é possível ver a capa do livro que está no topo, assim também é na estrutura de pilha computacionalmente, onde não é possível ver informações sobre qualquer elemento que não seja o do topo.
 
 Apesar do caráter restritivo dessa estrutura de dados, ela se prova bastante valiosa para determinados usos, como avaliação de expressões matemáticas e gerenciamento de execução em sistemas operacionais e linguagens de programação. Esta estrutura de dados também é usada devido às duas operações serem muito rápidas, como podemos ver na tabela abaixo:
 
 | Operação | Complexidade de tempo |
 | -------- | --------------------- |
-| `PUSH`   | O(1)                  |
-| `POP`    | O(1)                  |
+| `PUSH`   | $O(1)$                  |
+| `POP`    | $O(1)$                  |
 
 ## Implementações
 
@@ -31,7 +31,7 @@ Em ambas as abordagens, a ideia é deitarmos essa pilha, mais ou menos como na f
 
 ![Pilha de livros deitada, onde agora só colocamos e tiramos por uma das pontas. (Foto: George Milton)](../../../assets/pexels-george-milton-7034504.jpg)
 
-Para o caso de listas encadeadas, a representação comum envolve uma lista sequencial de todos os elementos até o valor NULL. A representação em pilhas é exatamente a mesma, onde os elementos são adicionados ou removidos pelo começo da lista, a fim de garantir a complexidade das operações.
+Para o caso de listas encadeadas, a representação comum envolve uma lista sequencial de todos os elementos até o valor `NULL`. A representação em pilhas é exatamente a mesma, onde os elementos são adicionados ou removidos pelo começo da lista, a fim de garantir a complexidade das operações.
 
 Para o caso de vetores, é importante que os elementos sejam adicionados ou removidos pelo final do vetor, já que se você remove o primeiro elemento, a própria linguagem se encarrega de "empurrar" todos os elementos da memória para frente e, neste caso, você perde a complexidade constante de $O(1)$ no `POP`.
 
@@ -133,11 +133,65 @@ int main(){
 
 > A saída do programa acima será: `30 20 10 `
 
+### C#
+
+A classe `Stack<T>` contém a estrutura necessária para usarmos pilhas em C#. Para mais informações sobre `Stack<T>`, consulte a [documentação](https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.stack-1?view=net-7.0).
+
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        Stack<int> pilha = new Stack<int>();
+        
+        pilha.Push(10);
+        pilha.Push(20);
+        pilha.Push(30);
+        
+        while(pilha.Count > 0){
+            Console.Write($"{pilha.Peek()} ");
+            pilha.Pop();
+        }
+        Console.WriteLine("");
+    }
+}
+```
+
+> A saída do programa será: `30 20 10 `
+
+### Java
+
+A class `Stack` implementada na biblioteca `java.util`. Para mais informações sobre `Stack`, consulte a [documentação](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html).
+
+```java
+import java.util.Stack;
+
+public class Main
+{
+	public static void main(String[] args) {
+		Stack<Integer> pilha = new Stack<Integer>();
+		
+		pilha.push(10);
+		pilha.push(20);
+		pilha.push(30);
+		
+		while(pilha.size() > 0){
+		    System.out.printf("%d ", pilha.peek());
+		    pilha.pop();
+		}
+		System.out.println("");
+	}
+}
+```
+
+> A saída do programa será: `30 20 10 `
+
 ### JavaScript
 
 A implementação em JavaScript é bastante simples, podendo ser feita com o auxílio de um array onde só é permitido acrescentar e remover a partir do último índice. Com isso, fazemos meio que uma pilha deitada, onde inserimos e removemos sempre o elemento mais à direita.
 
-```javascript
+```js
 class Pilha {
     constructor() {
         this.pilha = [];
@@ -171,7 +225,7 @@ class Pilha {
 
 Vamos usar exatamente o mesmo raciocínio que usamos para a pilha em JavaScript, onde representando a pilha como um vetor, temos que só podemos adicionar ou remover a partir do último índice.
 
-```python
+```py
 class Pilha:
     def __init__(self):
         self.pilha = []
@@ -198,7 +252,7 @@ Python implementa [fila duplamente-encadeada](deque.md) com a biblioteca `collec
 
 Você pode implementar a função `top` guardando o retorno do `pop` e fazendo um `push` de volta.
 
-```python
+```py
 from collections import deque
 
 pilha = deque()
@@ -215,8 +269,8 @@ while(len(pilha) > 0):
 
 ## Problemas
 
-* [1062 - Trilhos](../../../estruturas-e-bibliotecas/1062/README.md)
-* [1068 - Balanço de parênteses I](../../../estruturas-e-bibliotecas/1068/README.md)
-* [1069 - Diamantes e areia](../../../estruturas-e-bibliotecas/1069/README.md)
-* [1077 - Infixa para posfixa](../../../estruturas-e-bibliotecas/1077/README.md)
-* [2929 - Menor da pilha](../../../estruturas-e-bibliotecas/2929/README.md)
+* [1062 - Trilhos](../../../problemas/estruturas-e-bibliotecas/1062/README.md)
+* [1068 - Balanço de parênteses I](../../../problemas/estruturas-e-bibliotecas/1068/README.md)
+* [1069 - Diamantes e areia](../../../problemas/estruturas-e-bibliotecas/1069/README.md)
+* [1077 - Infixa para posfixa](../../../problemas/estruturas-e-bibliotecas/1077/README.md)
+* [2929 - Menor da pilha](../../../problemas/estruturas-e-bibliotecas/2929/README.md)
