@@ -1,4 +1,4 @@
-## Estruturas e Bibliotecas (18/179)
+## Estruturas e Bibliotecas (20/179)
 * [1022 - TDA Racional](./1022/README.md)
 * [1023 - Estiagem](./1023/README.md)
 * [1025 - Onde está o Mármore?](./1025/README.md)

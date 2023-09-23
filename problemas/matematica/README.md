@@ -1,4 +1,4 @@
-## Matemática (27/269)
+## Matemática (26/269)
 * [1028 - Figurinhas](./1028/README.md)
 * [1161 - Soma de Fatoriais](./1161/README.md)
 * [1169 - Trigo no Tabuleiro](./1169/README.md)

@@ -350,7 +350,7 @@
 * [2242 - Huaauhahhuahau](./strings/2242/README.md)
 * [2253 - Validador de Senhas](./strings/2253/README.md)
 
-## [Estruturas e Bibliotecas (18/179)](./estruturas-e-bibliotecas/README.md)
+## [Estruturas e Bibliotecas (20/179)](./estruturas-e-bibliotecas/README.md)
 * [1022 - TDA Racional](./estruturas-e-bibliotecas/1022/README.md)
 * [1023 - Estiagem](./estruturas-e-bibliotecas/1023/README.md)
 * [1025 - Onde está o Mármore?](./estruturas-e-bibliotecas/1025/README.md)
@@ -372,7 +372,7 @@
 * [1566 - Altura](./estruturas-e-bibliotecas/1566/README.md)
 * [2929 - Menor da Pilha](./estruturas-e-bibliotecas/2929/README.md)
 
-## [Matemática (27/269)](./matematica/README.md)
+## [Matemática (26/269)](./matematica/README.md)
 * [1028 - Figurinhas](./matematica/1028/README.md)
 * [1161 - Soma de Fatoriais](./matematica/1161/README.md)
 * [1169 - Trigo no Tabuleiro](./matematica/1169/README.md)
