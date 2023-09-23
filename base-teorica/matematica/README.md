@@ -1,6 +1,6 @@
 # Matemática
 
-* [Macetes matemáticos](./macetes-matematicos/README.md)
+* [Macetes matemáticos](./macetes/README.md)
 * [Base numérica](./base-numerica/README.md)
 * [Progressões](./progressoes/README.md)
 * [MDC](./gcd/README.md)
