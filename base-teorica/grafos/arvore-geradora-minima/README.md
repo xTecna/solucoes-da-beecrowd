@@ -174,190 +174,6 @@ O processo de ir colocando as arestas em uma [fila de prioridade](../../estrutur
 
 #### C
 ```c
-struct ListaNo{
-    int chave, valor;
-    struct ListaNo *anterior, *proximo;
-};
-
-void inicializaListaNo(struct ListaNo *ln){
-    ln->chave = 0;
-    ln->valor = 0;
-    ln->anterior = NULL;
-    ln->proximo = NULL;
-}
-
-void destroiListaNo(struct ListaNo *ln){
-    ln->chave = 0;
-    ln->valor = 0;
-    ln->anterior = NULL;
-    ln->proximo = NULL;
-}
-
-struct ListaEncadeada{
-    struct ListaNo *comeco, *final;
-};
-
-void inicializaListaEncadeada(struct ListaEncadeada *le){
-    le->comeco = NULL;
-    le->final = NULL;
-}
-
-void destroiListaEncadeada(struct ListaEncadeada *le){
-    struct ListaNo *no = le->comeco;
-    while(no != NULL){
-        struct ListaNo *removido = no;
-        no = no->proximo;
-        destroiListaNo(removido);
-        free(removido);
-    }
-    le->comeco = NULL;
-    le->final = NULL;
-}
-
-void adicionaListaEncadeada(struct ListaEncadeada *le, int chave, int valor){
-    struct ListaNo *no = (struct ListaNo *)malloc(sizeof(struct ListaNo));
-    inicializaListaNo(no);
-    no->chave = chave;
-    no->valor = valor;
-
-    if(le->comeco == NULL){
-        le->comeco = no;
-        le->final = no;
-    }else{
-        no->anterior = le->final;
-        le->final->proximo = no;
-        le->final = no;
-    }
-}
-
-struct Grafo
-{
-    struct ListaEncadeada *arestas;
-};
-
-void inicializaGrafo(struct Grafo *g, int n){
-    int i;
-    g->arestas = (struct ListaNo *)malloc(n * sizeof(struct ListaEncadeada));
-    for(i = 0; i < n; ++i){
-        inicializaListaEncadeada(&(g->arestas[i]));
-    }
-}
-
-void destroiGrafo(struct Grafo *g, int n){
-    int i;
-    for(i = 0; i < n; ++i){
-        destroiListaEncadeada(&(g->arestas[i]));
-    }
-    free(g->arestas);
-}
-
-void adicionaAresta(struct Grafo *g, int u, int v, int peso){
-    adicionaListaEncadeada(&(g->arestas[u]), v, peso);
-    adicionaListaEncadeada(&(g->arestas[v]), u, peso);
-}
-
-struct Aresta
-{
-    int u, v, peso;
-};
-
-int comp(struct Aresta a, struct Aresta b){
-    return b.peso - a.peso;
-}
-
-struct FilaDePrioridade
-{
-    int tamanho;
-    struct Aresta *arvore;
-};
-
-void inicializaFilaDePrioridade(struct FilaDePrioridade *fp, int capacidade){
-    fp->tamanho = 0;
-    fp->arvore = (struct Aresta*)malloc(capacidade * sizeof(struct Aresta));
-}
-
-void destroiFilaDePrioridade(struct FilaDePrioridade *fp){
-    fp->tamanho = 0;
-    free(fp->arvore);
-}
-
-int pai(int i){
-    return i/2;
-}
-
-int filhoEsquerdo(int i){
-    return 2*i;
-}
-
-int filhoDireito(int i){
-    return 2*i + 1;
-}
-
-void corrigeSubindo(struct FilaDePrioridade *fp, int indice){
-    if(indice == 1){
-        return;
-    }
-    
-    int acima = pai(indice);
-    if(comp(fp->arvore[acima], fp->arvore[indice]) < 0){
-        struct Aresta temp = fp->arvore[acima];
-        fp->arvore[acima] = fp->arvore[indice];
-        fp->arvore[indice] = temp;
-        corrigeSubindo(fp, acima);
-    }
-}
-
-void push(struct FilaDePrioridade *fp, struct Aresta valor){
-    fp->tamanho += 1;
-    fp->arvore[fp->tamanho] = valor;
-    corrigeSubindo(fp, fp->tamanho);
-}
-
-void corrigeDescendo(struct FilaDePrioridade *fp, int indice){
-    int abaixo = filhoEsquerdo(indice);
-    if(abaixo > fp->tamanho){
-        return;
-    }
-    if(comp(fp->arvore[indice], fp->arvore[abaixo]) < 0){
-        struct Aresta temp = fp->arvore[abaixo];
-        fp->arvore[abaixo] = fp->arvore[indice];
-        fp->arvore[indice] = temp;
-        corrigeDescendo(fp, abaixo);
-    }
-    
-    abaixo = filhoDireito(indice);
-    if(abaixo > fp->tamanho){
-        return;
-    }
-    if(comp(fp->arvore[indice], fp->arvore[abaixo]) < 0){
-        struct Aresta temp = fp->arvore[abaixo];
-        fp->arvore[abaixo] = fp->arvore[indice];
-        fp->arvore[indice] = temp;
-        corrigeDescendo(fp, abaixo);
-    }
-}
-
-void pop(struct FilaDePrioridade *fp){
-    if(fp->tamanho == 0){
-        return;
-    }
-    
-    struct Aresta temp = fp->arvore[1];
-    fp->arvore[1] = fp->arvore[fp->tamanho];
-    fp->arvore[fp->tamanho] = temp;
-    fp->tamanho -= 1;
-    
-    corrigeDescendo(fp, 1);
-}
-
-struct Aresta top(struct FilaDePrioridade *fp){
-    return fp->arvore[1];
-}
-
-int empty(struct FilaDePrioridade *fp){
-    return fp->tamanho == 0;
-}
-
 void visitaVertice(int *visitados, struct Grafo *g, struct FilaDePrioridade *fp, int u){
     visitados[u] = 1;
 
@@ -444,160 +260,44 @@ int Prim(vector<vector<pair<int, int>>> &grafo, int n){
 > Aqui a classe `URI` representa a classe principal do seu programa.
 
 ```cs
-class FilaDePrioridade {
-    private List<Tuple<int, int>> arvore;
+static void visitaVertice(ref List<bool> visitados, ref List<List<Tuple<int, int>>> grafo, ref FilaDePrioridade fila, int u){
+    visitados[u] = true;
 
-    public FilaDePrioridade(){
-        this.arvore = new List<Tuple<int, int>>();
-        this.arvore.Add(new Tuple<int, int>(0, 0));
-    }
+    for(int i = 0; i < grafo[u].Count; ++i){
+        Tuple<int, int> aresta = grafo[u][i];
 
-    private int pai(int i){
-        return i/2;
-    }
-
-    private int filhoEsquerdo(int i){
-        return 2*i;
-    }
-
-    private int filhoDireito(int i){
-        return 2*i + 1;
-    }
-
-    private int comp(Tuple<int, int> a, Tuple<int, int> b){
-        return b.Item2 - a.Item2;
-    }
-
-    private void corrigeSubindo(int indice){
-        if(indice == 1){
-            return;
+        if(!visitados[aresta.Item1]){
+            fila.push(aresta);
         }
-
-        int acima = this.pai(indice);
-        if(this.comp(this.arvore[acima], this.arvore[indice]) < 0){
-            Tuple<int, int> temp = this.arvore[acima];
-            this.arvore[acima] = this.arvore[indice];
-            this.arvore[indice] = temp;
-            this.corrigeSubindo(acima);
-        }
-    }
-
-    public void push(Tuple<int, int> valor){
-        this.arvore.Add(valor);
-        this.corrigeSubindo(this.arvore.Count - 1);
-    }
-
-    private void corrigeDescendo(int indice){
-        int abaixo = this.filhoEsquerdo(indice);
-        if(abaixo >= this.arvore.Count){
-            return;
-        }
-        if(this.comp(this.arvore[indice], this.arvore[abaixo]) < 0){
-            Tuple<int, int> temp = this.arvore[abaixo];
-            this.arvore[abaixo] = this.arvore[indice];
-            this.arvore[indice] = temp;
-            this.corrigeDescendo(abaixo);
-        }
-
-        abaixo = this.filhoDireito(indice);
-        if(abaixo >= this.arvore.Count){
-            return;
-        }
-        if(this.comp(this.arvore[indice], this.arvore[abaixo]) < 0){
-            Tuple<int, int> temp = this.arvore[abaixo];
-            this.arvore[abaixo] = this.arvore[indice];
-            this.arvore[indice] = temp;
-            this.corrigeDescendo(abaixo);
-        }
-    }
-
-    public void pop(){
-        if(this.arvore.Count <= 1){
-            return;
-        }
-
-        Tuple<int, int> temp = this.arvore[1];
-        this.arvore[1] = this.arvore[this.arvore.Count - 1];
-        this.arvore[this.arvore.Count - 1] = temp;
-        this.arvore.RemoveAt(this.arvore.Count - 1);
-        this.corrigeDescendo(1);
-    }
-
-    public Tuple<int, int> top(){
-        return this.arvore[1];
-    }
-
-    public bool empty(){
-        return this.arvore.Count == 1;
     }
 }
 
-class URI {
-    static void visitaVertice(ref List<bool> visitados, ref List<List<Tuple<int, int>>> grafo, ref FilaDePrioridade fila, int u){
-        visitados[u] = true;
+static int Prim(ref List<List<Tuple<int, int>>> grafo, int n){
+    List<bool> visitados = new List<bool>();
+    for(int i = 0; i < n; ++i){
+        visitados.Add(false);
+    }
 
-        for(int i = 0; i < grafo[u].Count; ++i){
-            Tuple<int, int> aresta = grafo[u][i];
+    FilaDePrioridade fila = new FilaDePrioridade();
 
-            if(!visitados[aresta.Item1]){
-                fila.push(aresta);
-            }
+    visitaVertice(ref visitados, ref grafo, ref fila, 0);
+
+    int resposta = 0;
+    while(!fila.empty()){
+        Tuple<int, int> atual = fila.top();
+        fila.pop();
+        if(!visitados[atual.Item1]){
+            resposta += atual.Item2;
+            visitaVertice(ref visitados, ref grafo, ref fila, atual.Item1);
         }
     }
 
-    static int Prim(ref List<List<Tuple<int, int>>> grafo, int n){
-        List<bool> visitados = new List<bool>();
-        for(int i = 0; i < n; ++i){
-            visitados.Add(false);
-        }
-
-        FilaDePrioridade fila = new FilaDePrioridade();
-
-        visitaVertice(ref visitados, ref grafo, ref fila, 0);
-
-        int resposta = 0;
-        while(!fila.empty()){
-            Tuple<int, int> atual = fila.top();
-            fila.pop();
-            if(!visitados[atual.Item1]){
-                resposta += atual.Item2;
-                visitaVertice(ref visitados, ref grafo, ref fila, atual.Item1);
-            }
-        }
-
-        return resposta;
-    }
+    return resposta;
 }
 ```
 
 #### Java
 ```java
-public static class Aresta implements Comparable {
-    public int u, v, peso;
-
-    public Aresta(){
-        this.u = 0;
-        this.v = 0;
-        this.peso = 0;
-    }
-
-    public Aresta(int u, int v, int peso){
-        this.u = u;
-        this.v = v;
-        this.peso = peso;
-    }
-
-    @Override
-    public boolean equals(Object obj){
-        return ((Aresta)obj).u == this.u && ((Aresta)obj).v == this.v;
-    }
-
-    @Override
-    public int compareTo(Object obj){
-        return this.peso - ((Aresta)obj).peso;
-    }
-}
-
 public static void visitaVertice(ArrayList<Boolean> visitados, ArrayList<ArrayList<Aresta>> grafo, PriorityQueue<Aresta> fila, int u) {
     visitados.set(u, true);
 
@@ -636,91 +336,6 @@ public static int Prim(ArrayList<ArrayList<Aresta>> grafo, int n) {
 
 #### JavaScript
 ```js
-class FilaDePrioridade {
-    constructor() {
-        this.arvore = [[0, 0]];
-    }
-
-    pai(i) {
-        return Math.floor(i/2);
-    }
-
-    filhoEsquerdo(i){
-        return 2*i;
-    }
-
-    filhoDireito(i){
-        return 2*i + 1;
-    }
-
-    comp(a, b){
-        return b[1] - a[1];
-    }
-
-    corrigeSubindo(indice){
-        if(indice === 1){
-            return;
-        }
-
-        let acima = this.pai(indice);
-        if(this.comp(this.arvore[acima], this.arvore[indice]) < 0){
-            let temp = this.arvore[acima];
-            this.arvore[acima] = this.arvore[indice];
-            this.arvore[indice] = temp;
-            this.corrigeSubindo(acima);
-        }
-    }
-
-    push(valor){
-        this.arvore.push(valor);
-        this.corrigeSubindo(this.arvore.length - 1);
-    }
-
-    corrigeDescendo(indice){
-        let abaixo = this.filhoEsquerdo(indice);
-        if(abaixo >= this.arvore.length){
-            return;
-        }
-        if(this.comp(this.arvore[indice], this.arvore[abaixo]) < 0){
-            let temp = this.arvore[abaixo];
-            this.arvore[abaixo] = this.arvore[indice];
-            this.arvore[indice] = temp;
-            this.corrigeDescendo(abaixo);
-        }
-
-        abaixo = this.filhoDireito(indice);
-        if(abaixo >= this.arvore.length){
-            return;
-        }
-        if(this.comp(this.arvore[indice], this.arvore[abaixo]) < 0){
-            let temp = this.arvore[abaixo];
-            this.arvore[abaixo] = this.arvore[indice];
-            this.arvore[indice] = temp;
-            this.corrigeDescendo(abaixo);
-        }
-    }
-
-    pop(){
-        if(this.arvore.length <= 1){
-            return;
-        }
-
-        let temp = this.arvore[1];
-        this.arvore[1] = this.arvore[this.arvore.length - 1];
-        this.arvore[this.arvore.length - 1] = temp;
-        this.arvore.pop();
-        this.corrigeDescendo(1);
-    }
-
-    top(){
-        return this.arvore[1];
-    }
-
-    empty(){
-        return this.arvore.length === 1;
-    }
-}
-
 const visitaVertice = (visitados, grafo, fila, u) => {
     visitados[u] = true;
 
