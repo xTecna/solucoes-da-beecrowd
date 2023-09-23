@@ -14,7 +14,7 @@ Daí executar o programa para cada uma das 9 linhas, 9 colunas e 9 quadrados.
 
 Nas linguagens de programação onde era permitido, utilizei conjuntos para adicionar todos os números de uma determinada linha, coluna ou quadrado e depois verificar se tal conjunto tinha tamanho exatamente 9. Para linguagens onde tal estrutura não é trivial, utilizei um vetor para marcar cada número e se fosse marcar um número já marcado, apontar a irregularidade.
 
-Para definir onde começa cada quadrado, onde `x` é o identificador do quadrado, fiz `3*(x/3)` para definir a linha e `3*(x%3)` para definir a coluna da coordenada de cada quadrado. Dessa maneira, temos as seguintes coordenadas para os 9 quadrados:
+Para definir onde começa cada quadrado, onde $x$ é o identificador do quadrado, fiz $3(x \div 3)$ para definir a linha e $3(x \mod 3)$ para definir a coluna da coordenada de cada quadrado. Dessa maneira, temos as seguintes coordenadas para os 9 quadrados:
 
 | Quadrado | Coordenada |
 | -------- | ---------- |
@@ -183,8 +183,147 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static int[,] sudoku = new int[9,9];
+    
+    static bool verificaLinha(int i){
+        HashSet<int> numeros = new HashSet<int>();
+        for(int j = 0; j < 9; ++j){
+            numeros.Add(sudoku[i, j]);
+        }
+        return numeros.Count == 9;
+    }
+    
+    static bool verificaColuna(int j){
+        HashSet<int> numeros = new HashSet<int>();
+        for(int i = 0; i < 9; ++i){
+            numeros.Add(sudoku[i, j]);
+        }
+        return numeros.Count == 9;
+    }
+    
+    static bool verificaQuadrado(int x){
+        HashSet<int> numeros = new HashSet<int>();
+        
+        int linha = 3*(x/3);
+        int coluna = 3*(x%3);
+        for(int i = 0; i < 3; ++i){
+            for(int j = 0; j < 3; ++j){
+                numeros.Add(sudoku[linha + i, coluna + j]);
+            }
+        }
+        return numeros.Count == 9;
+    }
+    
+    static void Main(string[] args) {
+        int n = int.Parse(Console.ReadLine());
+        
+        for(int k = 1; k <= n; ++k){
+            for(int i = 0; i < 9; ++i){
+                string[] entrada = Console.ReadLine().Trim().Split(' ');
+                for(int j = 0; j < 9; ++j){
+                    sudoku[i, j] = int.Parse(entrada[j]);
+                }
+            }
+            
+            bool resposta = true;
+            for(int i = 0; i < 9; ++i){
+                if(!verificaLinha(i) || !verificaColuna(i) || !verificaQuadrado(i)){
+                    resposta = false;
+                    break;
+                }
+            }
+            
+            Console.WriteLine($"Instancia {k}");
+            if(resposta){
+                Console.WriteLine("SIM");
+            }else{
+                Console.WriteLine("NAO");
+            }
+            Console.WriteLine("");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+
+public class Main {
+    public static int[][] sudoku = new int[9][9];
+
+    public static boolean verificaLinha(int i){
+        HashSet<Integer> numeros = new HashSet<Integer>();
+        for(int j = 0; j < 9; ++j){
+            numeros.add(sudoku[i][j]);
+        }
+        return numeros.size() == 9;
+    }
+
+    public static boolean verificaColuna(int j){
+        HashSet<Integer> numeros = new HashSet<Integer>();
+        for(int i = 0; i < 9; ++i){
+            numeros.add(sudoku[i][j]);
+        }
+        return numeros.size() == 9;
+    }
+
+    public static boolean verificaQuadrado(int x){
+        HashSet<Integer> numeros = new HashSet<Integer>();
+        int linha = 3 * (x / 3);
+        int coluna = 3 * (x % 3);
+        for(int i = 0; i < 3; ++i){
+            for(int j = 0; j < 3; ++j){
+                numeros.add(sudoku[linha + i][coluna + j]);
+            }
+        }
+        return numeros.size() == 9;
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int n = Integer.parseInt(in.readLine());
+        for(int k = 1; k <= n; ++k){
+            for(int i = 0; i < 9; ++i){
+                String[] entrada = in.readLine().trim().split(" ");
+                for(int j = 0; j < 9; ++j){
+                    sudoku[i][j] = Integer.parseInt(entrada[j]);
+                }
+            }
+
+            boolean resposta = true;
+            for(int i = 0; i < 9; ++i){
+                if(!verificaLinha(i) || !verificaColuna(i) || !verificaQuadrado(i)){
+                    resposta = false;
+                    break;
+                }
+            }
+
+            System.out.printf("Instancia %d\n", k);
+            if(resposta){
+                System.out.println("SIM");
+            }else{
+                System.out.println("NAO");
+            }
+            System.out.println("");
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -236,7 +375,7 @@ for(let k = 1; k <= n; ++k){
 ```
 
 ### Python 3.9
-```python
+```py
 def verificaLinha(sudoku, x):
     numeros = set(sudoku[x])
     return len(numeros) == 9

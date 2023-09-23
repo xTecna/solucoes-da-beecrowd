@@ -6,7 +6,7 @@
 
 Em todas as linguagens que possuem suporte para tal, você pode usar conjuntos para guardar os nomes de todos os Pomekons que você for encontrando e no final apenas subtrair 151 da quantidade de Pomekons diferentes que você encontrou.
 
-Para linguagens que não possuem esse suporte, você pode ir colocando os Pomekons em um vetor e a cada novo Pomekon ver se ele já não está no vetor, mas tenha em mente que esse é um processo muito mais custoso do que usar conjuntos (complexidade de O(N²) versus O(N)). Felizmente, estamos lidando com apenas 1000 pomekons diferentes, então a complexidade quadrática é aceitável.
+Para linguagens que não possuem esse suporte, você pode ir colocando os Pomekons em um vetor e a cada novo Pomekon ver se ele já não está no vetor, mas tenha em mente que esse é um processo muito mais custoso do que usar conjuntos (complexidade de O($n^{2}$) versus O($n$)). Felizmente, estamos lidando com apenas 1000 pomekons diferentes, então a complexidade quadrática é aceitável.
 
 ### C99
 ```c
@@ -70,8 +70,51 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        HashSet<string> pomekons = new HashSet<string>();
+        for(int i = 0; i < N; ++i){
+            string pomekon = Console.ReadLine().Trim();
+            pomekons.Add(pomekon);
+        }
+
+        Console.WriteLine($"Falta(m) {151 - pomekons.Count} pomekon(s).");
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        HashSet<String> pomekons = new HashSet<String>();
+        for(int i = 0; i < N; ++i){
+            String pomekon = in.readLine().trim();
+            pomekons.add(pomekon);
+        }
+
+        System.out.printf("Falta(m) %d pomekon(s).\n", 151 - pomekons.size());
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -88,7 +131,7 @@ console.log(`Falta(m) ${151 - pomekons.size} pomekon(s).`);
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 pomekons = set()

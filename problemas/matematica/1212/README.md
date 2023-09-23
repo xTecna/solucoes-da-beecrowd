@@ -4,9 +4,9 @@
 
 ## Solução
 
-É possível simular o processo de soma inteiro, verificando se vai-um manualmente em cada processo de cada soma.
+É possível simular o processo de soma inteiro, verificando se vai-um manualmente em cada processo de cada soma. Aqui eu simulei esse processo pegando o último dígito do número um de cada vez e somando até não ter mais o que somar. Lembrando que não estamos interessados no resultado da soma, apenas na quantidade de vai-uns.
 
-> Preste atenção no fato de que quando há 1 operação de vai-um, a resposta é "operation" no singular.
+> Preste atenção no fato de que quando há 1 operação de vai-um, a resposta é `operation` no singular.
 
 ### C99
 ```c
@@ -162,8 +162,143 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            string[] numeros = entrada.Trim().Split(' ');
+
+            int a = int.Parse(numeros[0]);
+            int b = int.Parse(numeros[1]);
+
+            if(a == 0 && b == 0){
+                break;
+            }
+
+            int carry = 0;
+            int resposta = 0;
+            while(a > 0 && b > 0){
+                if(a % 10 + b % 10 + carry > 9){
+                    carry = 1;
+                    ++resposta;
+                }else{
+                    carry = 0;
+                }
+
+                a /= 10;
+                b /= 10;
+            }
+
+            while(a > 0){
+                if(a % 10 + carry > 9){
+                    carry = 1;
+                    ++resposta;
+                }else{
+                    carry = 0;
+                }
+
+                a /= 10;
+            }
+
+            while(b > 0){
+                if(b % 10 + carry > 9){
+                    carry = 1;
+                    ++resposta;
+                }else{
+                    carry = 0;
+                }
+
+                b /= 10;
+            }
+
+            if(resposta == 0){
+                Console.WriteLine("No carry operation.");
+            }else if(resposta == 1){
+                Console.WriteLine("1 carry operation.");
+            }else{
+                Console.WriteLine($"{resposta} carry operations.");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] entrada = in.readLine().trim().split(" ");
+
+            int a = Integer.parseInt(entrada[0]);
+            int b = Integer.parseInt(entrada[1]);
+
+            if(a == 0 && b == 0){
+                break;
+            }
+
+            int resposta = 0;
+            int carry = 0;
+            while(a > 0 && b > 0){
+                if(a % 10 + b % 10 + carry > 9){
+                    carry = 1;
+                    ++resposta;
+                }else{
+                    carry = 0;
+                }
+
+                a /= 10;
+                b /= 10;
+            }
+
+            while(a > 0){
+                if(a % 10 + carry > 9){
+                    carry = 1;
+                    ++resposta;
+                }else{
+                    carry = 0;
+                }
+
+                a /= 10;
+            }
+
+            while(b > 0){
+                if(b % 10 + carry > 9){
+                    carry = 1;
+                    ++resposta;
+                }else{
+                    carry = 0;
+                }
+
+                b /= 10;
+            }
+
+            if(resposta == 0){
+                System.out.println("No carry operation.");
+            }else if(resposta == 1){
+                System.out.println("1 carry operation.");
+            }else{
+                System.out.printf("%d carry operations.\n", resposta);
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -215,7 +350,7 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         a, b = [int(x) for x in input().strip().split(' ')]

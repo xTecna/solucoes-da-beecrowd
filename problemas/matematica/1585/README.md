@@ -4,9 +4,14 @@
 
 ## Solução
 
-A pipa é formada por dois bambus que são amarrados em formato de cruz, como diz a observação do enunciado. Com isso, para calcular a área do losango com base em suas diagonais, podemos pensar no losango como dois triângulos de mesma base, mas altura diferente. Se tivermos por exemplo dimensões de diagonais `X` e `Y`, podemos considerar a base de ambos os triângulos como `X` e as alturas dos dois triângulos `W` e `Z` tal que `Y = W + Z`. Com isso, a soma das áreas dos dois triângulos será
+A pipa é formada por dois bambus que são amarrados em formato de cruz, como diz a observação do enunciado. Com isso, para calcular a área do losango com base em suas diagonais, podemos pensar no losango como dois triângulos de mesma base, mas altura diferente. Se tivermos por exemplo dimensões de diagonais $X$ e $Y$, podemos considerar a base de ambos os triângulos como $X$ e as alturas dos dois triângulos $W$ e $Z$ tal que $Y = W + Z$. Com isso, a soma das áreas dos dois triângulos será
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;A&space;=&space;\frac{XW}{2}&space;&plus;&space;\frac{XZ}{2}&space;=&space;\frac{XW&space;&plus;&space;XZ}{2}&space;=&space;\frac{X(W&space;&plus;&space;Z)}{2}&space;=&space;\frac{XY}{2}" title="\bg_white A = \frac{XW}{2} + \frac{XZ}{2} = \frac{XW + XZ}{2} = \frac{X(W + Z)}{2} = \frac{XY}{2}" />
+$$\begin{split}
+A & = \frac{XW}{2} + \frac{XZ}{2} \\
+A & = \frac{XW + XZ}{2} \\
+A & = \frac{X(W + Z)}{2} \\
+A & = \frac{XY}{2}
+\end{split}$$
 
 ### C99
 ```c
@@ -52,8 +57,51 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        for(int i = 0; i < N; ++i){
+            string[] entrada = Console.ReadLine().Trim().Split(' ');
+
+            int x = int.Parse(entrada[0]);
+            int y = int.Parse(entrada[1]);
+
+            Console.WriteLine($"{(x * y) / 2} cm2");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int i = 0; i < N; ++i){
+            String[] entrada = in.readLine().trim().split(" ");
+
+            int x = Integer.parseInt(entrada[0]);
+            int y = Integer.parseInt(entrada[1]);
+
+            System.out.printf("%d cm2\n", (x * y) / 2);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -67,7 +115,7 @@ for (let i = 0; i < N; ++i) {
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 for _ in range(N):

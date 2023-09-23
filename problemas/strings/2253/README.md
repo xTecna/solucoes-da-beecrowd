@@ -4,7 +4,12 @@
 
 ## Solução
 
-É mais fácil pensar nesse problema como um for que passa em cada letra e no final do for você precisa ter algumas variáveis com valor verdadeiro e outras com valor falso. Se tivermos uma variável indicando se vimos alguma caractere que não é letra nem número, no final queremos que essa variável seja falsa. Se tivermos uma variável cada para indicar se vimos uma maiúscula, uma minúscula ou um número, queremos que todas essas variáveis no final sejam verdadeiras. Com isso, com esse raciocínio, se torna um pouquinho mais fácil fazer esse programa, apenas lembrando que se ele não tiver o tamanho recomendado, você não precisa perder seu tempo fazendo o for, pode ir direto para a próxima senha.
+É mais fácil pensar nesse problema como um `for` que passa em cada letra e no final do `for` você precisa ter algumas variáveis para verificar as regras 1 e 2.
+
+* Se tivermos uma variável indicando se vimos algum caractere que não é letra nem número, no final queremos que a variável de quebra da regra 2 seja `true`.
+* Se tivermos uma variável cada para indicar se vimos uma maiúscula, uma minúscula ou um número, queremos que todas essas variáveis no final sejam `true`.
+
+Com esse raciocínio, se torna um pouquinho mais fácil fazer esse programa, apenas lembrando que se ele não tiver o tamanho recomendado, você não precisa perder seu tempo fazendo o `for`, pode ir direto para a próxima senha.
 
 ### C99
 ```c
@@ -92,8 +97,93 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            if(entrada.Length < 6 || entrada.Length > 32){
+                Console.WriteLine("Senha invalida.");
+                continue;
+            }
+            
+            bool maiuscula = false;
+            bool minuscula = false;
+            bool numero = false;
+            bool errado = false;
+            for(int i = 0; i < entrada.Length; ++i){
+                if(char.IsLetter(entrada[i])){
+                    if(char.IsUpper(entrada[i]))    maiuscula = true;
+                    else                            minuscula = true;
+                }else if(char.IsNumber(entrada[i])){
+                    numero = true;
+                }else{
+                    errado = true;
+                    break;
+                }
+            }
+            
+            if(errado || !(maiuscula && minuscula && numero)){
+                Console.WriteLine("Senha invalida.");
+            }else{
+                Console.WriteLine("Senha valida.");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String senha = in.readLine();
+
+            if(senha.length() < 6 || senha.length() > 32){
+                System.out.println("Senha invalida.");
+                continue;
+            }
+
+            boolean maiuscula = false;
+            boolean minuscula = false;
+            boolean numero = false;
+            boolean errado = false;
+            for(int i = 0; i < senha.length(); ++i){
+                if(Character.isAlphabetic(senha.charAt(i))){
+                    if(Character.isUpperCase(senha.charAt(i)))  maiuscula = true;
+                    else                                        minuscula = true;
+                }else if(Character.isDigit(senha.charAt(i))){
+                    numero = true;
+                }else{
+                    errado = true;
+                    break;
+                }
+            }
+
+            if(errado || !(maiuscula && minuscula && numero)){
+                System.out.println("Senha invalida.");
+            }else{
+                System.out.println("Senha valida.");
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -128,7 +218,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         S = input()

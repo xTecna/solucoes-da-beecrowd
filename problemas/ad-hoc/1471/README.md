@@ -6,9 +6,9 @@
 
 Podemos considerar dois caminhos: um usando vetor e outro usando conjuntos.
 
-Pela solução com vetor, podemos utilizar um de `N` posições, onde `N` é o número de voluntários, para guardar informação sobre quais sobreviveram e quais não, assumindo que, a princípio ninguém voltou, mas marcando `verdadeiro` para cada mergulhador que for lendo. Se o número de mergulhadores que retornaram é o mesmo que o número de voluntários, então imprimimos apenas um asterisco. Se o número for menor, precisamos percorrer o vetor imprimindo todos os índices cujo valor seja `falso`.
+Pela solução com vetor, podemos utilizar um de $N$ posições, onde $N$ é o número de voluntários, para guardar informação sobre quais sobreviveram e quais não, assumindo que, a princípio ninguém voltou, mas marcando `true` para cada mergulhador que for lendo. Se o número de mergulhadores que retornaram é o mesmo que o número de voluntários, então imprimimos apenas um asterisco. Se o número for menor, precisamos percorrer o vetor imprimindo todos os índices cujo valor seja `false`.
 
-Pela solução com conjunto, podemos criar um conjunto que inicialmente contem todos os voluntários de `1` a `N` e ir removendo os voluntários que voltarem da missão, imprimindo os que não sobreviveram ao final da leitura. Mas é importante notar que essa solução só é válida em linguagens que ordenam os elementos do conjunto. Nas soluções exibidas abaixo, veja as alternativas que eu escolhi para cada linguagem suportada aqui.
+Pela solução com conjunto, podemos criar um conjunto que inicialmente contem todos os voluntários de $1$ a $N$ e ir removendo os voluntários que voltarem da missão, imprimindo os que não sobreviveram ao final da leitura. Mas é importante notar que essa solução só é válida em linguagens que ordenam os elementos do conjunto. Nas soluções exibidas abaixo, veja as alternativas que eu escolhi para cada linguagem suportada aqui.
 
 > Não é necessário fazer o tratamento da saída com espaço entre elementos, o problema pede para que você **sempre** inclua um espaço após todo mergulhador que não sobreviveu.
 
@@ -78,8 +78,79 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            List<int> numeros = entrada.Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            
+            int N = numeros[0];
+            int R = numeros[1];
+            
+            bool[] voluntarios = new bool[N + 1];
+            numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            for(int i = 0; i < R; ++i){
+                voluntarios[numeros[i]] = true;
+            }
+            
+            if(N == R){
+                Console.WriteLine("*");
+            }else{
+                for(int i = 1; i <= N; ++i){
+                    if(!voluntarios[i]) Console.Write($"{i} ");
+                }
+                Console.WriteLine("");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] entrada = in.readLine().trim().split(" ");
+
+            int N = Integer.parseInt(entrada[0]);
+            int R = Integer.parseInt(entrada[1]);
+
+            boolean[] voluntarios = new boolean[N + 1];
+            entrada = in.readLine().trim().split(" ");
+            for(int i = 0; i < R; ++i){
+                voluntarios[Integer.parseInt(entrada[i])] = true;
+            }
+
+            if(N == R){
+                System.out.println("*");
+            }else{
+                for(int i = 1; i <= N; ++i){
+                    if(!voluntarios[i]) System.out.printf("%d ", i);
+                }
+                System.out.println("");
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('./input.txt', 'utf8');
 var lines = input.split('\n');
 
@@ -102,7 +173,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         N, R = [int(x) for x in input().strip().split(' ')]

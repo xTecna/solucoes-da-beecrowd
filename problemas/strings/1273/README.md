@@ -4,9 +4,11 @@
 
 ## Solução
 
-Este problema se resume a imprimir cada palavra do texto gastando o mesmo espaço que a maior palavra. Linhas que tem menos letras que a maior palavra precisam apenas exibir espaços à esquerda.
+Este problema se resume a imprimir cada palavra do texto gastando o mesmo espaço que a maior palavra. Linhas que têm menos letras que a maior palavra precisam apenas exibir espaços à esquerda.
 
-Na linguagem C++, temos um jeito muito elegante de resolver esse problema usando a biblioteca `iomanip`, onde podemos definir o espaço de cada palavra e que elas podem ser alinhadas à direita. Para outras linguagens, podemos inserir os espaços manualmente.
+Algumas linguagens possuem recursos especiais para fazer o espaçamento, confira como lidamos com isso na sua linguagem.
+
+> Em Java, usei encadeamento de formatações para conseguir um espaçamento dinâmico, baseado na maior palavra.
 
 ### C99
 ```c
@@ -75,8 +77,83 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Runtime;
+
+class URI {
+    static void Main(string[] args) {
+        bool first = true;
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            int N = int.Parse(entrada);
+
+            if(N == 0){
+                break;
+            }
+
+            if(first)   first = false;
+            else        Console.WriteLine("");
+
+            int maior = 0;
+            string[] palavras = new string[N];
+            for(int i = 0; i < N; ++i){
+                palavras[i] = Console.ReadLine().Trim();
+                maior = Math.Max(maior, palavras[i].Length);
+            }
+
+            for(int i = 0; i < N; ++i){
+                Console.WriteLine(palavras[i].PadLeft(maior));
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        boolean first = true;
+
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            if(N == 0){
+                break;
+            }
+
+            if(first)   first = false;
+            else        System.out.println("");
+
+            int maior = 0;
+            String[] palavras = new String[N];
+            for(int k = 0; k < N; ++k){
+                palavras[k] = in.readLine().trim();
+                maior = Math.max(maior, palavras[k].length());
+            }
+
+            for(int k = 0; k < N; ++k){
+                System.out.println(String.format(String.format("%%%ds", maior), palavras[k]));
+            }
+        }
+
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -97,16 +174,13 @@ while(lines.length){
     let maior = frases.reduce((acc, cur) => acc < cur.length ? cur.length : acc, 0);
 
     for(let i = 0; i < N; ++i){
-        let retorno = '';
-        for(let j = 0; j < maior - frases[i].length; ++j)   retorno += ' ';
-        retorno += frases[i];
-        console.log(retorno);
+        console.log(frases[i].padStart(maior));
     }
 }
 ```
 
 ### Python 3.9
-```python
+```py
 first = True
 while True:
     try:

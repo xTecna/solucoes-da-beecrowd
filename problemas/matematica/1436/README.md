@@ -6,6 +6,8 @@
 
 O capitão deve ser uma pessoa cuja idade faça com que exista um número igual de pessoas mais novas e mais velhas que ela. Logo, o capitão precisa ser o que tem a idade equivalente à mediana das idades presentes na equipe. A entrada que vamos receber pode estar ordenada tanto do maior pro menor quanto do menor pro maior, mas isso para nós não importa, pois a mediana sempre vai ser o valor do meio. Por isso, só precisamos retornar a idade do jogador na posição do meio.
 
+> Em Java, o vetor de idades vem todo junto na mesma linha com o tamanho, então eu precisei fazer o cálculo considerando um elemento a menos e todos ajustados pra direita, por isso precisei somar 1 no final.
+
 ### C99
 ```c
 #include <stdio.h>
@@ -70,8 +72,47 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        int T = int.Parse(Console.ReadLine());
+        for(int k = 1; k <= T; ++k){
+            List<int> idades = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).Skip(1).ToList();
+            
+            Console.WriteLine($"Case {k}: {idades[idades.Count / 2]}");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int T = Integer.parseInt(in.readLine());
+        for(int k = 1; k <= T; ++k){
+            String[] idades = in.readLine().trim().split(" ");
+
+            System.out.printf("Case %d: %s\n", k, idades[((idades.length - 1) / 2) + 1]);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -86,7 +127,7 @@ for (let k = 0; k < T; ++k) {
 ```
 
 ### Python 3.9
-```python
+```py
 T = int(input())
 
 for i in range(T):

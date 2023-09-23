@@ -1,6 +1,6 @@
 # Problemas
 
-## Iniciante (233/336)
+## Iniciante (237/336)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -228,11 +228,15 @@
 * [2754 - Saída 8](./iniciante/2754/README.md)
 * [2755 - Saída 9](./iniciante/2755/README.md)
 * [2756 - Saída 10](./iniciante/2756/README.md)
+* [2757 - Entrada e Saída de Números Inteiros](./iniciante/2757/README.md)
 * [2759 - Entrada e Saída de Carácter](./iniciante/2759/README.md)
 * [2763 - Entrada e Saída CPF](./iniciante/2763/README.md)
 * [2764 - Entrada e Saída de Data](./iniciante/2764/README.md)
 * [2766 - Entrada e Saída Lendo e Pulando Nomes](./iniciante/2766/README.md)
 * [2780 - Basquete de Robôs](./iniciante/2780/README.md)
+* [2791 - Feijão](./iniciante/2791/README.md)
+* [2862 - Inseto!](./iniciante/2862/README.md)
+* [2936 - Quanta Mandioca?](./iniciante/2936/README.md)
 * [2987 - Balão de Honra](./iniciante/2987/README.md)
 
 ## Ad-hoc (82/850)
@@ -319,7 +323,7 @@
 * [3227 - Doorman](./ad-hoc/3227/README.md)
 * [3263 - Apague Com Segurança](./ad-hoc/3263/README.md)
 
-## [Strings (24/148)](./strings/README.md)
+## [Strings (25/148)](./strings/README.md)
 * [1024 - Criptografia](./strings/1024/README.md)
 * [1120 - Revisão de Contrato](./strings/1120/README.md)
 * [1168 - LED](./strings/1168/README.md)
@@ -342,6 +346,7 @@
 * [1873 - Pedra-papel-tesoura-lagarto-Spock](./strings/1873/README.md)
 * [2062 - OBI URI](./strings/2062/README.md)
 * [2137 - A Biblioteca do Senhor Severino](./strings/2137/README.md)
+* [2174 - Coleção de Pomekon](./strings/2174/README.md)
 * [2242 - Huaauhahhuahau](./strings/2242/README.md)
 * [2253 - Validador de Senhas](./strings/2253/README.md)
 
@@ -403,6 +408,9 @@
 * [1203 - Pontes de São Petersburgo](./paradigmas/1203/README.md)
 * [1310 - Lucro](./paradigmas/1310/README.md)
 * [2243 - Isósceles](./paradigmas/2243/README.md)
+
+## Grafos (1/277)
+* [1152 - Estradas Escuras](./grafos/1152/README.md)
 
 ## Geometria computacional (1/82)
 * [1039 - Flores de Fogo](./geometria-computacional/1039/README.md)

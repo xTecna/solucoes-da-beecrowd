@@ -63,7 +63,7 @@ void insertionSort(vector<T> &V){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static void insertionSort(ref List<int> V){
     for(int i = 1; i < V.Count; ++i){
@@ -79,7 +79,7 @@ static void insertionSort(ref List<int> V){
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static void insertionSort(ArrayList<Integer> V){
     for(int i = 1; i < V.size(); ++i){
@@ -166,7 +166,7 @@ void selectionSort(vector<T>& V){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static void selectionSort(ref List<int> V){
     for(int i = 0; i < V.Count - 1; ++i){
@@ -181,7 +181,7 @@ static void selectionSort(ref List<int> V){
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static void selectionSort(ArrayList<Integer> V){
     for(int i = 0; i < V.size() - 1; ++i){
@@ -270,7 +270,7 @@ void bubbleSort(vector<T>& V){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static void bubbleSort(ref List<int> V){
     for(int i = 0; i < V.Count - 1; ++i){
@@ -286,7 +286,7 @@ static void bubbleSort(ref List<int> V){
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static void bubbleSort(ArrayList<Integer> V){
     for(int i = 0; i < V.size() - 1; ++i){
@@ -409,7 +409,7 @@ void mergeSort(vector<T>& V, int inicio, int fim){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static void merge(ref List<int> V, int inicio, int meio, int fim){
     List<int> aux = new List<int>(fim - inicio);
@@ -439,7 +439,7 @@ static void mergeSort(ref List<int> V, int inicio, int fim){
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static void merge(ArrayList<Integer> V, int inicio, int meio, int fim){
     ArrayList<Integer> aux = new ArrayList<Integer>(fim - inicio);
@@ -607,7 +607,7 @@ void quickSort(vector<T>& V, int inicio, int fim){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static int particao(ref List<int> V, int inicio, int fim){
     int pivo = V[fim - 1];
@@ -639,7 +639,7 @@ static void quickSort(ref List<int> V, int inicio, int fim){
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static int particao(ArrayList<Integer> V, int inicio, int fim){
     int pivo = V.get(fim - 1);
@@ -767,7 +767,7 @@ void countingSort(vector<int>& V, int limite){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static void countingSort(ref List<int> V, int limite){
     List<int> aux = new List<int>(limite);
@@ -786,7 +786,7 @@ static void countingSort(ref List<int> V, int limite){
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static void countingSort(ArrayList<Integer> V, int limite){
     ArrayList<Integer> aux = new ArrayList<Integer>(limite);
@@ -850,7 +850,7 @@ Em C, é possível usar a função `qsort()` para ordenar um vetor por [QuickSor
 
 Em C++, pode-se usar a função `sort()` para ordenar um vetor ou um `vector`. Mais informações sobre a função podem ser encontradas na [documentação](https://www.cplusplus.com/reference/algorithm/sort/?kw=sort).
 
-### C#
+#### C#
 
 Em C#, pode-se usar a função `Sort()` para ordernar uma `List`. Mais informações sobre a função podem ser encontradas na [documentação](https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.list-1.sort?view=net-7.0).
 
@@ -903,14 +903,14 @@ bool comp(T a, T b){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static int comp(int a, int b){
     return a - b;
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static int comp(int a, int b){
     return a - b;
@@ -944,7 +944,7 @@ bool comp(Aluno a, Aluno b){
 }
 ```
 
-### C#
+#### C#
 ```cs
 static int comp(Aluno a, Aluno b){
     if(a.nota == b.nota)    return a.nome.Compare(b.nome);
@@ -952,7 +952,7 @@ static int comp(Aluno a, Aluno b){
 }
 ```
 
-### Java 19
+#### Java 19
 ```java
 public static int comp(Aluno a, Aluno b){
     if(a.nota == b.nota)    return a.nome.CompareTo(b.nome);

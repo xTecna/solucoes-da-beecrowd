@@ -4,9 +4,11 @@
 
 ## Solução
 
-Este problema explica de forma bem básica como funcionam as tabelas hash, tabelas que armazenam informações baseada em chaves, ou seja, o próprio elemento a ser inserido é convertido para decidir sua posição no vetor. Este tipo de estrutura de dados serve a um propósito de facilitar a busca de elementos, pois quanto menos colisão existir na fórmula hash, menos elementos precisamos percorrer para encontrarmos o que procuramos (ao invés de termos que pesquisar linearmente).
+Este problema explica de forma bem básica como funcionam as tabelas _hash_, tabelas que armazenam informações baseada em chaves, ou seja, o próprio elemento a ser inserido é convertido para decidir sua posição no vetor. Este tipo de estrutura de dados serve a um propósito de facilitar a busca de elementos, pois quanto menos colisão existir na fórmula _hash_, menos elementos precisamos percorrer para encontrarmos o que procuramos (ao invés de termos que pesquisar linearmente).
 
-Com isso, tudo o que precisamos é de um vetor com `M` posições que armazena listas encadeadas ou vetores com tamanho variável. Dessa forma, teremos uma estrutura de dados bem robusta a qual podemos inserir e imprimir todos os elementos de forma apropriada.
+Com isso, tudo o que precisamos é de um vetor com $M$ posições que armazena listas encadeadas ou vetores com tamanho variável. Dessa forma, teremos uma estrutura de dados bem robusta a qual podemos inserir e imprimir todos os elementos de forma apropriada.
+
+> Infelizmente não temos solução para Java no momento.
 
 ### C99
 ```c
@@ -222,8 +224,74 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class TabelaHash {
+    public int chave { get; set; }
+    public List<int>[] tabela { get; set; }
+
+    public TabelaHash(int chave){
+        this.chave = chave;
+        this.tabela = new List<int>[chave];
+        for(int i = 0; i < chave; ++i){
+            this.tabela[i] = new List<int>();
+        }
+    }
+
+    private int funcaoHash(int x){
+        return x % this.chave;
+    }
+
+    public void adiciona(int x){
+        this.tabela[this.funcaoHash(x)].Add(x);
+    }
+
+    private void imprimeLinha(int i){
+        Console.Write($"{i} ->");
+        for(int j = 0; j < this.tabela[i].Count; ++j){
+            Console.Write($" {this.tabela[i][j]} ->");
+        }
+        Console.WriteLine(" \\");
+    }
+
+    public void imprime(){
+        for(int i = 0; i < this.tabela.Length; ++i){
+            this.imprimeLinha(i);
+        }
+    }
+}
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        for(int k = 0; k < N; ++k){
+            if(k > 0){
+                Console.WriteLine("");
+            }
+
+            string[] entrada = Console.ReadLine().Trim().Split(' ');
+
+            int M = int.Parse(entrada[0]);
+            int C = int.Parse(entrada[1]);
+            TabelaHash tabela = new TabelaHash(M);
+
+            List<int> chaves = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            for(int i = 0; i < chaves.Count; ++i){
+                tabela.adiciona(chaves[i]);
+            }
+
+            tabela.imprime();
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -270,7 +338,7 @@ for(let k = 0; k < N; ++k){
 ```
 
 ### Python 3.9
-```python
+```py
 class TabelaHash:
     def __init__(self, M):
         self.M = M

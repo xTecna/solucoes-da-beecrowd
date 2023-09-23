@@ -1,4 +1,4 @@
-## Strings (24/148)
+## Strings (25/148)
 * [1024 - Criptografia](./1024/README.md)
 * [1120 - Revisão de Contrato](./1120/README.md)
 * [1168 - LED](./1168/README.md)
@@ -21,5 +21,6 @@
 * [1873 - Pedra-papel-tesoura-lagarto-Spock](./1873/README.md)
 * [2062 - OBI URI](./2062/README.md)
 * [2137 - A Biblioteca do Senhor Severino](./2137/README.md)
+* [2174 - Coleção de Pomekon](./2174/README.md)
 * [2242 - Huaauhahhuahau](./2242/README.md)
 * [2253 - Validador de Senhas](./2253/README.md)

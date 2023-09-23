@@ -4,7 +4,7 @@
 
 ## Solução
 
-Para entendermos o que o problema quer, vamos analisar quantos passos vamos precisar para que uma letra se transforme em outra letra. Por exemplo, vamos supor que queiramos saber quantos passos precisamos para ir de `'a'` até `'d'`. Essa resposta é tranquila, precisamos de 3 passos: `'a' -> 'b' -> 'c' -> 'd'`. Isso é facilmente obtido se fizermos `ASCII('d') - ASCII('a')` (ver página [Tabela ASCII](../base-teorica/strings/tabela-ascii.md)). Entretanto, quantos passos precisamos para ir de `'x'` até `'a'`? Também 3 passos, pois fazemos `'x' -> 'y' -> 'z' -> 'a'`. Esse aspecto de poder voltar à letra 'a' quando avançamos 'z' pode tornar nosso cálculo um pouco mais difícil, mas isso é facilmente contornado se ao invés de calcularmos ASCII('a') - ASCII('x'), que daria um número negativo, podemos fazer `(ASCII('a') - ASCII('x') + 26) % 26` (ver página [Deslocar dentro de um intervalo \[0, N - 1\]](../base-teorica/matematica/macetes-matematicos.md#deslocar-dentro-de-um-intervalo-0-n-1) para entender porque este cálculo funciona).
+Para entendermos o que o problema quer, vamos analisar quantos passos vamos precisar para que uma letra se transforme em outra letra. Por exemplo, vamos supor que queiramos saber quantos passos precisamos para ir de `'a'` até `'d'`. Essa resposta é tranquila, precisamos de 3 passos: `'a' -> 'b' -> 'c' -> 'd'`. Isso é facilmente obtido se fizermos `ASCII('d') - ASCII('a')` (ver página [Tabela ASCII](../../../base-teorica/strings/ascii/README.md)). Entretanto, quantos passos precisamos para ir de `'x'` até `'a'`? Também 3 passos, pois fazemos `'x' -> 'y' -> 'z' -> 'a'`. Esse aspecto de poder voltar à letra 'a' quando avançamos 'z' pode tornar nosso cálculo um pouco mais difícil, mas isso é facilmente contornado se ao invés de calcularmos ASCII('a') - ASCII('x'), que daria um número negativo, podemos fazer `(ASCII('a') - ASCII('x') + 26) % 26` (ver página [Deslocar dentro de um intervalo \[0, N - 1\]](../../../base-teorica/matematica/macetes/README.md#deslocar-dentro-de-um-intervalo-0-n-1) para entender porque este cálculo funciona).
 
 Logo, para termos o número mínimo de operações entre uma string e outra, basta apenas calcular a soma do número de operações de uma letra para outra, na ordem.
 
@@ -61,8 +61,59 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int T = int.Parse(Console.ReadLine());
+        for(int k = 0; k < T; ++k){
+            string[] entrada = Console.ReadLine().Trim().Split(' ');
+            
+            string A = entrada[0];
+            string B = entrada[1];
+            
+            int resposta = 0;
+            for(int i = 0; i < A.Length; ++i){
+                resposta += (B[i] - A[i] + 26) % 26;
+            }
+            Console.WriteLine(resposta);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int T = Integer.parseInt(in.readLine());
+        for(int k = 0; k < T; ++k){
+            String[] entrada = in.readLine().trim().split(" ");
+
+            String A = entrada[0];
+            String B = entrada[1];
+
+            int resposta = 0;
+            for(int i = 0; i < A.length(); ++i){
+                resposta += (B.charAt(i) - A.charAt(i) + 26) % 26;
+            }
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -81,7 +132,7 @@ for(let i = 0; i < T; ++i){
 ```
 
 ### Python 3.9
-```python
+```py
 T = int(input())
 
 for _ in range(T):

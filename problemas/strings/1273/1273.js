@@ -18,9 +18,6 @@ while(lines.length){
     let maior = frases.reduce((acc, cur) => acc < cur.length ? cur.length : acc, 0);
 
     for(let i = 0; i < N; ++i){
-        let retorno = '';
-        for(let j = 0; j < maior - frases[i].length; ++j)   retorno += ' ';
-        retorno += frases[i];
-        console.log(retorno);
+        console.log(frases[i].padStart(maior));
     }
 }
