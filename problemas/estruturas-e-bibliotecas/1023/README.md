@@ -4,7 +4,7 @@
 
 ## Solução
 
-Não parece muito claro, mas o objetivo desse problema é contabilizar quantas pessoas têm com o custo médio equivalente a cada valor, ou seja, precisamos agrupar as pessoas pelo consumo médio delas por pessoa na sua casa.
+Não parece muito claro, mas o objetivo desse problema é contabilizar quantas pessoas tem com o custo médio equivalente a cada valor, ou seja, precisamos agrupar as pessoas pelo consumo médio delas por pessoa na sua casa.
 
 Por exemplo, vamos analisar o segundo caso de teste:
 
@@ -77,7 +77,7 @@ int main()
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 #include <iomanip>
@@ -137,7 +137,6 @@ int main()
 ```
 
 ### C#
-
 ```cs
 using System;
 using System.Collections.Generic;
@@ -193,8 +192,7 @@ class URI
 }
 ```
 
-### Java 14
-
+### Java 19
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -252,7 +250,7 @@ public class Main {
 ```
 
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -291,7 +289,7 @@ while(p < lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 import math
 
 T = 0

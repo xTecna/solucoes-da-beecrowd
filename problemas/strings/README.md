@@ -1,4 +1,4 @@
-## Strings (25/148)
+## Strings (26/148)
 * [1024 - Criptografia](./1024/README.md)
 * [1120 - Revisão de Contrato](./1120/README.md)
 * [1168 - LED](./1168/README.md)
@@ -11,6 +11,7 @@
 * [1253 - Cifra de César](./1253/README.md)
 * [1255 - Frequência de Letras](./1255/README.md)
 * [1257 - Array Hash](./1257/README.md)
+* [1263 - Aliteração](./1263/README.md)
 * [1272 - Mensagem Oculta](./1272/README.md)
 * [1273 - Justificador](./1273/README.md)
 * [1332 - Um-Dois-Três](./1332/README.md)

@@ -397,3 +397,7 @@ def Prim(grafo, n):
 
     return resposta
 ```
+
+## Problemas
+
+* [1152 - Estradas Escuras](../../../problemas/grafos/1152/README.md)

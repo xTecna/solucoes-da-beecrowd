@@ -2,117 +2,109 @@
 
 ## Motivação
 
-Os deques são como as [pilhas](../pilha/README.md) e as filas, mas em vez de só poder adicionar e remover de um dos lados especificamente, é permitido adicionar e remover de ambas as pontas, com complexidade constante. Pela semelhança, normalmente são chamados também de filas duplamente terminadas.
+Os deques são como as [pilhas](../pilha/README.md) e as [filas](../fila/README.md), mas em vez de só poder adicionar e remover de um dos lados especificamente, é permitido adicionar e remover de ambas as pontas, com complexidade constante. Pela semelhança, normalmente são chamados também de filas duplamente terminadas.
 
-Também vale notar que [pilhas](../pilha/README.md) e filas podem servir como exemplos de deques limitados de alguma maneira e as implementações de deque podem ser usadas tranquilamente para implementação de pilhas e filhas (que é inclusive o que é feito com a solução na biblioteca `collections` em Python).
+Também vale notar que [pilhas](../pilha/README.md) e [filas](../fila/README.md) podem servir como exemplos de deques limitados de alguma maneira e as implementações de deque podem ser usadas tranquilamente para implementação de pilhas e filhas (que é inclusive o que é feito com a solução na biblioteca `collections` em Python).
 
 ## Implementações
 
-É possível implementar deques com listas encadeadas, envolvendo uma lista sequencial de todos os elementos até o valor NULL com dois ponteiros apontando para o início e para o final. A representação em deques é exatamente a mesma, onde os elementos são adicionados ou removidos pelo começo ou pelo final da lista, a fim de garantir a complexidade das operações.
+É possível implementar deques com listas encadeadas, envolvendo uma lista sequencial de todos os elementos até o valor `NULL`` com dois ponteiros: um apontando para o início e outro para o final. A representação em deques é exatamente a mesma, onde os elementos são adicionados ou removidos pelo começo ou pelo final da lista, a fim de garantir a complexidade das operações.
 
 Vamos conferir então como podemos implementar um deque nas linguagens suportadas por esse solucionário.
 
-> Todos os códigos aqui apresentados (inclusive os providenciados por biblioteca) dão erro ao se tentar acessar ou remover um elemento que não existe. Confira se o deque está vazio antes de tentar remover ou acessar algum elemento.
+> A menos que o código mostre o contrário, assuma que as estruturas aqui apresentadas (inclusive as providenciadas por biblioteca) dão erro ao se tentar acessar ou remover um elemento que não existe. Confira se o deque está vazio antes de tentar remover ou acessar o elemento de uma das pontas.
 
 ### C
 
-Aqui eu implementei a nossa pilha como uma struct, onde você precisa inicializa-la toda vez que você precisar usá-la. Eu tomei a liberdade de fazer algumas operações extras de acordo com o deque implementado na biblioteca STL do C++ (ver subseção abaixo).
+Aqui eu implementei o nosso deque como uma _struct_, onde você precisa inicializa-la toda vez que você precisar usá-la. Eu tomei a liberdade de fazer algumas operações extras de acordo com o deque implementado na biblioteca STL do C++ (ver subseção abaixo).
 
 ```c
-struct dequeNo
-{
+struct dequeNo{
     int valor;
     struct dequeNo *anterior, *proximo;
 };
 
-struct deque
-{
+struct deque{
     int tamanho;
     struct dequeNo *frente, *tras;
 };
 
-void push_front(struct deque *d, int valor)
-{
+void push_front(struct deque* d, int valor){
     d->tamanho += 1;
-    struct dequeNo *novaFrente = (struct dequeNo *)malloc(sizeof(struct dequeNo));
+    struct dequeNo* novoNo = (struct dequeNo*) malloc(sizeof(struct dequeNo));
+    novoNo->valor = valor;
+    novoNo->anterior = NULL;
+    novoNo->proximo = d->frente;
 
-    novaFrente->valor = valor;
-    novaFrente->proximo = d->frente;
-    if (d->frente != NULL)
-        d->frente->anterior = novaFrente;
-    d->frente = novaFrente;
-    if (d->tras == NULL)
-        d->tras = d->frente;
+    if(d->frente != NULL){
+        d->frente->anterior = novoNo;
+    }
+    d->frente = novoNo;
+
+    if(d->tras == NULL){
+        d->tras = novoNo;
+    }
 }
 
-void push_back(struct deque *d, int valor)
-{
+void push_back(struct deque* d, int valor){
     d->tamanho += 1;
-    struct dequeNo *novoTras = (struct dequeNo *)malloc(sizeof(struct dequeNo));
+    struct dequeNo* novoNo = (struct dequeNo*) malloc(sizeof(struct dequeNo));
+    novoNo->valor = valor;
+    novoNo->anterior = d->tras;
+    novoNo->proximo = NULL;
 
-    novoTras->valor = valor;
-    novoTras->anterior = d->tras;
-    if (d->tras != NULL)
-        d->tras->proximo = novoTras;
-    d->tras = novoTras;
-    if (d->frente == NULL)
-        d->frente = d->tras;
+    if(d->tras != NULL){
+        d->tras->proximo = novoNo;
+    }
+    d->tras = novoNo;
+
+    if(d->frente == NULL){
+        d->frente = novoNo;
+    }
 }
 
-void pop_front(struct deque *d)
-{
-    if (d->tamanho > 0)
-    {
+void pop_front(struct deque* d){
+    if(d->tamanho > 0){
         d->tamanho -= 1;
-        struct dequeNo *velhaFrente = d->frente;
-        d->frente = d->frente->proximo;
+        struct dequeNo* velhaFrente = d->frente;
+        d->frente = velhaFrente->proximo;
         free(velhaFrente);
     }
 }
 
-void pop_back(struct deque *d)
-{
-    if (d->tamanho > 0)
-    {
+void pop_back(struct deque* d){
+    if(d->tamanho > 0){
         d->tamanho -= 1;
-        struct dequeNo *velhoTras = d->tras;
-        d->tras = d->tras->anterior;
+        struct dequeNo* velhoTras = d->tras;
+        d->tras = velhoTras->anterior;
         free(velhoTras);
     }
 }
 
-int front(struct deque *d)
-{
+int front(struct deque* d){
     return d->frente->valor;
 }
 
-int back(struct deque *d)
-{
+int back(struct deque* d){
     return d->tras->valor;
 }
 
-int size(struct deque *d)
-{
+int size(struct deque* d){
     return d->tamanho;
 }
 
-int empty(struct deque *d)
-{
+int empty(struct deque* d){
     return d->tamanho == 0;
 }
 
-void inicializa(struct deque *d)
-{
+void inicializa(struct deque* d){
     d->tamanho = 0;
     d->frente = NULL;
     d->tras = NULL;
 }
 
-void destroi(struct deque *d)
-{
-    d->tamanho = 0;
-    while (!empty(d))
-    {
+void destroi(struct deque* d){
+    while(!empty(d)){
         pop_front(d);
     }
 }
@@ -120,97 +112,15 @@ void destroi(struct deque *d)
 
 ### C++
 
-A biblioteca STL oferece uma implementação de deque `deque<T>` pronta para ser usada, com as seguintes operações:
-
-* `push_front`: insere um elemento na frente do deque
-* `push_back`: insere um elemento atrás do deque
-* `pop_front`: remove o elemento da frente do deque
-* `pop_back`: remove o elemento de trás do deque
-* `front`: retorna o elemento que está na frente do deque
-* `back`: retorna o elemento que está atrás do deque
-* `size`: retorna quantos elementos tem no deque
-* `empty`: retorna se o deque está vazio
-
-Para mais detalhes sobre como funciona cada operação ou sobre como instanciar um deque, veja a [documentação](https://www.cplusplus.com/reference/deque/deque/).
-
-```cpp
-#include <iostream>
-#include <deque>
-
-using namespace std;
-
-int main(){
-    deque<int> d;
-    
-    d.push_front(10);
-    d.push_front(20);
-    d.push_back(30);
-    
-    while(!d.empty()){
-        cout << d.front() << ' ';
-        d.pop_front();
-    }
-    cout << endl;
-    
-    return 0;
-}
-```
-
-> A saída do programa acima será: `20 10 30`
+A biblioteca STL oferece uma implementação de deque `deque<T>` pronta para ser usada. Para mais detalhes sobre como funciona cada operação ou sobre como instanciar um deque, veja a [documentação](https://www.cplusplus.com/reference/deque/deque/).
 
 ### C#
 
 Não há uma implementação direta de deque em C#, mas entendendo que deques podem ser implementados como listas encadeadas com operações de inserção e remoção em $O(1)$, então podemos usar a classe `LinkedList<T>`, que contém os métodos `AddFirst()`, `AddLast()`, `RemoveFirst()` e `RemoveLast()`, com a mesma complexidade de um deque. Você pode ver mais detalhes sobre essa classe na [documentação](https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.linkedlist-1?view=net-7.0).
 
-```cs
-using System;
-using System.Collections.Generic;
-
-class URI {
-    static void Main(string[] args) {
-        LinkedList<int> deque = new LinkedList<int>();
-        
-        deque.AddFirst(10);
-        deque.AddFirst(20);
-        deque.AddLast(30);
-        
-        while(deque.Count > 0){
-            Console.Write($"{deque.First.Value} ");
-            deque.RemoveFirst();
-        }
-        Console.WriteLine("");
-    }
-}
-```
-
-> A saída do programa será: `20 10 30 `
-
 ### Java
 
 Assim como em C#, em Java podemos usar a estrutura `LinkedList` implementada na biblioteca `java.util`. Para mais informações sobre `LinkedList`, consulte a [documentação](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html).
-
-```java
-import java.util.LinkedList;
-
-public class Main
-{
-	public static void main(String[] args) {
-		LinkedList<Integer> deque = new LinkedList<Integer>();
-		
-		deque.addFirst(10);
-		deque.addFirst(20);
-		deque.addLast(30);
-		
-		while(deque.size() > 0){
-		    System.out.printf("%d ", deque.peekFirst());
-		    deque.removeFirst();
-		}
-		System.out.println("");
-	}
-}
-```
-
-> A saída do programa será: `20 10 30 `
 
 ### JavaScript
 
@@ -286,31 +196,7 @@ class Deque {
 
 ### Python
 
-Python implementa o deque com a biblioteca `collections` com todas as seguintes operações:
-
-* `appendleft`: insere um elemento na frente do deque
-* `append`: insere um elemento atrás do deque
-* `popleft`: remove o elemento da frente do deque
-* `pop`: remove o elemento de trás do deque
-
-Pode-se usar acessores diretamente para avaliar a posição da frente e a de trás com \[0] e \[-1] respectivamente.
-
-Para mais detalhes sobre como funciona cada operação ou sobre como instanciar um deque, veja a [documentação](https://docs.python.org/3/library/collections.html#collections.deque).
-
-```python
-from collections import deque
-
-d = deque()
-
-d.appendleft(10)
-d.appendleft(20)
-d.append(30)
-
-while(len(d) > 0):
-    print(d.pop())
-```
-
-> A saída do programa acima será: `30 10 20`
+Python implementa deque com a biblioteca `collections`. Você pode usar acessores diretamente para ver a posição de frente e a de trás com `[0]` e `[-1]` respectivamente. Mais detalhes sobre essa implementação podem ser encontrados na [documentação](https://docs.python.org/3/library/collections.html#collections.deque).
 
 ## Problemas
 

@@ -37,7 +37,7 @@ int main()
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 #include <sstream>
@@ -74,8 +74,65 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string entrada;
+
+        while((entrada = Console.ReadLine()) != null){
+            if(entrada == "-1"){
+                break;
+            }
+            
+            int numero = 0;
+            if(entrada.StartsWith("0x")){
+                numero = Convert.ToInt32(entrada, 16);
+                Console.WriteLine(numero);
+            }else{
+                numero = int.Parse(entrada);
+                Console.WriteLine($"0x{numero:X}");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String entrada = in.readLine();
+
+            if(entrada.equals("-1")){
+                break;
+            }
+
+            int numero = 0;
+            if(entrada.startsWith("0x")){
+                numero = Integer.parseInt(entrada.substring(2), 16);
+                System.out.println(numero);
+            }else{
+                numero = Integer.parseInt(entrada);
+                System.out.printf("0x%X\n", numero);
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -93,7 +150,7 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-```python
+```py
 while True:
     try:
         entrada = input()

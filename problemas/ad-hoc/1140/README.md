@@ -16,7 +16,7 @@ int main(){
     char letra, frase[1001];
     int n, tautograma, primeiro;
 
-    while(scanf("%[^\n]\n", &frase)){
+    while(scanf("%[^\n]\n", &frase) != EOF){
         if(frase[0] == '*') break;
 
         primeiro = 1;

@@ -1,99 +1,92 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-struct dequeNo
-{
+struct dequeNo{
     int valor;
     struct dequeNo *anterior, *proximo;
 };
 
-struct deque
-{
+struct deque{
     int tamanho;
     struct dequeNo *frente, *tras;
 };
 
-void push_front(struct deque *d, int valor)
-{
+void push_front(struct deque* d, int valor){
     d->tamanho += 1;
-    struct dequeNo *novaFrente = (struct dequeNo *)malloc(sizeof(struct dequeNo));
+    struct dequeNo* novoNo = (struct dequeNo*) malloc(sizeof(struct dequeNo));
+    novoNo->valor = valor;
+    novoNo->anterior = NULL;
+    novoNo->proximo = d->frente;
 
-    novaFrente->valor = valor;
-    novaFrente->proximo = d->frente;
-    if (d->frente != NULL)
-        d->frente->anterior = novaFrente;
-    d->frente = novaFrente;
-    if (d->tras == NULL)
-        d->tras = d->frente;
+    if(d->frente != NULL){
+        d->frente->anterior = novoNo;
+    }
+    d->frente = novoNo;
+
+    if(d->tras == NULL){
+        d->tras = novoNo;
+    }
 }
 
-void push_back(struct deque *d, int valor)
-{
+void push_back(struct deque* d, int valor){
     d->tamanho += 1;
-    struct dequeNo *novoTras = (struct dequeNo *)malloc(sizeof(struct dequeNo));
+    struct dequeNo* novoNo = (struct dequeNo*) malloc(sizeof(struct dequeNo));
+    novoNo->valor = valor;
+    novoNo->anterior = d->tras;
+    novoNo->proximo = NULL;
 
-    novoTras->valor = valor;
-    novoTras->anterior = d->tras;
-    if (d->tras != NULL)
-        d->tras->proximo = novoTras;
-    d->tras = novoTras;
-    if (d->frente == NULL)
-        d->frente = d->tras;
+    if(d->tras != NULL){
+        d->tras->proximo = novoNo;
+    }
+    d->tras = novoNo;
+
+    if(d->frente == NULL){
+        d->frente = novoNo;
+    }
 }
 
-void pop_front(struct deque *d)
-{
-    if (d->tamanho > 0)
-    {
+void pop_front(struct deque* d){
+    if(d->tamanho > 0){
         d->tamanho -= 1;
-        struct dequeNo *velhaFrente = d->frente;
-        d->frente = d->frente->proximo;
+        struct dequeNo* velhaFrente = d->frente;
+        d->frente = velhaFrente->proximo;
         free(velhaFrente);
     }
 }
 
-void pop_back(struct deque *d)
-{
-    if (d->tamanho > 0)
-    {
+void pop_back(struct deque* d){
+    if(d->tamanho > 0){
         d->tamanho -= 1;
-        struct dequeNo *velhoTras = d->tras;
-        d->tras = d->tras->anterior;
+        struct dequeNo* velhoTras = d->tras;
+        d->tras = velhoTras->anterior;
         free(velhoTras);
     }
 }
 
-int front(struct deque *d)
-{
+int front(struct deque* d){
     return d->frente->valor;
 }
 
-int back(struct deque *d)
-{
+int back(struct deque* d){
     return d->tras->valor;
 }
 
-int size(struct deque *d)
-{
+int size(struct deque* d){
     return d->tamanho;
 }
 
-int empty(struct deque *d)
-{
+int empty(struct deque* d){
     return d->tamanho == 0;
 }
 
-void inicializa(struct deque *d)
-{
+void inicializa(struct deque* d){
     d->tamanho = 0;
     d->frente = NULL;
     d->tras = NULL;
 }
 
-void destroi(struct deque *d)
-{
-    while (!empty(d))
-    {
+void destroi(struct deque* d){
+    while(!empty(d)){
         pop_front(d);
     }
 }

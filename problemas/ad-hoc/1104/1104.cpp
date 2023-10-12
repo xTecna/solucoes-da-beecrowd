@@ -6,7 +6,7 @@ using namespace std;
 
 int main(){
     int A, B, carta;
-    set<int> alice, beatriz, uniao;
+    set<int> alice, beatriz, ambas;
 
     while(cin >> A >> B){
         if(!A && !B)    break;
@@ -23,10 +23,10 @@ int main(){
             beatriz.insert(carta);
         }
 
-        uniao.clear();
-        set_union(alice.begin(), alice.end(), beatriz.begin(), beatriz.end(), inserter(uniao, uniao.end()));
+        ambas.clear();
+        set_union(alice.begin(), alice.end(), beatriz.begin(), beatriz.end(), inserter(ambas, ambas.end()));
 
-        cout << min(uniao.size() - beatriz.size(), uniao.size() - alice.size()) << endl;
+        cout << min(ambas.size() - beatriz.size(), ambas.size() - alice.size()) << endl;
     }
 
     return 0;

@@ -9,7 +9,7 @@ A pilha é uma estrutura de dados que funciona que nem uma pilha da vida real.
 Nessa enorme pilha de livros que vemos aqui e considerando que você é uma pessoa cuidadosa, só é possível adicionar ou remover livros no topo. As duas operações principais de uma pilha, no sentido computacional, são também essas:
 
 * `PUSH`: que adiciona um elemento ao topo da pilha
-* `POP`: que remova um elemento no topo da pilha
+* `POP`: que remove um elemento no topo da pilha
 
 Este comportamento é conhecido como LIFO (_Last In, First Out_), ou seja, o primeiro elemento a entrar é o último a sair, o que vemos também na pilha de livros. Também podemos ver que na pilha de livros, só é possível ver a capa do livro que está no topo, assim também é na estrutura de pilha computacionalmente, onde não é possível ver informações sobre qualquer elemento que não seja o do topo.
 
@@ -17,15 +17,15 @@ Apesar do caráter restritivo dessa estrutura de dados, ela se prova bastante va
 
 | Operação | Complexidade de tempo |
 | -------- | --------------------- |
-| `PUSH`   | $O(1)$                  |
-| `POP`    | $O(1)$                  |
+| `PUSH`   | $O(1)$                |
+| `POP`    | $O(1)$                |
 
 ## Implementações
 
 Existem duas maneiras de implementar pilhas:
 
-* Através de listas encadeadas (ver [C](pilha.md#c))
-* Através de vetores (ver [JavaScript](pilha.md#javascript) ou [Python](pilha.md#python))
+* Através de listas encadeadas
+* Através de vetores
 
 Em ambas as abordagens, a ideia é deitarmos essa pilha, mais ou menos como na figura abaixo:
 
@@ -37,16 +37,16 @@ Para o caso de vetores, é importante que os elementos sejam adicionados ou remo
 
 Vamos conferir então como podemos implementar uma pilha nas linguagens suportadas por esse solucionário.
 
-> Todos os códigos aqui apresentados (inclusive os providenciados por biblioteca) dão erro ao se tentar acessar ou remover um elemento que não existe. Confira se a pilha está vazia antes de tentar remover ou acessar o elemento do topo.
+> A menos que o código mostre o contrário, assuma que as estruturas aqui apresentadas (inclusive as providenciadas por biblioteca) dão erro ao se tentar acessar ou remover um elemento que não existe. Confira se a pilha está vazia antes de tentar remover ou acessar o elemento do topo.
 
 ### C
 
-Aqui eu implementei a nossa pilha como uma struct, onde você precisa inicializa-la toda vez que você precisar usá-la. Eu tomei a liberdade de fazer algumas operações extras de acordo com a pilha implementada na biblioteca STL do C++ (ver subseção abaixo).
+Aqui eu implementei a nossa pilha como uma _struct_, onde você precisa inicializa-la toda vez que você precisar usá-la. Eu tomei a liberdade de fazer algumas operações extras de acordo com a pilha implementada na biblioteca STL do C++ (ver subseção abaixo).
 
 ```c
 struct pilhaNo{
     int valor;
-    struct pilhaNo* abaixo;
+    struct PilhaNo* abaixo;
 };
 
 struct pilha{
@@ -56,7 +56,7 @@ struct pilha{
 
 void push(struct pilha* p, int valor){
     p->tamanho += 1;
-    struct pilhaNo* novoTopo = (struct pilhaNo*) malloc(sizeof(struct pilhaNo));
+    struct pilhaNo* novoTopo = (struct pilhaNo*) malloc(sizeof(struct PilhaNo));
 
     novoTopo->valor = valor;
     novoTopo->abaixo = p->topo;
@@ -66,8 +66,8 @@ void push(struct pilha* p, int valor){
 void pop(struct pilha* p){
     if(p->tamanho > 0){
         p->tamanho -= 1;
-        struct pilhaNo* velhoTopo = p->topo;
-        p->topo = p->topo->abaixo;
+        struct PilhaNo* velhoTopo = p->topo;
+        p->topo = velhoTopo->abaixo;
         free(velhoTopo);
     }
 }
@@ -98,94 +98,15 @@ void destroi(struct pilha* p){
 
 ### C++
 
-A biblioteca STL oferece uma implementação de pilha `stack<T>` pronta para ser usada, com as seguintes operações:
-
-* `push`: insere um elemento no topo da pilha
-* `pop`: remove o elemento do topo da pilha
-* `top`: retorna o elemento que está no topo da pilha
-* `size`: retorna quantos elementos tem na pilha
-* `empty`: retorna se a pilha está vazia
-
-Para mais detalhes sobre como funciona cada operação ou sobre como instanciar uma pilha, veja a [documentação](https://www.cplusplus.com/reference/stack/stack/).
-
-```cpp
-#include <iostream>
-#include <stack>
-
-using namespace std;
-
-int main(){
-    stack<int> pilha;
-    
-    pilha.push(10);
-    pilha.push(20);
-    pilha.push(30);
-    
-    while(!pilha.empty()){
-        cout << pilha.top() << ' ';
-        pilha.pop();
-    }
-    cout << endl;
-    
-    return 0;
-}
-```
-
-> A saída do programa acima será: `30 20 10 `
+A biblioteca STL oferece uma implementação de pilha `stack<T>` pronta para ser usada. Para mais detalhes sobre como funciona cada operação ou sobre como instanciar uma pilha, veja a [documentação](https://www.cplusplus.com/reference/stack/stack/).
 
 ### C#
 
 A classe `Stack<T>` contém a estrutura necessária para usarmos pilhas em C#. Para mais informações sobre `Stack<T>`, consulte a [documentação](https://learn.microsoft.com/pt-br/dotnet/api/system.collections.generic.stack-1?view=net-7.0).
 
-```cs
-using System;
-using System.Collections.Generic;
-
-class URI {
-    static void Main(string[] args) {
-        Stack<int> pilha = new Stack<int>();
-        
-        pilha.Push(10);
-        pilha.Push(20);
-        pilha.Push(30);
-        
-        while(pilha.Count > 0){
-            Console.Write($"{pilha.Peek()} ");
-            pilha.Pop();
-        }
-        Console.WriteLine("");
-    }
-}
-```
-
-> A saída do programa será: `30 20 10 `
-
 ### Java
 
-A class `Stack` implementada na biblioteca `java.util`. Para mais informações sobre `Stack`, consulte a [documentação](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html).
-
-```java
-import java.util.Stack;
-
-public class Main
-{
-	public static void main(String[] args) {
-		Stack<Integer> pilha = new Stack<Integer>();
-		
-		pilha.push(10);
-		pilha.push(20);
-		pilha.push(30);
-		
-		while(pilha.size() > 0){
-		    System.out.printf("%d ", pilha.peek());
-		    pilha.pop();
-		}
-		System.out.println("");
-	}
-}
-```
-
-> A saída do programa será: `30 20 10 `
+A classe `Stack` implementada na biblioteca `java.util` já está implementada e pronta pra usarmos. Para mais informações sobre `Stack`, consulte a [documentação](https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html).
 
 ### JavaScript
 
@@ -221,51 +142,7 @@ class Pilha {
 
 ### Python
 
-#### Usando array
-
-Vamos usar exatamente o mesmo raciocínio que usamos para a pilha em JavaScript, onde representando a pilha como um vetor, temos que só podemos adicionar ou remover a partir do último índice.
-
-```py
-class Pilha:
-    def __init__(self):
-        self.pilha = []
-    
-    def push(self, valor):
-        self.pilha.append(valor)
-    
-    def pop(self):
-        self.pilha.pop()
-    
-    def top(self):
-        return self.pilha[-1]
-    
-    def size(self):
-        return len(self.pilha)
-    
-    def empty(self):
-        return len(self.pilha) == 0
-```
-
-#### Usando collections.deque
-
-Python implementa [fila duplamente-encadeada](deque.md) com a biblioteca `collections`, onde você pode usar a classe deque com o mesmo comportamento de uma pilha se você usar somente as operações `append` e `pop`.
-
-Você pode implementar a função `top` guardando o retorno do `pop` e fazendo um `push` de volta.
-
-```py
-from collections import deque
-
-pilha = deque()
-
-pilha.append(10)
-pilha.append(20)
-pilha.append(30)
-
-while(len(pilha) > 0):
-    print(pilha.pop())
-```
-
-> A saída do programa acima será: `30 20 10 `
+Python implementa [fila duplamente encadeada](../deque/README.md) com a biblioteca `collections`, onde você pode usar a classe deque com o mesmo comportamento de uma pilha se você usar somente as operações `append` e `pop`. Você pode implementar a função `top` guardando o retorno do `pop` e fazendo um `push` de volta. Mais detalhes sobre essa implementação podem ser encontrados na [documentação](https://docs.python.org/3/library/collections.html#collections.deque).
 
 ## Problemas
 
@@ -274,3 +151,4 @@ while(len(pilha) > 0):
 * [1069 - Diamantes e areia](../../../problemas/estruturas-e-bibliotecas/1069/README.md)
 * [1077 - Infixa para posfixa](../../../problemas/estruturas-e-bibliotecas/1077/README.md)
 * [2929 - Menor da pilha](../../../problemas/estruturas-e-bibliotecas/2929/README.md)
+* [1340 - Eu Posso Adivinhar a Estrutura de Dados!](../../../problemas/estruturas-e-bibliotecas/1340/README.md)

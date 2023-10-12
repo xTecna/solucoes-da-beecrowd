@@ -7,7 +7,6 @@
 Uma maneira um pouco mais fácil de resolver esse problema é normalizar as datas para quantidade de dias desde o dia 31/12/2015 e tirar a diferença. Para isso, eu montei um vetor com todos os dias acumulados no começo de cada mês para facilitar a conta em relação a qualquer dia do mês, o que fiz somando a quantidade de dias nos meses anteriores, começando com 0, depois 31, depois 31 + 29 (ano bissexto), depois 31 + 29 + 31, e assim por diante. Provavelmente deve ter um jeito muito mais fácil de fazer do que esse.
 
 ### C99
-
 ```c
 #include <stdio.h>
 
@@ -48,8 +47,7 @@ int main()
 }
 ```
 
-### C++17
-
+### C++20
 ```cpp
 #include <iostream>
 
@@ -93,7 +91,6 @@ int main()
 ```
 
 ### C#
-
 ```cs
 using System;
 using System.Collections.Generic;
@@ -138,7 +135,6 @@ class URI {
 ```
 
 ### Java 14
-
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -177,7 +173,6 @@ public class Main {
 ```
 
 ### Javascript 12.18
-
 ```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
@@ -204,7 +199,6 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-
 ```py
 diasAteMes = [0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335]
 

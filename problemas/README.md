@@ -1,6 +1,6 @@
 # Problemas
 
-## Iniciante (237/336)
+## Iniciante (240/336)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -229,7 +229,10 @@
 * [2755 - Saída 9](./iniciante/2755/README.md)
 * [2756 - Saída 10](./iniciante/2756/README.md)
 * [2757 - Entrada e Saída de Números Inteiros](./iniciante/2757/README.md)
+* [2758 - Entrada e Saída de Números Reais](./iniciante/2758/README.md)
 * [2759 - Entrada e Saída de Carácter](./iniciante/2759/README.md)
+* [2760 - Entrada e Saída de String](./iniciante/2760/README.md)
+* [2762 - Entrada e Saída 6](./iniciante/2762/README.md)
 * [2763 - Entrada e Saída CPF](./iniciante/2763/README.md)
 * [2764 - Entrada e Saída de Data](./iniciante/2764/README.md)
 * [2766 - Entrada e Saída Lendo e Pulando Nomes](./iniciante/2766/README.md)
@@ -323,7 +326,7 @@
 * [3227 - Doorman](./ad-hoc/3227/README.md)
 * [3263 - Apague Com Segurança](./ad-hoc/3263/README.md)
 
-## [Strings (25/148)](./strings/README.md)
+## [Strings (26/148)](./strings/README.md)
 * [1024 - Criptografia](./strings/1024/README.md)
 * [1120 - Revisão de Contrato](./strings/1120/README.md)
 * [1168 - LED](./strings/1168/README.md)
@@ -336,6 +339,7 @@
 * [1253 - Cifra de César](./strings/1253/README.md)
 * [1255 - Frequência de Letras](./strings/1255/README.md)
 * [1257 - Array Hash](./strings/1257/README.md)
+* [1263 - Aliteração](./strings/1263/README.md)
 * [1272 - Mensagem Oculta](./strings/1272/README.md)
 * [1273 - Justificador](./strings/1273/README.md)
 * [1332 - Um-Dois-Três](./strings/1332/README.md)
@@ -409,13 +413,14 @@
 * [1310 - Lucro](./paradigmas/1310/README.md)
 * [2243 - Isósceles](./paradigmas/2243/README.md)
 
-## Grafos (1/277)
+## Grafos (2/277)
 * [1152 - Estradas Escuras](./grafos/1152/README.md)
+* [1195 - Árvore Binária de Busca](./grafos/1195/README.md)
 
 ## Geometria computacional (1/82)
 * [1039 - Flores de Fogo](./geometria-computacional/1039/README.md)
 
-## SQL (22/46)
+## SQL (23/46)
 * [2602 - Select Básico](./sql/2602/README.md)
 * [2603 - Endereço dos Clientes](./sql/2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./sql/2604/README.md)
@@ -437,4 +442,5 @@
 * [2621 - Quantidades Entre 10 e 20](./sql/2621/README.md)
 * [2622 - Pessoas Jurídicas](./sql/2622/README.md)
 * [2623 - Categorias com Vários Produtos](./sql/2623/README.md)
-* [2624 - Quantidades de Cidades por Clientes](./2624/README.md)
+* [2624 - Quantidades de Cidades por Clientes](./sql/2624/README.md)
+* [2737 - Advogados](./sql/2737/README.md)

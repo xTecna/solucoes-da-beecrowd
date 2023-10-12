@@ -1,20 +1,20 @@
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main()
 {
-    string nomes[3];
+    string A, B, C;
 
-    for (int i = 0; i < 3; ++i)
-    {
-        getline(cin, nomes[i]);
-    }
+    getline(cin, A);
+    getline(cin, B);
+    getline(cin, C);
 
-    cout << nomes[0] << nomes[1] << nomes[2] << endl;
-    cout << nomes[1] << nomes[2] << nomes[0] << endl;
-    cout << nomes[2] << nomes[0] << nomes[1] << endl;
-    cout << nomes[0].substr(0, 10) << nomes[1].substr(0, 10) << nomes[2].substr(0, 10) << endl;
+    cout << A << B << C << endl;
+    cout << B << C << A << endl;
+    cout << C << A << B << endl;
+    cout << A.substr(0, 10) << B.substr(0, 10) << C.substr(0, 10) << endl;
 
     return 0;
 }

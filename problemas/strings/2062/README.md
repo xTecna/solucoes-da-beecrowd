@@ -4,7 +4,7 @@
 
 ## Solução
 
-Basta apenas verificar se para cada palavra, a palavra tem tamanho 3 e se ela começa com uma das duas substrings apresentadas no enunciado para ser corrigida de acordo. Algumas linguagens têm suporte a ver se uma string começa com outra substring, mas para esse caso é bem tranquilo fazer manualmente também.
+Basta apenas verificar se para cada palavra, a palavra tem tamanho 3 e se ela começa com uma das duas _substrings_ apresentadas no enunciado para ser corrigida de acordo. Algumas linguagens têm suporte a ver se uma _string_ começa com outra _substring_, mas para esse caso é bem tranquilo fazer manualmente também.
 
 ### C99
 ```c
@@ -39,7 +39,7 @@ int main(){
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 
@@ -72,8 +72,61 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        string[] palavras = Console.ReadLine().Trim().Split(' ');
+
+        for(int i = 0; i < N; ++i){
+            if(palavras[i].Length == 3){
+                if(palavras[i].StartsWith("OB")){
+                    palavras[i] = "OBI";
+                }else if(palavras[i].StartsWith("UR")){
+                    palavras[i] = "URI";
+                }
+            }
+        }
+
+        Console.WriteLine(string.Join(" ", palavras));
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        String[] palavras = in.readLine().trim().split(" ");
+
+        for(int i = 0; i < N; ++i){
+            if(palavras[i].length() == 3){
+                if(palavras[i].startsWith("OB")){
+                    palavras[i] = "OBI";
+                }else if(palavras[i].startsWith("UR")){
+                    palavras[i] = "URI";
+                }
+            }
+        }
+
+        System.out.println(String.join(" ", palavras));
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -93,7 +146,7 @@ console.log(palavras.join(' '));
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input())
 
 palavras = input().strip().split(' ')

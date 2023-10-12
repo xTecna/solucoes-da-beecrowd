@@ -6,6 +6,8 @@
 
 Veja a seção de [critérios customizados](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md#customização-de-critérios) para entender como customizar a ordenação que está presente em bibliotecas da sua linguagem de programação.
 
+Em C#, a comparação dá uma bugada por algum motivo, então não temos código disponível para essa linguagem.
+
 > Em Python, resolvi implementar um algoritmo de ordenação eficiente por não saber lidar com os critérios de ordenação tão específicos deste problema.
 
 ### C99
@@ -69,7 +71,7 @@ int main()
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <algorithm>
 #include <iostream>
@@ -149,8 +151,79 @@ int main()
 }
 ```
 
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Arrays;
+
+public class Main {
+    public static class Camisa implements Comparable<Camisa> {
+        public Camisa(String nome, String cor, char tamanho){
+            this.nome = nome;
+            this.cor = cor;
+            this.tamanho = tamanho;
+        }
+
+        public String nome;
+        public String cor;
+        public char tamanho;
+
+        @Override
+        public int compareTo(Camisa outra) {
+            if(this.cor.equals(outra.cor)){
+                if(this.tamanho == outra.tamanho){
+                    return this.nome.compareTo(outra.nome);
+                }else{
+                    return outra.tamanho - this.tamanho;
+                }
+            }else{
+                return this.cor.compareTo(outra.cor);
+            }
+        }
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        boolean first = true;
+        while(in.ready()){
+            int N = Integer.parseInt(in.readLine());
+
+            if(N == 0){
+                break;
+            }
+
+            if(first){
+                first = false;
+            }else{
+                System.out.println("");
+            }
+
+            Camisa[] camisas = new Camisa[N];
+            for(int i = 0; i < N; ++i){
+                String nome = in.readLine();
+                
+                String[] corTamanho = in.readLine().trim().split(" ");
+                String cor = corTamanho[0];
+                char tamanho = corTamanho[1].charAt(0);
+
+                camisas[i] = new Camisa(nome, cor, tamanho);
+            }
+
+            Arrays.sort(camisas);
+            for(int i = 0; i < N; ++i){
+                System.out.printf("%s %c %s\n", camisas[i].cor, camisas[i].tamanho, camisas[i].nome);
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -200,273 +273,11 @@ while(lines.length){
     for(let i = 0; i < N; ++i){
         console.log(`${camisetas[i].cor} ${camisetas[i].tamanho} ${camisetas[i].nome}`);
     }
-}#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
-
-using namespace std;
-
-class Camiseta
-{
-public:
-    string nome, cor, tamanho;
-
-    Camiseta()
-    {
-        nome = "";
-        cor = "";
-        tamanho = "";
-    }
-
-    Camiseta(string n, string c, string t)
-    {
-        nome = n;
-        cor = c;
-        tamanho = t;
-    }
-};
-
-bool comp(Camiseta a, Camiseta b)
-{
-    if (a.cor == b.cor)
-    {
-        if (a.tamanho == b.tamanho)
-        {
-            return a.nome < b.nome;
-        }
-        return a.tamanho > b.tamanho;
-    }
-    return a.cor < b.cor;
-}
-
-int main()
-{
-    int N;
-    bool first;
-    vector<Camiseta> camisetas;
-
-    first = true;
-    while (cin >> N)
-    {
-        if (!N)
-            break;
-        cin.ignore();
-
-        if (first)
-            first = false;
-        else
-            cout << endl;
-
-        camisetas.assign(N, Camiseta());
-        for (int i = 0; i < N; ++i)
-        {
-            getline(cin, camisetas[i].nome);
-            cin >> camisetas[i].cor >> camisetas[i].tamanho;
-            cin.ignore();
-        }
-
-        sort(camisetas.begin(), camisetas.end(), comp);
-
-        for (int i = 0; i < N; ++i)
-        {
-            cout << camisetas[i].cor << " " << camisetas[i].tamanho << " " << camisetas[i].nome << endl;
-        }
-    }
-
-    return 0;
-}#include <algorithm>
-#include <iostream>
-#include <string>
-#include <vector>
-
-using namespace std;
-
-class Camiseta
-{
-public:
-    string nome, cor, tamanho;
-
-    Camiseta()
-    {
-        nome = "";
-        cor = "";
-        tamanho = "";
-    }
-
-    Camiseta(string n, string c, string t)
-    {
-        nome = n;
-        cor = c;
-        tamanho = t;
-    }
-};
-
-bool comp(Camiseta a, Camiseta b)
-{
-    if (a.cor == b.cor)
-    {
-        if (a.tamanho == b.tamanho)
-        {
-            return a.nome < b.nome;
-        }
-        return a.tamanho > b.tamanho;
-    }
-    return a.cor < b.cor;
-}
-
-int main()
-{
-    int N;
-    bool first;
-    vector<Camiseta> camisetas;
-
-    first = true;
-    while (cin >> N)
-    {
-        if (!N)
-            break;
-        cin.ignore();
-
-        if (first)
-            first = false;
-        else
-            cout << endl;
-
-        camisetas.assign(N, Camiseta());
-        for (int i = 0; i < N; ++i)
-        {
-            getline(cin, camisetas[i].nome);
-            cin >> camisetas[i].cor >> camisetas[i].tamanho;
-            cin.ignore();
-        }
-
-        sort(camisetas.begin(), camisetas.end(), comp);
-
-        for (int i = 0; i < N; ++i)
-        {
-            cout << camisetas[i].cor << " " << camisetas[i].tamanho << " " << camisetas[i].nome << endl;
-        }
-    }
-
-    return 0;
-}#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-
-struct Camiseta
-{
-    char nome[100], cor[10], tamanho[10];
-};
-
-int comp(const void *a, const void *b)
-{
-    struct Camiseta *cA = (struct Camiseta *)a;
-    struct Camiseta *cB = (struct Camiseta *)b;
-
-    if (strcmp(cA->cor, cB->cor) == 0)
-    {
-        if (strcmp(cA->tamanho, cB->tamanho) == 0)
-        {
-            return strcmp(cA->nome, cB->nome);
-        }
-        return -strcmp(cA->tamanho, cB->tamanho);
-    }
-    return strcmp(cA->cor, cB->cor);
-}
-
-int main()
-{
-    int N, first;
-    struct Camiseta camisetas[60];
-
-    first = 1;
-    while (scanf("%d\n", &N))
-    {
-        if (!N)
-            break;
-
-        if (first)
-            first = 0;
-        else
-            printf("\n");
-
-        for (int i = 0; i < N; ++i)
-        {
-            scanf("%[^\n]\n", &(camisetas[i].nome));
-            scanf("%s %s\n", &(camisetas[i].cor), &(camisetas[i].tamanho));
-        }
-
-        qsort(camisetas, N, sizeof(struct Camiseta), comp);
-
-        for (int i = 0; i < N; ++i)
-        {
-            printf("%s %s %s\n", camisetas[i].cor, camisetas[i].tamanho, camisetas[i].nome);
-        }
-    }
-
-    return 0;
-}#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
-
-struct Camiseta
-{
-    char nome[100], cor[10], tamanho[10];
-};
-
-int comp(const void *a, const void *b)
-{
-    struct Camiseta *cA = (struct Camiseta *)a;
-    struct Camiseta *cB = (struct Camiseta *)b;
-
-    if (strcmp(cA->cor, cB->cor) == 0)
-    {
-        if (strcmp(cA->tamanho, cB->tamanho) == 0)
-        {
-            return strcmp(cA->nome, cB->nome);
-        }
-        return -strcmp(cA->tamanho, cB->tamanho);
-    }
-    return strcmp(cA->cor, cB->cor);
-}
-
-int main()
-{
-    int N, first;
-    struct Camiseta camisetas[60];
-
-    first = 1;
-    while (scanf("%d\n", &N))
-    {
-        if (!N)
-            break;
-
-        if (first)
-            first = 0;
-        else
-            printf("\n");
-
-        for (int i = 0; i < N; ++i)
-        {
-            scanf("%[^\n]\n", &(camisetas[i].nome));
-            scanf("%s %s\n", &(camisetas[i].cor), &(camisetas[i].tamanho));
-        }
-
-        qsort(camisetas, N, sizeof(struct Camiseta), comp);
-
-        for (int i = 0; i < N; ++i)
-        {
-            printf("%s %s %s\n", camisetas[i].cor, camisetas[i].tamanho, camisetas[i].nome);
-        }
-    }
-
-    return 0;
 }
 ```
 
 ### Python 3.9
-```python
+```py
 class Camiseta:
     def __init__(self, n, c, t):
         self.nome = n
@@ -537,5 +348,4 @@ while True:
             print(f'{camiseta.cor} {camiseta.tamanho} {camiseta.nome}')
     except EOFError:
         break
-
 ```

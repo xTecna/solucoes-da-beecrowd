@@ -46,8 +46,59 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+        List<int> L = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+        List<int> S = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+
+        if(L[0] <= N && N <= L[1] && S[0] <= N && N <= S[1]){
+            Console.WriteLine("possivel");
+        }else{
+            Console.WriteLine("impossivel");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        
+        String[] L = in.readLine().trim().split(" ");
+        int LA = Integer.parseInt(L[0]);
+        int LB = Integer.parseInt(L[1]);
+
+        String[] S = in.readLine().trim().split(" ");
+        int SA = Integer.parseInt(S[0]);
+        int SB = Integer.parseInt(S[1]);
+
+        if(LA <= N && N <= LB && SA <= N && N <= SB){
+            System.out.println("possivel");
+        }else{
+            System.out.println("impossivel");
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -63,7 +114,7 @@ if(LA <= N && N <= LB && SA <= N && N <= SB){
 ```
 
 ### Python 3.9
-```python
+```py
 N = int(input().strip())
 LA, LB = [int(x) for x in input().strip().split(' ')]
 SA, SB = [int(x) for x in input().strip().split(' ')]

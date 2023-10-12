@@ -33,97 +33,144 @@ As operações que vamos implementar aqui então são:
 
 ### C
 
+Aqui em C escolhemos implementar de uma maneira um pouco diferente: usando a ideia de listas encadeadas em vez de vetores, já que em C não temos como fazer vetores de tamanho variável. No histórico de mudanças tem uma versão desse algoritmo implementada com um vetor de tamanho fixo, mas isso também limita o tamanho da nossa fila de prioridade, o que pode ser algo desejável ou não.
+
+No caso de uma solução com lista encadeada, os cálculos de índice de pai e filho não fazem mais sentido, já que teremos referência direta a todos eles no próprio nó. Por outro lado, é importante ter um ponteiro apontando para o final da árvore para sempre sabermos onde adicionar novos nós. Com esse ponteiro último entretanto, ainda temos que decidir se o novo nó a adicionar será irmão ou filho dele. Enfim, são umas complicações a mais para não termos que nos preocupar com o tamanho da fila de prioridade.
+
 ```c
-struct FilaDePrioridade
+struct filaDePrioridadeNo
 {
-    int tamanho;
-    int *arvore;
+    int valor;
+    struct filaDePrioridadeNo *pai, *esq, *dir;
 };
 
-void inicializaFilaDePrioridade(struct FilaDePrioridade *fp, int capacidade){
+struct filaDePrioridade
+{
+    int tamanho;
+    struct filaDePrioridadeNo *topo, *ultimo;
+};
+
+void inicializa(struct filaDePrioridade *fp){
     fp->tamanho = 0;
-    fp->arvore = (int*)malloc(capacidade * sizeof(int));
+    fp->topo = NULL;
+    fp->ultimo = NULL;
 }
 
-void destroiFilaDePrioridade(struct FilaDePrioridade *fp){
+void destroiNo(struct filaDePrioridadeNo *fpn){
+    if(fpn->esq != NULL){
+        destroiNo(fpn->esq);
+    }
+    if(fpn->dir != NULL){
+        destroiNo(fpn->dir);
+    }
+    free(fpn);
+}
+
+void destroi(struct filaDePrioridade *fp){
     fp->tamanho = 0;
-    free(fp->arvore);
+    if(fp->topo != NULL){
+        destroiNo(fp->topo);
+    }
 }
 
-int pai(int i){
-    return i/2;
-}
-
-int filhoEsquerdo(int i){
-    return 2*i;
-}
-
-int filhoDireito(int i){
-    return 2*i + 1;
-}
-
-void corrigeSubindo(struct FilaDePrioridade *fp, int indice){
-    if(indice == 1){
+void corrigeSubindo(struct filaDePrioridadeNo *fpn){
+    if(fpn->pai == NULL){
         return;
     }
     
-    int acima = pai(indice);
-    if(comp(fp->arvore[acima], fp->arvore[indice]) < 0){
-        int temp = fp->arvore[acima];
-        fp->arvore[acima] = fp->arvore[indice];
-        fp->arvore[indice] = temp;
-        corrigeSubindo(fp, acima);
+    struct filaDePrioridadeNo *pai = fpn->pai;
+    if(comp(pai->valor, fpn->valor) < 0){
+        int temp = pai->valor;
+        pai->valor = fpn->valor;
+        fpn->valor = temp;
+        corrigeSubindo(pai);
     }
 }
 
-void push(struct FilaDePrioridade *fp, int valor){
+void push(struct filaDePrioridade *fp, int valor){
     fp->tamanho += 1;
-    fp->arvore[fp->tamanho] = valor;
-    corrigeSubindo(fp, fp->tamanho);
+
+    struct filaDePrioridadeNo* novoNo = (struct filaDePrioridadeNo*)malloc(sizeof(struct filaDePrioridadeNo));
+    novoNo->valor = valor;
+    novoNo->esq = NULL;
+    novoNo->dir = NULL;
+
+    if(fp->topo == NULL){
+    	novoNo->pai = NULL;
+        fp->topo = novoNo;
+    }else{
+    	if(fp->ultimo->pai != NULL && fp->ultimo->pai->dir == NULL){
+    		novoNo->pai = fp->ultimo->pai;
+    		fp->ultimo->pai->dir = novoNo;
+    	}else{
+    		novoNo->pai = fp->ultimo;
+    		fp->ultimo->esq = novoNo;
+    	}
+    }
+    fp->ultimo = novoNo;
+    
+    corrigeSubindo(novoNo);
 }
 
-void corrigeDescendo(struct FilaDePrioridade *fp, int indice){
-    int abaixo = filhoEsquerdo(indice);
-    if(abaixo > fp->tamanho){
-        return;
-    }
-    if(comp(fp->arvore[indice], fp->arvore[abaixo]) < 0){
-        int temp = fp->arvore[abaixo];
-        fp->arvore[abaixo] = fp->arvore[indice];
-        fp->arvore[indice] = temp;
-        corrigeDescendo(fp, abaixo);
+void corrigeDescendo(struct filaDePrioridadeNo *fpn){
+    if(fpn->esq != NULL){
+        struct filaDePrioridadeNo *esq = fpn->esq;
+        if(comp(fpn->valor, esq->valor) < 0){
+            int temp = fpn->valor;
+            fpn->valor = esq->valor;
+            esq->valor = temp;
+            corrigeDescendo(esq);
+        }
     }
     
-    abaixo = filhoDireito(indice);
-    if(abaixo > fp->tamanho){
-        return;
-    }
-    if(comp(fp->arvore[indice], fp->arvore[abaixo]) < 0){
-        int temp = fp->arvore[abaixo];
-        fp->arvore[abaixo] = fp->arvore[indice];
-        fp->arvore[indice] = temp;
-        corrigeDescendo(fp, abaixo);
+    if(fpn->dir != NULL){
+        struct filaDePrioridadeNo *dir = fpn->dir;
+        if(comp(fpn->valor, dir->valor) < 0){
+            int temp = fpn->valor;
+            fpn->valor = dir->valor;
+            dir->valor = temp;
+            corrigeDescendo(dir);
+        }
     }
 }
 
-void pop(struct FilaDePrioridade *fp){
+void pop(struct filaDePrioridade *fp){
     if(fp->tamanho == 0){
         return;
     }
     
-    int temp = fp->arvore[1];
-    fp->arvore[1] = fp->arvore[fp->tamanho];
-    fp->arvore[fp->tamanho] = temp;
     fp->tamanho -= 1;
     
-    corrigeDescendo(fp, 1);
+    struct filaDePrioridadeNo* velhoUltimo = fp->ultimo;
+	if(velhoUltimo == fp->topo){
+		fp->topo = NULL;
+	}else{
+    	int temp = fp->topo->valor;
+    	fp->topo->valor = velhoUltimo->valor;
+    	velhoUltimo->valor = temp;
+    	
+    	if(velhoUltimo->pai != NULL && velhoUltimo->pai->esq != NULL && velhoUltimo->pai->esq != velhoUltimo){
+    		velhoUltimo->pai->dir = NULL;
+    		fp->ultimo = velhoUltimo->pai->esq;
+    	}else{
+    		if(velhoUltimo->pai != NULL){
+    			velhoUltimo->pai->esq = NULL;
+    		}
+    		fp->ultimo = velhoUltimo->pai;
+    	}
+	}
+    free(velhoUltimo);
+    
+    if(fp->topo != NULL){
+    	corrigeDescendo(fp->topo);
+    }
 }
 
-int top(struct FilaDePrioridade *fp){
-    return fp->arvore[1];
+int top(struct filaDePrioridade *fp){
+    return fp->topo->valor;
 }
 
-int empty(struct FilaDePrioridade *fp){
+int empty(struct filaDePrioridade *fp){
     return fp->tamanho == 0;
 }
 ```
@@ -232,7 +279,7 @@ class FilaDePrioridade {
 
 ### Java
 
-A biblioteca `java.utils.PriorityQueue` tem a estrutura `PriorityQueue` que pode ser usada nesse caso. Mais detalhes na [documentação](https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html).
+A biblioteca `java.util` tem a estrutura `PriorityQueue` que pode ser usada nesse caso. Mais detalhes na [documentação](https://docs.oracle.com/javase/8/docs/api/java/util/PriorityQueue.html).
 
 ### JavaScript
 
@@ -328,3 +375,7 @@ class FilaDePrioridade {
 ### Python
 
 A biblioteca `queue` possui a estrutura `ProrityQueue` que você pode usar. Confira a [documentação](https://docs.python.org/3/library/queue.html#queue.PriorityQueue) para entender melhor como ela funciona.
+
+## Problemas
+
+* [1340 - Eu Posso Adivinhar a Estrutura de Dados!](../../../problemas/estruturas-e-bibliotecas/1340/README.md)

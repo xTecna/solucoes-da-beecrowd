@@ -4,7 +4,7 @@
 
 ## Solução
 
-Este problema quer saber apenas o tamanho da maior substring comum possível entre duas strings de entrada, problema que possui um algoritmo conhecido. Confira a página [Maior Subsequência Comum](../base-teorica/strings/maior-subsequencia-comum-lcs.md) para entender como o algoritmo funciona.
+Este problema quer saber apenas o tamanho da maior _substring_ comum possível entre duas _strings_ de entrada, problema que possui um algoritmo conhecido. Confira a página [Maior Subsequência Comum](../../../base-teorica/strings/lcs/README.md) para entender como o algoritmo funciona.
 
 > A solução em Python ainda não está disponível no momento. :(
 
@@ -52,7 +52,7 @@ int main(){
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 #include <vector>
@@ -96,8 +96,93 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Runtime;
+
+class URI {
+    static int LCS(string A, string B) {
+        int n = A.Length, m = B.Length;
+        int[,] T = new int[n + 1, m + 1];
+
+        for(int i = 0; i <= n; ++i){
+            for(int j = 0; j <= m; ++j){
+                T[i, j] = 0;
+            }
+        }
+
+        int resultado = 0;
+        for(int i = 1; i <= n; ++i){
+            for(int j = 1; j <= m; ++j){
+                if(A[i - 1] == B[j - 1]){
+                    T[i, j] = T[i - 1, j - 1] + 1;
+                    resultado = Math.Max(resultado, T[i, j]);
+                }
+            }
+        }
+
+        return resultado;
+    }
+
+    static void Main(string[] args) {
+        string A, B;
+
+        while((A = Console.ReadLine()) != null){
+            B = Console.ReadLine();
+            Console.WriteLine(LCS(A, B));
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+public class Main {
+    public static int LCS(String A, String B) {
+        int n = A.length(), m = B.length();
+        int[][] T = new int[n + 1][m + 1];
+
+        for(int i = 0; i <= n; ++i){
+            for(int j = 0; j <= m; ++j){
+                T[i][j] = 0;
+            }
+        }
+
+        int resultado = 0;
+        for(int i = 1; i <= n; ++i){
+            for(int j = 1; j <= m; ++j){
+                if(A.charAt(i - 1) == B.charAt(j - 1)){
+                    T[i][j] = T[i - 1][j - 1] + 1;
+                    resultado = Math.max(resultado, T[i][j]);
+                }
+            }
+        }
+
+        return resultado;
+    }
+
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String A = in.readLine();
+            String B = in.readLine();
+
+            System.out.println(LCS(A, B));
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 

@@ -4,9 +4,9 @@
 
 ## Solução
 
-Aqui não precisamos nos preocupar com código HTML inválido, não precisamos nos preocupar com aba aberta sem fechar, vivemos no mais puro paraíso. Com isso, o que precisamos fazer é só substituir os underlines por tags itálico e os asteriscos por tags negrito, guardando em uma variável se já abrimos uma tag dessas antes ou não. Essa variável é consultada antes de colocarmos a tag e o valor dela troca sempre após colocarmos a tag apropriada.
+Aqui não precisamos nos preocupar com código HTML inválido, não precisamos nos preocupar com aba aberta sem fechar, vivemos no mais puro paraíso. Com isso, o que precisamos fazer é só substituir os _underlines_ por _tags_ itálico e os asteriscos por _tags_ negrito, guardando em uma variável se já abrimos uma _tag_ dessas antes ou não. Essa variável é consultada antes de colocarmos a _tag_ e o valor dela troca sempre após colocarmos a _tag_ apropriada.
 
-Um detalhe interessante para as linguagens JavaScript e Python é que eu não uso o replace indiscriminadamente porque alguns dos underlines abrem e outros fecham, mesma coisa para os asteriscos, então precisa-se trocar com certo critério.
+Um detalhe interessante para as linguagens C#, Java, JavaScript e Python é que eu não uso o replace indiscriminadamente porque alguns dos underlines abrem e outros fecham, mesma coisa para os asteriscos, então precisa-se trocar com certo critério.
 
 ### C99
 ```c
@@ -39,7 +39,7 @@ int main(){
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 
@@ -72,8 +72,90 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+
+class URI {
+    static void Main(string[] args) {
+        string frase;
+
+        while((frase = Console.ReadLine()) != null){
+            string resposta = "";
+
+            bool negrito = false;
+            bool italico = false;
+            for(int i = 0; i < frase.Length; ++i){
+                if(frase[i] == '_'){
+                    if(italico){
+                        resposta += "</i>";
+                    }else{
+                        resposta += "<i>";
+                    }
+                    italico = !italico;
+                }else if(frase[i] == '*'){
+                    if(negrito){
+                        resposta += "</b>";
+                    }else{
+                        resposta += "<b>";
+                    }
+                    negrito = !negrito;
+                }else{
+                    resposta += frase[i];
+                }
+            }
+
+            Console.WriteLine(resposta);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String frase = in.readLine();
+
+            String resposta = "";
+            boolean negrito = false;
+            boolean italico = false;
+            for(int i = 0; i < frase.length(); ++i){
+                if(frase.charAt(i) == '_'){
+                    if(italico){
+                        resposta += "</i>";
+                    }else{
+                        resposta += "<i>";
+                    }
+                    italico = !italico;
+                }else if(frase.charAt(i) == '*'){
+                    if(negrito){
+                        resposta += "</b>";
+                    }else{
+                        resposta += "<b>";
+                    }
+                    negrito = !negrito;
+                }else{
+                    resposta += frase.charAt(i);
+                }
+            }
+
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -100,7 +182,7 @@ while(lines.length){
 ```
 
 ### Python 3.9
-```python
+```py
 def replaceAll(frase, simbolo, tagAberta, tagFechada):
     novaFrase = frase.replace(simbolo, tagAberta, 1)
     aberta = True

@@ -2,23 +2,16 @@
 
 int main()
 {
-    char nomes[3][201], n[3][11];
+    char A[101], B[101], C[101];
 
-    for (int i = 0; i < 3; ++i)
-    {
-        scanf("%[^\n]\n", &nomes[i]);
-    }
+    scanf("%[^\n]\n", &A);
+    scanf("%[^\n]\n", &B);
+    scanf("%[^\n]\n", &C);
 
-    printf("%s%s%s\n", nomes[0], nomes[1], nomes[2]);
-    printf("%s%s%s\n", nomes[1], nomes[2], nomes[0]);
-    printf("%s%s%s\n", nomes[2], nomes[0], nomes[1]);
-
-    for (int i = 0; i < 3; ++i)
-    {
-        strncpy(n[i], nomes[i], 10);
-        n[i][10] = '\0';
-    }
-    printf("%s%s%s\n", n[0], n[1], n[2]);
+    printf("%s%s%s\n", A, B, C);
+    printf("%s%s%s\n", B, C, A);
+    printf("%s%s%s\n", C, A, B);
+    printf("%.10s%.10s%.10s\n", A, B, C);
 
     return 0;
 }
