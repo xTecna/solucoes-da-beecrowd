@@ -28,7 +28,7 @@ Perceba que as estruturas mostradas, se somadas, dão o valor em decimal dos nú
 
 ### Conversão de um número em qualquer base para um número decimal
 
-Como discutimos na seção anterior, um algoritmo de conversão de um número em qualquer base para um número na base decimal deve se aproveitar da estrutura que cada número tem para extrair um dígito de cada vez. Se considerarmos o número como uma `string` (para podermos aceitar qualquer símbolo) e uma função que define o valor de cada símbolo em relação à base decimal, podemos montar uma função de conversão seguindo essa estrutura (supondo que o resultado final caiba num inteiro):
+Como discutimos na seção anterior, um algoritmo de conversão de um número em qualquer base para um número na base decimal deve se aproveitar da estrutura que cada número tem para extrair um dígito de cada vez. Se considerarmos o número como uma _string_ (para podermos aceitar qualquer símbolo) e uma função que define o valor de cada símbolo em relação à base decimal, podemos montar uma função de conversão seguindo essa estrutura (supondo que o resultado final caiba num inteiro):
 
 ```
 função converte(string número, inteiro base):
@@ -68,7 +68,6 @@ função converte(inteiro decimal, inteiro base):
 ### Conversão de qualquer base para decimal
 
 #### C99
-
 ```c
 int converteParaDecimal(char *numero, int base){
     int potencia = 1, resposta = 0;
@@ -82,8 +81,7 @@ int converteParaDecimal(char *numero, int base){
 }
 ```
 
-#### C++17
-
+#### C++
 ```cpp
 int converteParaDecimal(string numero, int base){
     int potencia = 1, resposta = 0;
@@ -98,9 +96,8 @@ int converteParaDecimal(string numero, int base){
 ```
 
 #### C#
-
 ```cs
-public static int converteParaDecimal(string numero, int baseNumerica){
+static int converteParaDecimal(string numero, int baseNumerica){
     int potencia = 1, resposta = 0;
 
     for(int i = numero.Length - 1; i > -1; --i){
@@ -112,7 +109,7 @@ public static int converteParaDecimal(string numero, int baseNumerica){
 }
 ```
 
-#### Java 14
+#### Java
 ```java
 public static int converteParaDecimal(String numero, int base){
     int potencia = 1, resposta = 0;
@@ -126,24 +123,22 @@ public static int converteParaDecimal(String numero, int base){
 }
 ```
 
-#### JavaScript 12.18
-
-```javascript
-function converteParaDecimal(numero, base){
+#### JavaScript
+```js
+const converteParaDecimal = (numero, base) => {
     let potencia = 1, resposta = 0;
-    
+
     for(let i = numero.length - 1; i > -1; --i){
         resposta += valor(numero[i]) * potencia;
         potencia *= base;
     }
-    
+
     return resposta;
 }
 ```
 
-#### Python 3.9
-
-```python
+#### Python
+```py
 def converteParaDecimal(numero, base):
     potencia, resposta = 1, 0
     
@@ -158,30 +153,32 @@ def converteParaDecimal(numero, base):
 
 #### C99
 
-Como estamos pegando os dígitos de trás pra frente, mas ao mesmo tempo não sabemos quantos dígitos vamos pegar no total (na verdade tem como se usarmos logaritmo), vamos primeiro pegar todos os dígitos e ao final inverter a string. Eu também decidi imprimir o resultado logo aqui pra evitar a fadiga de passar ponteiros de `char` como retorno de função.
+Em C, não podemos fazer _strings_ de tamanho variável, mas felizmente temos uma maneira de prever e já alocar o tamanho do espaço certinho que vamos precisar, já que sabemos que para um número $n$ na base $b$, o seu número de dígitos é $\lfloor \log_{b}{n} \rfloor + 1$. Aqui fazemos $\lfloor \log_{b}{n} + 2$ porque todo array de caracteres precisa ter o caractere de término de _string_ `\0`.
+
+Com o tamanho certinho alocado, vamos então primeiro pegar todos os dígitos e ao final inverter a string.
 
 ```c
-void converteDeDecimal(int decimal, int base){
+char *converteDeDecimal(int decimal, int base){
     int posicao = 0;
-    char numero[100];
+    int digitos = floor(log(decimal) / log(base)) + 2;
+    char *numero = (char *)malloc(digitos * sizeof(char));
 
-    while(decimal > 0){
+    while (decimal > 0) {
         numero[posicao++] = simbolo(decimal % base);
         decimal /= base;
     }
-    for(int i = 0; i < posicao/2; ++i){
+    for (int i = 0; i < posicao / 2; ++i) {
         char temp = numero[i];
         numero[i] = numero[posicao - i - 1];
         numero[posicao - i - 1] = temp;
     }
     numero[posicao] = '\0';
 
-    printf("%s\n", numero);
+    return numero;
 }
 ```
 
-#### C++17
-
+#### C++
 ```cpp
 string converteDeDecimal(int decimal, int base){
     string numero = "";
@@ -196,9 +193,8 @@ string converteDeDecimal(int decimal, int base){
 ```
 
 #### C#
-
 ```cs
-public static string converteDeDecimal(int numero, int baseNumerica){
+static string converteDeDecimal(int numero, int baseNumerica){
     string resposta = "";
 
     while(numero > 0){
@@ -210,7 +206,7 @@ public static string converteDeDecimal(int numero, int baseNumerica){
 }
 ```
 
-#### Java 14
+#### Java
 ```java
 public static String converteDeDecimal(int decimal, int base){
     String resposta = "";
@@ -224,24 +220,22 @@ public static String converteDeDecimal(int decimal, int base){
 }
 ```
 
-#### JavaScript 12.18
-
-```javascript
-function converteDeDecimal(decimal, base){
+#### JavaScript
+```js
+const converteDeDecimal = (decimal, base) => {
     let resposta = "";
-    
+
     while(decimal > 0){
         resposta = simbolo(decimal % base) + resposta;
         decimal = parseInt(Math.floor(decimal / base));
     }
-    
+
     return resposta;
 }
 ```
 
-#### Python 3.9
-
-```python
+#### Python
+```py
 def converteDeDecimal(decimal, base):
     resposta = ''
     
@@ -255,4 +249,5 @@ def converteDeDecimal(decimal, base):
 ## Problemas
 
 * [1033 - Quantas Chamadas Recursivas?](../../../problemas/paradigmas/1033/README.md)
-* [1848 - Corvo Contador](../../../iniciante/1848/README.md)
+* [1193 - Conversão entre Bases](../../../problemas/matematica/1193/README.md)
+* [1848 - Corvo Contador](../../../problemas/iniciante/1848/README.md)

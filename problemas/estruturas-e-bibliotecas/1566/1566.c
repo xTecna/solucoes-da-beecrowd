@@ -1,35 +1,43 @@
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-    int NC, N, altura, first, alturas[231];
+void countingSort(int *V, int n, int limite) {
+    int *aux = (int *)malloc(limite * sizeof(int));
+    int k = 0;
+    for (int i = 0; i < limite; ++i) {
+        aux[i] = 0;
+    }
+    for (int i = 0; i < n; ++i) {
+        aux[V[i]] += 1;
+    }
+    for (int i = 0; i < limite; ++i) {
+        for (int j = 0; j < aux[i]; ++j) {
+            V[k++] = i;
+        }
+    }
+    free(aux);
+}
+
+int main(void) {
+    int NC, N;
+    int *V;
 
     scanf("%d", &NC);
-
-    for (int k = 0; k < NC; ++k)
-    {
-        memset(alturas, 0, sizeof(alturas));
-
+    for (int k = 0; k < NC; ++k) {
         scanf("%d", &N);
 
-        for (int i = 0; i < N; ++i)
-        {
-            scanf("%d", &altura);
-            alturas[altura]++;
+        V = (int *)malloc(N * sizeof(int));
+        for (int i = 0; i < N; ++i) {
+            scanf("%d", &V[i]);
         }
 
-        first = 1;
-        for (int i = 20; i < 231; ++i)
-        {
-            for (int j = 0; j < alturas[i]; ++j)
-            {
-                if (first)
-                    first = 0;
-                else
-                    printf(" ");
-                printf("%d", i);
-            }
+        countingSort(V, N, 231);
+
+        if (N > 0) {
+            printf("%d", V[0]);
+        }
+        for (int i = 1; i < N; ++i) {
+            printf(" %d", V[i]);
         }
         printf("\n");
     }

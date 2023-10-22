@@ -1,6 +1,6 @@
 # Problemas
 
-## Iniciante (240/336)
+## [Iniciante (242/336)](./iniciante/README.md)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -238,11 +238,13 @@
 * [2766 - Entrada e Saída Lendo e Pulando Nomes](./iniciante/2766/README.md)
 * [2780 - Basquete de Robôs](./iniciante/2780/README.md)
 * [2791 - Feijão](./iniciante/2791/README.md)
+* [2861 - A Saída](./iniciante/2861/README.md)
 * [2862 - Inseto!](./iniciante/2862/README.md)
 * [2936 - Quanta Mandioca?](./iniciante/2936/README.md)
 * [2987 - Balão de Honra](./iniciante/2987/README.md)
+* [3055 - Nota Esquecida](./iniciante/3055/README.md)
 
-## Ad-hoc (82/850)
+## [Ad-hoc (82/850)](./ad-hoc/README.md)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./ad-hoc/1030/README.md)
 * [1031 - Crise de Energia](./ad-hoc/1031/README.md)
@@ -326,7 +328,7 @@
 * [3227 - Doorman](./ad-hoc/3227/README.md)
 * [3263 - Apague Com Segurança](./ad-hoc/3263/README.md)
 
-## [Strings (26/148)](./strings/README.md)
+## [Strings (28/148)](./strings/README.md)
 * [1024 - Criptografia](./strings/1024/README.md)
 * [1120 - Revisão de Contrato](./strings/1120/README.md)
 * [1168 - LED](./strings/1168/README.md)
@@ -350,9 +352,11 @@
 * [1873 - Pedra-papel-tesoura-lagarto-Spock](./strings/1873/README.md)
 * [2062 - OBI URI](./strings/2062/README.md)
 * [2137 - A Biblioteca do Senhor Severino](./strings/2137/README.md)
+* [2157 - Sequência Espelho](./strings/2157/README.md)
 * [2174 - Coleção de Pomekon](./strings/2174/README.md)
 * [2242 - Huaauhahhuahau](./strings/2242/README.md)
 * [2253 - Validador de Senhas](./strings/2253/README.md)
+* [2694 - Problema com a Calculadora](./2694/README.md)
 
 ## [Estruturas e Bibliotecas (20/179)](./estruturas-e-bibliotecas/README.md)
 * [1022 - TDA Racional](./estruturas-e-bibliotecas/1022/README.md)
@@ -404,7 +408,7 @@
 * [2033 - Juros Sobre o Empréstimo](./matematica/2033/README.md)
 * [2232 - Triângulo de Pascal](./matematica/2232/README.md)
 
-## Paradigmas (7/215)
+## [Paradigmas (7/215)](./paradigmas/README.md)
 * [1027 - Onda Crítica](./paradigmas/1027/README.md)
 * [1029 - Fibonacci, Quantas Chamadas?](./paradigmas/1029/README.md)
 * [1033 - Quantas Chamadas Recursivas?](./paradigmas/1033/README.md)
@@ -413,14 +417,16 @@
 * [1310 - Lucro](./paradigmas/1310/README.md)
 * [2243 - Isósceles](./paradigmas/2243/README.md)
 
-## Grafos (2/277)
+## [Grafos (4/277)](./grafos/README.md)
+* [1076 - Desenhando Labirintos](./grafos/1076/README.md)
+* [1148 - Países em Guerra](./grafos/1148/README.md)
 * [1152 - Estradas Escuras](./grafos/1152/README.md)
 * [1195 - Árvore Binária de Busca](./grafos/1195/README.md)
 
-## Geometria computacional (1/82)
+## [Geometria computacional (1/82)](./geometria-computacional/README.md)
 * [1039 - Flores de Fogo](./geometria-computacional/1039/README.md)
 
-## SQL (23/46)
+## [SQL (26/46)](./sql/README.md)
 * [2602 - Select Básico](./sql/2602/README.md)
 * [2603 - Endereço dos Clientes](./sql/2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./sql/2604/README.md)
@@ -443,4 +449,7 @@
 * [2622 - Pessoas Jurídicas](./sql/2622/README.md)
 * [2623 - Categorias com Vários Produtos](./sql/2623/README.md)
 * [2624 - Quantidades de Cidades por Clientes](./sql/2624/README.md)
+* [2625 - Máscara de CPF](./sql/2625/README.md)
 * [2737 - Advogados](./sql/2737/README.md)
+* [2738 - Concurso](./sql/2738/README.md)
+* [2744 - Senhas](./sql/2744/README.md)

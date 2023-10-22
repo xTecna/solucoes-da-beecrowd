@@ -7,24 +7,27 @@
 O enunciado nos diz que as piscadas do corvo podem ser consideradas números em binário, com o `*` representando `1` e `-` representando `0`. Com isso, se seguirmos o algoritmo de conversão de bases apresentado [neste material](../../../base-teorica/matematica/base-numerica/README.md#conversão-de-qualquer-base-para-decimal), podemos descobrir qual seria o valor decimal e sempre somá-lo na nossa resposta.
 
 ### C99
-
 ```c
 #include <string.h>
 #include <stdio.h>
 
-int converte(char *linha)
-{
-    int soma = 0, n = strlen(linha);
+int valor(char simbolo){
+    switch(simbolo){
+        case '-':   return 0;
+        case '*':   return 1;
+    }
+}
 
-    for (int i = 0; i < n; ++i)
-    {
-        if (linha[i] == '*')
-        {
-            soma += 1 << (n - i - 1);
-        }
+int converte(char *numero)
+{
+    int potencia = 1, resposta = 0;
+
+    for(int i = strlen(numero) - 1; i > -1; --i){
+        resposta += valor(numero[i]) * potencia;
+        potencia *= 2;
     }
 
-    return soma;
+    return resposta;
 }
 
 int main()
@@ -49,26 +52,29 @@ int main()
 }
 ```
 
-### C++17
-
+### C++20
 ```cpp
 #include <iostream>
 
 using namespace std;
 
-int converte(string linha)
-{
-    int soma = 0, n = linha.length();
-
-    for (int i = 0; i < n; ++i)
-    {
-        if (linha[i] == '*')
-        {
-            soma += 1 << (n - i - 1);
-        }
+int valor(char simbolo){
+    switch(simbolo){
+        case '-':   return 0;
+        case '*':   return 1;
     }
+}
 
-    return soma;
+int converte(string numero)
+{
+    int potencia = 1, resposta = 0;
+    
+    for(int i = numero.length() - 1; i > -1; --i){
+        resposta += valor(numero[i]) * potencia;
+        potencia *= 2;
+    }
+    
+    return resposta;
 }
 
 int main()
@@ -94,25 +100,29 @@ int main()
 ```
 
 ### C#
-
 ```cs
 using System;
 
 class URI
 {
-    static int converte(string linha)
-    {
-        int soma = 0, n = linha.Length;
+    static int valor(char simbolo){
+        switch(simbolo){
+            case '-':   return 0;
+            case '*':   return 1;
+            default:    return 0;
+        }
+    }
 
-        for (int i = 0; i < n; ++i)
-        {
-            if (linha[i] == '*')
-            {
-                soma += 1 << (n - i - 1);
-            }
+    static int converte(string numero)
+    {
+        int potencia = 1, resposta = 0;
+
+        for(int i = numero.Length - 1; i > -1; --i){
+            resposta += valor(numero[i]) * potencia;
+            potencia *= 2;
         }
 
-        return soma;
+        return resposta;
     }
 
     static void Main(string[] args)
@@ -136,24 +146,30 @@ class URI
 }
 ```
 
-### Java 14
-
+### Java 19
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-    public static int converte(String linha) {
-        int soma = 0, n = linha.length();
-
-        for (int i = 0; i < n; ++i) {
-            if (linha.charAt(i) == '*') {
-                soma += 1 << (n - i - 1);
-            }
+    public static int valor(char simbolo) {
+        switch(simbolo){
+            case '-':   return 0;
+            case '*':   return 1;
         }
+        return 0;
+    }
 
-        return soma;
+    public static int converte(String numero) {
+        int potencia = 1, resposta = 0;
+        
+        for(int i = numero.length() - 1; i > -1; --i){
+            resposta += valor(numero.charAt(i)) * potencia;
+            potencia *= 2;
+        }
+        
+        return resposta;
     }
 
     public static void main(String[] args) throws IOException {
@@ -177,21 +193,26 @@ public class Main {
 ```
 
 ### Javascript 12.18
-
 ```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
-const converte = (linha) => {
-    let soma = 0, n = linha.length;
-
-    for (let i = 0; i < n; ++i) {
-        if (linha[i] === '*') {
-            soma += 1 << (n - i - 1);
-        }
+const valor = (simbolo) => {
+    switch(simbolo) {
+        case '-':   return 0;
+        case '*':   return 1;
     }
+}
 
-    return soma;
+const converte = (numero) => {
+    let potencia = 1, resposta = 0;
+    
+    for(let i = numero.length - 1; i > -1; --i){
+        resposta += valor(numero[i]) * potencia;
+        potencia *= 2;
+    }
+    
+    return resposta;
 };
 
 let soma = 0;
@@ -208,11 +229,21 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-
 ```py
-def converte(linha):
-    return sum([1 << (len(linha) - i - 1) for i in range(len(linha)) if linha[i] == '*'])
+def valor(simbolo):
+    if simbolo == '-':
+        return 0
+    if simbolo == '*':
+        return 1
 
+def converte(numero):
+    potencia, resposta = 1, 0
+    
+    for digito in numero[::-1]:
+        resposta += valor(digito) * potencia
+        potencia *= 2
+        
+    return resposta
 
 soma = 0
 while True:

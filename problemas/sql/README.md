@@ -1,4 +1,4 @@
-## SQL (23/46)
+## SQL (26/46)
 * [2602 - Select Básico](./2602/README.md)
 * [2603 - Endereço dos Clientes](./2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./2604/README.md)
@@ -21,4 +21,7 @@
 * [2622 - Pessoas Jurídicas](./2622/README.md)
 * [2623 - Categorias com Vários Produtos](./2623/README.md)
 * [2624 - Quantidades de Cidades por Clientes](./2624/README.md)
+* [2625 - Máscara de CPF](./2625/README.md)
 * [2737 - Advogados](./2737/README.md)
+* [2738 - Concurso](./2738/README.md)
+* [2744 - Senhas](./2744/README.md)

@@ -1,123 +1,68 @@
-#include <iostream>
-#include <iomanip>
-#include <sstream>
 #include <cctype>
+#include <iostream>
 
 using namespace std;
 
-int converte(string numero)
-{
-    int resposta;
-    stringstream fluxo;
+int valor(char simbolo) {
+    if (isalpha(simbolo)) {
+        return simbolo - 'a' + 10;
+    } else {
+        return simbolo - '0';
+    }
+}
 
-    fluxo << numero;
-    fluxo >> resposta;
+char simbolo(int valor) {
+    if (valor > 9) {
+        return valor - 10 + 'a';
+    } else {
+        return valor + '0';
+    }
+}
+
+int converteParaDecimal(string numero, int base) {
+    int potencia = 1, resposta = 0;
+
+    for (int i = numero.length() - 1; i > -1; --i) {
+        resposta += valor(numero[i]) * potencia;
+        potencia *= base;
+    }
 
     return resposta;
 }
 
-int binToDec(string bin)
-{
-    int dec = 0, potencia = 1;
+string converteDeDecimal(int decimal, int base) {
+    string numero = "";
 
-    for (int i = bin.length() - 1; i > -1; --i)
-    {
-        dec += potencia * (bin[i] - '0');
-        potencia *= 2;
+    while (decimal > 0) {
+        numero = simbolo(decimal % base) + numero;
+        decimal /= base;
     }
 
-    return dec;
+    return numero;
 }
 
-string decToBin(int dec)
-{
-    string bin = "";
-
-    while (dec)
-    {
-        bin = (char)(dec % 2 + '0') + bin;
-        dec /= 2;
-    }
-
-    return bin;
-}
-
-string decToHex(int dec)
-{
-    string hex = "";
-
-    while (dec)
-    {
-        if (dec % 16 > 9)
-        {
-            hex = (char)(dec % 16 + 'a' - 10) + hex;
-        }
-        else
-        {
-            hex = (char)(dec % 16 + '0') + hex;
-        }
-        dec /= 16;
-    }
-
-    return hex;
-}
-
-string binToHex(string bin)
-{
-    return decToHex(binToDec(bin));
-}
-
-int hexToDec(string hex)
-{
-    int dec = 0, potencia = 1;
-
-    for (int i = hex.length() - 1; i > -1; --i)
-    {
-        if (isalpha(hex[i]))
-        {
-            dec += potencia * (hex[i] - 'a' + 10);
-        }
-        else
-        {
-            dec += potencia * (hex[i] - '0');
-        }
-        potencia *= 16;
-    }
-
-    return dec;
-}
-
-string hexToBin(string hex)
-{
-    return decToBin(hexToDec(hex));
-}
-
-int main()
-{
+int main() {
     int N;
     string numero, base;
 
     cin >> N;
-    for (int i = 0; i < N; ++i)
-    {
+    for (int i = 0; i < N; ++i) {
         cin >> numero >> base;
 
         cout << "Case " << i + 1 << ":" << endl;
 
-        if (base == "dec")
-        {
-            cout << decToHex(converte(numero)) << " hex" << endl;
-            cout << decToBin(converte(numero)) << " bin" << endl;
-        }
-        else if (base == "hex")
-        {
-            cout << hexToDec(numero) << " dec" << endl;
-            cout << hexToBin(numero) << " bin" << endl;
-        }
-        else
-        {
-            cout << binToDec(numero) << " dec" << endl;
-            cout << binToHex(numero) << " hex" << endl;
+        if (base == "bin") {
+            int dec = converteParaDecimal(numero, 2);
+            cout << dec << " dec" << endl;
+            cout << converteDeDecimal(dec, 16) << " hex" << endl;
+        } else if (base == "dec") {
+            int dec = converteParaDecimal(numero, 10);
+            cout << converteDeDecimal(dec, 16) << " hex" << endl;
+            cout << converteDeDecimal(dec, 2) << " bin" << endl;
+        } else if (base == "hex") {
+            int dec = converteParaDecimal(numero, 16);
+            cout << dec << " dec" << endl;
+            cout << converteDeDecimal(dec, 2) << " bin" << endl;
         }
 
         cout << endl;

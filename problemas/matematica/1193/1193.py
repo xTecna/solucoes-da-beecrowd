@@ -1,71 +1,49 @@
-def binToDec(b):
-    dec, potencia = 0, 1
+def valor(simbolo):
+    if simbolo.isalpha():
+        return ord(simbolo) - ord('a') + 10
+    else:
+        return ord(simbolo) - ord('0')
 
-    for digito in b[::-1]:
-        dec += int(digito) * potencia
-        potencia *= 2
+def simbolo(valor):
+    if valor > 9:
+        return chr(valor - 10 + ord('a'))
+    else:
+        return chr(valor + ord('0'))
 
-    return dec
+def converteParaDecimal(numero, base):
+    potencia, resposta = 1, 0
 
+    for digito in numero[::-1]:
+        resposta += valor(digito) * potencia
+        potencia *= base
 
-def decToBin(dec):
-    b = ''
+    return resposta
 
-    while(dec):
-        b = chr(ord('0') + (dec % 2)) + b
-        dec //= 2
+def converteDeDecimal(decimal, base):
+    resposta = ''
 
-    return b
+    while (decimal > 0):
+        resposta = simbolo(decimal % base) + resposta
+        decimal //= base
 
-
-def decToHex(dec):
-    h = ''
-
-    while(dec):
-        if(dec % 16 > 9):
-            h = chr(ord('a') + (dec % 16 - 10)) + h
-        else:
-            h = chr(ord('0') + (dec % 16)) + h
-        dec //= 16
-
-    return h
-
-
-def hexToDec(h):
-    dec, potencia = 0, 1
-
-    for digito in h[::-1]:
-        if('a' <= digito <= 'f'):
-            dec += (ord(digito) - ord('a') + 10) * potencia
-        else:
-            dec += int(digito) * potencia
-        potencia *= 16
-
-    return dec
-
-
-def binToHex(b):
-    return decToHex(binToDec(b))
-
-
-def hexToBin(h):
-    return decToBin(hexToDec(h))
-
+    return resposta
 
 N = int(input())
 
-for i in range(N):
+for i in range(1, N + 1):
     numero, base = input().strip().split(' ')
 
-    print(f'Case {i + 1}:')
-    if(base == 'bin'):
-        print(f'{binToDec(numero)} dec')
-        print(f'{binToHex(numero)} hex')
-    elif(base == 'dec'):
-        numero = int(numero)
-        print(f'{decToHex(numero)} hex')
-        print(f'{decToBin(numero)} bin')
-    else:
-        print(f'{hexToDec(numero)} dec')
-        print(f'{hexToBin(numero)} bin')
+    print(f'Case {i}:')
+    if (base == 'bin'):
+        dec = converteParaDecimal(numero, 2)
+        print(f'{dec} dec')
+        print(f'{converteDeDecimal(dec, 16)} hex')
+    elif (base == 'dec'):
+        dec = converteParaDecimal(numero, 10)
+        print(f'{converteDeDecimal(dec, 16)} hex')
+        print(f'{converteDeDecimal(dec, 2)} bin')
+    elif (base == 'hex'):
+        dec = converteParaDecimal(numero, 16)
+        print(f'{dec} dec')
+        print(f'{converteDeDecimal(dec, 2)} bin')
     print('')

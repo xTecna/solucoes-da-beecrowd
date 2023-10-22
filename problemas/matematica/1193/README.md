@@ -6,134 +6,91 @@
 
 Problema bem parecido com o [1199 - Conversão Simples de Base](../1199/README.md), mas aqui estamos usando cada função numericamente/lidando com strings, do jeito que era pra ser mesmo.
 
+Para entender melhor as interações para transformar de caractere para número e vice-versa consulte [código ASCII](../../../base-teorica/strings/ascii/README.md).
+
 ### C99
 ```c
+#include <ctype.h>
+#include <math.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
-#include <ctype.h>
 
-int binToDec(char *bin)
-{
+int valor(char simbolo) {
+    if (isalpha(simbolo)) {
+        return simbolo - 'a' + 10;
+    } else {
+        return simbolo - '0';
+    }
+}
+
+char simbolo(int valor) {
+    if (valor > 9) {
+        return valor - 10 + 'a';
+    } else {
+        return valor + '0';
+    }
+}
+
+int converteParaDecimal(char *numero, int base) {
     int potencia = 1, resposta = 0;
 
-    for (int i = strlen(bin) - 1; i > -1; --i)
-    {
-        resposta += potencia * (bin[i] - '0');
-        potencia *= 2;
+    for (int i = strlen(numero) - 1; i > -1; --i) {
+        resposta += valor(numero[i]) * potencia;
+        potencia *= base;
     }
 
     return resposta;
 }
 
-char *decToBin(int dec)
-{
-    int p = 0;
-    char temp, *resposta = malloc(100 * sizeof(int));
+char *converteDeDecimal(int decimal, int base) {
+    int posicao = 0;
+    int digitos = floor(log(decimal) / log(base)) + 2;
+    char *numero = (char *)malloc(digitos * sizeof(char));
 
-    while (dec)
-    {
-        resposta[p++] = (dec % 2) + '0';
-        dec /= 2;
+    while (decimal > 0) {
+        numero[posicao++] = simbolo(decimal % base);
+        decimal /= base;
     }
-    resposta[p] = '\0';
-
-    for (int i = 0; i < p / 2; ++i)
-    {
-        temp = resposta[i];
-        resposta[i] = resposta[p - i - 1];
-        resposta[p - i - 1] = temp;
+    for (int i = 0; i < posicao / 2; ++i) {
+        char temp = numero[i];
+        numero[i] = numero[posicao - i - 1];
+        numero[posicao - i - 1] = temp;
     }
+    numero[posicao] = '\0';
 
-    return resposta;
+    return numero;
 }
 
-int hexToDec(char *hex)
-{
-    int potencia = 1, resposta = 0;
-
-    for (int i = strlen(hex) - 1; i > -1; --i)
-    {
-        if (isalpha(hex[i]))
-        {
-            resposta += potencia * (hex[i] - 'a' + 10);
-        }
-        else
-        {
-            resposta += potencia * (hex[i] - '0');
-        }
-        potencia *= 16;
-    }
-
-    return resposta;
-}
-
-char *decToHex(int dec)
-{
-    int p = 0;
-    char temp, *resposta = malloc(100 * sizeof(int));
-
-    while (dec)
-    {
-        if (dec % 16 > 9)
-        {
-            resposta[p++] = ((dec % 16) - 10) + 'a';
-        }
-        else
-        {
-            resposta[p++] = (dec % 16) + '0';
-        }
-        dec /= 16;
-    }
-    resposta[p] = '\0';
-
-    for (int i = 0; i < p / 2; ++i)
-    {
-        temp = resposta[i];
-        resposta[i] = resposta[p - i - 1];
-        resposta[p - i - 1] = temp;
-    }
-
-    return resposta;
-}
-
-char *binToHex(char *bin)
-{
-    return decToHex(binToDec(bin));
-}
-
-char *hexToBin(char *hex)
-{
-    return decToBin(hexToDec(hex));
-}
-
-int main()
-{
-    int N, dec;
-    char X[100], Y[5];
+int main(void) {
+    int N;
+    char numero[100], base[100];
 
     scanf("%d\n", &N);
+    for (int k = 1; k <= N; ++k) {
+        scanf("%s %s\n", numero, base);
 
-    for (int i = 0; i < N; ++i)
-    {
-        scanf("%s %s\n", &X, &Y);
-
-        printf("Case %d:\n", i + 1);
-        if (strcmp(Y, "bin") == 0)
-        {
-            printf("%d dec\n", binToDec(X));
-            printf("%s hex\n", binToHex(X));
-        }
-        else if (strcmp(Y, "dec") == 0)
-        {
-            sscanf(X, "%d", &dec);
-            printf("%s hex\n", decToHex(dec));
-            printf("%s bin\n", decToBin(dec));
-        }
-        else
-        {
-            printf("%d dec\n", hexToDec(X));
-            printf("%s bin\n", hexToBin(X));
+        printf("Case %d:\n", k);
+        if (strcmp(base, "bin") == 0) {
+            int dec = converteParaDecimal(numero, 2);
+            char *hex = converteDeDecimal(dec, 16);
+            printf("%d dec\n", dec);
+            printf("%s hex\n", hex);
+            free(hex);
+        } else if (strcmp(base, "dec") == 0) {
+            int dec = converteParaDecimal(numero, 10);
+            char *hex = converteDeDecimal(dec, 16);
+            char *bin = converteDeDecimal(dec, 2);
+            printf("%s hex\n", hex);
+            printf("%s bin\n", bin);
+            free(hex);
+            free(bin);
+        } else if (strcmp(base, "hex") == 0) {
+            int dec = converteParaDecimal(numero, 16);
+            char *bin = converteDeDecimal(dec, 2);
+                printf("%d dec\n", dec);
+                printf("%s bin\n", bin);
+                free(bin);
         }
         printf("\n");
     }
@@ -142,128 +99,73 @@ int main()
 }
 ```
 
-### C++17
+### C++20
 ```cpp
-#include <iostream>
-#include <iomanip>
-#include <sstream>
 #include <cctype>
+#include <iostream>
 
 using namespace std;
 
-int converte(string numero)
-{
-    int resposta;
-    stringstream fluxo;
+int valor(char simbolo) {
+    if (isalpha(simbolo)) {
+        return simbolo - 'a' + 10;
+    } else {
+        return simbolo - '0';
+    }
+}
 
-    fluxo << numero;
-    fluxo >> resposta;
+char simbolo(int valor) {
+    if (valor > 9) {
+        return valor - 10 + 'a';
+    } else {
+        return valor + '0';
+    }
+}
+
+int converteParaDecimal(string numero, int base) {
+    int potencia = 1, resposta = 0;
+
+    for (int i = numero.length() - 1; i > -1; --i) {
+        resposta += valor(numero[i]) * potencia;
+        potencia *= base;
+    }
 
     return resposta;
 }
 
-int binToDec(string bin)
-{
-    int dec = 0, potencia = 1;
+string converteDeDecimal(int decimal, int base) {
+    string numero = "";
 
-    for (int i = bin.length() - 1; i > -1; --i)
-    {
-        dec += potencia * (bin[i] - '0');
-        potencia *= 2;
+    while (decimal > 0) {
+        numero = simbolo(decimal % base) + numero;
+        decimal /= base;
     }
 
-    return dec;
+    return numero;
 }
 
-string decToBin(int dec)
-{
-    string bin = "";
-
-    while (dec)
-    {
-        bin = (char)(dec % 2 + '0') + bin;
-        dec /= 2;
-    }
-
-    return bin;
-}
-
-string decToHex(int dec)
-{
-    string hex = "";
-
-    while (dec)
-    {
-        if (dec % 16 > 9)
-        {
-            hex = (char)(dec % 16 + 'a' - 10) + hex;
-        }
-        else
-        {
-            hex = (char)(dec % 16 + '0') + hex;
-        }
-        dec /= 16;
-    }
-
-    return hex;
-}
-
-string binToHex(string bin)
-{
-    return decToHex(binToDec(bin));
-}
-
-int hexToDec(string hex)
-{
-    int dec = 0, potencia = 1;
-
-    for (int i = hex.length() - 1; i > -1; --i)
-    {
-        if (isalpha(hex[i]))
-        {
-            dec += potencia * (hex[i] - 'a' + 10);
-        }
-        else
-        {
-            dec += potencia * (hex[i] - '0');
-        }
-        potencia *= 16;
-    }
-
-    return dec;
-}
-
-string hexToBin(string hex)
-{
-    return decToBin(hexToDec(hex));
-}
-
-int main()
-{
+int main() {
     int N;
     string numero, base;
 
     cin >> N;
-    for (int i = 0; i < N; ++i)
-    {
+    for (int i = 0; i < N; ++i) {
         cin >> numero >> base;
 
         cout << "Case " << i + 1 << ":" << endl;
 
-        if (base == "dec")
-        {
-            cout << decToHex(converte(numero)) << " hex" << endl;
-            cout << decToBin(converte(numero)) << " bin" << endl;
-        }
-        else if (base == "hex")
-        {
-            cout << hexToDec(numero) << " dec" << endl;
-            cout << hexToBin(numero) << " bin" << endl;
-        }
-        else
-        {
-            cout << binToDec(numero) << " dec" << endl;
-            cout << binToHex(numero) << " hex" << endl;
+        if (base == "bin") {
+            int dec = converteParaDecimal(numero, 2);
+            cout << dec << " dec" << endl;
+            cout << converteDeDecimal(dec, 16) << " hex" << endl;
+        } else if (base == "dec") {
+            int dec = converteParaDecimal(numero, 10);
+            cout << converteDeDecimal(dec, 16) << " hex" << endl;
+            cout << converteDeDecimal(dec, 2) << " bin" << endl;
+        } else if (base == "hex") {
+            int dec = converteParaDecimal(numero, 16);
+            cout << dec << " dec" << endl;
+            cout << converteDeDecimal(dec, 2) << " bin" << endl;
         }
 
         cout << endl;
@@ -273,159 +175,261 @@ int main()
 }
 ```
 
-### JavaScript 12.18
-```javascript
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+### C#
+```cs
+using System;
 
-const convertePraLetra = (numero) => String.fromCharCode('a'.charCodeAt(0) + numero);
-
-const convertePraNumero = (letra) => letra.charCodeAt(0) - 'a'.charCodeAt(0) + 10;
-
-const binToDec = (bin) => {
-    let potencia = 1;
-
-    return bin.split('').reverse().reduce((acc, cur) => {
-        let resposta = acc + parseInt(cur) * potencia;
-        potencia *= 2;
-
-        return resposta;
-    }, 0);
-};
-
-const decToBin = (dec) => {
-    let bin = "";
-
-    while (dec) {
-        bin = (dec % 2).toString() + bin;
-        dec = Math.floor(dec / 2);
-    }
-
-    return bin;
-};
-
-const decToHex = (dec) => {
-    let hex = "";
-
-    while (dec) {
-        if (dec % 16 > 9) {
-            hex = convertePraLetra(dec % 16 - 10) + hex;
-        } else {
-            hex = (dec % 16).toString() + hex;
+class URI {
+    static int valor(char simbolo){
+        if(Char.IsLetter(simbolo)){
+            return simbolo - 'a' + 10;
+        }else{
+            return simbolo - '0';
         }
-        dec = Math.floor(dec / 16);
     }
 
-    return hex;
-};
+    static char simbolo(int valor){
+        if(valor > 9){
+            return (char)(valor - 10 + 'a');
+        }else{
+            return (char)(valor + '0');
+        }
+    }
+    
+    static int converteParaDecimal(string numero, int baseNumerica){
+        int potencia = 1, resposta = 0;
 
-const hexToDec = (hex) => {
-    let potencia = 1;
-
-    return hex.split('').reverse().reduce((acc, cur) => {
-        let resposta = acc + (/[a-f]/.test(cur) ? convertePraNumero(cur) : parseInt(cur)) * potencia;
-        potencia *= 16;
+        for(int i = numero.Length - 1; i > -1; --i){
+            resposta += valor(numero[i]) * potencia;
+            potencia *= baseNumerica;
+        }
 
         return resposta;
-    }, 0);
-};
+    }
+    
+    static string converteDeDecimal(int numero, int baseNumerica){
+        string resposta = "";
 
-const binToHex = (bin) => decToHex(binToDec(bin));
+        while(numero > 0){
+            resposta = simbolo(numero % baseNumerica) + resposta;
+            numero /= baseNumerica;
+        }
 
-const hexToBin = (hex) => decToBin(hexToDec(hex));
+        return resposta;
+    }
+    
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+
+        for(int i = 1; i <= N; ++i){
+            string[] partes = Console.ReadLine().Trim().Split(' ');
+
+            Console.WriteLine($"Case {i}:");
+            if(partes[1] == "bin"){
+                int dec = converteParaDecimal(partes[0], 2);
+                Console.WriteLine($"{dec} dec");
+                Console.WriteLine($"{converteDeDecimal(dec, 16)} hex");
+            }else if(partes[1] == "dec"){
+                int dec = converteParaDecimal(partes[0], 10);
+                Console.WriteLine($"{converteDeDecimal(dec, 16)} hex");
+                Console.WriteLine($"{converteDeDecimal(dec, 2)} bin");
+            }else if(partes[1] == "hex"){
+                int dec = converteParaDecimal(partes[0], 16);
+                Console.WriteLine($"{dec} dec");
+                Console.WriteLine($"{converteDeDecimal(dec, 2)} bin");
+            }
+            Console.WriteLine("");
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static int valor(char simbolo){
+        if(Character.isLetter(simbolo)){
+            return simbolo - 'a' + 10;
+        }else{
+            return simbolo - '0';
+        }
+    }
+
+    public static char simbolo(int valor){
+        if(valor > 9){
+            return (char)(valor - 10 + 'a');
+        }else{
+            return (char)(valor + '0');
+        }
+    }
+    
+    public static int converteParaDecimal(String numero, int base){
+        int potencia = 1, resposta = 0;
+
+        for(int i = numero.length() - 1; i > -1; --i){
+            resposta += valor(numero.charAt(i)) * potencia;
+            potencia *= base;
+        }
+
+        return resposta;
+    }
+
+    public static String converteDeDecimal(int decimal, int base){
+        String resposta = "";
+
+        while(decimal > 0){
+            resposta = simbolo(decimal % base) + resposta;
+            decimal /= base;
+        }
+
+        return resposta;
+    }
+    
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+        for(int k = 1; k <= N; ++k){
+            String[] partes = in.readLine().trim().split(" ");
+
+            System.out.printf("Case %d:\n", k);
+            if(partes[1].equals("bin")){
+                int dec = converteParaDecimal(partes[0], 2);
+                System.out.printf("%d dec\n", dec);
+                System.out.printf("%s hex\n\n", converteDeDecimal(dec, 16));
+            }else if(partes[1].equals("dec")){
+                int dec = converteParaDecimal(partes[0], 10);
+                System.out.printf("%s hex\n", converteDeDecimal(dec, 16));
+                System.out.printf("%s bin\n\n", converteDeDecimal(dec, 2));
+            }else if(partes[1].equals("hex")){
+                int dec = converteParaDecimal(partes[0], 16);
+                System.out.printf("%d dec\n", dec);
+                System.out.printf("%s bin\n\n", converteDeDecimal(dec, 2));
+            }
+        }
+    }
+}
+```
+
+### JavaScript 12.18
+```js
+var input = require('fs').readFileSync('/dev/stdin', 'utf8');
+var lines = input.trim().split('\n');
+
+const valor = (simbolo) => {
+    if (simbolo.match(/[a-z]/i)){
+        return simbolo.charCodeAt(0) - 'a'.charCodeAt(0) + 10;
+    } else {
+        return simbolo.charCodeAt(0) - '0'.charCodeAt(0);
+    }
+}
+
+const simbolo = (valor) => {
+    if (valor > 9){
+        return String.fromCharCode('a'.charCodeAt(0) + valor - 10);
+    } else {
+        return String.fromCharCode('0'.charCodeAt(0) + valor);
+    }
+}
+
+const converteParaDecimal = (numero, base) => {
+    let potencia = 1, resposta = 0;
+
+    for(let i = numero.length - 1; i > -1; --i){
+        resposta += valor(numero[i]) * potencia;
+        potencia *= base;
+    }
+
+    return resposta;
+}
+
+const converteDeDecimal = (decimal, base) => {
+    let resposta = "";
+
+    while(decimal > 0){
+        resposta = simbolo(decimal % base) + resposta;
+        decimal = parseInt(Math.floor(decimal / base));
+    }
+
+    return resposta;
+}
 
 let N = parseInt(lines.shift());
-
-for (let i = 0; i < N; ++i) {
+for(let k = 1; k <= N; ++k){
     let [numero, base] = lines.shift().trim().split(' ');
 
-    console.log(`Case ${i + 1}:`);
-    if (base === 'bin') {
-        console.log(`${binToDec(numero)} dec`);
-        console.log(`${binToHex(numero)} hex`);
-    } else if (base === 'dec') {
-        numero = parseInt(numero);
-        console.log(`${decToHex(numero)} hex`);
-        console.log(`${decToBin(numero)} bin`);
-    } else {
-        console.log(`${hexToDec(numero)} dec`);
-        console.log(`${hexToBin(numero)} bin`);
+    console.log(`Case ${k}:`);
+    if(base === 'bin'){
+        let dec = converteParaDecimal(numero, 2);
+        console.log(`${dec} dec`);
+        console.log(`${converteDeDecimal(dec, 16)} hex`);
+    }else if(base === 'dec'){
+        let dec = converteParaDecimal(numero, 10);
+        console.log(`${converteDeDecimal(dec, 16)} hex`);
+        console.log(`${converteDeDecimal(dec, 2)} bin`);        
+    }else if(base === 'hex'){
+        let dec = converteParaDecimal(numero, 16);
+        console.log(`${dec} dec`);
+        console.log(`${converteDeDecimal(dec, 2)} bin`);
     }
     console.log('');
 }
 ```
 
 ### Python 3.9
-```python
-def binToDec(b):
-    dec, potencia = 0, 1
+```py
+def valor(simbolo):
+    if simbolo.isalpha():
+        return ord(simbolo) - ord('a') + 10
+    else:
+        return ord(simbolo) - ord('0')
 
-    for digito in b[::-1]:
-        dec += int(digito) * potencia
-        potencia *= 2
+def simbolo(valor):
+    if valor > 9:
+        return chr(valor - 10 + ord('a'))
+    else:
+        return chr(valor + ord('0'))
 
-    return dec
+def converteParaDecimal(numero, base):
+    potencia, resposta = 1, 0
 
+    for digito in numero[::-1]:
+        resposta += valor(digito) * potencia
+        potencia *= base
 
-def decToBin(dec):
-    b = ''
+    return resposta
 
-    while(dec):
-        b = chr(ord('0') + (dec % 2)) + b
-        dec //= 2
+def converteDeDecimal(decimal, base):
+    resposta = ''
 
-    return b
+    while (decimal > 0):
+        resposta = simbolo(decimal % base) + resposta
+        decimal //= base
 
-
-def decToHex(dec):
-    h = ''
-
-    while(dec):
-        if(dec % 16 > 9):
-            h = chr(ord('a') + (dec % 16 - 10)) + h
-        else:
-            h = chr(ord('0') + (dec % 16)) + h
-        dec //= 16
-
-    return h
-
-
-def hexToDec(h):
-    dec, potencia = 0, 1
-
-    for digito in h[::-1]:
-        if('a' <= digito <= 'f'):
-            dec += (ord(digito) - ord('a') + 10) * potencia
-        else:
-            dec += int(digito) * potencia
-        potencia *= 16
-
-    return dec
-
-
-def binToHex(b):
-    return decToHex(binToDec(b))
-
-
-def hexToBin(h):
-    return decToBin(hexToDec(h))
-
+    return resposta
 
 N = int(input())
 
-for i in range(N):
+for i in range(1, N + 1):
     numero, base = input().strip().split(' ')
 
-    print(f'Case {i + 1}:')
-    if(base == 'bin'):
-        print(f'{binToDec(numero)} dec')
-        print(f'{binToHex(numero)} hex')
-    elif(base == 'dec'):
-        numero = int(numero)
-        print(f'{decToHex(numero)} hex')
-        print(f'{decToBin(numero)} bin')
-    else:
-        print(f'{hexToDec(numero)} dec')
-        print(f'{hexToBin(numero)} bin')
+    print(f'Case {i}:')
+    if (base == 'bin'):
+        dec = converteParaDecimal(numero, 2)
+        print(f'{dec} dec')
+        print(f'{converteDeDecimal(dec, 16)} hex')
+    elif (base == 'dec'):
+        dec = converteParaDecimal(numero, 10)
+        print(f'{converteDeDecimal(dec, 16)} hex')
+        print(f'{converteDeDecimal(dec, 2)} bin')
+    elif (base == 'hex'):
+        dec = converteParaDecimal(numero, 16)
+        print(f'{dec} dec')
+        print(f'{converteDeDecimal(dec, 2)} bin')
     print('')
 ```

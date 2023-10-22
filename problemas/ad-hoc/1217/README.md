@@ -50,7 +50,7 @@ int main(){
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 #include <sstream>
@@ -98,8 +98,72 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+
+class URI {
+    static void Main(string[] args) {
+        int N = int.Parse(Console.ReadLine());
+
+        int pesoTotal = 0;
+        double precoTotal = 0.0;
+        int[] pesos = new int[N];
+        for(int k = 0; k < N; ++k){
+            double V = double.Parse(Console.ReadLine());
+            string[] frutas = Console.ReadLine().Trim().Split(' ');
+
+            pesos[k] = frutas.Length;
+            pesoTotal += pesos[k];
+            precoTotal += V;
+        }
+
+        for(int i = 1; i <= N; ++i){
+            Console.WriteLine($"day {i}: {pesos[i - 1]} kg");
+        }
+        Console.WriteLine($"{((double)pesoTotal/N):N2} kg by day");
+        Console.WriteLine($"R$ {(precoTotal/N):N2} by day");
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int N = Integer.parseInt(in.readLine());
+
+        int pesoTotal = 0;
+        double precoTotal = 0.0;
+        int[] pesos = new int[N];
+        for(int k = 0; k < N; ++k){
+            double V = Double.parseDouble(in.readLine());
+            String[] frutas = in.readLine().trim().split(" ");
+
+            pesos[k] = frutas.length;
+            pesoTotal += pesos[k];
+            precoTotal += V;
+        }
+
+        for(int k = 1; k <= N; ++k){
+            System.out.printf("day %d: %d kg\n", k, pesos[k - 1]);
+        }
+        System.out.printf("%.2f kg by day\n", (double)pesoTotal/N);
+        System.out.printf("R$ %.2f by day\n", precoTotal/N);
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -125,7 +189,7 @@ console.log(`R$ ${gastoPorDia.toFixed(2)} by day`);
 ```
 
 ### Python 3.9
-```python
+```py
 pesoPorDia = 0.0
 gastoPorDia = 0.0
 

@@ -145,7 +145,7 @@ class Fila {
         this.frente = this.frente.proximo;
     }
 
-    top() {
+    front() {
         return this.frente.valor;
     }
 

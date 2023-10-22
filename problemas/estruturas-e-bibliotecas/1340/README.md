@@ -713,7 +713,7 @@ class Fila {
         this.frente = this.frente.proximo;
     }
 
-    top() {
+    front() {
         return this.frente.valor;
     }
 
@@ -840,7 +840,7 @@ while(lines.length){
                 }
             }
             if(f){
-                if(fila.empty() || fila.top() !== elemento){
+                if(fila.empty() || fila.front() !== elemento){
                     f = false;
                 }else{
                     fila.pop();

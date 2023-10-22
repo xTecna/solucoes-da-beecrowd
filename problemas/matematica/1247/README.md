@@ -4,19 +4,11 @@
 
 ## Solução
 
-O caminho que o ladrão precisa fazer é uma reta até um ponto a 12 milhas náuticas de distância com velocidade constante de `VF` nós (unidade de velocidade correspondente a uma milha náutica por hora).
+O caminho que o ladrão precisa fazer é uma reta até um ponto a 12 milhas náuticas de distância com velocidade constante de $VF$ nós (unidade de velocidade correspondente a uma milha náutica por hora).
 
-Já o caminho do guarda é um caminho inclinado, onde a distância a ser percorrida é equivalente à hipotenusa de um triângulo envolvendo as 12 milhas do ladrão e a distância de `D` milhas náuticas entre o guarda e o ladrão como catetos. Logo, a distância a ser percorrida pelo guarda é
+Já o caminho do guarda é um caminho inclinado, onde a distância a ser percorrida é equivalente à hipotenusa de um triângulo envolvendo as $12$ milhas do ladrão e a distância de $D$ milhas náuticas entre o guarda e o ladrão como catetos. Logo, a distância a ser percorrida pelo guarda é $\sqrt{144 + D^{2}}$ com velocidade constante de $VG$ nós.
 
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;d&space;=&space;\sqrt{144&space;&plus;&space;D^2}" title="\bg_white d = \sqrt{144 + D^2}" />
-
-com velocidade constante de `VG` nós.
-
-Com isso, o que precisamos fazer é apenas comparar o tempo que cada um leva para percorrer suas respectivas distâncias: se o ladrão chega em menos tempo, ele escapa; caso contrário, o guarda consegue prendê-lo. Logo, o que queremos checar é se a expressão abaixo é verdadeira
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\frac{12}{VF}&space;<&space;\frac{\sqrt{144&space;&plus;&space;D^2}}{VG}" title="\bg_white \frac{12}{VF} < \frac{\sqrt{144 + D^2}}{VG}" />
-
-então o ladrão consegue escapar.
+Com isso, o que precisamos fazer é apenas comparar o tempo que cada um leva para percorrer suas respectivas distâncias: se o ladrão chega em menos tempo, ele escapa; caso contrário, o guarda consegue prendê-lo. Logo, o que queremos checar é que se a expressão $\frac{12}{VF} < \frac{\sqrt{144 + D^{2}}}{VG}$ é verdadeira então o ladrão consegue escapar.
 
 ### C99
 ```c
@@ -41,7 +33,7 @@ int main()
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 #include <cmath>
@@ -66,8 +58,62 @@ int main()
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {    
+    static void Main(string[] args) {
+        string entrada;
+        
+        while((entrada = Console.ReadLine()) != null){
+            List<int> DVFVG = entrada.Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            int D = DVFVG[0];
+            int VF = DVFVG[1];
+            int VG = DVFVG[2];
+
+            if(12.0/VF >= Math.Sqrt(144 + (D * D))/VG){
+                Console.WriteLine("S");
+            }else{
+                Console.WriteLine("N");
+            }
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.Math;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        while(in.ready()){
+            String[] DVFVG = in.readLine().trim().split(" ");
+            int D = Integer.parseInt(DVFVG[0]);
+            int VF = Integer.parseInt(DVFVG[1]);
+            int VG = Integer.parseInt(DVFVG[2]);
+
+            if(12.0/VF >= Math.sqrt(144 + (D * D))/VG){
+                System.out.println("S");
+            }else{
+                System.out.println("N");
+            }
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -83,7 +129,7 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-```python
+```py
 import math
 
 while True:

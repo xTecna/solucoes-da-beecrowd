@@ -4,42 +4,52 @@
 
 ## Solução
 
-Note uma temos que lidar com uma quantidade muito grande de casos de teste e de alturas diferentes a serem ordenadas, que pode chegar à ordem de 300 milhões de elementos no total. Como sabemos que todas as alturas sempre estarão no intervalo entre 20 e 230 cm, o [Counting sort](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md#counting-sort)  vem como uma excelente alternativa para ordenar tantos dados rapidamente.
+Note uma temos que lidar com uma quantidade muito grande de casos de teste e de alturas diferentes a serem ordenadas, que pode chegar à ordem de 300 milhões de elementos no total. Como sabemos que todas as alturas sempre estarão no intervalo entre $20$ e $230$ cm, o [Counting sort](../../../base-teorica/estruturas-e-bibliotecas/ordenacao/README.md#counting-sort)  vem como uma excelente alternativa para ordenar tantos dados rapidamente.
+
+> As soluções em Java e Python ou estão retornando _Time Limit Exceeded_ ou _Memory Limit Exceeded_, então não temos essas duas disponíveis por enquanto.
 
 ### C99
 ```c
-#include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
-    int NC, N, altura, first, alturas[231];
+void countingSort(int *V, int n, int limite) {
+    int *aux = (int *)malloc(limite * sizeof(int));
+    int k = 0;
+    for (int i = 0; i < limite; ++i) {
+        aux[i] = 0;
+    }
+    for (int i = 0; i < n; ++i) {
+        aux[V[i]] += 1;
+    }
+    for (int i = 0; i < limite; ++i) {
+        for (int j = 0; j < aux[i]; ++j) {
+            V[k++] = i;
+        }
+    }
+    free(aux);
+}
+
+int main(void) {
+    int NC, N;
+    int *V;
 
     scanf("%d", &NC);
-
-    for (int k = 0; k < NC; ++k)
-    {
-        memset(alturas, 0, sizeof(alturas));
-
+    for (int k = 0; k < NC; ++k) {
         scanf("%d", &N);
 
-        for (int i = 0; i < N; ++i)
-        {
-            scanf("%d", &altura);
-            alturas[altura]++;
+        V = (int *)malloc(N * sizeof(int));
+        for (int i = 0; i < N; ++i) {
+            scanf("%d", &V[i]);
         }
 
-        first = 1;
-        for (int i = 20; i < 231; ++i)
-        {
-            for (int j = 0; j < alturas[i]; ++j)
-            {
-                if (first)
-                    first = 0;
-                else
-                    printf(" ");
-                printf("%d", i);
-            }
+        countingSort(V, N, 231);
+
+        if (N > 0) {
+            printf("%d", V[0]);
+        }
+        for (int i = 1; i < N; ++i) {
+            printf(" %d", V[i]);
         }
         printf("\n");
     }
@@ -48,74 +58,121 @@ int main()
 }
 ```
 
-### C++17
+### C++20
 ```cpp
-#include <cstring>
-#include <cstdio>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
-    bool first;
-    int NC, N, altura, alturas[231];
+void countingSort(vector<int> &V, int limite) {
+    vector<int> aux(limite, 0);
+    int k = 0, n = V.size();
+    for (int i = 0; i < n; ++i) {
+        aux[V[i]] += 1;
+    }
+    for (int i = 0; i < limite; ++i) {
+        for (int j = 0; j < aux[i]; ++j) {
+            V[k++] = i;
+        }
+    }
+}
 
-    scanf("%d", &NC);
+int main() {
+    int NC, N;
+    vector<int> V;
 
-    for (int k = 0; k < NC; ++k)
-    {
-        scanf("%d", &N);
+    cin >> NC;
+    for (int k = 0; k < NC; ++k) {
+        cin >> N;
 
-        memset(alturas, 0, sizeof(alturas));
-
-        for (int i = 0; i < N; ++i)
-        {
-            scanf("%d", &altura);
-            alturas[altura]++;
+        V.assign(N, 0);
+        for (int i = 0; i < N; ++i) {
+            cin >> V[i];
         }
 
-        first = true;
-        for (int i = 20; i < 231; ++i)
-        {
-            for (int j = 0; j < alturas[i]; ++j)
-            {
-                if (first)
-                    first = false;
-                else
-                    printf(" ");
+        countingSort(V, 231);
 
-                printf("%d", i);
-            }
+        if (N > 0) {
+            cout << V[0];
         }
-        printf("\n");
+        for (int i = 1; i < N; ++i) {
+            cout << ' ' << V[i];
+        }
+        cout << endl;
     }
 
     return 0;
+}
+```
+
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+	static void countingSort(ref List<int> V, int limite){
+		List<int> aux = new List<int>(limite);
+		for(int i = 0; i < limite; ++i){
+			aux.Add(0);
+		}
+		int k = 0, n = V.Count;
+		for(int i = 0; i < n; ++i){
+			aux[V[i]] += 1;
+		}
+		for(int i = 0; i < limite; ++i){
+			for(int j = 0; j < aux[i]; ++j){
+				V[k++] = i;
+			}
+		}
+	}
+	
+    static void Main(string[] args) {
+        int NC = int.Parse(Console.ReadLine());
+		for(int k = 0; k < NC; ++k){
+			int N = int.Parse(Console.ReadLine());
+
+			List<int> V = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+
+			countingSort(ref V, 231);
+
+			Console.WriteLine(String.Join(" ", V));
+		}
+    }
 }
 ```
 
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+var lines = input.trim().split('\n');
 
-let p = 0;
-let NC = parseInt(lines[p++]);
+const countingSort = (V, limite) => {
+	let aux = Array(limite);
+	for(let i = 0; i < limite; ++i){
+		aux[i] = 0;
+	}
+	let k = 0;
+	for(let i = 0; i < V.length; ++i){
+		aux[V[i]] += 1;
+	}
+	for(let i = 0; i < limite; ++i){
+		for(let j = 0; j < aux[i]; ++j){
+			V[k++] = i;
+		}
+	}
+};
 
-let alturas = Array(231);
-for(let k = 0; k < NC; ++k){
-    let N = parseInt(lines[p++]);
+let NC = parseInt(lines.shift());
+for (let k = 0; k < NC; ++k) {
+	let N = parseInt(lines.shift());
 
-    alturas.fill(0);
-    lines[p++].split(' ').map((x) => alturas[parseInt(x)] += 1);
+	let V = lines.shift().trim().split(' ').map(x => parseInt(x));
 
-    let resposta = [];
-    for(let i = 20; i < 231; ++i){
-        for(let j = 0; j < alturas[i]; ++j){
-            resposta.push(i);
-        }
-    }
+	countingSort(V, 231);
 
-    console.log(resposta.join(' '));
+	console.log(V.join(' '));
 }
 ```

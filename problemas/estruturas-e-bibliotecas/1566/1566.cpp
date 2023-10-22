@@ -1,41 +1,43 @@
-#include <cstring>
-#include <cstdio>
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
-    bool first;
-    int NC, N, altura, alturas[231];
+void countingSort(vector<int> &V, int limite) {
+    vector<int> aux(limite, 0);
+    int k = 0, n = V.size();
+    for (int i = 0; i < n; ++i) {
+        aux[V[i]] += 1;
+    }
+    for (int i = 0; i < limite; ++i) {
+        for (int j = 0; j < aux[i]; ++j) {
+            V[k++] = i;
+        }
+    }
+}
 
-    scanf("%d", &NC);
+int main() {
+    int NC, N;
+    vector<int> V;
 
-    for (int k = 0; k < NC; ++k)
-    {
-        scanf("%d", &N);
+    cin >> NC;
+    for (int k = 0; k < NC; ++k) {
+        cin >> N;
 
-        memset(alturas, 0, sizeof(alturas));
-
-        for (int i = 0; i < N; ++i)
-        {
-            scanf("%d", &altura);
-            alturas[altura]++;
+        V.assign(N, 0);
+        for (int i = 0; i < N; ++i) {
+            cin >> V[i];
         }
 
-        first = true;
-        for (int i = 20; i < 231; ++i)
-        {
-            for (int j = 0; j < alturas[i]; ++j)
-            {
-                if (first)
-                    first = false;
-                else
-                    printf(" ");
+        countingSort(V, 231);
 
-                printf("%d", i);
-            }
+        if (N > 0) {
+            cout << V[0];
         }
-        printf("\n");
+        for (int i = 1; i < N; ++i) {
+            cout << ' ' << V[i];
+        }
+        cout << endl;
     }
 
     return 0;

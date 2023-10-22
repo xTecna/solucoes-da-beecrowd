@@ -3,16 +3,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Main {
-    public static int converte(String linha) {
-        int soma = 0, n = linha.length();
-
-        for (int i = 0; i < n; ++i) {
-            if (linha.charAt(i) == '*') {
-                soma += 1 << (n - i - 1);
-            }
+    public static int valor(char simbolo) {
+        switch(simbolo){
+            case '-':   return 0;
+            case '*':   return 1;
         }
+        return 0;
+    }
 
-        return soma;
+    public static int converte(String numero) {
+        int potencia = 1, resposta = 0;
+        
+        for(int i = numero.length() - 1; i > -1; --i){
+            resposta += valor(numero.charAt(i)) * potencia;
+            potencia *= 2;
+        }
+        
+        return resposta;
     }
 
     public static void main(String[] args) throws IOException {

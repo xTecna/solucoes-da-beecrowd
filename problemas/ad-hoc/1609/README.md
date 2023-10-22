@@ -6,7 +6,7 @@
 
 Você pode fazer a contagem dos carneirinhos distintos colocando todos os carneirinhos que você for lendo em um conjunto e depois vendo o tamanho do conjunto; ou usando um vetor de booleanos e contabilizar toda vez que um carneirinho passa de `falso` para `verdadeiro`.
 
-Outra forma de resolver este problema para linguagens que não têm o recurso de conjuntos é ordenar todos os carneirinhos e usar a ordenação para distinguir e contar os carneirinhos diferentes.
+Outra forma de resolver este problema para linguagens que não têm o recurso de conjuntos é ordenar todos os carneirinhos e usar a ordenação para distinguir e contar os carneirinhos diferentes. Eu acabei seguindo essa abordagem em vez da de vetores para não ter que fazer um vetor com tamanho $10^9$.
 
 ### C99
 ```c
@@ -49,7 +49,7 @@ int main(){
 }
 ```
 
-### C++17
+### C++20
 ```cpp
 #include <iostream>
 #include <set>
@@ -79,8 +79,58 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {
+    static void Main(string[] args) {
+        int T = int.Parse(Console.ReadLine());
+
+        for(int k = 0; k < T; ++k){
+            int N = int.Parse(Console.ReadLine());
+            List<int> carneiros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+
+            HashSet<int> diferentes = new HashSet<int>(carneiros);
+            Console.WriteLine(diferentes.Count);
+        }
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashSet;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        int T = Integer.parseInt(in.readLine());
+        for(int k = 0; k < T; ++k){
+            int N = Integer.parseInt(in.readLine());
+
+            String[] carneiros = in.readLine().trim().split(" ");
+
+            HashSet<Integer> diferentes = new HashSet<Integer>();
+            for(int i = 0; i < carneiros.length; ++i){
+                diferentes.add(Integer.parseInt(carneiros[i]));
+            }
+
+            System.out.println(diferentes.size());
+        }
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -96,7 +146,7 @@ for(let i = 0; i < T; ++i){
 ```
 
 ### Python 3.9
-```python
+```py
 T = int(input())
 
 for _ in range(T):

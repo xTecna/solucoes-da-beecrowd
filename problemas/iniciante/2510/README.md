@@ -7,7 +7,6 @@
 Todos os vilões foram capturados pelo Batmain. Como vai ser passado uma lista de vilões, então a resposta é `Y` para todos.
 
 ### C99
-
 ```c
 #include <stdio.h>
 
@@ -27,8 +26,7 @@ int main()
 }
 ```
 
-### C++17
-
+### C++20
 ```cpp
 #include <iostream>
 
@@ -51,7 +49,6 @@ int main()
 ```
 
 ### C#
-
 ```cs
 using System;
 
@@ -66,8 +63,7 @@ class URI {
 }
 ```
 
-### Java 14
-
+### Java 19
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -88,7 +84,6 @@ public class Main {
 ```
 
 ### Javascript 12.18
-
 ```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
@@ -101,7 +96,6 @@ for (let i = 0; i < T; ++i) {
 ```
 
 ### Python 3.9
-
 ```py
 T = int(input())
 for _ in range(T):

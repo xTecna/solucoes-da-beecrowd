@@ -7,7 +7,6 @@
 Usar sentinelas, isto é, uma linha e uma coluna extra no começo e no final da matriz, é essencial para manter a verificação dos vizinhos o mais simples possível. Com os sentinelas, a função vira apenas a soma dos vizinhos sem precisar se preocupar se precisar fazer checagem de limites.
 
 ### C99
-
 ```c
 #include <stdio.h>
 
@@ -61,8 +60,7 @@ int main()
 }
 ```
 
-### C++17
-
+### C++20
 ```cpp
 #include <iostream>
 
@@ -119,7 +117,6 @@ int main()
 ```
 
 ### C#
-
 ```cs
 using System;
 using System.Collections.Generic;
@@ -161,8 +158,7 @@ class URI {
 }
 ```
 
-### Java 14
-
+### Java 19
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -206,7 +202,6 @@ public class Main {
 ```
 
 ### Javascript 12.18
-
 ```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
@@ -244,7 +239,6 @@ while (lines.length) {
 ```
 
 ### Python 3.9
-
 ```py
 def paesDeQueijoVizinhos(matriz, i, j):
     return matriz[i - 1][j] + matriz[i + 1][j] + matriz[i][j - 1] + matriz[i][j + 1]

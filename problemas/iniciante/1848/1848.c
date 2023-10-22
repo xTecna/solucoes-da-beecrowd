@@ -1,19 +1,23 @@
 #include <string.h>
 #include <stdio.h>
 
-int converte(char *linha)
-{
-    int soma = 0, n = strlen(linha);
+int valor(char simbolo){
+    switch(simbolo){
+        case '-':   return 0;
+        case '*':   return 1;
+    }
+}
 
-    for (int i = 0; i < n; ++i)
-    {
-        if (linha[i] == '*')
-        {
-            soma += 1 << (n - i - 1);
-        }
+int converte(char *numero)
+{
+    int potencia = 1, resposta = 0;
+
+    for(int i = strlen(numero) - 1; i > -1; --i){
+        resposta += valor(numero[i]) * potencia;
+        potencia *= 2;
     }
 
-    return soma;
+    return resposta;
 }
 
 int main()

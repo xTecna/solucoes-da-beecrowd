@@ -82,7 +82,7 @@ int main(){
 }
 ```
 
-#### C++17
+#### C++20
 ```cpp
 #include <iostream>
 #include <map>
@@ -154,8 +154,157 @@ int main(){
 }
 ```
 
+#### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+class URI {
+    static Dictionary<char, char> teclado;
+
+    static void inicializa(){
+        teclado = new Dictionary<char, char>();
+        teclado['1'] = '`';
+        teclado['2'] = '1';
+        teclado['3'] = '2';
+        teclado['4'] = '3';
+        teclado['5'] = '4';
+        teclado['6'] = '5';
+        teclado['7'] = '6';
+        teclado['8'] = '7';
+        teclado['9'] = '8';
+        teclado['0'] = '9';
+        teclado['-'] = '0';
+        teclado['='] = '-';
+        teclado['W'] = 'Q';
+        teclado['E'] = 'W';
+        teclado['R'] = 'E';
+        teclado['T'] = 'R';
+        teclado['Y'] = 'T';
+        teclado['U'] = 'Y';
+        teclado['I'] = 'U';
+        teclado['O'] = 'I';
+        teclado['P'] = 'O';
+        teclado['['] = 'P';
+        teclado[']'] = '[';
+        teclado['\\'] = ']';
+        teclado['S'] = 'A';
+        teclado['D'] = 'S';
+        teclado['F'] = 'D';
+        teclado['G'] = 'F';
+        teclado['H'] = 'G';
+        teclado['J'] = 'H';
+        teclado['K'] = 'J';
+        teclado['L'] = 'K';
+        teclado[';'] = 'L';
+        teclado['\''] = ';';
+        teclado['X'] = 'Z';
+        teclado['C'] = 'X';
+        teclado['V'] = 'C';
+        teclado['B'] = 'V';
+        teclado['N'] = 'B';
+        teclado['M'] = 'N';
+        teclado[','] = 'M';
+        teclado['.'] = ',';
+        teclado['/'] = '.';
+        teclado[' '] = ' ';
+    }
+    
+    static void Main(string[] args) {
+        inicializa();
+
+        string frase;
+        while((frase = Console.ReadLine()) != null){
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < frase.Length; ++i){
+                sb.Append(teclado[frase[i]]);
+            }
+            Console.WriteLine(sb.ToString());
+        }
+    }
+}
+```
+
+#### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+
+public class Main {
+    public static HashMap<Character, Character> teclado;
+    
+    public static void inicializa(){
+        teclado = new HashMap<Character, Character>();
+        teclado.put('1', '`');
+        teclado.put('2', '1');
+        teclado.put('3', '2');
+        teclado.put('4', '3');
+        teclado.put('5', '4');
+        teclado.put('6', '5');
+        teclado.put('7', '6');
+        teclado.put('8', '7');
+        teclado.put('9', '8');
+        teclado.put('0', '9');
+        teclado.put('-', '0');
+        teclado.put('=', '-');
+        teclado.put('W', 'Q');
+        teclado.put('E', 'W');
+        teclado.put('R', 'E');
+        teclado.put('T', 'R');
+        teclado.put('Y', 'T');
+        teclado.put('U', 'Y');
+        teclado.put('I', 'U');
+        teclado.put('O', 'I');
+        teclado.put('P', 'O');
+        teclado.put('[', 'P');
+        teclado.put(']', '[');
+        teclado.put('\\', ']');
+        teclado.put('S', 'A');
+        teclado.put('D', 'S');
+        teclado.put('F', 'D');
+        teclado.put('G', 'F');
+        teclado.put('H', 'G');
+        teclado.put('J', 'H');
+        teclado.put('K', 'J');
+        teclado.put('L', 'K');
+        teclado.put(';', 'L');
+        teclado.put('\'', ';');
+        teclado.put('X', 'Z');
+        teclado.put('C', 'X');
+        teclado.put('V', 'C');
+        teclado.put('B', 'V');
+        teclado.put('N', 'B');
+        teclado.put('M', 'N');
+        teclado.put(',', 'M');
+        teclado.put('.', ',');
+        teclado.put('/', '.');
+        teclado.put(' ', ' ');
+    }
+    
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        inicializa();
+
+        while(in.ready()){
+            String frase = in.readLine();
+
+            String resposta = "";
+            for(int i = 0; i < frase.length(); ++i){
+                resposta += teclado.get(frase.charAt(i));
+            }
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 #### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -215,7 +364,7 @@ while(lines.length){
 ```
 
 #### Python 3.9
-```python
+```py
 teclado = {
     '1': '`',
     '2': '1',
@@ -303,7 +452,7 @@ int main(){
 }
 ```
 
-#### C++17
+#### C++20
 ```cpp
 #include <iostream>
 
@@ -329,8 +478,74 @@ int main(){
 }
 ```
 
+#### C#
+```cs
+using System;
+using System.Text;
+
+class URI {    
+    static void Main(string[] args) {
+        string teclado = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
+
+        int[] posicoes = new int[255];
+        for(int i = 0; i < teclado.Length; ++i){
+            posicoes[teclado[i]] = i;
+        }
+
+        string frase;
+        while((frase = Console.ReadLine()) != null){
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < frase.Length; ++i){
+                if(frase[i] == ' '){
+                    sb.Append(' ');
+                }else{
+                    sb.Append(teclado[posicoes[frase[i]] - 1]);
+                }
+            }
+            Console.WriteLine(sb.ToString());
+        }
+    }
+}
+```
+
+#### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.HashMap;
+
+public class Main {    
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        String teclado = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./";
+
+        int[] posicoes = new int[255];
+        for(int i = 0; i < teclado.length(); ++i){
+            posicoes[teclado.charAt(i)] = i;
+        }
+
+        while(in.ready()){
+            String frase = in.readLine();
+
+            String resposta = "";
+            for(int i = 0; i < frase.length(); ++i){
+                if(frase.charAt(i) == ' '){
+                    resposta += ' ';
+                }else{
+                    resposta += teclado.charAt(posicoes[frase.charAt(i)] - 1);
+                }
+            }
+            System.out.println(resposta);
+        }
+    }
+}
+```
+
 #### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
 
@@ -350,7 +565,7 @@ while(lines.length){
 ```
 
 #### Python 3.9
-```python
+```py
 teclado = "`1234567890-=QWERTYUIOP[]\\ASDFGHJKL;'ZXCVBNM,./"
 posicoes = {}
 for i, tecla in enumerate(teclado):

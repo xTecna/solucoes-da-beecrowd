@@ -15,7 +15,6 @@ Com isso, podemos implementar uma função que pesquisa para cada número se o s
 > Para os casos apresentados aqui, a pilha de recursão do Python não estoura, então podemos seguir com a versão recursiva.
 
 ### C99
-
 ```c
 #include <stdio.h>
 
@@ -70,7 +69,6 @@ int main()
 ```
 
 ### C++17
-
 ```cpp
 #include <iostream>
 
@@ -127,7 +125,6 @@ int main()
 ```
 
 ### C#
-
 ```cs
 using System;
 
@@ -185,8 +182,7 @@ class URI
 }
 ```
 
-### Java 14
-
+### Java 19
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -237,7 +233,6 @@ public class Main {
 ```
 
 ### JavaScript 12.18
-
 ```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.trim().split('\n');
@@ -274,7 +269,6 @@ while(lines.length){
 ```
 
 ### Python 3.9
-
 ```py
 T = [[-1 for _ in range(1001)] for _ in range(101)]
 

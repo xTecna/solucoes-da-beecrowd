@@ -8,17 +8,17 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria | Documentados | Total de problemas |
 | -- | -- | -- |
-| [Iniciante](./problemas/iniciante/README.md) | 240 | 336 |
+| [Iniciante](./problemas/iniciante/README.md) | 242 | 336 |
 | [Ad-Hoc](./problemas/ad-hoc/README.md) | 82 | 850 |
-| [Strings](./problemas/strings/README.md) | 26 | 148 |
+| [Strings](./problemas/strings/README.md) | 28 | 148 |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) | 20 | 179 |
 | [Matemática](./problemas/matematica/README.md) | 26 | 269 |
 | [Paradigmas](./problemas/paradigmas/README.md) | 7 | 215 |
-| [Grafos](./problemas/grafos/README.md) | 2 | 277 |
+| [Grafos](./problemas/grafos/README.md) | 4 | 277 |
 | [Geometria Computacional](./problemas/geometria-computacional/README.md) | 1 | 82 |
-| [SQL](./problemas/sql/README.md) | 23 | 46 |
+| [SQL](./problemas/sql/README.md) | 26 | 46 |
 | | | |
-| Total | 424 | 2402 |
+| Total | 433 | 2402 |
 
 ## Aqui tem material teórico?
 

@@ -4,11 +4,7 @@
 
 ## Solução
 
-Se temos `C` competidores e cada um precisa receber `F` folhas de papel especial, então para o número `P` de folhas compradas pela diretora ser o suficiente, precisamos que
-
-<img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;
-P&space;\geq&space;C&space;\cdot&space;F" title="\bg_white 
-P \geq C \cdot F" />
+Se temos `C` competidores e cada um precisa receber `F` folhas de papel especial, então para o número `P` de folhas compradas pela diretora seja o suficiente para todos, é necessário que $P \geq C \dot F$.
 
 ### C99
 ```c
@@ -42,8 +38,47 @@ int main(){
 }
 ```
 
+### C#
+```cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class URI {    
+    static void Main(string[] args) {
+        List<int> CPF = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+        int C = CPF[0];
+        int P = CPF[1];
+        int F = CPF[2];
+
+        Console.WriteLine(P >= C * F ? 'S' : 'N');
+    }
+}
+```
+
+### Java 19
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        InputStreamReader ir = new InputStreamReader(System.in);
+        BufferedReader in = new BufferedReader(ir);
+
+        String[] CPF = in.readLine().trim().split(" ");
+        int C = Integer.parseInt(CPF[0]);
+        int P = Integer.parseInt(CPF[1]);
+        int F = Integer.parseInt(CPF[2]);
+
+        System.out.println(P >= C * F ? 'S' : 'N');
+    }
+}
+```
+
 ### JavaScript 12.18
-```javascript
+```js
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
 var lines = input.split('\n');
 
@@ -53,7 +88,7 @@ console.log(P >= C * F ? 'S' : 'N');
 ```
 
 ### Python 3.9
-```python
+```py
 C, P, F = [int(x) for x in input().strip().split(' ')]
 
 print('S' if P >= C * F else 'N')

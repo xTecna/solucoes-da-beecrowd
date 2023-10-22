@@ -1,22 +1,29 @@
 var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+var lines = input.trim().split('\n');
 
-let p = 0;
-let NC = parseInt(lines[p++]);
+const countingSort = (V, limite) => {
+	let aux = Array(limite);
+	for(let i = 0; i < limite; ++i){
+		aux[i] = 0;
+	}
+	let k = 0;
+	for(let i = 0; i < V.length; ++i){
+		aux[V[i]] += 1;
+	}
+	for(let i = 0; i < limite; ++i){
+		for(let j = 0; j < aux[i]; ++j){
+			V[k++] = i;
+		}
+	}
+};
 
-let alturas = Array(231);
-for(let k = 0; k < NC; ++k){
-    let N = parseInt(lines[p++]);
+let NC = parseInt(lines.shift());
+for (let k = 0; k < NC; ++k) {
+	let N = parseInt(lines.shift());
 
-    alturas.fill(0);
-    lines[p++].split(' ').map((x) => alturas[parseInt(x)] += 1);
+	let V = lines.shift().trim().split(' ').map(x => parseInt(x));
 
-    let resposta = [];
-    for(let i = 20; i < 231; ++i){
-        for(let j = 0; j < alturas[i]; ++j){
-            resposta.push(i);
-        }
-    }
+	countingSort(V, 231);
 
-    console.log(resposta.join(' '));
+	console.log(V.join(' '));
 }
