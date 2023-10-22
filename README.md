@@ -16,9 +16,9 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 | [Paradigmas](./problemas/paradigmas/README.md) | 7 | 215 |
 | [Grafos](./problemas/grafos/README.md) | 4 | 277 |
 | [Geometria Computacional](./problemas/geometria-computacional/README.md) | 1 | 82 |
-| [SQL](./problemas/sql/README.md) | 26 | 46 |
+| [SQL](./problemas/sql/README.md) | 26 | 50 |
 | | | |
-| Total | 433 | 2402 |
+| Total | 436 | 2406 |
 
 ## Aqui tem material teórico?
 
