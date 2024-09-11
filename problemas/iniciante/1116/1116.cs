@@ -7,7 +7,7 @@ class URI {
         int N = int.Parse(Console.ReadLine());
 
         for(int i = 0; i < N; ++i){
-            List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(x)).ToList();
+            List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(
 
             if(entrada[1] == 0){
                 Console.WriteLine("divisao impossivel");
@@ -16,4 +16,3 @@ class URI {
             }
         }
     }
-}

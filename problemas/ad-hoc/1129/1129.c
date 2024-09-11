@@ -7,7 +7,8 @@ int main(){
         if(!N)  break;
 
         for(int i = 0; i < N; ++i){
-            opcao = -1, corretos = 0;
+            opcao = -1;
+            corretos = 0;
 
             for(int k = 0; k < 5; ++k){
                 scanf("%d", &cor);

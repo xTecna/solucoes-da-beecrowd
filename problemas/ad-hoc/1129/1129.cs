@@ -14,7 +14,7 @@ class URI {
             }
             
             for(int k = 0; k < N; ++k){
-                List<int> folha = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+                List<int> folha = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(
                 
                 int opcao = -1;
                 int corretos = 0;
@@ -33,4 +33,3 @@ class URI {
             }
         }
     }
-}
