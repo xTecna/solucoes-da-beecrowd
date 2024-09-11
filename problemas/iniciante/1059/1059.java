@@ -2,11 +2,8 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        int par = 2;
-        
-        while(par <= 100){
-            System.out.printf("%d\n", par);
-            par += 2;
+        for(int par = 2; par <= 100; par += 2){
+            System.out.println(par);
         }
     }
 }

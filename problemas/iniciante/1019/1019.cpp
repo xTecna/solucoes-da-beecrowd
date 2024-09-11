@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     int segundos, horas, minutos;
 
     cin >> segundos;

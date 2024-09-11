@@ -1,15 +1,12 @@
 #include <stdio.h>
 
-int main()
-{
+int main(){
     int X;
-    double Y, consumo;
+    double Y;
 
     scanf("%d\n%lf", &X, &Y);
 
-    consumo = X / Y;
-
-    printf("%.3lf km/l\n", consumo);
+    printf("%.3lf km/l\n", X/Y);
 
     return 0;
 }

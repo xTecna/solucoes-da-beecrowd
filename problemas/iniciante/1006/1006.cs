@@ -6,8 +6,6 @@ class URI {
         double B = double.Parse(Console.ReadLine());
         double C = double.Parse(Console.ReadLine());
 
-        double media = (2 * A + 3 * B + 5 * C)/10;
-
-        Console.WriteLine($"MEDIA = {media:0.0}");
+        Console.WriteLine($"MEDIA = {(2 * A + 3 * B + 5 * C)/10:0.0}");
     }
 }

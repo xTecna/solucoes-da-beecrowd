@@ -3,8 +3,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
     double A, B, media;
 
     cin >> A >> B;

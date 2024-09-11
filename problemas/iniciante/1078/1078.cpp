@@ -1,17 +1,16 @@
+#include <iomanip>
 #include <iostream>
 
 using namespace std;
 
-int main()
-{
-    int N;
+int main() {
+  int N;
 
-    cin >> N;
+  cin >> N;
 
-    for (int i = 1; i < 11; ++i)
-    {
-        cout << i << " x " << N << " = " << i * N << endl;
-    }
+  for (int i = 1; i < 11; ++i) {
+    cout << i << " x " << N << " = " << i * N << endl;
+  }
 
-    return 0;
+  return 0;
 }

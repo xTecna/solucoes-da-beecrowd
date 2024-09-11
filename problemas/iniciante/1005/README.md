@@ -4,10 +4,9 @@
 
 ## Solução
 
-Só precisamos aqui fazer o cálculo direto da média ponderada, ou seja, calcular a expressão <img src="https://latex.codecogs.com/png.image?\dpi{110}&space;\bg_white&space;\text{Media}&space;=&space;\frac{3,5&space;\times&space;A&space;+&space;7,5&space;\times&space;B}{11}" title="\bg_white \text{Media} = \frac{3,5 \times A + 7,5 \times B}{11}" />.
+Dado $M$ como a média ponderada, precisamos calcular $M = \frac{3,5A + 7,5B}{11}$.
 
 ### C99
-
 ```c
 #include <stdio.h>
 
@@ -24,15 +23,14 @@ int main(){
 }
 ```
 
-### C++17
-
+### C++20
 ```cpp
 #include <iostream>
 #include <iomanip>
 
 using namespace std;
 
-int main(){
+int main() {
     double A, B, media;
 
     cin >> A >> B;
@@ -61,7 +59,7 @@ class URI {
 }
 ```
 
-### Java 14
+### Java 19
 ```java
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -83,8 +81,7 @@ public class Main {
 ```
 
 ### JavaScript 12.18
-
-```javascript
+```js
 let input = require("fs").readFileSync("/dev/stdin", "utf8");
 let lines = input.split("\n");
 
@@ -97,12 +94,19 @@ console.log(`MEDIA = ${media.toFixed(5)}`);
 ```
 
 ### Python 3.9
-
-```python
+```py
 A = float(input())
 B = float(input())
 
 media = (3.5 * A + 7.5 * B)/11
 
 print(f"MEDIA = {media:.5f}")
+```
+
+### Ruby 2.7
+```rb
+A = gets.to_f
+B = gets.to_f
+
+puts "MEDIA = %.5f" % ((3.5 * A + 7.5 * B) / 11)
 ```

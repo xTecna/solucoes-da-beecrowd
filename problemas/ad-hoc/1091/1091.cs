@@ -13,11 +13,11 @@ class URI {
                 break;
             }
             
-            List<int> numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            List<int> numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x))
             int N = numeros[0];
             int M = numeros[1];
             for(int k = 0; k < K; ++k){
-                numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+                numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList
                 int X = numeros[0] - N;
                 int Y = numeros[1] - M;
                 
@@ -35,4 +35,3 @@ class URI {
             }
         }
     }
-}

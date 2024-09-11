@@ -10,7 +10,7 @@ class URI {
         for(int k = 0; k < N; ++k){
             double media = 0.0;
 
-            List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList();
+            List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.
             for(int i = 0; i < 3; ++i){
                 media += entrada[i] * pesos[i];
             }
@@ -18,4 +18,3 @@ class URI {
             Console.WriteLine($"{media/10:0.0}");
         }
     }
-}

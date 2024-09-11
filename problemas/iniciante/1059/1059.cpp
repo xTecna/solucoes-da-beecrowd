@@ -4,12 +4,9 @@ using namespace std;
 
 int main()
 {
-    int par = 2;
-
-    while (par <= 100)
+    for (int par = 2; par <= 100; par += 2)
     {
         cout << par << endl;
-        par += 2;
     }
 
     return 0;

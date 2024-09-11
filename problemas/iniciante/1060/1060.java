@@ -16,6 +16,6 @@ public class Main {
                 ++positivos;
         }
         
-        System.out.printf("%d valores positivos\n", positivos);
+        System.out.println(positivos + " valores positivos");
     }
 }

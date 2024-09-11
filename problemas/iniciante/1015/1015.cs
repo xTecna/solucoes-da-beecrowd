@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using System.Linq;
 
 class URI {
+    static int max(int a, int b){
+        return (a + b + Math.Abs(a - b))/2;
+    }
+    
     static void Main(string[] args) {
-        List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList();
+        List<double> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse
         double x1 = entrada[0];
         double y1 = entrada[1];
         
-        entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList();
+        entrada = Console.ReadLine().Trim().Split(' ').Select((x) => double.Parse(x)).ToList(
         double x2 = entrada[0];
         double y2 = entrada[1];
         
@@ -17,4 +21,3 @@ class URI {
         
         Console.WriteLine($"{distancia:0.0000}");
     }
-}

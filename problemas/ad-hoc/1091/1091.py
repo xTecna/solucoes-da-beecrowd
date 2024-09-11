@@ -2,7 +2,7 @@ while True:
     try:
         K = int(input())
 
-        if(not K):
+        if(K == 0):
             break
 
         N, M = [int(x) for x in input().strip().split(' ')]

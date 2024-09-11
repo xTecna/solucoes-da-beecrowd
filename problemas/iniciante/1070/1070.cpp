@@ -9,7 +9,7 @@ int main()
     cin >> X;
     X += (X % 2 == 0);
 
-    for (int i = 0; i < 12; i += 2)
+    for (int i = 0; i <= 10; i += 2)
     {
         cout << X + i << endl;
     }

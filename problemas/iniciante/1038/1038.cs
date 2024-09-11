@@ -4,7 +4,7 @@ using System.Linq;
 
 class URI {
     static void Main(string[] args) {
-        List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(x)).ToList();
+        List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(x)).
         int codigo = entrada[0];
         int quantidade = entrada[1];
         
@@ -24,4 +24,3 @@ class URI {
         
         Console.WriteLine($"Total: R$ {total:0.00}");
     }
-}
