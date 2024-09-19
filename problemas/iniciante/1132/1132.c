@@ -1,29 +1,28 @@
+#include <math.h>
 #include <stdio.h>
 
-int main()
-{
-    int X, Y;
+int somaPA(int a1, int an, int n) { return ((a1 + an) * n) / 2; }
 
-    scanf("%d %d", &X, &Y);
+int main() {
+  int X, Y;
 
-    if (X > Y)
-    {
-        int temp = X;
-        X = Y;
-        Y = temp;
-    }
+  scanf("%d", &X);
+  scanf("%d", &Y);
 
-    int soma = 0;
-    for (int i = X; i <= Y; ++i)
-    {
-        if (i % 13 == 0)
-        {
-            continue;
-        }
-        soma += i;
-    }
+  if (X > Y) {
+    int temp = X;
+    X = Y;
+    Y = temp;
+  }
 
-    printf("%d\n", soma);
+  int a1 = 13 * ceil(X / 13.0);
+  int an = 13 * floor(Y / 13.0);
+  int n = ((an - a1) / 13) + 1;
 
-    return 0;
+  int tudo = somaPA(X, Y, Y - X + 1);
+  int multiplos = somaPA(a1, an, n);
+
+  printf("%d\n", tudo - multiplos);
+
+  return 0;
 }

@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 int main(){
-    int L, R;
+    int filhos, filhas;
 
-    while(scanf("%d %d", &L, &R)){
-        if(!L && !R)  break;
+    while(scanf("%d %d", &filhos, &filhas)){
+        if(!filhos && !filhas)  break;
 
-        printf("%d\n", L + R);
+        printf("%d\n", filhos + filhas);
     }
 
     return 0;

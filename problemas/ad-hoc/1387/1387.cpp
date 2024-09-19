@@ -3,12 +3,12 @@
 using namespace std;
 
 int main(){
-    int L, R;
+    int filhos, filhas;
 
-    while(cin >> L >> R){
-        if(!L && !R)    break;
+    while(cin >> filhos >> filhas){
+        if (!filhos && !filhas) break;
 
-        cout << L + R << endl;
+        cout << filhos + filhas << endl;
     }
 
     return 0;

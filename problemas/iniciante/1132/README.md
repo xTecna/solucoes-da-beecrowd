@@ -6,7 +6,7 @@
 
 Para essa solução, o jeito mais simples é fazer um `for` que vai do menor ou maior elemento contando apenas os números que não são múltiplos de 13.
 
-Também dá pra usar uma fórmula fechada considerando a diferença entre a soma de uma progressão aritmética de todos os números entre $X$ e $Y$ e a soma de uma progressão aritmética de todos os múltiplos de $13$ entre $X$ e $Y$ (que comecaria no primeiro múltiplo maior que $X$ e terminaria no último multiplo menor que $Y$ e teria razão $13$). Vou deixar um exemplo desse código abaixo em $C$, mas a forma apresentada nos outros códigos é mais simples de entender (embora menos eficiente):
+Também dá pra usar uma fórmula fechada considerando a diferença entre a soma de uma progressão aritmética de todos os números entre $X$ e $Y$ e a soma de uma progressão aritmética de todos os múltiplos de $13$ entre $X$ e $Y$ (que comecaria no primeiro múltiplo maior que $X$, terminaria no último multiplo menor que $Y$ e teria razão $13$). Vou deixar um exemplo desse código abaixo em $C$, mas a forma apresentada nos outros códigos é mais simples de entender (embora menos eficiente):
 
 ```c
 #include <math.h>
