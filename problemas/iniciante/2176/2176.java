@@ -8,11 +8,11 @@ public class Main {
         BufferedReader in = new BufferedReader(ir);
 
         int pares = 0;
-        String bits = in.readLine();
-        for (int i = 0; i < bits.length(); ++i) {
-            pares += bits.charAt(i) == '1' ? 1 : 0;
+        String entrada = in.readLine();
+        for (int i = 0; i < entrada.length(); ++i) {
+            pares += entrada.charAt(i) == '1' ? 1 : 0;
         }
 
-        System.out.printf("%s%d\n", bits, pares % 2);
+        System.out.printf("%s%d\n", entrada, pares % 2);
     }
 }

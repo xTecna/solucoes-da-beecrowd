@@ -1,0 +1,11 @@
+input <- file('stdin', 'r')
+
+write(paste('       A'), '')
+write(paste('      B B'), '')
+write(paste('     C   C'), '')
+write(paste('    D     D'), '')
+write(paste('   E       E'), '')
+write(paste('    D     D'), '')
+write(paste('     C   C'), '')
+write(paste('      B B'), '')
+write(paste('       A'), '')

@@ -1,37 +1,20 @@
-const imprimeLinhaHorizontal = () => {
-    let linha = '';
-    for (let i = 0; i < 39; ++i) {
-        linha += '-';
-    }
-    console.log(linha);
-};
-
-const imprimeCabecalho = () => {
-    imprimeLinhaHorizontal();
-    console.log("|  decimal  |  octal  |  Hexadecimal  |");
-    imprimeLinhaHorizontal();
-};
-
-const imprimeLinha = (numero) => {
-    let linha = '|';
-
-    let formato = numero.toString();
-    linha += formato.padStart(7);
-    linha += '|'.padStart(5);
-
-    formato = numero.toString(8);
-    linha += formato.padStart(5);
-    linha += '|'.padStart(5);
-
-    formato = numero.toString(16).toUpperCase();
-    linha += formato.padStart(8);
-    linha += '|'.padStart(8);
-
-    console.log(linha);
-};
-
-imprimeCabecalho();
-for (let i = 0; i < 16; ++i) {
-    imprimeLinha(i);
-}
-imprimeLinhaHorizontal();
+console.log("---------------------------------------");
+console.log("|  decimal  |  octal  |  Hexadecimal  |");
+console.log("---------------------------------------");
+console.log("|      0    |    0    |       0       |");
+console.log("|      1    |    1    |       1       |");
+console.log("|      2    |    2    |       2       |");
+console.log("|      3    |    3    |       3       |");
+console.log("|      4    |    4    |       4       |");
+console.log("|      5    |    5    |       5       |");
+console.log("|      6    |    6    |       6       |");
+console.log("|      7    |    7    |       7       |");
+console.log("|      8    |   10    |       8       |");
+console.log("|      9    |   11    |       9       |");
+console.log("|     10    |   12    |       A       |");
+console.log("|     11    |   13    |       B       |");
+console.log("|     12    |   14    |       C       |");
+console.log("|     13    |   15    |       D       |");
+console.log("|     14    |   16    |       E       |");
+console.log("|     15    |   17    |       F       |");
+console.log("---------------------------------------");

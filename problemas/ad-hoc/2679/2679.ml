@@ -1,0 +1,1 @@
+Scanf.scanf "%d" (fun x -> Printf.printf "%d\n" (x + 2 - (x mod 2)))

@@ -1,0 +1,1 @@
+Scanf.scanf "%d\n%d" (fun n m -> Printf.printf "%d\n" (n - m))

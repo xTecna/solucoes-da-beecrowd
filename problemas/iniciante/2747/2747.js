@@ -1,22 +1,6 @@
-const imprimeLinha = () => {
-    let linha = '';
-    for (let i = 0; i < 39; ++i) {
-        linha += '-';
-    }
-    console.log(linha);
-};
-
-const imprimeMeio = () => {
-    let linha = '|';
-    for (let i = 0; i < 37; ++i) {
-        linha += ' ';
-    }
-    linha += '|';
-    console.log(linha);
-};
-
-imprimeLinha();
+const linha = '---------------------------------------';
+console.log(linha);
 for (let i = 0; i < 5; ++i) {
-    imprimeMeio();
+    console.log('|                                     |');
 }
-imprimeLinha();
+console.log(linha);

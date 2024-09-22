@@ -5,28 +5,26 @@
 using namespace std;
 
 int main(){
+    string nome;
     char comportamento;
-    vector<string> criancas;
-    int N, bemComportadas, malComportadas;
+    vector<string> nomes;
+    int N, n_comportadas;
 
     cin >> N;
-
-    criancas.assign(N, "");
-    bemComportadas = malComportadas = 0;
+    n_comportadas = 0;
     for(int i = 0; i < N; ++i){
-        cin >> comportamento >> criancas[i];
-
-        if(comportamento == '+')    ++bemComportadas;
-        else                        ++malComportadas;
+        cin >> comportamento >> nome;
+        nomes.push_back(nome);
+        if(comportamento == '+'){
+            n_comportadas += 1;
+        }
     }
 
-    sort(criancas.begin(), criancas.end());
+    sort(nomes.begin(), nomes.end());
 
-    for(int i = 0; i < N; ++i){
-        cout << criancas[i] << endl;
+    for(int i = 0; i < nomes.size(); ++i){
+        cout << nomes[i] << endl;
     }
-    cout << "Se comportaram: " << bemComportadas << " | ";
-    cout << "Nao se comportaram: " << malComportadas << endl;
+    cout << "Se comportaram: " << n_comportadas << " | Nao se comportaram: " << N - n_comportadas  
 
     return 0;
-}

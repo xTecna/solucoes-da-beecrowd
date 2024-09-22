@@ -1,17 +1,16 @@
+#include <stdlib.h>
 #include <stdio.h>
 
 int main()
 {
-    char frase[50] = "AMO FAZER EXERCICIO NO URI";
-
-    printf("<%s>\n", &frase);
-    printf("<%30s>\n", &frase);
-    printf("<%.20s>\n", &frase);
-    printf("<%-20s>\n", &frase);
-    printf("<%-30s>\n", &frase);
-    printf("<%.30s>\n", &frase);
-    printf("<%30.20s>\n", &frase);
-    printf("<%-30.20s>\n", &frase);
+    printf("<AMO FAZER EXERCICIO NO URI>\n");
+    printf("<    AMO FAZER EXERCICIO NO URI>\n");
+    printf("<AMO FAZER EXERCICIO >\n");
+    printf("<AMO FAZER EXERCICIO NO URI>\n");
+    printf("<AMO FAZER EXERCICIO NO URI    >\n");
+    printf("<AMO FAZER EXERCICIO NO URI>\n");
+    printf("<          AMO FAZER EXERCICIO >\n");
+    printf("<AMO FAZER EXERCICIO           >\n");
 
     return 0;
 }

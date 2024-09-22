@@ -1,0 +1,7 @@
+write(paste('---------------------------------------'), '')
+write(paste('|        Roberto                      |'), '')
+write(paste('|                                     |'), '')
+write(paste('|        5786                         |'), '')
+write(paste('|                                     |'), '')
+write(paste('|        UNIFEI                       |'), '')
+write(paste('---------------------------------------'), '')

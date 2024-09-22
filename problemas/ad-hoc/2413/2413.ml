@@ -1,0 +1,1 @@
+Scanf.scanf "%d\n" (fun a -> Printf.printf "%d\n" (4 * a))

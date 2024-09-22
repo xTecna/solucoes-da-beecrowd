@@ -2,33 +2,13 @@
 
 using namespace std;
 
-void imprimirLinha()
-{
-    for (int i = 0; i < 39; ++i)
-    {
-        cout << '-';
+int main(){
+    string linha = "---------------------------------------";
+    cout << linha << endl;
+    for(int i = 0; i < 5; ++i){
+        cout << "|                                     |" << endl;
     }
-    cout << endl;
-}
-
-void imprimirMeio()
-{
-    cout << '|';
-    for (int i = 0; i < 37; ++i)
-    {
-        cout << ' ';
-    }
-    cout << '|' << endl;
-}
-
-int main()
-{
-    imprimirLinha();
-    for (int i = 0; i < 5; ++i)
-    {
-        imprimirMeio();
-    }
-    imprimirLinha();
+    cout << linha << endl;
 
     return 0;
 }

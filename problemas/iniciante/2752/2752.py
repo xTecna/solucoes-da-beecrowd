@@ -1,10 +1,8 @@
-frase = 'AMO FAZER EXERCICIO NO URI'
-
-print(f'<{frase}>')
-print(f'<{frase:>30s}>')
-print(f'<{frase:>.20s}>')
-print(f'<{frase:20s}>')
-print(f'<{frase:30s}>')
-print(f'<{frase:>.30s}>')
-print(f'<{frase:>30.20s}>')
-print(f'<{frase:30.20s}>')
+print('<AMO FAZER EXERCICIO NO URI>')
+print('<    AMO FAZER EXERCICIO NO URI>')
+print('<AMO FAZER EXERCICIO >')
+print('<AMO FAZER EXERCICIO NO URI>')
+print('<AMO FAZER EXERCICIO NO URI    >')
+print('<AMO FAZER EXERCICIO NO URI>')
+print('<          AMO FAZER EXERCICIO >')
+print('<AMO FAZER EXERCICIO           >')

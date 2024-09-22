@@ -1,0 +1,1 @@
+Scanf.scanf "%d %d" (fun c n -> Printf.printf "%d\n" (c mod n))

@@ -1,32 +1,13 @@
 #include <stdio.h>
 
-void imprimeLinha()
-{
-    for (int i = 0; i < 39; ++i)
-    {
-        printf("-");
-    }
-    printf("\n");
-}
+int main() {
+  char linha[50] = "---------------------------------------";
 
-void imprimeMeio()
-{
-    printf("|");
-    for (int i = 0; i < 37; ++i)
-    {
-        printf(" ");
-    }
-    printf("|\n");
-}
+  printf("%s\n", linha);
+  for (int i = 0; i < 5; ++i) {
+    printf("|                                     |\n");
+  }
+  printf("%s\n", linha);
 
-int main()
-{
-    imprimeLinha();
-    for (int i = 0; i < 5; ++i)
-    {
-        imprimeMeio();
-    }
-    imprimeLinha();
-
-    return 0;
+  return 0;
 }

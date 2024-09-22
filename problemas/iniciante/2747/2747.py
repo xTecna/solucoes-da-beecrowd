@@ -1,12 +1,5 @@
-def imprimeLinha():
-    print('-' * 39)
-
-
-def imprimeMeio():
-    print(f'|{" " * 37}|')
-
-
-imprimeLinha()
+linha = '---------------------------------------'
+print(linha)
 for _ in range(5):
-    imprimeMeio()
-imprimeLinha()
+    print('|                                     |')
+print(linha)

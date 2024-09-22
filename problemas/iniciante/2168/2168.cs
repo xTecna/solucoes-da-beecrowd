@@ -13,7 +13,7 @@ class URI {
         int N = int.Parse(Console.ReadLine());
         mapa = new int[N + 1, N + 1];
         for(int i = 0; i < N + 1; ++i){
-            List<int> entrada = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+            List<int> entrada = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x))
             for(int j = 0; j < N + 1; ++j){
                 mapa[i, j] = entrada[j];
             }
@@ -26,4 +26,3 @@ class URI {
             Console.WriteLine("");
         }
     }
-}
