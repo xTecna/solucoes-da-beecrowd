@@ -11,8 +11,7 @@ int main()
     for (int i = 0; i < T; ++i)
     {
         cin >> H >> M >> O;
-        cout << setw(2) << setfill('0') << H << ":" << setw(2) << setfill('0') << M << " - A porta " << (O ? "abriu" : "fechou") << "!" << endl;
+        cout << setw(2) << setfill('0') << H << ":" << setw(2) << setfill('0') << M << " - A porta "          
     }
 
     return 0;
-}

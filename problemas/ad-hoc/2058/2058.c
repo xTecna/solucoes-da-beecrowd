@@ -1,11 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
-int main(){
-    int N;
+int main() {
+  int n;
 
-    scanf("%d", &N);
+  scanf("%d", &n);
+  printf("%d\n", n - 2);
 
-    printf("%d\n", N - 2);
-
-    return 0;
+  return 0;
 }

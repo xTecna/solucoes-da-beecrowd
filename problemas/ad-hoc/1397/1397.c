@@ -11,8 +11,8 @@ int main(){
         for(int i = 0; i < N; ++i){
             scanf("%d %d", &A, &B);
 
-            if(A > B)       ++jogador1;
-            else if(B > A)  ++jogador2;
+            if(A > B)       jogador1 += 1;
+            else if(B > A)  jogador2 += 1;
         }
 
         printf("%d %d\n", jogador1, jogador2);

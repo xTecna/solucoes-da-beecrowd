@@ -2,27 +2,26 @@
 
 using namespace std;
 
-int main()
-{
-    int X, Y, a;
+int main(){
+    int X[5], Y[5];
+    bool compativel;
 
-    X = 0;
-    for (int i = 0; i < 5; ++i)
-    {
-        cin >> a;
-        X *= 2;
-        X += a;
+    for(int i = 0; i < 5; ++i){
+        cin >> X[i];
+    }
+    for(int i = 0; i < 5; ++i){
+        cin >> Y[i];
     }
 
-    Y = 0;
-    for (int i = 0; i < 5; ++i)
-    {
-        cin >> a;
-        Y *= 2;
-        Y += a;
+    compativel = true;
+    for(int i = 0; i < 5; ++i){
+        if(X[i] == Y[i]){
+            compativel = false;
+            break;
+        }
     }
 
-    cout << ((X ^ Y) == 31 ? 'Y' : 'N') << endl;
+    cout << (compativel ? 'Y' : 'N') << endl;
 
     return 0;
 }

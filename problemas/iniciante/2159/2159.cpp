@@ -19,7 +19,6 @@ int main()
     int n;
 
     cin >> n;
-    cout << setprecision(1) << fixed << limiteInferior(n) << ' ' << setprecision(1) << fixed << limiteSuperior(n) << endl;
+    cout << setprecision(1) << fixed << limiteInferior(n) << ' ' << setprecision(1) << fixed    
 
     return 0;
-}

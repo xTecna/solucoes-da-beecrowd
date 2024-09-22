@@ -7,7 +7,7 @@ class URI
 {
     static void Main(string[] args)
     {
-        List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(x)).ToList();
+        List<int> entrada = Console.ReadLine().Trim().Split(' ').Select((x) => int.Parse(x)).
 
         if (entrada[0] == entrada[1])
         {
@@ -18,4 +18,3 @@ class URI
             Console.WriteLine(Math.Max(entrada[0], entrada[1]));
         }
     }
-}

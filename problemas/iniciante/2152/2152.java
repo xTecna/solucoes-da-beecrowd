@@ -15,8 +15,7 @@ public class Main {
                 int M = Integer.parseInt(entrada[1]);
                 int O = Integer.parseInt(entrada[2]);
 
-                System.out.printf("%02d:%02d - A porta %s!\n", H, M, O == 1 ? "abriu" : "fechou");
+                System.out.printf("%02d:%02d - A porta %s!\n", H, M, O == 1 ? "abriu" : "fechou"
             }
         }
     }
-}

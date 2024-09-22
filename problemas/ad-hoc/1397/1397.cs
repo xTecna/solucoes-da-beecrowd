@@ -16,7 +16,7 @@ class URI {
             int A = 0;
             int B = 0;
             for(int i = 0; i < N; ++i){
-                List<int> numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
+                List<int> numeros = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse
                 
                 if(numeros[0] > numeros[1]){
                     ++A;
@@ -27,4 +27,3 @@ class URI {
             Console.WriteLine($"{A} {B}");
         }
     }
-}

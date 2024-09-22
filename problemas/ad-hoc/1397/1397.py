@@ -2,9 +2,9 @@ while True:
     try:
         N = int(input())
 
-        if(not N):
+        if(N == 0):
             break
-
+        
         jogador1, jogador2 = 0, 0
 
         for _ in range(N):
@@ -14,7 +14,7 @@ while True:
                 jogador1 += 1
             elif(B > A):
                 jogador2 += 1
-
+        
         print(f"{jogador1} {jogador2}")
     except EOFError:
         break

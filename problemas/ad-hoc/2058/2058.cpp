@@ -2,11 +2,11 @@
 
 using namespace std;
 
-int main(){
-    int N;
+int main() {
+  int n;
 
-    cin >> N;
-    cout << N - 2 << endl;
+  cin >> n;
+  cout << n - 2 << endl;
 
-    return 0;
+  return 0;
 }

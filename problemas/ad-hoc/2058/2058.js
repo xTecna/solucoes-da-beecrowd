@@ -1,6 +1,5 @@
-var input = require('fs').readFileSync('/dev/stdin', 'utf8');
-var lines = input.split('\n');
+let input = require("fs").readFileSync("/dev/stdin", "utf8");
+let lines = input.trim().split("\n");
 
-let N = parseInt(lines.shift().trim());
-
-console.log(N - 2);
+let n = parseInt(lines.shift());
+console.log(n - 2);
