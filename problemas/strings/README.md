@@ -1,4 +1,4 @@
-## Strings (28/148)
+## Strings (28/150)
 * [1024 - Criptografia](./1024/README.md)
 * [1120 - Revisão de Contrato](./1120/README.md)
 * [1168 - LED](./1168/README.md)

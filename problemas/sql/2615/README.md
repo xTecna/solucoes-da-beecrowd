@@ -5,9 +5,3 @@
 ## Solução
 
 Para saber quais cidades diferentes tem na tabela sem repetir nenhuma cidade, basta selecionar a coluna `cidade` estipulando `distinct`.
-
-### PostgreSQL
-
-```sql
-select distinct(city) from customers;
-```

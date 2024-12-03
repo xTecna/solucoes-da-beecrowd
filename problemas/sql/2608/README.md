@@ -5,9 +5,3 @@
 ## Solução
 
 É possível usar o `select` para fazer agregações nas tabelas, como conseguir o valor máximo de uma coluna com `max` e o valor mínimo com `min`.
-
-### PostgreSQL
-
-```sql
-select max(price), min(price) from products;
-```

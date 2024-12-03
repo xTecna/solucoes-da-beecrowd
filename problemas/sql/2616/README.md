@@ -11,9 +11,3 @@ Aqui temos interesse em saber quais clientes nunca alugaram nada na locadora. Pa
 * Para cada cliente que não fez nenhuma alocação, tenha uma única linha com os dados do cliente exceto a coluna usada para correlação (porque escolhemos preservar o lado do cliente) e com todos os dados da alocação **nulos**. Isso acontece porque o cliente não tem alocações de onde correlacionar (e é por isso que a coluna de correlação é nula também).
 
 Com isso, se queremos ter informação sobre os clientes que nunca fizeram alocações, basta filtrarmos pelos clientes que têm informações nulas em uma das colunas em `locations`. No nosso caso, escolhemos a coluna `id_customers`, mas poderia qualquer outra que normalmente não suporta valor nulo.
-
-### PostgreSQL
-
-```sql
-select tc.id as id, tc.name as name from customers tc left join locations tl on tc.id = tl.id_customers where tl.id_customers is NULL;
-```

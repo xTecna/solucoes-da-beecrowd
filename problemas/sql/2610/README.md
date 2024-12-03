@@ -5,9 +5,3 @@
 ## Solução
 
 Aqui usamos uma função de agregamento `avg()` e arredondar usar a função `round()` especificando duas casas decimais.
-
-### PostgreSQL
-
-```sql
-select round(avg(price),2) from products;
-```

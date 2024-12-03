@@ -7,9 +7,3 @@
 Os dois pontos de destaque dessa questão são:
 * Você precisa filtrar por cidades, mas não pode repetir cidades, então deve usar o `distinct`.
 * Você deve ordenar em ordem alfabética pelo nome das cidades, então você precisa usar `order by`.
-
-### PostgreSQL
-
-```sql
-select distinct(city) from providers order by city;
-```

@@ -5,9 +5,3 @@
 ## Solução
 
 É possível usar funções de agregamento, como a `count`, junto com o `distinct` para considerar apenas dados únicos de uma determinada coluna.
-
-### PostgreSQL
-
-```sql
-select count(distinct(customers.city)) from customers;
-```
