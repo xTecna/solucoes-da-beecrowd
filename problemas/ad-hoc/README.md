@@ -1,4 +1,5 @@
-## Ad-hoc (82/849)
+
+## [Ad-hoc (84/849)](./README.md)
 * [1026 - Carrega ou não Carrega?](./1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./1030/README.md)
 * [1031 - Crise de Energia](./1031/README.md)
@@ -67,6 +68,7 @@
 * [2377 - Pedágio](./2377/README.md)
 * [2381 - Lista de Chamada](./2381/README.md)
 * [2385 - Multiplicação de Matrizes](./2385/README.md)
+* [2388 - Tacógrafo](./2388/README.md)
 * [2413 - Busca na Internet](./2413/README.md)
 * [2414 - Desafio do Maior Número](./2414/README.md)
 * [2416 - Corrida](./2416/README.md)
@@ -78,6 +80,7 @@
 * [2479 - Ordenando a Lista de Crianças do Papai Noel](./2479/README.md)
 * [2679 - Sucessor Par](./2679/README.md)
 * [2868 - Errrou!](./2868/README.md)
+* [3048 - Sequência Secreta](./3048/README.md)
 * [3085 - O Grande Dia](./3085/README.md)
 * [3227 - Doorman](./3227/README.md)
 * [3263 - Apague Com Segurança](./3263/README.md)

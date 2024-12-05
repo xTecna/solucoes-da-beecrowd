@@ -1,9 +1,9 @@
 var
-    distancia: int64;
+	distancia: int64;
 
 begin
-    read(distancia);
+	read(distancia);
 
-    write(2 * distancia);
-    writeln(' minutos');
+	write(2 * distancia);
+	writeln(' minutos');
 end.

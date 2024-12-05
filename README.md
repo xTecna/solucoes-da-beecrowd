@@ -9,7 +9,7 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 | Categoria | Documentados | Total de problemas | Porcentagem |
 | -- | -- | -- | -- |
 | [Iniciante](./problemas/iniciante/README.md) | 242 | 334 | 72,46% |
-| [Ad-Hoc](./problemas/ad-hoc/README.md) | 82 | 849 | 9,66% |
+| [Ad-Hoc](./problemas/ad-hoc/README.md) | 84 | 849 | 9,89% |
 | [Strings](./problemas/strings/README.md) | 28 | 150 | 18,67% |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) | 20 | 180 | 11,11% |
 | [Matemática](./problemas/matematica/README.md) | 26 | 269 | 9.67% |

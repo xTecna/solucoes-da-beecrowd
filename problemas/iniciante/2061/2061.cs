@@ -4,7 +4,7 @@ using System.Linq;
 
 class URI {
     static void Main(string[] args) {
-        List<int> entradas = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList
+        List<int> entradas = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
         int N = entradas[0];
         int M = entradas[1];
 
@@ -20,3 +20,4 @@ class URI {
 
         Console.WriteLine(N);
     }
+}

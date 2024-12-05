@@ -2,33 +2,21 @@
 
 using namespace std;
 
-char conceito(int nota)
-{
-    if (nota > 85)
-    {
-        return 'A';
-    }
-    if (nota > 60)
-    {
-        return 'B';
-    }
-    if (nota > 35)
-    {
-        return 'C';
-    }
-    if (nota > 0)
-    {
-        return 'D';
-    }
-    return 'E';
-}
+int main() {
+  int nota;
 
-int main()
-{
-    int N;
+  cin >> nota;
+  if (nota > 85) {
+    cout << "A" << endl;
+  } else if (nota > 60) {
+    cout << "B" << endl;
+  } else if (nota > 35) {
+    cout << "C" << endl;
+  } else if (nota > 0) {
+    cout << "D" << endl;
+  } else {
+    cout << "E" << endl;
+  }
 
-    cin >> N;
-    cout << conceito(N) << endl;
-
-    return 0;
+  return 0;
 }

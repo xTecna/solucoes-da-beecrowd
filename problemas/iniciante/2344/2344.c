@@ -23,10 +23,10 @@ char conceito(int nota)
 
 int main()
 {
-    int N;
+    int nota;
 
-    scanf("%d", &N);
-    printf("%c\n", conceito(N));
+    scanf("%d", &nota);
+    printf("%c\n", conceito(nota));
 
     return 0;
 }
