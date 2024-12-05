@@ -6,13 +6,9 @@ int main()
 
     scanf("%d", &N);
 
-    for (int i = 0; i < N; ++i)
+    for (int i = 1; i < 4 * N; i += 4)
     {
-        for (int j = 0; j < 3; ++j)
-        {
-            printf("%d ", 4 * i + 1 + j);
-        }
-        printf("PUM\n");
+        printf("%d %d %d PUM\n", i, i + 1, i + 2);
     }
 
     return 0;

@@ -1,4 +1,3 @@
 (def n (read-string (read-line)))
-(doseq [i (range 0 n)]
-  (def m (+ 1 (* 4 i)))
-  (printf "%d %d %d PUM\n" m (+ m 1) (+ m 2)))
+(doseq [i (range 1 (* 4 n) 4)]
+  (printf "%d %d %d PUM\n" i (+ i 1) (+ i 2)))

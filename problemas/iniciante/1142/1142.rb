@@ -1,5 +1,4 @@
 n = gets.to_i
-for i in (1..n)
-    x = 4 * (i - 1) + 1
-    puts "%d %d %d PUM" % [x,x + 1,x + 2]
+for i in (1..4*n).step(4)
+    puts "%d %d %d PUM" % [i,i + 1,i + 2]
 end

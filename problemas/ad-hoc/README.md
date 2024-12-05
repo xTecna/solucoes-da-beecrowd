@@ -1,5 +1,4 @@
-
-## [Ad-hoc (84/849)](./README.md)
+## [Ad-hoc (85/849)](./README.md)
 * [1026 - Carrega ou não Carrega?](./1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./1030/README.md)
 * [1031 - Crise de Energia](./1031/README.md)
@@ -73,6 +72,7 @@
 * [2414 - Desafio do Maior Número](./2414/README.md)
 * [2416 - Corrida](./2416/README.md)
 * [2424 - Tira-teima](./2424/README.md)
+* [2434 - Saldo do Vovô](./2434/README.md)
 * [2454 - Flíper](./2454/README.md)
 * [2455 - Gangorra](./2455/README.md)
 * [2456 - Cartas](./2456/README.md)

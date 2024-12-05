@@ -1,8 +1,4 @@
 N = int(input())
 
-for i in range(N):
-    linha = []
-    for j in range(3):
-        linha.append(str(4 * i + 1 + j))
-    linha.append('PUM')
-    print(' '.join(linha))
+for i in range(1, 4 * N, 4):
+    print(f'{i} {i + 1} {i + 2} PUM')

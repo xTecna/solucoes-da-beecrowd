@@ -1,6 +1,6 @@
 # Problemas
 
-## [Iniciante (242/334)](./iniciante/README.md)
+## [Iniciante (243/334)](./iniciante/README.md)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -242,9 +242,10 @@
 * [2862 - Inseto!](./iniciante/2862/README.md)
 * [2936 - Quanta Mandioca?](./iniciante/2936/README.md)
 * [2987 - Balão de Honra](./iniciante/2987/README.md)
+* [3046 - Dominó](./iniciante/3046/README.md)
 * [3055 - Nota Esquecida](./iniciante/3055/README.md)
 
-## [Ad-hoc (84/849)](./ad-hoc/README.md)
+## [Ad-hoc (85/849)](./ad-hoc/README.md)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./ad-hoc/1030/README.md)
 * [1031 - Crise de Energia](./ad-hoc/1031/README.md)
@@ -318,6 +319,7 @@
 * [2414 - Desafio do Maior Número](./ad-hoc/2414/README.md)
 * [2416 - Corrida](./ad-hoc/2416/README.md)
 * [2424 - Tira-teima](./ad-hoc/2424/README.md)
+* [2434 - Saldo do Vovô](./ad-hoc/2434/README.md)
 * [2454 - Flíper](./ad-hoc/2454/README.md)
 * [2455 - Gangorra](./ad-hoc/2455/README.md)
 * [2456 - Cartas](./ad-hoc/2456/README.md)

@@ -5,8 +5,7 @@ fn main() {
     io::stdin().read_line(&mut input);
     let n: i32 = input.trim().parse().unwrap();
 
-    for i in 0..n {
-        let x = 1 + 4 * i;
-        println!("{} {} {} PUM", x, x + 1, x + 2);
+    for i in (1..(4*n)).step_by(4) {
+        println!("{} {} {} PUM", i, i + 1, i + 2);
     }
 }

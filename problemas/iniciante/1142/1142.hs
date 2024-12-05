@@ -1,13 +1,14 @@
 import Text.Printf
 
-imprime :: Int -> IO ()
-imprime 0 = return ()
-imprime i = do
-  imprime (i - 1)
-  let x = 4 * (i - 1) + 1
-  printf "%d %d %d PUM\n" x (x + 1) (x + 2)
+imprime :: Int -> Int -> IO ()
+imprime i n = do
+  if i < n then do
+    printf "%d %d %d PUM\n" i (i + 1) (i + 2)
+    imprime (i + 4) n
+  else
+    return ()
 
 main :: IO ()
 main = do
   n <- readLn :: IO Int
-  imprime n
+  imprime 1 (4 * n)

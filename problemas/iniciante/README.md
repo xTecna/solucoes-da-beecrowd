@@ -1,4 +1,4 @@
-## Iniciante (242/334)
+## [Iniciante (243/334)](./README.md)
 * [1000 - Hello World!](./1000/README.md)
 * [1001 - Extremamente Básico](./1001/README.md)
 * [1002 - Área do Círculo](./1002/README.md)
@@ -240,4 +240,5 @@
 * [2862 - Inseto!](./2862/README.md)
 * [2936 - Quanta Mandioca?](./2936/README.md)
 * [2987 - Balão de Honra](./2987/README.md)
+* [3046 - Dominó](./3046/README.md)
 * [3055 - Nota Esquecida](./3055/README.md)

@@ -7,14 +7,9 @@ int main()
     int N;
 
     cin >> N;
-
-    for (int i = 0; i < N; ++i)
+    for (int i = 1; i < 4 * N; i += 4)
     {
-        for (int j = 0; j < 3; ++j)
-        {
-            cout << 4 * i + 1 + j << ' ';
-        }
-        cout << "PUM" << endl;
+        cout << i << ' ' << i + 1 << ' ' << i + 2 << " PUM" << endl;
     }
 
     return 0;

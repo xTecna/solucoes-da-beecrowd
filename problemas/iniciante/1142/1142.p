@@ -1,14 +1,13 @@
 var
-  n, m, i: int64;
+  n, i: int64;
 
 begin
   read(n);
   
-  i := 0;
-  while i < n do
+  i := 1;
+  while i < 4 * n do
   begin
-    m := 1 + 4 * i;
-    writeln(m, ' ', m + 1, ' ', m + 2, ' PUM');
-    i := i + 1;
+    writeln(i, ' ', i + 1, ' ', i + 2, ' PUM');
+    i := i + 4;
   end;
 end.
