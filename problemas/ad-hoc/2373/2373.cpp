@@ -2,18 +2,14 @@
 
 using namespace std;
 
-int main()
-{
+int main(){
     int N, L, C, resposta;
 
     resposta = 0;
     cin >> N;
-    for (int i = 0; i < N; ++i)
-    {
+    for(int i = 0; i < N; ++i){
         cin >> L >> C;
-
-        if (L > C)
-        {
+        if(L > C){
             resposta += C;
         }
     }

@@ -1,6 +1,6 @@
 # Problemas
 
-## [Iniciante (243/334)](./iniciante/README.md)
+## [Iniciante (246/334)](./iniciante/README.md)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -237,13 +237,16 @@
 * [2764 - Entrada e Saída de Data](./iniciante/2764/README.md)
 * [2766 - Entrada e Saída Lendo e Pulando Nomes](./iniciante/2766/README.md)
 * [2780 - Basquete de Robôs](./iniciante/2780/README.md)
+* [2786 - Piso da Escola](./iniciante/2786/README.md)
 * [2791 - Feijão](./iniciante/2791/README.md)
 * [2861 - A Saída](./iniciante/2861/README.md)
 * [2862 - Inseto!](./iniciante/2862/README.md)
 * [2936 - Quanta Mandioca?](./iniciante/2936/README.md)
+* [2879 - Desvendando Monty Hall](./iniciante/2879/README.md)
 * [2987 - Balão de Honra](./iniciante/2987/README.md)
 * [3046 - Dominó](./iniciante/3046/README.md)
 * [3055 - Nota Esquecida](./iniciante/3055/README.md)
+* [3091 - Resto 1.0](./iniciante/3091/README.md)
 
 ## [Ad-hoc (85/849)](./ad-hoc/README.md)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
@@ -384,7 +387,7 @@
 * [1566 - Altura](./estruturas-e-bibliotecas/1566/README.md)
 * [2929 - Menor da Pilha](./estruturas-e-bibliotecas/2929/README.md)
 
-## [Matemática (26/269)](./matematica/README.md)
+## [Matemática (27/269)](./matematica/README.md)
 * [1028 - Figurinhas](./matematica/1028/README.md)
 * [1161 - Soma de Fatoriais](./matematica/1161/README.md)
 * [1169 - Trigo no Tabuleiro](./matematica/1169/README.md)
@@ -410,6 +413,7 @@
 * [1805 - Soma Natural](./matematica/1805/README.md)
 * [1921 - Guilherme e Suas Pipas](./matematica/1921/README.md)
 * [2033 - Juros Sobre o Empréstimo](./matematica/2033/README.md)
+* [2218 - O Temível Evil-Son](./matematica/2218/README.md)
 * [2232 - Triângulo de Pascal](./matematica/2232/README.md)
 
 ## [Paradigmas (7/215)](./paradigmas/README.md)

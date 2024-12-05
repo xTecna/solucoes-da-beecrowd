@@ -18,7 +18,7 @@ class URI {
     static void Main(string[] args) {
         int N = int.Parse(Console.ReadLine());
         for(int i = 0; i < N; ++i){
-            List<int> xy = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList
+            List<int> xy = Console.ReadLine().Trim().Split(' ').Select(x => int.Parse(x)).ToList();
 
             int rafael = r(xy[0], xy[1]);
             int beto = b(xy[0], xy[1]);
@@ -33,3 +33,4 @@ class URI {
             }
         }
     }
+}
