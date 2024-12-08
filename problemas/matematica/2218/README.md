@@ -4,7 +4,7 @@
 
 ## Solução
 
-Para pensar em como resolver esse problema, podemos fazer uma prova por indução começando com $1$ reta e após isso provar que, se com $k$ retas dividimos o território em $1 + 1 + 2 + \ldots + k$ regiões, então com $k + 1$ retas dividimos o território em $1 + 1 + 2 + \cdots + k + (k + 1)$ regiões (ou seja, são acrescentadas $k + 1$ regiões).
+Para pensar em como resolver esse problema, podemos fazer uma prova por indução começando com $1$ reta dividindo o território em $1 + 1$ regiões e após isso provar que, se com $k$ retas dividimos o território em $1 + 1 + 2 + \ldots + k$ regiões, então com $k + 1$ retas dividimos o território em $1 + 1 + 2 + \cdots + k + (k + 1)$ regiões (ou seja, são acrescentadas $k + 1$ regiões).
 
 ### Caso base: $k = 1$
 
