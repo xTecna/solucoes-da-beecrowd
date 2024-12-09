@@ -24,11 +24,11 @@ Esse método costuma ser bastante intuitivo pois é possível nos imaginarmos or
 
 | Propriedade         | Complexidades |
 | ------------------- | ------------- |
-| Tempo (melhor caso) | $O(n)$          |
-| Tempo (pior caso)   | $O(n^{2})$         |
-| Espaço              | $O(1)$          |
+| Tempo (melhor caso) | $O(n)$        |
+| Tempo (pior caso)   | $O(n^{2})$    |
+| Espaço              | $O(1)$        |
 
-#### C99
+#### C
 ```c
 void swap(int* a, int* b){
     int aux = *a;
@@ -47,7 +47,7 @@ void insertionSort(int* V, int n){
 }
 ```
 
-#### C++17
+#### C++
 ```cpp
 template <typename T>
 void insertionSort(vector<T> &V){
@@ -79,7 +79,7 @@ static void insertionSort(ref List<int> V){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static void insertionSort(ArrayList<Integer> V){
     for(int i = 1; i < V.size(); ++i){
@@ -93,7 +93,7 @@ public static void insertionSort(ArrayList<Integer> V){
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 const insertionSort = (V) => {
     for (let i = 1; i < V.length; ++i){
@@ -106,7 +106,7 @@ const insertionSort = (V) => {
 };
 ```
 
-#### Python 3.9
+#### Python
 ```python
 def insertionSort(V):
     for i in range(1, len(V)):
@@ -128,10 +128,10 @@ Também é um algoritmo simples de se implementar e não necessita de um vetor a
 
 | Propriedade | Complexidades |
 | ----------- | ------------- |
-| Tempo       | $O(n^{2})$         |
-| Espaço      | $O(1)$          |
+| Tempo       | $O(n^{2})$    |
+| Espaço      | $O(1)$        |
 
-#### C99
+#### C
 ```c
 void swap(int* a, int* b){
     int aux = *a;
@@ -150,7 +150,7 @@ void selectionSort(int* V, int n){
 }
 ```
 
-#### C++17
+#### C++
 ```cpp
 template <typename T>
 void selectionSort(vector<T>& V){
@@ -181,7 +181,7 @@ static void selectionSort(ref List<int> V){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static void selectionSort(ArrayList<Integer> V){
     for(int i = 0; i < V.size() - 1; ++i){
@@ -194,7 +194,7 @@ public static void selectionSort(ArrayList<Integer> V){
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 const selectionSort = (V) => {
     for (let i = 0; i < V.length - 1; ++i){
@@ -207,7 +207,7 @@ const selectionSort = (V) => {
 };
 ```
 
-#### Python 3.9
+#### Python
 ```python
 def selectionSort(V):
     n = len(V)
@@ -228,11 +228,11 @@ Este algoritmo tem todas as características do InsertionSort, então qual méto
 
 | Propriedade         | Complexidades |
 | ------------------- | ------------- |
-| Tempo (melhor caso) | $O(n)$          |
-| Tempo (pior caso)   | $O(n^{2})$         |
-| Espaço              | $O(1)$          |
+| Tempo (melhor caso) | $O(n)$        |
+| Tempo (pior caso)   | $O(n^{2})$    |
+| Espaço              | $O(1)$        |
 
-#### C99
+#### C
 ```c
 void swap(int* a, int* b){
     int aux = *a;
@@ -253,7 +253,7 @@ void bubbleSort(int* V, int n){
 }
 ```
 
-#### C++17
+#### C++
 ```cpp
 template <typename T>
 void bubbleSort(vector<T>& V){
@@ -286,7 +286,7 @@ static void bubbleSort(ref List<int> V){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static void bubbleSort(ArrayList<Integer> V){
     for(int i = 0; i < V.size() - 1; ++i){
@@ -300,7 +300,7 @@ public static void bubbleSort(ArrayList<Integer> V){
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 const bubbleSort = (V) => {
     for (let i = 0; i < V.length - 1; ++i){
@@ -314,7 +314,7 @@ const bubbleSort = (V) => {
 };
 ```
 
-#### Python 3.9
+#### Python
 ```python
 def bubbleSort(V):
     n = len(V)
@@ -342,12 +342,12 @@ A pergunta que fica é: como ordenar as duas metades que você dividiu? Ora, com
 
 Este algoritmo é extremamente eficiente, com uma ideia um pouco menos intuitiva, mas que faz bastante sentido num ponto de vista de dividir para conquistar. É um método que gasta bastante memória e não é fácil de implementar a princípio, mas que com certeza vale a pena conhecer a fundo, pois essa abordagem para resolver problemas é amplamente utilizada, não apenas com ordenação.
 
-| Propriedades | Complexidade |
-| ------------ | ------------ |
-| Tempo        | $O(n \log{n})$   |
+| Propriedades | Complexidade   |
+| ------------ | -------------- |
+| Tempo        | $O(n \log{n})$ |
 | Espaço       | $O(n)$         |
 
-#### C99
+#### C
 ```c
 void merge(int* V, int inicio, int meio, int fim){
     int* aux = (int*) malloc((fim - inicio) * sizeof(int));
@@ -377,7 +377,7 @@ void mergeSort(int* V, int inicio, int fim){
 }
 ```
 
-#### C++17
+#### C++
 ```cpp
 template <typename T>
 void merge(vector<T>& V, int inicio, int meio, int fim){
@@ -439,7 +439,7 @@ static void mergeSort(ref List<int> V, int inicio, int fim){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static void merge(ArrayList<Integer> V, int inicio, int meio, int fim){
     ArrayList<Integer> aux = new ArrayList<Integer>(fim - inicio);
@@ -469,7 +469,7 @@ public static void mergeSort(ArrayList<Integer> V, int inicio, int fim){
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 const merge = (V, inicio, meio, fim) => {
     let aux = Array(fim - inicio);
@@ -498,7 +498,7 @@ const mergeSort = (V, inicio, fim) => {
 };
 ```
 
-#### Python 3.9
+#### Python
 ```py
 def merge(V, inicio, meio, fim):
     aux = [0 for _ in range(fim - inicio)]
@@ -542,13 +542,13 @@ O QuickSort é o mais eficiente de todos os métodos de ordenação por compara�
 
 Tem uma ideia bem parecida com o MergeSort com mesmas complexidades de tempo, mas com uma baita economia de espaço. É o algoritmo de escolha em grande parte das implementações dos métodos `sort()` em diversas bibliotecas.
 
-| Propriedades        | Complexidade       |
-| ------------------- | ------------------ |
-| Tempo (melhor caso) | $O(n \log{n})$         |
+| Propriedades        | Complexidade            |
+| ------------------- | ----------------------- |
+| Tempo (melhor caso) | $O(n \log{n})$          |
 | Tempo (pior caso)   | $O(n^{2})$ (muito raro) |
-| Espaço              | $O(1)$               |
+| Espaço              | $O(1)$                  |
 
-#### C99
+#### C
 ```c
 void swap(int* a, int* b){
     int aux = *a;
@@ -580,7 +580,7 @@ void quickSort(int* V, int inicio, int fim){
 }
 ```
 
-#### C++17
+#### C++
 ```cpp
 template <typename T>
 int particao(vector<T>& V, int inicio, int fim){
@@ -639,7 +639,7 @@ static void quickSort(ref List<int> V, int inicio, int fim){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static int particao(ArrayList<Integer> V, int inicio, int fim){
     int pivo = V.get(fim - 1);
@@ -667,7 +667,7 @@ public static void quickSort(ArrayList<Integer> V, int inicio, int fim){
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 const particao = (V, inicio, fim) => {
     let pivo = V[fim - 1];
@@ -694,7 +694,7 @@ const quickSort = (V, inicio, fim) => {
 };
 ```
 
-#### Python 3.9
+#### Python
 ```py
 def particao(V, inicio, fim):
     pivo = V[fim - 1]
@@ -724,13 +724,12 @@ Este é o mais eficiente de todos os algoritmos que foram apresentados, mas ele 
 
 Ao contrário dos outros algoritmos, onde pudemos aplicar a função generalizada de comparação, aqui estamos nos atendo a ordenar do menor para o maior, já que é específico para números. As complexidades são apresentadas para um vetor com $n$ elementos e limite no valor do número de $m$.
 
-| Propriedades | Complexidade                                       |
-| ------------ | -------------------------------------------------- |
-| Tempo        | $O(nm)$                                               |
-| Espaço       | $O(m)$ |
+| Propriedades | Complexidade |
+| ------------ | ------------ |
+| Tempo        | $O(nm)$      |
+| Espaço       | $O(m)$       |
 
-#### C99
-
+#### C
 ```c
 void countingSort(int* V, int n, int limite){
     int* aux = (int*) malloc(limite * sizeof(int));
@@ -750,8 +749,7 @@ void countingSort(int* V, int n, int limite){
 }
 ```
 
-#### C++17
-
+#### C++
 ```cpp
 void countingSort(vector<int>& V, int limite){
     vector<int> aux(limite, 0);
@@ -786,7 +784,7 @@ static void countingSort(ref List<int> V, int limite){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static void countingSort(ArrayList<Integer> V, int limite){
     ArrayList<Integer> aux = new ArrayList<Integer>(limite);
@@ -807,7 +805,7 @@ public static void countingSort(ArrayList<Integer> V, int limite){
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 const countingSort = (V, limite) => {
     let aux = Array(limite);
@@ -826,7 +824,7 @@ const countingSort = (V, limite) => {
 };
 ```
 
-#### Python 3.9
+#### Python
 ```py
 def countingSort(V, limite):
     aux = [0 for _ in range(limite)]
@@ -888,14 +886,14 @@ As implementações de `sort()` em diversas bibliotecas têm suporte a uma funç
 
 Comparar dois inteiros e retornar número negativo se `a` estiver na frente de `b` na ordenação, número positivo caso contrário e `0` se os dois números são iguais.
 
-#### C99
+#### C
 ```c
 int comp(const void* a, const void* b){
     return *(int*)a - *(int*)b;
 }
 ```
 
-#### C++17
+#### C++
 ```cpp
 template <typename T>
 bool comp(T a, T b){
@@ -910,14 +908,14 @@ static int comp(int a, int b){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static int comp(int a, int b){
     return a - b;
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 comp = (a, b) => a - b;
 ```
@@ -926,7 +924,7 @@ comp = (a, b) => a - b;
 
 Comparar dois `Alunos`, ordenando-os primeiro por nota (da maior nota pra menor) e se os dois alunos têm mesma nota, apresentar em ordem alfabética. Repare que aqui começamos trabalhamos com dois casos: caso em que as notas são iguais e, neste caso, temos que desempatar pelo nome; e em que as notas são diferentes, então comparar pela nota já nos trás um resultado conclusivo.
 
-#### C99
+#### C
 ```c
 int comp(const void* Aluno a, const void* Aluno b){
     if(*(struct Aluno*)a.nota == *(struct Aluno*)b.nota){
@@ -936,7 +934,7 @@ int comp(const void* Aluno a, const void* Aluno b){
 }
 ```
 
-#### C++17
+#### C++
 ```cpp
 bool comp(Aluno a, Aluno b){
     if(a.nota == b.nota)    return a.nome < b.nome;
@@ -952,7 +950,7 @@ static int comp(Aluno a, Aluno b){
 }
 ```
 
-#### Java 19
+#### Java
 ```java
 public static int comp(Aluno a, Aluno b){
     if(a.nota == b.nota)    return a.nome.CompareTo(b.nome);
@@ -960,7 +958,7 @@ public static int comp(Aluno a, Aluno b){
 }
 ```
 
-#### JavaScript 12.18
+#### JavaScript
 ```js
 const comp = (a, b) => {
     if(a.nota === b.nota){
@@ -978,7 +976,7 @@ Com a comparação por chave, associamos cada elemento com um outro valor que é
 
 No exemplo abaixo, queremos ordenar uma estrutura de dados `Aluno` pelo nome.
 
-#### Python 3.9
+#### Python
 ```python
 def comp(aluno):
     return aluno.nome

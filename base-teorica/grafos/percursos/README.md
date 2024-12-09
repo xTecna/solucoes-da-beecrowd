@@ -120,7 +120,7 @@ const DFS = (visitado, grafo, u) => {
             DFS(visitado, grafo, v);
         }
     }
-}
+};
 
 // Externamente
 for(let i = 0; i < n; ++i){
@@ -349,3 +349,4 @@ for i in range(n):
 ## Problemas
 
 * [1076 - Desenhando Labirintos](../../../problemas/grafos/1076/README.md)
+* [1082 - Componentes Conexos](../../../problemas/grafos/1082/README.md)
