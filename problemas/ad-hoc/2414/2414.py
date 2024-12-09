@@ -1,3 +1,1 @@
-numeros = [int(x) for x in input().strip().split(' ')]
-
-print(max(numeros))
+print(max([int(x) for x in input().strip().split()]))
