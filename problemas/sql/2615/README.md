@@ -1,4 +1,4 @@
-# 2615 - Expandindo o Negócio
+# 2615 - Expandindo o Negocio
 
 ## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/2615)
 

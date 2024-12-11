@@ -6,7 +6,7 @@ int main()
 
     scanf("%d %d %d", &A, &B, &C);
 
-    if (A == B || A == C || B == C || A + B == C || A + C == B || B + C == A)
+    if ((A == B) || (A == C) || (B == C) || (A + B == C) || (A + C == B) || (B + C == A))
     {
         printf("S\n");
     }

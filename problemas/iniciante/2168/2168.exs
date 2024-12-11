@@ -6,7 +6,7 @@ defmodule Modulo do
   end
 
   def segura(m, i, j) do
-    Enum.at(Enum.at(m, i), j) + Enum.at(Enum.at(m, i + 1), j) + Enum.at(Enum.at(m, i), j + 1)          
+    Enum.at(Enum.at(m, i), j) + Enum.at(Enum.at(m, i + 1), j) + Enum.at(Enum.at(m, i), j + 1) + Enum.at(Enum.at(m, i + 1), j + 1) >= 2
   end
 
   def processa(m, i, j, n) do
@@ -29,3 +29,4 @@ end
 n = IO.gets("") |> String.trim() |> String.to_integer()
 m = Modulo.leitura(n + 1)
 resposta = Modulo.processa(m, 0, 0, n)
+IO.puts String.trim(resposta)

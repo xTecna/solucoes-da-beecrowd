@@ -1,6 +1,6 @@
 # Problemas
 
-## [Iniciante (246/334)](./iniciante/README.md)
+## [Iniciante (247/334)](./iniciante/README.md)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -241,6 +241,7 @@
 * [2791 - Feijão](./iniciante/2791/README.md)
 * [2861 - A Saída](./iniciante/2861/README.md)
 * [2862 - Inseto!](./iniciante/2862/README.md)
+* [2896 - Aproveite a Oferta](./iniciante/2896/README.md)
 * [2936 - Quanta Mandioca?](./iniciante/2936/README.md)
 * [2879 - Desvendando Monty Hall](./iniciante/2879/README.md)
 * [2987 - Balão de Honra](./iniciante/2987/README.md)
@@ -248,7 +249,7 @@
 * [3055 - Nota Esquecida](./iniciante/3055/README.md)
 * [3091 - Resto 1.0](./iniciante/3091/README.md)
 
-## [Ad-hoc (85/849)](./ad-hoc/README.md)
+## [Ad-hoc (87/849)](./ad-hoc/README.md)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./ad-hoc/1030/README.md)
 * [1031 - Crise de Energia](./ad-hoc/1031/README.md)
@@ -332,10 +333,12 @@
 * [2868 - Errrou!](./ad-hoc/2868/README.md)
 * [3048 - Sequência Secreta](./ad-hoc/3048/README.md)
 * [3085 - O Grande Dia](./ad-hoc/3085/README.md)
+* [3093 - Truco da Galera 1.0](./ad-hoc/3093/README.md)
+* [3126 - Lista de Treinamento](./ad-hoc/3126/README.md)
 * [3227 - Doorman](./ad-hoc/3227/README.md)
 * [3263 - Apague Com Segurança](./ad-hoc/3263/README.md)
 
-## [Strings (28/150)](./strings/README.md)
+## [Strings (29/150)](./strings/README.md)
 * [1024 - Criptografia](./strings/1024/README.md)
 * [1120 - Revisão de Contrato](./strings/1120/README.md)
 * [1168 - LED](./strings/1168/README.md)
@@ -355,6 +358,7 @@
 * [1551 - Frase Completa](./strings/1551/README.md)
 * [1581 - Conversa Internacional](./strings/1581/README.md)
 * [1607 - Avance as Letras](./strings/1607/README.md)
+* [1632 - Variações](./strings/1632/README.md)
 * [1871 - Zero vale Zero](./strings/1871/README.md)
 * [1873 - Pedra-papel-tesoura-lagarto-Spock](./strings/1873/README.md)
 * [2062 - OBI URI](./strings/2062/README.md)

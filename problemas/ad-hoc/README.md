@@ -1,4 +1,4 @@
-## [Ad-hoc (85/849)](./README.md)
+# Ad-hoc (87/849)
 * [1026 - Carrega ou não Carrega?](./1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./1030/README.md)
 * [1031 - Crise de Energia](./1031/README.md)
@@ -82,5 +82,7 @@
 * [2868 - Errrou!](./2868/README.md)
 * [3048 - Sequência Secreta](./3048/README.md)
 * [3085 - O Grande Dia](./3085/README.md)
+* [3093 - Truco da Galera 1.0](./3093/README.md)
+* [3126 - Lista de Treinamento](./3126/README.md)
 * [3227 - Doorman](./3227/README.md)
 * [3263 - Apague Com Segurança](./3263/README.md)

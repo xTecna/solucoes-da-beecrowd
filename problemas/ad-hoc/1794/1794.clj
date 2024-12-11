@@ -7,3 +7,4 @@
     (let [entrada2 (str/split (read-line) #" ")
           sa (read-string (nth entrada2 0))
           sb (read-string (nth entrada2 1))]
+      (if (and (<= la n) (<= n lb) (<= sa n) (<= n sb)) (printf "possivel\n") (printf "impossivel\n")))))

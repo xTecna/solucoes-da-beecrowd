@@ -1,4 +1,4 @@
-(defn segura [m, i, j] (>= (+ (get-in @m [i j]) (get-in @m [(+ i 1) j]) (get-in @m [i (+ j 1)])         
+(defn segura [m, i, j] (>= (+ (get-in @m [i j]) (get-in @m [(+ i 1) j]) (get-in @m [i (+ j 1)]) (get-in @m [(+ i 1) (+ j 1)])) 2))
 
 (def n (read-string (read-line)))
 
@@ -13,3 +13,4 @@
     (if (segura M i j)
       (printf "S")
       (printf "U")))
+  (printf "\n"))

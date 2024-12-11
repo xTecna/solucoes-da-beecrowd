@@ -10,7 +10,9 @@ Tecnicamente falando, o enunciado está de fato correto porque fala de aceleraç
 
 Podemos calcular a distância percorrida por uma partícula em movimento uniforme da seguinte forma
 
-$\Delta_s = vt$
+$$
+\Delta_s = vt
+$$
 
 Então, para calcularmos o deslocamento em $2t$, basta trocarmos $t$ por $2t$ na equação acima.
 

@@ -9,7 +9,7 @@ leitura n = do
   return (linha : resto)
 
 segura :: [[Int]] -> Int -> Int -> Bool
-segura m i j = m !! i !! j + m !! (i + 1) !! j + m !! i !! (j + 1) + m !! (i + 1) !! (j + 1)  
+segura m i j = m !! i !! j + m !! (i + 1) !! j + m !! i !! (j + 1) + m !! (i + 1) !! (j + 1) >= 2
 
 processa :: [[Int]] -> Int -> Int -> Int -> IO ()
 processa m i j n
@@ -27,3 +27,4 @@ main :: IO ()
 main = do
   n <- readLn :: IO Int
   m <- leitura (n + 1)
+  processa m 0 0 n

@@ -1,4 +1,4 @@
-## Strings (28/150)
+# Strings (29/150)
 * [1024 - Criptografia](./1024/README.md)
 * [1120 - Revisão de Contrato](./1120/README.md)
 * [1168 - LED](./1168/README.md)
@@ -18,6 +18,7 @@
 * [1551 - Frase Completa](./1551/README.md)
 * [1581 - Conversa Internacional](./1581/README.md)
 * [1607 - Avance as Letras](./1607/README.md)
+* [1632 - Variações](./1632/README.md)
 * [1871 - Zero vale Zero](./1871/README.md)
 * [1873 - Pedra-papel-tesoura-lagarto-Spock](./1873/README.md)
 * [2062 - OBI URI](./2062/README.md)

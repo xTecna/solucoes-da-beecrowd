@@ -1,4 +1,4 @@
-## Iniciante (246/334)
+# Iniciante (247/334)
 * [1000 - Hello World!](./1000/README.md)
 * [1001 - Extremamente Básico](./1001/README.md)
 * [1002 - Área do Círculo](./1002/README.md)
@@ -239,6 +239,7 @@
 * [2791 - Feijão](./2791/README.md)
 * [2861 - A Saída](./2861/README.md)
 * [2862 - Inseto!](./2862/README.md)
+* [2896 - Aproveite a Oferta](./2896/README.md)
 * [2936 - Quanta Mandioca?](./2936/README.md)
 * [2879 - Desvendando Monty Hall](./2879/README.md)
 * [2987 - Balão de Honra](./2987/README.md)
