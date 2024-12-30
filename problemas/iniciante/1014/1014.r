@@ -1,4 +1,3 @@
-# Read multiple lines from stdin (must use 'r')
 input <- file('stdin', 'r')
 
 x <- as.integer(readLines(input, n=1))

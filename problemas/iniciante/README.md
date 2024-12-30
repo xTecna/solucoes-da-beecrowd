@@ -1,4 +1,4 @@
-# Iniciante (247/334)
+# Iniciante (248/334)
 * [1000 - Hello World!](./1000/README.md)
 * [1001 - Extremamente Básico](./1001/README.md)
 * [1002 - Área do Círculo](./1002/README.md)
@@ -244,5 +244,6 @@
 * [2879 - Desvendando Monty Hall](./2879/README.md)
 * [2987 - Balão de Honra](./2987/README.md)
 * [3046 - Dominó](./3046/README.md)
+* [3047 - A idade de Dona Mônica](./3047/README.md)
 * [3055 - Nota Esquecida](./3055/README.md)
 * [3091 - Resto 1.0](./3091/README.md)

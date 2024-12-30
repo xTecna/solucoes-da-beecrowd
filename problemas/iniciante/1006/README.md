@@ -4,4 +4,4 @@
 
 ## Solução
 
-Parecido com o problema [1005 - Média 1](../1005/README.md), só que com os pesos somando 10 dessa vez.
+Parecido com o problema [1005 - Média 1](../1005/README.md), só que com os pesos somando $10$ dessa vez.

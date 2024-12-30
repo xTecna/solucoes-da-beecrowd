@@ -2,13 +2,11 @@
 
 using namespace std;
 
-int main()
-{
+int main(){
     int T, N;
 
     cin >> T;
-    for (int i = 0; i < T; ++i)
-    {
+    for(int i = 0; i < T; ++i){
         cin >> N;
         cout << (1 << N) - 1 << endl;
     }

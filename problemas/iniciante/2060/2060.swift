@@ -1,7 +1,7 @@
 import Foundation
 
 let n = Int(readLine(strippingNewline: true)!)!
-let numeros = readLine(strippingNewline: true)!.components(separatedBy: " ").compactMap { Int 
+let numeros = readLine(strippingNewline: true)!.components(separatedBy: " ").compactMap { Int($0) }
 
 var dois = 0
 var tres = 0
@@ -25,3 +25,4 @@ for i in 0..<n {
 print(dois, "Multiplo(s) de 2")
 print(tres, "Multiplo(s) de 3")
 print(quatro, "Multiplo(s) de 4")
+print(cinco, "Multiplo(s) de 5")
