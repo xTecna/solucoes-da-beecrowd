@@ -1,4 +1,4 @@
-# Iniciante (248/334)
+# Iniciante (249/334)
 * [1000 - Hello World!](./1000/README.md)
 * [1001 - Extremamente Básico](./1001/README.md)
 * [1002 - Área do Círculo](./1002/README.md)
@@ -236,6 +236,7 @@
 * [2766 - Entrada e Saída Lendo e Pulando Nomes](./2766/README.md)
 * [2780 - Basquete de Robôs](./2780/README.md)
 * [2786 - Piso da Escola](./2786/README.md)
+* [2787 - Xadrez](./2787/README.md)
 * [2791 - Feijão](./2791/README.md)
 * [2861 - A Saída](./2861/README.md)
 * [2862 - Inseto!](./2862/README.md)

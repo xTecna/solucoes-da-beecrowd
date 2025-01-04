@@ -1,6 +1,6 @@
 # Problemas
 
-## [Iniciante (248/334)](./iniciante/README.md)
+## [Iniciante (249/334)](./iniciante/README.md)
 * [1000 - Hello World!](./iniciante/1000/README.md)
 * [1001 - Extremamente Básico](./iniciante/1001/README.md)
 * [1002 - Área do Círculo](./iniciante/1002/README.md)
@@ -238,6 +238,7 @@
 * [2766 - Entrada e Saída Lendo e Pulando Nomes](./iniciante/2766/README.md)
 * [2780 - Basquete de Robôs](./iniciante/2780/README.md)
 * [2786 - Piso da Escola](./iniciante/2786/README.md)
+* [2787 - Xadrez](./iniciante/2787/README.md)
 * [2791 - Feijão](./iniciante/2791/README.md)
 * [2861 - A Saída](./iniciante/2861/README.md)
 * [2862 - Inseto!](./iniciante/2862/README.md)
@@ -250,7 +251,7 @@
 * [3055 - Nota Esquecida](./iniciante/3055/README.md)
 * [3091 - Resto 1.0](./iniciante/3091/README.md)
 
-## [Ad-hoc (89/849)](./ad-hoc/README.md)
+## [Ad-hoc (92/849)](./ad-hoc/README.md)
 * [1026 - Carrega ou não Carrega?](./ad-hoc/1026/README.md)
 * [1030 - A Lenda de Flavious Josephus](./ad-hoc/1030/README.md)
 * [1031 - Crise de Energia](./ad-hoc/1031/README.md)
@@ -315,6 +316,7 @@
 * [2058 - Triângulos e Polígonos Regulares](./ad-hoc/2058/README.md)
 * [2189 - Quermesse](./ad-hoc/2189/README.md)
 * [2339 - Aviões de Papel](./ad-hoc/2339/README.md)
+* [2369 - Conta de Água](./ad-hoc/2369/README.md)
 * [2373 - Garçom](./ad-hoc/2373/README.md)
 * [2374 - Pneu](./ad-hoc/2374/README.md)
 * [2375 - Sedex](./ad-hoc/2375/README.md)
@@ -322,6 +324,8 @@
 * [2381 - Lista de Chamada](./ad-hoc/2381/README.md)
 * [2385 - Multiplicação de Matrizes](./ad-hoc/2385/README.md)
 * [2388 - Tacógrafo](./ad-hoc/2388/README.md)
+* [2395 - Transporte de Contêineres](./ad-hoc/2395/README.md)
+* [2408 - Vice-Campeão](./ad-hoc/2408/README.md)
 * [2413 - Busca na Internet](./ad-hoc/2413/README.md)
 * [2414 - Desafio do Maior Número](./ad-hoc/2414/README.md)
 * [2416 - Corrida](./ad-hoc/2416/README.md)
@@ -395,7 +399,7 @@
 * [1566 - Altura](./estruturas-e-bibliotecas/1566/README.md)
 * [2929 - Menor da Pilha](./estruturas-e-bibliotecas/2929/README.md)
 
-## [Matemática (29/269)](./matematica/README.md)
+## [Matemática (31/269)](./matematica/README.md)
 * [1028 - Figurinhas](./matematica/1028/README.md)
 * [1161 - Soma de Fatoriais](./matematica/1161/README.md)
 * [1169 - Trigo no Tabuleiro](./matematica/1169/README.md)
@@ -424,7 +428,9 @@
 * [2033 - Juros Sobre o Empréstimo](./matematica/2033/README.md)
 * [2218 - O Temível Evil-Son](./matematica/2218/README.md)
 * [2232 - Triângulo de Pascal](./matematica/2232/README.md)
+* [2497 - Contando Ciclos](./matematica/2497/README.md)
 * [2839 - As Meias de Rangel](./matematica/2839/README.md)
+* [3049 - Nota Cortada](./matematica/3049/README.md)
 
 ## [Paradigmas (7/215)](./paradigmas/README.md)
 * [1027 - Onda Crítica](./paradigmas/1027/README.md)

@@ -150,9 +150,9 @@ y = linha[1]
 
 #### Rust
 ```rs
-let linha: Vec<&str> = input.split(" ").collect();
-let x: i32 = linha[0].trim().parse().unwrap();
-let y: i32 = linha[1].trim().parse().unwrap();
+let mut input = String::new();
+io::stdin().read_line(&mut input);
+let numeros: Vec<i32> = input.split_whitespace().map(|s| s.parse().expect("")).collect();
 ```
 
 #### Scala
