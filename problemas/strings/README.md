@@ -1,4 +1,4 @@
-# Strings (30/150)
+# Strings (32/150)
 * [1024 - Criptografia](./1024/README.md)
 * [1120 - Revisão de Contrato](./1120/README.md)
 * [1168 - LED](./1168/README.md)
@@ -28,4 +28,6 @@
 * [2174 - Coleção de Pomekon](./2174/README.md)
 * [2242 - Huaauhahhuahau](./2242/README.md)
 * [2253 - Validador de Senhas](./2253/README.md)
+* [2587 - Jetiqui](./2587/README.md)
+* [2591 - HameKameKa](./2591/README.md)
 * [2694 - Problema com a Calculadora](./2694/README.md)

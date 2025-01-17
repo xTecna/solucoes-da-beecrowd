@@ -4,4 +4,4 @@
 
 ## Solução
 
-Se queremos saber o consumo médio do automóvel por km/L, precisamos dividir a distância percorrida (em km) pelo total de combustível gasto (em L).
+Se queremos saber o consumo médio do automóvel por $km/\ell$, precisamos dividir a distância percorrida (em $km$) pelo total de combustível gasto (em $\ell$).

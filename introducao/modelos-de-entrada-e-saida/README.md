@@ -214,17 +214,10 @@ while (scanf("%d\n", &x) != EOF)
 ```clj
 (require '[clojure.java.io :as io])
 
-(defn leitura [entrada p]
-    (if (< p (count entrada))
-        (do
-            (let [linha (nth entrada p)]
-                ; ...
-            )
-            (leitura entrada (inc p)))
-        ()))
-
 (let [entrada (vec (line-seq (io/reader *in*)))]
-    (leitura entrada 0))
+  (doseq [linha entrada]
+    ; ...
+  ))
 ```
 
 #### Dart 3.0
