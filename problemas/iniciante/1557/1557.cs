@@ -8,19 +8,6 @@ class URI
         return (int)Math.Floor(Math.Log10(numero)) + 1;
     }
 
-    static string espaco(int numero, int limite)
-    {
-        string resposta = numero.ToString();
-
-        int espacos = limite - resposta.Length;
-        for (int i = 0; i < espacos; ++i)
-        {
-            resposta = " " + resposta;
-        }
-
-        return resposta;
-    }
-
     static void Main(string[] args)
     {
         string entrada;
@@ -38,7 +25,7 @@ class URI
 
             for (int i = 0; i < N; ++i)
             {
-                Console.Write((1 << i).ToString().padLeft(limite));
+                Console.Write((1 << i).ToString().PadLeft(limite));
                 for (int j = 1; j < N; ++j)
                 {
                     Console.Write($" {(1 << (i + j)).ToString().PadLeft(limite)}");

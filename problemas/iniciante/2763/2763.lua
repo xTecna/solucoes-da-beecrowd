@@ -1,0 +1,5 @@
+cpf = io.read()
+print(string.sub(cpf, 1, 3))
+print(string.sub(cpf, 5, 7))
+print(string.sub(cpf, 9, 11))
+print(string.sub(cpf, 13, 14))

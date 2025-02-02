@@ -1,4 +1,4 @@
-# Matemática (31/269)
+# Matemática (32/269)
 * [1028 - Figurinhas](./1028/README.md)
 * [1161 - Soma de Fatoriais](./1161/README.md)
 * [1169 - Trigo no Tabuleiro](./1169/README.md)
@@ -21,6 +21,7 @@
 * [1582 - O Teorema de Pitágoras](./1582/README.md)
 * [1585 - Fazendo Pandorgas](./1585/README.md)
 * [1630 - Estacas](./1630/README.md)
+* [1761 - Decoração Natalina](./1761/README.md)
 * [1795 - Triângulo Trinomial](./1795/README.md)
 * [1805 - Soma Natural](./1805/README.md)
 * [1921 - Guilherme e Suas Pipas](./1921/README.md)

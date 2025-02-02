@@ -8,17 +8,17 @@ Abaixo está a contagem de problemas que já foram documentados nesta página di
 
 | Categoria | Documentados | Total de problemas | Porcentagem |
 | -- | -- | -- | -- |
-| [Iniciante](./problemas/iniciante/README.md) | 249 | 334 | 74,55% |
-| [Ad-Hoc](./problemas/ad-hoc/README.md) | 98 | 849 | 11,54% |
+| [Iniciante](./problemas/iniciante/README.md) | 252 | 334 | 75,49% |
+| [Ad-Hoc](./problemas/ad-hoc/README.md) | 101 | 849 | 11,90% |
 | [Strings](./problemas/strings/README.md) | 32 | 150 | 21,33% |
 | [Estruturas e Bibliotecas](./problemas/estruturas-e-bibliotecas/README.md) | 20 | 180 | 11,11% |
-| [Matemática](./problemas/matematica/README.md) | 31 | 269 | 11,52% |
-| [Paradigmas](./problemas/paradigmas/README.md) | 7 | 215 | 3,26% |
+| [Matemática](./problemas/matematica/README.md) | 32 | 269 | 11,90% |
+| [Paradigmas](./problemas/paradigmas/README.md) | 8 | 215 | 3,72% |
 | [Grafos](./problemas/grafos/README.md) | 4 | 277 | 1,44% |
 | [Geometria Computacional](./problemas/geometria-computacional/README.md) | 1 | 83 | 1,2% |
 | [SQL](./problemas/sql/README.md) | 50 | 50 | 100% |
 | | | |
-| Total | 492 | 2407 | 20,44% |
+| Total | 500 | 2407 | 20,77% |
 
 ## Aqui tem material teórico?
 
