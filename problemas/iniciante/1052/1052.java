@@ -13,6 +13,6 @@ public class Main {
         };
         int mes = Integer.parseInt(in.readLine());
         
-        System.out.printf("%d\n", meses[mes - 1]);
+        System.out.printf("%s\n", meses[mes - 1]);
     }
 }
