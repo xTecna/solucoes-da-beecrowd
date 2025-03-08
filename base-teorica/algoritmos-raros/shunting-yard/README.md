@@ -29,19 +29,19 @@ Também vamos precisar considerar a precedência dos operadores, ou seja, a orde
 
 Para traduzirmos corretamente a expressão infixa para posfixa, o algoritmo utiliza uma [pilha](../../estruturas-e-bibliotecas/pilha/README.md) para guardar os operadores e os parênteses à medida que formos lendo cada um deles. Com isso, vamos lendo a expressão um caractere por vez, tomando medidas diferentes dependendo de qual caractere estamos lendo no momento:
 
-* Se o caractere é um operando, escrever tal caractere direto na resposta
-* Se o caractere é um parênteses aberto, colocar um parênteses aberto na pilha
-* Se o caractere é um parênteses fechado, ir tirando operadores da pilha, escrevendo-os na resposta, até encontrarmos um parênteses aberto na pilha, caso em que vamos retirá-lo da pilha, mas não vamos escrevê-lo na resposta
+* Se o caractere é um operando, escrever tal caractere direto na resposta.
+* Se o caractere é um parênteses aberto, colocar um parênteses aberto na pilha.
+* Se o caractere é um parênteses fechado, ir tirando operadores da pilha, escrevendo-os na resposta, até encontrarmos um parênteses aberto na pilha, caso em que vamos retirá-lo da pilha, mas não vamos escrevê-lo na resposta.
 * Se o caractere é um operador, ir tirando operadores da pilha, escrevendo-os na resposta, até uma dessas três possibilidades acontecer. Quando algo abaixo acontecer, coloque o operador na pilha e passe para o próximo caractere.
-  * A pilha estar vazia
-  * Encontrarmos um parênteses aberto
-  * Encontrarmos um operador com precedência menor do que a do operador que lemos naquele momento
-    * Seria inteligente aqui separarmos o caso em que lemos `^` para ir direto colocar na pilha, já que qualquer operador que encontrássemos na pilha teria precedência menor que `^`
+  * A pilha estar vazia;
+  * Encontrarmos um parênteses aberto;
+  * Encontrarmos um operador com precedência menor do que a do operador que lemos naquele momento.
+    * Seria inteligente aqui separarmos o caso em que lemos `^` para ir direto colocar na pilha, já que qualquer operador que encontrássemos na pilha teria precedência menor que `^`.
 
 > É possível com esse mesmo algoritmo detectar erros na expressão infixa caso isso seja necessário. Repare que dependendo que como a expressão é escrita, podemos nos deparar com alguns casos indesejáveis:
 
 > * Podemos ter dois ou mais operandos sucessivos.
-> * Podemos ter parênteses sobrando ou faltando, caso em que teremos ou parênteses sobrando na pilha ou final da operação ou o parêntese fechado sendo incapaz de desempilhar um parêntese aberto.
+> * Podemos ter parênteses sobrando ou faltando, caso em que teremos ou parênteses sobrando na pilha no final da operação ou o parêntese fechado sendo incapaz de desempilhar um parêntese aberto.
 
 > Nestes casos, é possível acrescentar facilmente algumas verificações para evitar que estes casos ocorram, se seguirmos usando este algoritmo.
 

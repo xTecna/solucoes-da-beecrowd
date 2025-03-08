@@ -8,4 +8,4 @@ Vide [tabela ASCII](../../../base-teorica/strings/ascii/README.md) para entender
 
 Também dá para copiar e colar a resposta.
 
-> Por favor, não faça 26 variáveis.
+> Por favor, não faça $26$ variáveis.
