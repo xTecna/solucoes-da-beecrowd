@@ -1,57 +1,43 @@
-with
-    resultados as (
-        SELECT
-            team_1,
-            team_2,
-            case
-                WHEN (team_1_goals > team_2_goals) then team_1
-                WHEN (team_2_goals > team_1_goals) then team_2
-                else NULL
-            end as winning_team,
-            case
-                WHEN (team_1_goals < team_2_goals) then team_1
-                WHEN (team_2_goals < team_1_goals) then team_2
-                else NULL
-            end as losing_team
-        FROM
-            matches
-    )
-SELECT
+with resultados as (
+    select
+        team_1,
+        team_2,
+        case
+            when (team_1_goals > team_2_goals) then team_1
+            when (team_2_goals > team_1_goals) then team_2
+        end as winning_team,
+        case
+            when (team_1_goals < team_2_goals) then team_1
+            when (team_2_goals < team_1_goals) then team_2
+        end as losing_team
+    from
+        matches
+)
+
+select
     teams.name,
     COUNT(*) as matches,
-    count(*) filter (
-        where
-            teams.id = resultados.winning_team
-    ) as victories,
-    count(*) filter (
-        where
-            teams.id = resultados.losing_team
-    ) as defeats,
-    count(*) filter (
-        where
-            resultados.winning_team is NULL
-            and resultados.losing_team IS NULL
+    COUNT(*) filter (where teams.id = resultados.winning_team) as victories,
+    COUNT(*) filter (where teams.id = resultados.losing_team) as defeats,
+    COUNT(*) filter (
+        where resultados.winning_team is NULL and resultados.losing_team is NULL
     ) as draws,
     (
-        3 * (
-            count(*) filter (
-                where
-                    teams.id = resultados.winning_team
-            )
-        ) + (
-            count(*) filter (
-                where
-                    resultados.winning_team is NULL
-                    and resultados.losing_team IS NULL
+        3 * (COUNT(*) filter (where teams.id = resultados.winning_team))
+        + (
+            COUNT(*) filter (
+                where resultados.winning_team is NULL
+                and resultados.losing_team is NULL
             )
         )
     ) as score
-FROM
+from
     teams
-    JOIN resultados ON resultados.team_1 = teams.id
-    or resultados.team_2 = teams.id
-group BY
+inner join
+    resultados
+    on
+        teams.id = resultados.team_1 or teams.id = resultados.team_2
+group by
     teams.id
-order BY
-    score desc,
-    name asc;
+order by
+    score desc, name asc;

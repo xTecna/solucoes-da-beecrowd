@@ -1,4 +1,1 @@
-select
-    count(distinct (customers.city)) as count
-from
-    customers;
+select count(distinct customers.city) from customers;

@@ -1,8 +1,6 @@
 select
-    movies.id as id,
-    movies.name as name
-from
-    movies
-    join genres on movies.id_genres = genres.id
-where
-    genres.description = 'Action';
+    movies.id,
+    movies.name
+from movies
+inner join genres on movies.id_genres = genres.id
+where genres.description = 'Action';

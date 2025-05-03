@@ -1,27 +1,21 @@
 (
-    SELECT
+    select
         city_name,
         population
-    FROM
+    from
         cities
-    ORDER BY
-        population DESC
-    LIMIT
-        1
-    OFFSET
-        1
+    order by
+        population desc
+    limit 1 offset 1
 )
-UNION ALL
+union all
 (
-    SELECT
+    select
         city_name,
         population
-    FROM
+    from
         cities
-    ORDER BY
+    order by
         population
-    LIMIT
-        1
-    OFFSET
-        1
+    limit 1 offset 1
 );

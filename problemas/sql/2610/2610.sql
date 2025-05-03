@@ -1,4 +1,1 @@
-select
-    round(avg(price), 2) as price
-from
-    products;
+select round(avg(price), 2) from products;

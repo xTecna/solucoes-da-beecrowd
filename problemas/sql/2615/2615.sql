@@ -1,4 +1,1 @@
-select distinct
-    (city)
-from
-    customers;
+select distinct city from customers;

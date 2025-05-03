@@ -1,6 +1,5 @@
-SELECT
-    name
-FROM
+select name
+from
     customers
-WHERE
+where
     state = 'RS';

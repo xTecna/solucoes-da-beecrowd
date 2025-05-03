@@ -1,11 +1,4 @@
 select
     name,
-    cast(
-        extract(
-            day
-            from
-                payday
-        ) as int
-    ) as day
-from
-    loan;
+    cast(extract(day from payday) as int) as day
+from loan;

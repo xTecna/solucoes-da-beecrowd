@@ -1,11 +1,11 @@
 select
-    life_registry.name as name,
+    life_registry.name,
     round((life_registry.omega * 1.618), 3) as "Fator N"
 from
     life_registry
-    join dimensions on life_registry.dimensions_id = dimensions.id
+inner join dimensions on life_registry.dimensions_id = dimensions.id
 where
-    life_registry.name LIKE '%Richard%'
+    life_registry.name like '%Richard%'
     and (
         dimensions.name = 'C875'
         or dimensions.name = 'C774'
