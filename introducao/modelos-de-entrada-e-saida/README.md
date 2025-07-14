@@ -343,11 +343,10 @@ end
 let rec leitura () =
   try
     Scanf.scanf "%d\n" (fun n ->
-        (* ... *)
-        leitura ())
-  with End_of_file -> ()
-
-let () = leitura ()
+      (* ... *)
+      leitura ())
+  with End_of_file -> () in
+leitura ()
 ```
 
 #### Pascal
@@ -375,7 +374,7 @@ while (!feof(STDIN)) {
 
 #### Python 3.11
 ```py
-while(True):
+while True:
     try:
         N = int(input())
 

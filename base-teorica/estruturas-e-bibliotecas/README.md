@@ -4,6 +4,7 @@
 * [Pesquisa binária](./pesquisa-binaria/README.md)
 * [Flood Fill](./flood-fill/README.md)
 * [Pilha](./pilha/README.md)
+* [Fila](./fila/README.md)
 * [Deque](./deque/README.md)
 * [Fila de prioridade](./fila-de-prioridade/README.md)
 * [União-busca](./union-find/README.md)

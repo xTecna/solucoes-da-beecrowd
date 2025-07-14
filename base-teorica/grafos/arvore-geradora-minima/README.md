@@ -6,15 +6,15 @@ Dado um grafo conexo $G = (V, E)$ com pesos em suas arestas, a árvore geradora 
 
 ![Grafo conexo com pesos em arestas (Fonte: Algorithms for Competitive Programming)](https://cp-algorithms.com/graph/MST_before.png)
 
-![Sua respectiva árvore geradora mínima, onde o peso das arestas é o menor possível (Fonte: Algorithms for Competitive Programming)](https://cp-algorithms.com/graph/MST_before.png)
+![Sua respectiva árvore geradora mínima, onde o peso das arestas é o menor possível (Fonte: Algorithms for Competitive Programming)](https://cp-algorithms.com/graph/MST_after.png)
 
-Esse problema é normalmente visto quando queremos economizar recursos, construindo o menor número de conexões possíveis com o menor custo de forma que ainda dê para um vértice alcançar qualquer outro, o que é garantindo para qualquer árvore.
+Esse problema é normalmente visto quando queremos economizar recursos, construindo o menor número de conexões possíveis com o menor custo de forma que ainda dê para um vértice alcançar qualquer outro, o que é garantido para qualquer árvore.
 
 Dois dos algoritmos mais famosos para resolver este problema são o algoritmo de Kruskal e o de Prim, cada um com diferentes abordagens, mas mesma complexidade de $O(|E|\log{|V|})$.
 
 ## Algoritmo de Kruskal
 
-Esse algoritmo é baseado em uma abordagem gulosa, onde iremos ordenar as arestas por seus pesos e ir selecionando as menores arestas, onde é possível adicionar uma nova aresta à árvore caso sua adição não forme ciclos. A forma mais fácil de checar se uma aresta formaria ciclo com as já adicionadas é usando uma união-busca, que nesse caso aqui seria usado para separar cada vértice em um subconjunto onde vértices de subconjuntos iguais pertencem à mesma árvore (ou seja, faria um ciclo). Mais informações sobre esse tipo de estrutura específica podem ser encontradas na página [união-busca](../../estruturas-e-bibliotecas/union-find/README.md).
+Esse algoritmo é baseado em uma abordagem gulosa, onde iremos ordenar as arestas por seus pesos e ir selecionando as menores arestas. Fazemos isso para todas as arestas onde é possível adicionar, ou seja, caso sua adição não forme ciclos. A forma mais fácil de checar se uma aresta formaria ciclo com as já adicionadas é usando uma união-busca, que nesse caso aqui seria usado para separar cada vértice em um subconjunto onde vértices de subconjuntos iguais pertencem à mesma árvore (ou seja, faria um ciclo). Mais informações sobre esse tipo de estrutura específica podem ser encontradas na página [união-busca](../../estruturas-e-bibliotecas/union-find/README.md).
 
 ### Implementações
 
