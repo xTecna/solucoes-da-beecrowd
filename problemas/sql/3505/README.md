@@ -1,4 +1,4 @@
-# 3492 - Controle de Ingredientes
+# 3505 - Controle de Ingredientes
 
 ## [Descrição](https://www.beecrowd.com.br/judge/pt/problems/view/3505)
 

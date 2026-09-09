@@ -1,4 +1,4 @@
-# SQL (50/50)
+# SQL (52/52)
 * [2602 - Select Básico](./2602/README.md)
 * [2603 - Endereço dos Clientes](./2603/README.md)
 * [2604 - Menores que 10 ou Maiores que 100](./2604/README.md)
@@ -49,3 +49,5 @@
 * [3481 - Classificando uma Árvore](./3481/README.md)
 * [3482 - Seguidores](./3482/README.md)
 * [3483 - Segundo Maior e Menor](./3483/README.md)
+* [3492 - Ranking turismo CE](./3492/README.md)
+* [3505 - Controle de Ingredientes](./3505/README.md)
